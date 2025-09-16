@@ -1,5 +1,10 @@
 ---
 // RegistrationSection.astro - Organization registration information
+import { Image } from 'astro:assets';
+import patenttiImg from '../assets/patentti.jpg';
+import danishNgoImg from '../assets/danish-ngo.png';
+import skatteverketImg from '../assets/skv-fb-liggande.png';
+import icelandNgoImg from '../assets/iceland ngo.jpg';
 ---
 
 <section class="bg-white py-16">
@@ -18,10 +23,14 @@
       <!-- PRH Card -->
       <div class="text-center">
         <div class="bg-gray-50 p-6 rounded-lg mb-4">
-          <img
-            src="/images/patentti.jpg"
+          <Image
+            src={patenttiImg}
             alt="PRH - Patent- och registerstyrelsen"
             class="h-20 mx-auto object-contain"
+            loading="lazy"
+            format="webp"
+            width={80}
+            height={80}
           />
         </div>
         <div class="bg-slate-600 text-white px-4 py-2 rounded">
@@ -32,10 +41,14 @@
       <!-- Danish CVR Card -->
       <div class="text-center">
         <div class="bg-gray-50 p-6 rounded-lg mb-4">
-          <img
-            src="/images/danish-ngo.png"
+          <Image
+            src={danishNgoImg}
             alt="Erhvervsstyrelsen"
             class="h-20 mx-auto object-contain"
+            loading="lazy"
+            format="webp"
+            width={80}
+            height={80}
           />
         </div>
         <div class="bg-slate-600 text-white px-4 py-2 rounded">
@@ -46,10 +59,14 @@
       <!-- Skatteverket Card -->
       <div class="text-center">
         <div class="bg-gray-50 p-6 rounded-lg mb-4">
-          <img
-            src="/images/skv-fb-liggande.png"
+          <Image
+            src={skatteverketImg}
             alt="Skatteverket"
             class="h-20 mx-auto object-contain"
+            loading="lazy"
+            format="webp"
+            width={80}
+            height={80}
           />
         </div>
         <div class="bg-slate-600 text-white px-4 py-2 rounded">
@@ -62,10 +79,14 @@
       <!-- Iceland RSK Card -->
       <div class="text-center">
         <div class="bg-gray-50 p-6 rounded-lg mb-4">
-          <img
-            src="/images/iceland ngo.jpg"
+          <Image
+            src={icelandNgoImg}
             alt="Ríkisskattstjóri"
             class="h-20 mx-auto object-contain"
+            loading="lazy"
+            format="webp"
+            width={80}
+            height={80}
           />
         </div>
         <div class="bg-slate-600 text-white px-4 py-2 rounded">

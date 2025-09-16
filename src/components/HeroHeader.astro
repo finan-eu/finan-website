@@ -1,11 +1,19 @@
 ---
 // HeroHeader.astro - Main hero section with FiNAN mission
+import { Image } from 'astro:assets';
+import heroImage from '../assets/hero-image.jpg';
 ---
 
-<section
-  class="relative min-h-[80vh] md:h-screen bg-cover bg-center flex items-center"
-  style="background-image: url('/images/hero-image.jpg')"
->
+<section class="relative min-h-[80vh] md:h-screen flex items-center">
+  <Image
+    src={heroImage}
+    alt="Filipino nurses working together in Nordic healthcare"
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    format="webp"
+    width={1920}
+    height={1080}
+  />
   <!-- Gray overlay -->
   <div class="absolute inset-0 bg-gray-900/90"></div>
 
