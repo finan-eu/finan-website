@@ -1,22 +1,36 @@
+---
+import '../styles/global.css';
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>FiNAN - Coming Soon</title>
+    <meta
+      name="description"
+      content="FiNAN (Filipino Nurses Association in the Nordics) - Coming Soon. Uniting and empowering Filipino nurses across the Nordic region."
+    />
+    <meta property="og:title" content="FiNAN - Coming Soon" />
+    <meta
+      property="og:description"
+      content="FiNAN (Filipino Nurses Association in the Nordics) - Coming Soon. Uniting and empowering Filipino nurses across the Nordic region."
+    />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

@@ -1,0 +1,27 @@
+---
+// HeroHeader.astro - Main hero section with FiNAN mission
+import backgroundImage from '../assets/background.svg';
+---
+
+<section class="relative min-h-[80vh] md:h-screen bg-cover bg-center flex items-center" style={`background-image: url(${backgroundImage.src})`}>
+  <!-- Dark blue overlay -->
+  <div class="absolute inset-0 bg-blue-900/70"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-white">
+    <h1 class="text-4xl md:text-6xl font-bold">
+      Uniting & Empowering Filipino Nurses in the Nordics
+    </h1>
+
+    <p class="text-lg md:text-xl mt-4">
+      FiNAN is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region — providing trusted guidance on licensing, cultural integration, and professional growth.
+    </p>
+
+    <p class="text-sm text-gray-200 mt-6">
+      For more info you can visit our current website
+      <a href="https://filnan.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">
+        filnan.com
+      </a>.
+    </p>
+  </div>
+</section>
