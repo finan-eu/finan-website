@@ -1,27 +1,40 @@
 ---
 // HeroHeader.astro - Main hero section with FiNAN mission
-import backgroundImage from '../assets/background.svg';
 ---
 
-<section class="relative min-h-[80vh] md:h-screen bg-cover bg-center flex items-center" style={`background-image: url(${backgroundImage.src})`}>
-  <!-- Dark blue overlay -->
-  <div class="absolute inset-0 bg-blue-900/70"></div>
+<section
+  class="relative min-h-[80vh] md:h-screen bg-cover bg-center flex items-center"
+  style="background-image: url('/images/hero-image.jpg')"
+>
+  <!-- Gray overlay -->
+  <div class="absolute inset-0 bg-gray-900/90"></div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-white">
-    <h1 class="text-4xl md:text-6xl font-bold">
-      Uniting & Empowering Filipino Nurses in the Nordics
+  <div
+    class="relative z-10 max-w-screen-xl mx-auto px-6 text-white text-center"
+  >
+    <h1 class="text-4xl md:text-6xl font-bold mb-8">
+      Uniting & Empowering Filipino<br />Nurses in the Nordics
     </h1>
 
-    <p class="text-lg md:text-xl mt-4">
-      FiNAN is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region — providing trusted guidance on licensing, cultural integration, and professional growth.
+    <p class="text-lg md:text-xl max-w-4xl mx-auto mb-12">
+      FiNAN is a non-profit organization that connects, supports, and advocates
+      for Filipino nurses across the Nordic region — providing trusted guidance
+      on licensing, cultural integration, and professional growth.
     </p>
 
-    <p class="text-sm text-gray-200 mt-6">
-      For more info you can visit our current website
-      <a href="https://filnan.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">
-        filnan.com
-      </a>.
+    <p class="text-lg text-gray-200">
+      For more info you can visit our current website <a
+        href="https://www.filnan.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline font-bold hover:text-white transition-colors"
+        >www.filnan.com</a
+      > or email us at <a
+        href="mailto:info@finan.eu.com"
+        class="underline font-bold hover:text-white transition-colors"
+        >info@finan.eu.com</a
+      >
     </p>
   </div>
 </section>
