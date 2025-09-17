@@ -13,7 +13,8 @@
       "Bash(cp:*)",
       "Bash(git commit:*)",
       "Bash(npm run security:audit:*)",
-      "Bash(npm run security:check:*)"
+      "Bash(npm run security:check:*)",
+      "Bash(npm outdated)"
     ],
     "deny": [],
     "ask": []
