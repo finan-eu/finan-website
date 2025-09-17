@@ -4,22 +4,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Astro-based website project for "v2-finan-website" using the basic Astro starter template. The project follows standard Astro conventions and project structure.
+This is an Astro-based website project for "finan-website" using the basic Astro starter template. The project follows standard Astro conventions and project structure.
 
 ## Development Commands
 
-| Command | Action |
-|---------|--------|
-| `npm install` | Install dependencies |
-| `npm run dev` | Start development server at localhost:4321 |
-| `npm run build` | Build production site to ./dist/ |
-| `npm run preview` | Preview built site locally |
-| `npm run astro` | Run Astro CLI commands |
+| Command           | Action                                     |
+| ----------------- | ------------------------------------------ |
+| `npm install`     | Install dependencies                       |
+| `npm run dev`     | Start development server at localhost:4321 |
+| `npm run build`   | Build production site to ./dist/           |
+| `npm run preview` | Preview built site locally                 |
+| `npm run astro`   | Run Astro CLI commands                     |
 
 ## Architecture
 
 - **Framework**: Astro 5.x (static site generator with island architecture)
 - **Structure**: Standard Astro project layout
+
   - `src/pages/` - File-based routing for pages
   - `src/layouts/` - Reusable layout components
   - `src/components/` - Astro components
