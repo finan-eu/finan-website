@@ -1,23 +1,24 @@
 ---
 // TopBanner.astro - Site-wide announcement banner
-import denmarkFlag from "../assets/flags/190-denmark.svg";
-import swedenFlag from "../assets/flags/189-sweden.svg";
-import norwayFlag from "../assets/flags/204-norway.svg";
-import finlandFlag from "../assets/flags/210-finland.svg";
-import icelandFlag from "../assets/flags/221-iceland.svg";
-import greenlandFlag from "../assets/flags/078-greenland.svg";
-import faroeIslandsFlag from "../assets/flags/115-faroe islands.svg";
-import alandIslandsFlag from "../assets/flags/156-aland islands.svg";
+import { Image } from 'astro:assets';
+import denmarkFlag from '../assets/images/flags/190-denmark.svg';
+import swedenFlag from '../assets/images/flags/189-sweden.svg';
+import norwayFlag from '../assets/images/flags/204-norway.svg';
+import finlandFlag from '../assets/images/flags/210-finland.svg';
+import icelandFlag from '../assets/images/flags/221-iceland.svg';
+import greenlandFlag from '../assets/images/flags/078-greenland.svg';
+import faroeIslandsFlag from '../assets/images/flags/115-faroe islands.svg';
+import alandIslandsFlag from '../assets/images/flags/156-aland islands.svg';
 
 const flags = [
-  { alt: "Flag of Denmark", src: denmarkFlag.src },
-  { alt: "Flag of Sweden", src: swedenFlag.src },
-  { alt: "Flag of Norway", src: norwayFlag.src },
-  { alt: "Flag of Finland", src: finlandFlag.src },
-  { alt: "Flag of Iceland", src: icelandFlag.src },
-  { alt: "Flag of Greenland", src: greenlandFlag.src },
-  { alt: "Flag of the Faroe Islands", src: faroeIslandsFlag.src },
-  { alt: "Flag of Aland Islands", src: alandIslandsFlag.src },
+  { alt: 'Flag of Denmark', src: denmarkFlag },
+  { alt: 'Flag of Sweden', src: swedenFlag },
+  { alt: 'Flag of Norway', src: norwayFlag },
+  { alt: 'Flag of Finland', src: finlandFlag },
+  { alt: 'Flag of Iceland', src: icelandFlag },
+  { alt: 'Flag of Greenland', src: greenlandFlag },
+  { alt: 'Flag of the Faroe Islands', src: faroeIslandsFlag },
+  { alt: 'Flag of Aland Islands', src: alandIslandsFlag },
 ];
 ---
 
@@ -31,11 +32,13 @@ const flags = [
       class="mt-3 flex list-none flex-wrap items-center justify-center gap-2"
       aria-label="Nordic region flags"
     >
-      {flags.map((flag) => (
-        <li>
-          <img src={flag.src} alt={flag.alt} class="h-6 w-8" loading="lazy" />
-        </li>
-      ))}
+      {
+        flags.map((flag) => (
+          <li>
+            <Image src={flag.src} alt={flag.alt} class="h-6 w-8" loading="lazy" width={32} height={24} />
+          </li>
+        ))
+      }
     </ul>
   </div>
 </div>
