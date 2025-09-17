@@ -1,10 +1,41 @@
 ---
 // TopBanner.astro - Site-wide announcement banner
+import denmarkFlag from "../assets/flags/190-denmark.svg";
+import swedenFlag from "../assets/flags/189-sweden.svg";
+import norwayFlag from "../assets/flags/204-norway.svg";
+import finlandFlag from "../assets/flags/210-finland.svg";
+import icelandFlag from "../assets/flags/221-iceland.svg";
+import greenlandFlag from "../assets/flags/078-greenland.svg";
+import faroeIslandsFlag from "../assets/flags/115-faroe islands.svg";
+import alandIslandsFlag from "../assets/flags/156-aland islands.svg";
+
+const flags = [
+  { alt: "Flag of Denmark", src: denmarkFlag.src },
+  { alt: "Flag of Sweden", src: swedenFlag.src },
+  { alt: "Flag of Norway", src: norwayFlag.src },
+  { alt: "Flag of Finland", src: finlandFlag.src },
+  { alt: "Flag of Iceland", src: icelandFlag.src },
+  { alt: "Flag of Greenland", src: greenlandFlag.src },
+  { alt: "Flag of the Faroe Islands", src: faroeIslandsFlag.src },
+  { alt: "Flag of Aland Islands", src: alandIslandsFlag.src },
+];
 ---
 
 <div class="bg-blue-900 py-4 px-4">
-  <p class="text-white text-lg text-center">
-    Exciting news! We're launching a new website to better serve Filipino nurses
-    in the Nordic region. Stay tuned for updates!<br />🇩🇰 🇸🇪 🇳🇴 🇫🇮 🇮🇸 🇬🇱 🇫🇴 🇦🇽
-  </p>
+  <div class="text-white text-lg text-center">
+    <p>
+      Exciting news! We're launching a new website to better serve Filipino
+      nurses in the Nordic region. Stay tuned for updates!
+    </p>
+    <ul
+      class="mt-3 flex list-none flex-wrap items-center justify-center gap-2"
+      aria-label="Nordic region flags"
+    >
+      {flags.map((flag) => (
+        <li>
+          <img src={flag.src} alt={flag.alt} class="h-6 w-8" loading="lazy" />
+        </li>
+      ))}
+    </ul>
+  </div>
 </div>
