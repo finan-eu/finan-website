@@ -12,6 +12,9 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto'
   },
+  security: {
+    checkOrigin: true
+  },
   vite: {
     plugins: [tailwindcss()],
     build: {
@@ -22,6 +25,14 @@ export default defineConfig({
             vendor: ['astro']
           }
         }
+      }
+    },
+    server: {
+      headers: {
+        'X-Frame-Options': 'DENY',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()'
       }
     }
   }
