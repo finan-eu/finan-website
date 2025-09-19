@@ -68,3 +68,6 @@ Thumbs.db
 *.db
 *.sqlite
 *.sqlite3
+
+# --- Misc ---
+.playwright-mcp/

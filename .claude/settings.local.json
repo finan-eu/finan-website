@@ -14,7 +14,16 @@
       "Bash(git commit:*)",
       "Bash(npm run security:audit:*)",
       "Bash(npm run security:check:*)",
-      "Bash(npm outdated)"
+      "Bash(npm outdated)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_snapshot",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "mcp__playwright__browser_console_messages"
     ],
     "deny": [],
     "ask": []
