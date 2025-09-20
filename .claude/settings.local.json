@@ -26,7 +26,9 @@
       "mcp__playwright__browser_console_messages",
       "Bash(TZ=Europe/Helsinki date \"+%Y-%m-%d_%H-%M\")",
       "mcp__playwright__browser_wait_for",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "mcp__playwright__browser_navigate_back",
+      "mcp__playwright__browser_evaluate"
     ],
     "deny": [],
     "ask": []
