@@ -5,7 +5,7 @@ import finanLogo from '../assets/finan-logo.svg';
 ---
 
 <nav class="bg-white shadow-sm border-b border-gray-200 relative z-50 py-2">
-  <div class="max-w-screen-xl mx-auto px-6">
+  <div class="max-w-screen-2xl mx-auto px-6">
     <div class="flex items-center justify-between h-20">
       <!-- Logo/Brand -->
       <div class="flex-shrink-0">
@@ -40,6 +40,75 @@ import finanLogo from '../assets/finan-logo.svg';
           >
             FAQs
           </a>
+          <!-- Chapters Dropdown -->
+          <div class="relative" id="chapters-dropdown">
+            <button
+              type="button"
+              class="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors flex items-center cursor-pointer"
+              id="chapters-button"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Chapters
+              <svg
+                class="ml-1 h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible transform scale-95 transition-all duration-200 ease-out z-50"
+              id="chapters-menu"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="chapters-button"
+            >
+              <div class="py-1" role="none">
+                <a
+                  href="/chapters/denmark"
+                  class="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-lg"
+                  role="menuitem">Denmark</a
+                >
+                <a
+                  href="/chapters/faeroe-islands"
+                  class="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-lg"
+                  role="menuitem">Faeroe Islands</a
+                >
+                <a
+                  href="/chapters/finland"
+                  class="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-lg"
+                  role="menuitem">Finland</a
+                >
+                <a
+                  href="/chapters/greenland"
+                  class="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-lg"
+                  role="menuitem">Greenland</a
+                >
+                <a
+                  href="/chapters/iceland"
+                  class="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-lg"
+                  role="menuitem">Iceland</a
+                >
+                <a
+                  href="/chapters/norway"
+                  class="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-lg"
+                  role="menuitem">Norway</a
+                >
+                <a
+                  href="/chapters/sweden"
+                  class="text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-lg"
+                  role="menuitem">Sweden</a
+                >
+              </div>
+            </div>
+          </div>
           <a
             href="/about"
             class="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors"
@@ -131,6 +200,62 @@ import finanLogo from '../assets/finan-logo.svg';
         >
           FAQs
         </a>
+        <!-- Mobile Chapters Dropdown -->
+        <div class="block">
+          <button
+            type="button"
+            class="text-gray-700 hover:text-gray-900 w-full text-left py-2 text-lg font-medium flex items-center justify-between"
+            id="mobile-chapters-button"
+            aria-expanded="false"
+          >
+            Chapters
+            <svg
+              class="h-4 w-4 transform transition-transform duration-200"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              id="mobile-chapters-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="pl-4 space-y-1 hidden" id="mobile-chapters-menu">
+            <a
+              href="/chapters/denmark"
+              class="text-gray-600 hover:text-gray-900 block py-2 text-base"
+              >Denmark</a
+            >
+            <a
+              href="/chapters/faeroe-islands"
+              class="text-gray-600 hover:text-gray-900 block py-2 text-base"
+              >Faeroe Islands</a
+            >
+            <a
+              href="/chapters/finland"
+              class="text-gray-600 hover:text-gray-900 block py-2 text-base"
+              >Finland</a
+            >
+            <a
+              href="/chapters/iceland"
+              class="text-gray-600 hover:text-gray-900 block py-2 text-base"
+              >Iceland</a
+            >
+            <a
+              href="/chapters/norway"
+              class="text-gray-600 hover:text-gray-900 block py-2 text-base"
+              >Norway</a
+            >
+            <a
+              href="/chapters/sweden"
+              class="text-gray-600 hover:text-gray-900 block py-2 text-base"
+              >Sweden</a
+            >
+          </div>
+        </div>
         <a
           href="/contact"
           class="text-gray-700 hover:text-gray-900 block py-2 text-lg font-medium"
