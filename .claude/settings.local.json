@@ -23,7 +23,10 @@
       "mcp__playwright__browser_snapshot",
       "Bash(git add:*)",
       "Bash(git push:*)",
-      "mcp__playwright__browser_console_messages"
+      "mcp__playwright__browser_console_messages",
+      "Bash(TZ=Europe/Helsinki date \"+%Y-%m-%d_%H-%M\")",
+      "mcp__playwright__browser_wait_for",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []
