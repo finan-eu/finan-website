@@ -17,16 +17,16 @@ import { ctaBannerConfig } from '../data/ctaBannerConfig';
       </div>
 
       <!-- Right side - CTA buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 lg:flex-shrink-0">
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto lg:flex-shrink-0">
         <a
           href={ctaBannerConfig.buttons.primary.href}
-          class="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-center"
+          class="w-full sm:w-auto bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 inline-block text-center"
         >
           {ctaBannerConfig.buttons.primary.text}
         </a>
         <a
           href={ctaBannerConfig.buttons.secondary.href}
-          class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-800 transition-colors duration-200 text-center"
+          class="w-full sm:w-auto border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-800 transition-colors duration-200 inline-block text-center"
         >
           {ctaBannerConfig.buttons.secondary.text}
         </a>
