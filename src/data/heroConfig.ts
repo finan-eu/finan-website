@@ -1,4 +1,27 @@
-export const heroConfig = {
+export interface HeroButton {
+  text: string;
+  url: string;
+}
+
+export interface HeroContact {
+  websiteText: string;
+  websiteUrl: string;
+  websiteLabel: string;
+  emailText: string;
+  email: string;
+}
+
+export interface HeroData {
+  title: string;
+  description: string;
+  contact: HeroContact;
+  buttons: {
+    primary: HeroButton;
+    secondary: HeroButton;
+  };
+}
+
+export const heroConfig: HeroData = {
   title: "Uniting & Empowering Filipino Nurses in the Nordics",
   description: "FiNAN is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region — providing trusted guidance on licensing, cultural integration, and professional growth.",
   contact: {
