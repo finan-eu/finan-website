@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBanner from '../../components/TopBanner.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import heroImage from '../../assets/images/hero-image.jpg';
+---
+
+<Layout title="Faeroe Islands - FiNAN">
+  <main>
+    <TopBanner />
+    <Navbar />
+    <PageHeader
+      title="Faeroe Islands"
+      description="Explore unique healthcare opportunities in the Faeroe Islands, a remote Nordic archipelago with close-knit communities and pristine natural beauty."
+      backgroundImage={heroImage}
+      backgroundAlt="Dramatic Faeroese landscape with grass-roof houses"
+    />
+
+    <section class="py-16 bg-white">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
+        <div class="prose prose-lg max-w-none">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">
+            Healthcare in the Faeroe Islands
+          </h2>
+          <p class="text-gray-700 mb-6">
+            The Faeroe Islands offer a unique opportunity for Filipino healthcare professionals to work in a small, tight-knit community where every contribution makes a significant impact. Located between Iceland and Norway, this autonomous territory within Denmark provides a distinctive Nordic healthcare experience.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            With a population of approximately 53,000 people spread across 18 islands, the Faeroese healthcare system emphasizes community care, preventive medicine, and close patient-provider relationships. Healthcare professionals here enjoy the chance to work across various specialties and develop strong connections with the local community.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Healthcare System
+          </h3>
+          <p class="text-gray-700 mb-6">
+            The Faeroese healthcare system operates under Danish healthcare principles but is adapted to the unique geographic and demographic challenges of island life. The National Hospital in Tórshavn serves as the main medical facility, with smaller health centers distributed across the islands, often requiring healthcare professionals to be versatile and adaptable.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Island Life and Culture
+          </h3>
+          <p class="text-gray-700 mb-6">
+            Living in the Faeroe Islands means embracing a slower pace of life surrounded by dramatic landscapes, including grass-roof houses, steep cliffs, and pristine fjords. The Faeroese culture values community, tradition, and environmental stewardship, creating a welcoming atmosphere for international healthcare professionals seeking a unique Nordic experience.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Professional Opportunities
+          </h3>
+          <p class="text-gray-700">
+            Healthcare professionals in the Faeroe Islands often work across multiple specialties and have opportunities for diverse clinical experiences. The small population means that professionals can make a real difference in community health outcomes while enjoying excellent work-life balance and the opportunity to explore one of the world's most beautiful archipelagos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

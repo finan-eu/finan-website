@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBanner from '../../components/TopBanner.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import heroImage from '../../assets/images/hero-image.jpg';
+---
+
+<Layout title="Greenland - FiNAN">
+  <main>
+    <TopBanner />
+    <Navbar />
+    <PageHeader
+      title="Greenland"
+      description="Experience unique healthcare challenges in Greenland, the world's largest island, serving diverse communities across vast Arctic landscapes."
+      backgroundImage={heroImage}
+      backgroundAlt="Greenlandic icebergs and Arctic landscape"
+    />
+
+    <section class="py-16 bg-white">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
+        <div class="prose prose-lg max-w-none">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">
+            Healthcare in Greenland
+          </h2>
+          <p class="text-gray-700 mb-6">
+            Greenland presents extraordinary opportunities for Filipino healthcare professionals seeking to make a meaningful impact in one of the world's most unique healthcare environments. As an autonomous territory within Denmark, Greenland offers the chance to serve diverse communities across vast Arctic landscapes while being part of the Danish healthcare system.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            With a population of approximately 56,000 people spread across the world's largest island, healthcare delivery in Greenland requires innovation, adaptability, and cultural sensitivity. Healthcare professionals here play vital roles in community health, often serving as the primary medical contact for remote settlements.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Unique Healthcare Challenges
+          </h3>
+          <p class="text-gray-700 mb-6">
+            Greenland's healthcare system operates under Danish standards but is adapted to Arctic conditions and geographic isolation. The main hospital in Nuuk serves as the central facility, with smaller health centers and nursing stations distributed across coastal communities. Healthcare professionals often work with telemedicine technology and may travel by helicopter or boat to reach patients.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Arctic Life and Culture
+          </h3>
+          <p class="text-gray-700 mb-6">
+            Living in Greenland means experiencing the midnight sun, northern lights, and some of the world's most spectacular natural phenomena. The Greenlandic culture blends Inuit traditions with modern Nordic influences, creating a welcoming community that values healthcare professionals who serve remote populations with dedication and cultural respect.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Professional Impact
+          </h3>
+          <p class="text-gray-700">
+            Healthcare professionals in Greenland have the opportunity to make a profound difference in community health outcomes while experiencing one of the world's last frontiers. The work is challenging but rewarding, offering unique clinical experiences, cultural exchange, and the satisfaction of serving communities where healthcare access can be life-changing.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBanner from '../../components/TopBanner.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import heroImage from '../../assets/images/hero-image.jpg';
+---
+
+<Layout title="Sweden - FiNAN">
+  <main>
+    <TopBanner />
+    <Navbar />
+    <PageHeader
+      title="Sweden"
+      description="Explore healthcare opportunities in Sweden, known for innovation, equality, and a progressive healthcare system that values international professionals."
+      backgroundImage={heroImage}
+      backgroundAlt="Swedish archipelago and forest landscape"
+    />
+
+    <section class="py-16 bg-white">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
+        <div class="prose prose-lg max-w-none">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">
+            Healthcare in Sweden
+          </h2>
+          <p class="text-gray-700 mb-6">
+            Sweden provides outstanding opportunities for Filipino healthcare professionals in a country renowned for its innovation, equality, and progressive healthcare system. Known for its commitment to universal healthcare, Sweden offers a supportive environment where international professionals can thrive while contributing to world-class patient care.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            The Swedish healthcare system emphasizes evidence-based medicine, patient-centered care, and continuous improvement. Healthcare professionals benefit from excellent working conditions, comprehensive benefits, and a culture that values work-life balance and professional development.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Progressive Healthcare System
+          </h3>
+          <p class="text-gray-700 mb-6">
+            Sweden's healthcare system is decentralized across 21 regions, each responsible for healthcare delivery in their area. The system is known for its emphasis on primary care, preventive medicine, and integration of digital health technologies. Healthcare professionals have opportunities to work in diverse settings, from cutting-edge research hospitals to community health centers.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Swedish Culture and Lifestyle
+          </h3>
+          <p class="text-gray-700 mb-6">
+            Living in Sweden means embracing the concepts of "lagom" (balance) and "allemansrätten" (right to roam), reflecting Swedish values of moderation and connection with nature. The country offers beautiful archipelagos, forests, and cities that blend historical charm with modern innovation. Swedish culture values equality, sustainability, and inclusivity, creating a welcoming environment for international healthcare professionals.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Innovation and Development
+          </h3>
+          <p class="text-gray-700">
+            Sweden is a global leader in healthcare innovation, digital health solutions, and medical research. Healthcare professionals have access to cutting-edge technology, research opportunities, and international collaborations. The country's investment in healthcare education and professional development ensures that healthcare workers can continuously advance their skills and contribute to improving global health outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

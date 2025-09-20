@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBanner from '../../components/TopBanner.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import heroImage from '../../assets/images/hero-image.jpg';
+---
+
+<Layout title="Iceland - FiNAN">
+  <main>
+    <TopBanner />
+    <Navbar />
+    <PageHeader
+      title="Iceland"
+      description="Explore healthcare opportunities in Iceland, the land of fire and ice, known for its innovative healthcare system and high quality of life."
+      backgroundImage={heroImage}
+      backgroundAlt="Icelandic geysers and volcanic landscape"
+    />
+
+    <section class="py-16 bg-white">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
+        <div class="prose prose-lg max-w-none">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">
+            Healthcare in Iceland
+          </h2>
+          <p class="text-gray-700 mb-6">
+            Iceland offers unique opportunities for Filipino healthcare professionals in a country known for its innovative healthcare system, high quality of life, and stunning natural beauty. This Nordic island nation combines cutting-edge medical technology with a strong emphasis on preventive care and patient satisfaction.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            With one of the world's highest life expectancies and lowest infant mortality rates, Iceland's healthcare system is a model of efficiency and quality. Healthcare professionals enjoy excellent working conditions, competitive compensation, and the opportunity to work in a system that consistently ranks among the world's best.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Healthcare Innovation
+          </h3>
+          <p class="text-gray-700 mb-6">
+            Iceland's healthcare system is characterized by its use of advanced technology, comprehensive electronic health records, and emphasis on research and development. The country's unique genetic database and focus on precision medicine provide healthcare professionals with opportunities to participate in groundbreaking medical research and innovative treatment approaches.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Land of Fire and Ice
+          </h3>
+          <p class="text-gray-700 mb-6">
+            Living in Iceland means experiencing dramatic landscapes of glaciers, volcanoes, geysers, and the Northern Lights. The Icelandic culture values creativity, education, and community, creating a welcoming environment for international healthcare professionals. The country offers excellent work-life balance with access to geothermal pools, hiking trails, and cultural activities.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+            Professional Excellence
+          </h3>
+          <p class="text-gray-700">
+            Healthcare professionals in Iceland benefit from a system that prioritizes continuous improvement, evidence-based practice, and professional development. The small population allows for close collaboration between healthcare teams and the opportunity to make meaningful contributions to public health outcomes while enjoying one of the world's most beautiful and safe living environments.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
