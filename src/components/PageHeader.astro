@@ -1,0 +1,58 @@
+---
+// PageHeader.astro - Reusable page header component
+import { Image } from 'astro:assets';
+
+export interface Props {
+  title: string;
+  description?: string;
+  backgroundImage?: ImageMetadata;
+  backgroundAlt?: string;
+  className?: string;
+}
+
+const {
+  title,
+  description,
+  backgroundImage,
+  backgroundAlt = '',
+  className = '',
+} = Astro.props;
+---
+
+<section class={`relative min-h-[50vh] flex items-center py-8 ${className}`}>
+  {
+    backgroundImage && (
+      <Image
+        src={backgroundImage}
+        alt={backgroundAlt}
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        format="webp"
+        width={1920}
+        height={1080}
+      />
+    )
+  }
+
+  <!-- Gray overlay -->
+  <div class="absolute inset-0 bg-gray-900/90"></div>
+
+  <!-- Content -->
+  <div
+    class="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 text-white w-full"
+  >
+    <div class="max-w-4xl">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        {title}
+      </h1>
+
+      {
+        description && (
+          <p class="text-lg md:text-xl text-gray-200 max-w-3xl leading-relaxed">
+            {description}
+          </p>
+        )
+      }
+    </div>
+  </div>
+</section>
