@@ -64,23 +64,36 @@ export interface SiteConfig {
  */
 export const siteConfig = {
   metadata: {
-    title: 'Finan Website',
-    description: 'A modern, fast website built with Astro for exceptional performance and user experience.',
-    url: 'https://your-domain.com',
-    author: 'Your Name',
-    language: 'en'
+    title: 'FiNAN — Filipino Nurses Association in the Nordic Region',
+    description:
+      'FiNAN is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region — providing trusted guidance on licensing, cultural integration, and professional growth.',
+    url: 'https://finan.eu.com',
+    author: 'FiNAN',
+    language: 'en',
   },
   social: {
     twitter: 'yourhandle',
     github: 'https://github.com/yourusername',
-    image: '/images/og-image.jpg'
+    image: '/images/og-image.jpg',
   },
   seo: {
-    keywords: ['astro', 'website', 'modern', 'fast', 'performance'] as const,
+    keywords: [
+      'finan',
+      'filipino nurses',
+      'nordic nursing',
+      'nursing association',
+      'nurse advocacy',
+      'nurse licensing support',
+      'healthcare career guidance',
+      'nursing community',
+      'professional development for nurses',
+      'cultural integration support',
+      'nordic healthcare jobs',
+    ] as const,
     ogType: 'website' as const,
     twitterCard: 'summary_large_image' as const,
-    robots: 'index, follow'
-  }
+    robots: 'index, follow',
+  },
 } as const satisfies SiteConfig;
 
 /**
