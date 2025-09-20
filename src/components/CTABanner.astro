@@ -1,5 +1,6 @@
 ---
 // CTABanner.astro - Call to Action banner section
+import { ctaBannerConfig } from '../data/ctaBannerConfig';
 ---
 
 <section class="bg-gray-800 py-16">
@@ -8,27 +9,26 @@
       <!-- Left side - Main CTA content -->
       <div class="flex-1 text-center lg:text-left">
         <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 max-w-2xl">
-          Join FiNAN and Empower Filipino Nurses in the Nordic Region
+          {ctaBannerConfig.heading}
         </h2>
         <p class="text-lg text-gray-300 max-w-2xl">
-          Be part of a non-profit community that supports, guides, and advocates
-          for Filipino nurses across the Nordic region.
+          {ctaBannerConfig.description}
         </p>
       </div>
 
       <!-- Right side - CTA buttons -->
       <div class="flex flex-col sm:flex-row gap-4 lg:flex-shrink-0">
         <a
-          href="#donate"
+          href={ctaBannerConfig.buttons.secondary.href}
           class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-800 transition-colors duration-200 text-center"
         >
-          Donate
+          {ctaBannerConfig.buttons.secondary.text}
         </a>
         <a
-          href="#membership"
+          href={ctaBannerConfig.buttons.primary.href}
           class="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-center"
         >
-          Become a Member
+          {ctaBannerConfig.buttons.primary.text}
         </a>
       </div>
     </div>
