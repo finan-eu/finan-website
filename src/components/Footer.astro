@@ -5,114 +5,114 @@ import finanLogo from '../assets/finan-logo.svg';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="footer">
-  <div class="footer-container">
+<footer class="bg-white pt-20 pb-8 border-t border-gray-200">
+  <div class="max-w-screen-xl mx-auto px-6">
     <!-- Top section with logo and newsletter -->
-    <div class="footer-top">
-      <div class="footer-brand">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
+      <div class="flex flex-col gap-8">
         <Image
           src={finanLogo}
           alt="FINAN"
-          class="footer-logo"
+          class="w-30 h-auto"
           width={120}
           height={64}
         />
-        <div class="newsletter-section">
-          <p class="newsletter-text">
+        <div class="max-w-md">
+          <p class="text-base font-normal leading-6 text-gray-900 mb-6">
             Join our newsletter to stay up to date on features and releases.
           </p>
-          <form class="newsletter-form">
+          <form class="flex flex-col sm:flex-row gap-3 mb-4">
             <input
               type="email"
               placeholder="Enter your email"
-              class="newsletter-input"
+              class="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
               required
             />
-            <button type="submit" class="newsletter-button">Subscribe</button>
+            <button type="submit" class="px-6 py-3 text-base font-medium bg-gray-900 text-white border-0 rounded-lg cursor-pointer hover:bg-gray-800 transition-colors">Subscribe</button>
           </form>
-          <p class="newsletter-disclaimer">
+          <p class="text-sm leading-5 text-gray-500 m-0">
             By subscribing you agree to with our <a
               href="/privacy-policy"
-              class="link">Privacy Policy</a
+              class="text-gray-900 underline hover:text-blue-500">Privacy Policy</a
             > and provide consent to receive updates from our company.
           </p>
         </div>
       </div>
 
       <!-- Navigation columns -->
-      <div class="footer-nav">
-        <div class="nav-column">
-          <h3 class="nav-title">Services</h3>
-          <ul class="nav-links">
-            <li><a href="#" class="nav-link">Services One</a></li>
-            <li><a href="#" class="nav-link">Services Two</a></li>
-            <li><a href="#" class="nav-link">Services Three</a></li>
-            <li><a href="#" class="nav-link">Services Four</a></li>
-            <li><a href="#" class="nav-link">Services Five</a></li>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="flex flex-col">
+          <h3 class="text-base font-semibold text-gray-900 mb-6">Services</h3>
+          <ul class="list-none p-0 m-0 flex flex-col gap-4">
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Services One</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Services Two</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Services Three</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Services Four</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Services Five</a></li>
           </ul>
         </div>
 
-        <div class="nav-column">
-          <h3 class="nav-title">Nordic Chapters</h3>
-          <ul class="nav-links">
-            <li><a href="#" class="nav-link">Denmark</a></li>
-            <li><a href="#" class="nav-link">Faeroe Islands</a></li>
-            <li><a href="#" class="nav-link">Finland</a></li>
-            <li><a href="#" class="nav-link">Iceland</a></li>
-            <li><a href="#" class="nav-link">Norway</a></li>
-            <li><a href="#" class="nav-link">Sweden</a></li>
+        <div class="flex flex-col">
+          <h3 class="text-base font-semibold text-gray-900 mb-6">Nordic Chapters</h3>
+          <ul class="list-none p-0 m-0 flex flex-col gap-4">
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Denmark</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Faeroe Islands</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Finland</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Iceland</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Norway</a></li>
+            <li><a href="#" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Sweden</a></li>
           </ul>
         </div>
 
-        <div class="nav-column">
-          <h3 class="nav-title">Follow Us</h3>
-          <ul class="social-links">
+        <div class="flex flex-col">
+          <h3 class="text-base font-semibold text-gray-900 mb-6">Follow Us</h3>
+          <ul class="list-none p-0 m-0 flex flex-col gap-4">
             <li>
-              <a href="#" class="social-link">
+              <a href="#" class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">
                 <img
                   src="/icons/socmed/facebook.svg"
                   alt="Facebook"
-                  class="social-icon"
+                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <span>Facebook</span>
               </a>
             </li>
             <li>
-              <a href="#" class="social-link">
+              <a href="#" class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">
                 <img
                   src="/icons/socmed/instagram.svg"
                   alt="Instagram"
-                  class="social-icon"
+                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <span>Instagram</span>
               </a>
             </li>
             <li>
-              <a href="#" class="social-link">
+              <a href="#" class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">
                 <img
                   src="/icons/socmed/x-twitter.svg"
                   alt="X"
-                  class="social-icon"
+                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <span>X</span>
               </a>
             </li>
             <li>
-              <a href="#" class="social-link">
+              <a href="#" class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">
                 <img
                   src="/icons/socmed/linkedin.svg"
                   alt="LinkedIn"
-                  class="social-icon"
+                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <span>LinkedIn</span>
               </a>
             </li>
             <li>
-              <a href="#" class="social-link">
+              <a href="#" class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">
                 <img
                   src="/icons/socmed/youtube.svg"
                   alt="Youtube"
-                  class="social-icon"
+                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <span>Youtube</span>
               </a>
@@ -123,280 +123,15 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Bottom section with copyright and legal links -->
-    <div class="footer-bottom">
-      <div class="footer-bottom-content">
-        <p class="copyright">© {currentYear} FiNAN. All rights reserved.</p>
-        <div class="legal-links">
-          <a href="/privacy-policy" class="legal-link">Privacy Policy</a>
-          <a href="/terms-of-service" class="legal-link">Terms of Service</a>
-          <a href="/cookies-settings" class="legal-link">Cookies Settings</a>
+    <div class="border-t border-gray-200 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-base font-normal text-gray-500 m-0">© {currentYear} FiNAN. All rights reserved.</p>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <a href="/privacy-policy" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Privacy Policy</a>
+          <a href="/terms-of-service" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Terms of Service</a>
+          <a href="/cookies-settings" class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors">Cookies Settings</a>
         </div>
       </div>
     </div>
   </div>
 </footer>
-
-<style>
-  .footer {
-    background-color: #ffffff;
-    padding: 80px 0 32px 0;
-    border-top: 1px solid #e5e7eb;
-  }
-
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    margin-bottom: 80px;
-  }
-
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .footer-logo {
-    width: 120px;
-    height: auto;
-  }
-
-  .newsletter-section {
-    max-width: 400px;
-  }
-
-  .newsletter-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #111827;
-    margin: 0 0 24px 0;
-  }
-
-  .newsletter-form {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  .newsletter-input {
-    flex: 1;
-    padding: 12px 16px;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background-color: #ffffff;
-    color: #111827;
-  }
-
-  .newsletter-input::placeholder {
-    color: #6b7280;
-  }
-
-  .newsletter-input:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  }
-
-  .newsletter-button {
-    padding: 12px 24px;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    background-color: #111827;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-
-  .newsletter-button:hover {
-    background-color: #1f2937;
-  }
-
-  .newsletter-disclaimer {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #6b7280;
-    margin: 0;
-  }
-
-  .link {
-    color: #111827;
-    text-decoration: underline;
-  }
-
-  .link:hover {
-    color: #3b82f6;
-  }
-
-  .footer-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
-  }
-
-  .nav-column {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
-    margin: 0 0 24px 0;
-  }
-
-  .nav-links,
-  .social-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .nav-link {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #6b7280;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .nav-link:hover {
-    color: #111827;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #6b7280;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .social-link:hover {
-    color: #111827;
-  }
-
-  .social-icon {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-  }
-
-  .social-link:hover .social-icon {
-    opacity: 1;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid #e5e7eb;
-    padding-top: 32px;
-  }
-
-  .footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .copyright {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #6b7280;
-    margin: 0;
-  }
-
-  .legal-links {
-    display: flex;
-    gap: 32px;
-  }
-
-  .legal-link {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #6b7280;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .legal-link:hover {
-    color: #111827;
-  }
-
-  /* Responsive design */
-  @media (max-width: 1024px) {
-    .footer-top {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-
-    .footer-nav {
-      gap: 32px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .footer {
-      padding: 48px 0 24px 0;
-    }
-
-    .footer-container {
-      padding: 0 16px;
-    }
-
-    .footer-top {
-      gap: 32px;
-      margin-bottom: 48px;
-    }
-
-    .footer-nav {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .newsletter-form {
-      flex-direction: column;
-    }
-
-    .footer-bottom-content {
-      flex-direction: column;
-      gap: 16px;
-      text-align: center;
-    }
-
-    .legal-links {
-      gap: 16px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .legal-links {
-      flex-direction: column;
-      gap: 8px;
-    }
-  }
-</style>
