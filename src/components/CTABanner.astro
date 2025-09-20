@@ -8,7 +8,9 @@ import { ctaBannerConfig } from '../data/ctaBannerConfig';
     <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
       <!-- Left side - Main CTA content -->
       <div class="flex-1 text-center lg:text-left">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 max-w-2xl">
+        <h2
+          class="text-3xl lg:text-4xl font-bold text-white mb-4 max-w-2xl leading-tight"
+        >
           {ctaBannerConfig.heading}
         </h2>
         <p class="text-lg text-gray-300 max-w-2xl">
@@ -17,7 +19,9 @@ import { ctaBannerConfig } from '../data/ctaBannerConfig';
       </div>
 
       <!-- Right side - CTA buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto lg:flex-shrink-0">
+      <div
+        class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto lg:flex-shrink-0"
+      >
         <a
           href={ctaBannerConfig.buttons.primary.href}
           class="w-full sm:w-auto bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 inline-block text-center"
