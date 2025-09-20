@@ -35,16 +35,17 @@ export interface CTABannerContent {
  * Used by the CTABanner component to render content
  */
 export const ctaBannerConfig: CTABannerContent = {
-  heading: "Join FiNAN and Empower Filipino Nurses in the Nordic Region",
-  description: "Be part of a non-profit community that supports, guides, and advocates for Filipino nurses across the Nordic region.",
+  heading: 'Join FiNAN and Empower Filipino Nurses in the Nordic Region',
+  description:
+    'Be part of a non-profit community that supports, guides, and advocates for Filipino nurses across the Nordic region.',
   buttons: {
-    secondary: {
-      text: "Donate",
-      href: "#donate",
-    },
     primary: {
-      text: "Become a Member",
-      href: "#membership",
+      text: 'Become a Member',
+      href: '#membership',
+    },
+    secondary: {
+      text: 'Donate',
+      href: '#donate',
     },
   },
 } as const;
