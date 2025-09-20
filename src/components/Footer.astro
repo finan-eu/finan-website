@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import finanLogo from '../assets/finan-logo.svg';
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
@@ -8,7 +10,13 @@ import finanLogo from '../assets/finan-logo.svg';
     <!-- Top section with logo and newsletter -->
     <div class="footer-top">
       <div class="footer-brand">
-        <Image src={finanLogo} alt="FINAN" class="footer-logo" width={120} height={64} />
+        <Image
+          src={finanLogo}
+          alt="FINAN"
+          class="footer-logo"
+          width={120}
+          height={64}
+        />
         <div class="newsletter-section">
           <p class="newsletter-text">
             Join our newsletter to stay up to date on features and releases.
@@ -34,7 +42,7 @@ import finanLogo from '../assets/finan-logo.svg';
       <!-- Navigation columns -->
       <div class="footer-nav">
         <div class="nav-column">
-          <h3 class="nav-title">Column One</h3>
+          <h3 class="nav-title">Links</h3>
           <ul class="nav-links">
             <li><a href="#" class="nav-link">Link One</a></li>
             <li><a href="#" class="nav-link">Link Two</a></li>
@@ -45,13 +53,14 @@ import finanLogo from '../assets/finan-logo.svg';
         </div>
 
         <div class="nav-column">
-          <h3 class="nav-title">Column Two</h3>
+          <h3 class="nav-title">Nordic Chapters</h3>
           <ul class="nav-links">
-            <li><a href="#" class="nav-link">Link Six</a></li>
-            <li><a href="#" class="nav-link">Link Seven</a></li>
-            <li><a href="#" class="nav-link">Link Eight</a></li>
-            <li><a href="#" class="nav-link">Link Nine</a></li>
-            <li><a href="#" class="nav-link">Link Ten</a></li>
+            <li><a href="#" class="nav-link">Denmark</a></li>
+            <li><a href="#" class="nav-link">Faeroe Islands</a></li>
+            <li><a href="#" class="nav-link">Finland</a></li>
+            <li><a href="#" class="nav-link">Iceland</a></li>
+            <li><a href="#" class="nav-link">Norway</a></li>
+            <li><a href="#" class="nav-link">Sweden</a></li>
           </ul>
         </div>
 
@@ -116,7 +125,7 @@ import finanLogo from '../assets/finan-logo.svg';
     <!-- Bottom section with copyright and legal links -->
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p class="copyright">© 2025 FINAN. All rights reserved.</p>
+        <p class="copyright">© {currentYear} FiNAN. All rights reserved.</p>
         <div class="legal-links">
           <a href="/privacy-policy" class="legal-link">Privacy Policy</a>
           <a href="/terms-of-service" class="legal-link">Terms of Service</a>
