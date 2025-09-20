@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { siteConfig } from '../data/siteConfig';
+import { ClientRouter } from "astro:transitions";
 
 const { metadata, social, seo } = siteConfig;
 ---
@@ -46,9 +47,14 @@ const { metadata, social, seo } = siteConfig;
     <meta property="twitter:description" content={metadata.description} />
     {social.image && <meta property="twitter:image" content={social.image} />}
     {social.twitter && <meta property="twitter:site" content={`@${social.twitter}`} />}
+
+    <!-- View Transitions -->
+    <ClientRouter />
   </head>
   <body>
-    <slot />
+    <div id="page-content" transition:animate="fade">
+      <slot />
+    </div>
   </body>
 </html>
 
