@@ -152,23 +152,4 @@ import finanLogo from '../assets/finan-logo.svg';
   </div>
 </nav>
 
-<script>
-  // Mobile menu toggle functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function () {
-        const isExpanded =
-          mobileMenuButton.getAttribute('aria-expanded') === 'true';
-
-        mobileMenuButton.setAttribute(
-          'aria-expanded',
-          (!isExpanded).toString()
-        );
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-  });
-</script>
+<script src="/src/scripts/mobile-menu.js"></script>
