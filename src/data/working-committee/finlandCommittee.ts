@@ -1,9 +1,9 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const finlandCommittee: WorkingCommitteeConfig = {
-  heading: 'Finland Working Committee',
+  heading: 'Committee',
   description:
-    'Leading initiatives that guide Filipino nurses through Finland\'s licensing process, community integration, and continuing education opportunities.',
+    "Leading initiatives that guide Filipino nurses through Finland's licensing process, community integration, and continuing education opportunities.",
   members: [
     {
       name: 'Aino Korhonen',

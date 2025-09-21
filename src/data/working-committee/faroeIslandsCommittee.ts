@@ -1,7 +1,7 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const faroeIslandsCommittee: WorkingCommitteeConfig = {
-  heading: 'Faroe Islands Working Committee',
+  heading: 'Working Committee',
   description:
     'Connecting Filipino nurses across the archipelago with tailored support for remote placements, cultural acclimation, and Faroese language basics.',
   members: [

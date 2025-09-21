@@ -1,7 +1,7 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const denmarkCommittee: WorkingCommitteeConfig = {
-  heading: 'Denmark Working Committee',
+  heading: 'Working Committee',
   description:
     'Supporting members across Copenhagen, Aarhus, and Odense with credential validation, community outreach, and Danish language immersion.',
   members: [
@@ -24,18 +24,10 @@ const denmarkCommittee: WorkingCommitteeConfig = {
     {
       name: 'Camilla Sørensen',
       role: 'Well-being Coordinator',
-      bio: 'Leads wellness initiatives, including peer counseling and family integration support tailored to Denmark\'s social systems.',
+      bio: "Leads wellness initiatives, including peer counseling and family integration support tailored to Denmark's social systems.",
       imageAlt: 'Portrait of Camilla Sørensen, Well-being Coordinator',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/camilla-sorensen',
-    },
-    {
-      name: 'Leo Villanueva',
-      role: 'Events & Partnerships Lead',
-      bio: 'Organizes cross-chapter workshops and liaises with union representatives to highlight Filipino nurse contributions in Denmark.',
-      imageAlt: 'Portrait of Leo Villanueva, Events and Partnerships Lead',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/leo-villanueva-dk',
     },
   ],
 } as const;
