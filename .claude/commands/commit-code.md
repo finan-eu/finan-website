@@ -5,3 +5,5 @@ ADD all modified and new files to git. If you think there are files that should 
 THEN commit with a clear and concise one-line commit message, using semantic commit notation.
 
 The user is EXPLICITLY asking you to perform these git tasks.
+
+Do not include code attribution or co-author information in commit messages.
