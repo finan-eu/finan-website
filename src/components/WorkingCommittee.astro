@@ -1,0 +1,128 @@
+---
+import {
+  workingCommitteeConfigs,
+  type WorkingCommitteeConfig,
+  type WorkingCommitteeCountry,
+  type WorkingCommitteeMember,
+} from '../data/working-committee';
+
+interface WorkingCommitteeProps extends Partial<WorkingCommitteeConfig> {
+  country?: WorkingCommitteeCountry;
+}
+
+const fallbackConfig: WorkingCommitteeConfig = {
+  heading: 'Working Committee',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+  members: [
+    {
+      name: 'Full name',
+      role: 'Job title',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+      imageAlt: 'Placeholder portrait',
+      linkedinUrl: '#',
+    },
+    {
+      name: 'Full name',
+      role: 'Job title',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+      imageAlt: 'Placeholder portrait',
+      linkedinUrl: '#',
+    },
+    {
+      name: 'Full name',
+      role: 'Job title',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+      imageAlt: 'Placeholder portrait',
+      linkedinUrl: '#',
+    },
+    {
+      name: 'Full name',
+      role: 'Job title',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+      imageAlt: 'Placeholder portrait',
+      linkedinUrl: '#',
+    },
+  ] satisfies ReadonlyArray<WorkingCommitteeMember>,
+};
+
+const props = Astro.props as WorkingCommitteeProps;
+const baseConfig = props.country
+  ? workingCommitteeConfigs[props.country]
+  : undefined;
+
+const heading =
+  props.heading ?? baseConfig?.heading ?? fallbackConfig.heading;
+const description =
+  props.description ?? baseConfig?.description ?? fallbackConfig.description;
+const members =
+  props.members ?? baseConfig?.members ?? fallbackConfig.members;
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <header class="max-w-2xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+        {heading}
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+        {description}
+      </p>
+    </header>
+
+    <div class="mt-12 grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
+      {members.map((member) => (
+        <article class="flex flex-col">
+          <div class="overflow-hidden rounded-lg bg-gray-200 relative">
+            {member.imageSrc ? (
+              <img
+                src={member.imageSrc}
+                alt={member.imageAlt}
+                class="w-full aspect-square object-cover"
+                loading="lazy"
+              />
+            ) : (
+              <div class="aspect-square w-full bg-gray-200 flex items-center justify-center">
+                <svg
+                  class="h-12 w-12 text-gray-400"
+                  viewBox="0 0 48 48"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M40 6a2 2 0 0 1 2 2v32a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h32Zm-1 28-7.6-10.2-3.4 4.5L20 18 9 35h30ZM17.5 14.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+                </svg>
+              </div>
+            )}
+          </div>
+
+          <div class="flex-1 pt-6">
+            <h3 class="text-lg font-semibold text-gray-900">{member.name}</h3>
+            <p class="mt-1 text-sm text-gray-600">{member.role}</p>
+            <p class="mt-4 text-sm text-gray-600 leading-relaxed">
+              {member.bio}
+            </p>
+
+            {member.linkedinUrl && (
+              <div class="mt-6">
+                <a
+                  href={member.linkedinUrl}
+                  aria-label={`${member.name}'s LinkedIn profile`}
+                  class="inline-flex text-gray-500 transition-colors duration-200 hover:text-gray-900 focus:outline-none focus-visible:text-gray-900"
+                >
+                  <span class="sr-only">{member.name} on LinkedIn</span>
+                  <img
+                    src="/icons/socmed/linkedin.svg"
+                    alt=""
+                    class="h-5 w-5"
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                </a>
+              </div>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
