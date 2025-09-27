@@ -33,7 +33,7 @@ export const heroConfig: HeroData = {
   },
   buttons: {
     primary: {
-      text: "Become a Member",
+      text: "Join FiNAN",
       url: "https://filnan.com/membership-form"
     },
     secondary: {

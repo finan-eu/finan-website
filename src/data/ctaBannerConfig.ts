@@ -40,7 +40,7 @@ export const ctaBannerConfig: CTABannerContent = {
     'Be part of a non-profit community that supports, guides, and advocates for Filipino nurses across the Nordic region.',
   buttons: {
     primary: {
-      text: 'Become a Member',
+      text: 'Join FiNAN',
       href: '#membership',
     },
     secondary: {
