@@ -55,24 +55,26 @@ function initializeNavbar() {
   // Mobile Chapters dropdown functionality
   const mobileChaptersButton = document.getElementById('mobile-chapters-button');
   const mobileChaptersMenu = document.getElementById('mobile-chapters-menu');
-  const mobileChaptersIcon = document.getElementById('mobile-chapters-icon');
 
-  if (mobileChaptersButton && mobileChaptersMenu && mobileChaptersIcon) {
+  if (mobileChaptersButton && mobileChaptersMenu) {
     // Remove any existing listeners
     const newMobileChaptersButton = mobileChaptersButton.cloneNode(true);
     mobileChaptersButton.parentNode.replaceChild(newMobileChaptersButton, mobileChaptersButton);
 
     newMobileChaptersButton.addEventListener('click', function () {
       const isExpanded = newMobileChaptersButton.getAttribute('aria-expanded') === 'true';
+      const mobileChaptersIcon = document.getElementById('mobile-chapters-icon');
 
       newMobileChaptersButton.setAttribute('aria-expanded', (!isExpanded).toString());
       mobileChaptersMenu.classList.toggle('hidden');
 
       // Rotate the chevron icon
-      if (isExpanded) {
-        mobileChaptersIcon.classList.remove('rotate-180');
-      } else {
-        mobileChaptersIcon.classList.add('rotate-180');
+      if (mobileChaptersIcon) {
+        if (isExpanded) {
+          mobileChaptersIcon.classList.remove('rotate-180');
+        } else {
+          mobileChaptersIcon.classList.add('rotate-180');
+        }
       }
     });
   }
