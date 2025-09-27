@@ -24,7 +24,7 @@ const { metadata, social, seo } = siteConfig;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700&display=swap" rel="stylesheet" />
 
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <title>{metadata.title}</title>
@@ -55,6 +55,36 @@ const { metadata, social, seo } = siteConfig;
     <div id="page-content" transition:animate="fade">
       <slot />
     </div>
+
+    <!-- Mobile Viewport Height Fix Script -->
+    <script>
+      // Set the custom property to the actual viewport height
+      function setVH() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+
+      // Set on load
+      setVH();
+
+      // Update on resize and orientation change with debouncing
+      let resizeTimer;
+      function debouncedSetVH() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          setVH();
+        }, 100);
+      }
+
+      window.addEventListener('resize', debouncedSetVH);
+      window.addEventListener('orientationchange', function() {
+        // Wait a bit for orientation change to complete
+        setTimeout(setVH, 100);
+      });
+
+      // Also set on page show (for back/forward navigation)
+      window.addEventListener('pageshow', setVH);
+    </script>
   </body>
 </html>
 
