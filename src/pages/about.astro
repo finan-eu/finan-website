@@ -8,59 +8,44 @@ import heroImage from '../assets/images/hero-image.jpg';
 import CTABanner from '../components/CTABanner.astro';
 ---
 
-<Layout title="About the Philippines - FiNAN">
+<Layout title="About FiNAN">
   <main>
     <TopBanner />
     <Navbar />
     <PageHeader
       title="About FiNAN"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description="The Filipino Nurses Association-Nordic (FiNAN)"
       backgroundImage={heroImage}
       backgroundAlt="Beautiful landscape representing the Philippines"
     />
 
-    <!-- Additional content sections can be added here -->
     <section class="py-16 bg-white">
       <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
-        <div class="prose prose-lg max-w-none">
+        <div class="prose prose-lg max-w-prose">
+          <p class="text-gray-700 mb-6">
+            The Filipino Nurses Association-Nordic (FiNAN) is the first non-profit organization for Filipino Nurses in the Nordic Region. The first members of the association were gathered through social media platform with diverse educational and work background in the field of nursing. The urgency to create an association to give a voice for the Filipino Nurses living in the region was high in support to the World Health Organization's (WHO) Code of Ethical Recruitment of Health Personnel. Non-ethical issues regarding the recruitment process emerged as a critical dilemma which needed an urgent action from different stakeholders of the Nordic society.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            The association's vision is to be the leading Filipino Nurses Association in the Nordic Region for highly skilled and competitive Filipino Nurses and the mission is to empower and strengthen the global image of Filipino Nurses as a source of nursing manpower and care in the Nordic Region.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            As a starting non-profit organization, our resources to achieve the goals in relation to the United Nation's Sustainable Development Goals and Universal Health Coverage is limited.
+          </p>
+
           <h2 class="text-3xl font-bold text-gray-900 mb-8">
-            Welcome to the Philippines
+            Strategic Goals
           </h2>
-          <p class="text-gray-700 mb-6">
-            The Philippines, officially known as the Republic of the
-            Philippines, is an archipelagic country in Southeast Asia. Situated
-            in the western Pacific Ocean, it consists of about 7,641 islands
-            that are broadly categorized under three main geographical divisions
-            from north to south: Luzon, Visayas, and Mindanao.
-          </p>
 
-          <p class="text-gray-700 mb-6">
-            Known for its diverse culture, beautiful landscapes, and warm
-            hospitality, the Philippines has become home to many healthcare
-            professionals who have made significant contributions to the Nordic
-            healthcare systems.
-          </p>
-
-          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
-            Cultural Heritage
-          </h3>
-          <p class="text-gray-700 mb-6">
-            The Philippines boasts a rich cultural heritage influenced by its
-            indigenous roots, Spanish colonial history, American period, and
-            modern global connections. This diversity is reflected in its
-            languages, traditions, festivals, and cuisine.
-          </p>
-
-          <h3 class="text-2xl font-semibold text-gray-900 mb-4">
-            Healthcare Excellence
-          </h3>
-          <p class="text-gray-700">
-            Filipino healthcare professionals are renowned worldwide for their
-            compassion, skill, and dedication. Many have chosen to build their
-            careers in the Nordic countries, bringing their expertise and
-            cultural values to enhance healthcare services across Denmark,
-            Finland, Iceland, Norway, and Sweden.
-          </p>
+          <ol class="text-gray-700 text-lg mb-6 space-y-2 list-decimal list-inside">
+            <li>Monitor Filipino Nursing Workforce Migration to the Nordic Countries</li>
+            <li>Participate in the achievement of Sustainable Development Goals (SDGs)</li>
+            <li>Negotiate to decision and policy-makers</li>
+            <li>Collaborate in the integration of Filipino Nurses in the Nordic work life</li>
+            <li>Involve in peer support and mentoring</li>
+            <li>Produce evidence-based data</li>
+          </ol>
         </div>
       </div>
     </section>
