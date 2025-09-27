@@ -35,13 +35,13 @@ import finanLogo from '../assets/finan-logo.svg';
             News & Events
           </a>
           <a
-            href="/faq"
+            href="/faqs"
             class="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors"
           >
             FAQs
           </a>
           <!-- Chapters Dropdown -->
-          <div class="relative" id="chapters-dropdown">
+          <div class="relative group" id="chapters-dropdown">
             <button
               type="button"
               class="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors flex items-center cursor-pointer"
@@ -51,7 +51,7 @@ import finanLogo from '../assets/finan-logo.svg';
             >
               Chapters
               <svg
-                class="ml-1 h-4 w-4"
+                class="ml-1 h-4 w-4 transition-transform duration-200 ease-out group-hover:rotate-180"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -64,7 +64,7 @@ import finanLogo from '../assets/finan-logo.svg';
               </svg>
             </button>
             <div
-              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible transform scale-95 transition-all duration-200 ease-out z-50 overflow-hidden"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible transform scale-95 transition-all duration-200 ease-out z-50 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:scale-100"
               id="chapters-menu"
               role="menu"
               aria-orientation="vertical"
