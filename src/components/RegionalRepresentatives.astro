@@ -1,0 +1,274 @@
+---
+import {
+  finlandAlandRepresentatives,
+  swedenRepresentatives,
+  greenlandFaroeRepresentatives,
+  norwayIcelandRepresentatives,
+} from '../data/regional-representatives/index';
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <header class="max-w-2xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+        Regional Representatives
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+        Official regional representatives of the Filipino Nurses Association in
+        the Nordic Region
+      </p>
+    </header>
+
+    <!-- Finland & Åland -->
+    <div class="mt-12">
+      <h3
+        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+      >
+        {finlandAlandRepresentatives.heading}
+      </h3>
+      <div class="flex flex-wrap gap-10">
+        {
+          finlandAlandRepresentatives.members.map((member) => (
+            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+              <div class="flex-shrink-0">
+                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                  {member.imageSrc ? (
+                    <img
+                      src={member.imageSrc}
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src="/images/image_thumbnail.svg"
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <h4 class="text-xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h4>
+                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
+                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+
+                {member.linkedinUrl && (
+                  <div class="mt-4">
+                    <a
+                      href={member.linkedinUrl}
+                      aria-label={`${member.name}'s LinkedIn profile`}
+                      class="inline-flex text-gray-500 transition-colors duration-200 hover:text-gray-900 focus:outline-none focus-visible:text-gray-900"
+                    >
+                      <span class="sr-only">{member.name} on LinkedIn</span>
+                      <img
+                        src="/icons/socmed/linkedin.svg"
+                        alt=""
+                        class="h-7 w-7"
+                        aria-hidden="true"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Sweden -->
+    <div class="mt-12">
+      <h3
+        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+      >
+        {swedenRepresentatives.heading}
+      </h3>
+      <div class="flex flex-wrap gap-10">
+        {
+          swedenRepresentatives.members.map((member) => (
+            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+              <div class="flex-shrink-0">
+                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                  {member.imageSrc ? (
+                    <img
+                      src={member.imageSrc}
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src="/images/image_thumbnail.svg"
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <h4 class="text-xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h4>
+                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
+                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+
+                {member.linkedinUrl && (
+                  <div class="mt-4">
+                    <a
+                      href={member.linkedinUrl}
+                      aria-label={`${member.name}'s LinkedIn profile`}
+                      class="inline-flex text-gray-500 transition-colors duration-200 hover:text-gray-900 focus:outline-none focus-visible:text-gray-900"
+                    >
+                      <span class="sr-only">{member.name} on LinkedIn</span>
+                      <img
+                        src="/icons/socmed/linkedin.svg"
+                        alt=""
+                        class="h-7 w-7"
+                        aria-hidden="true"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Greenland & Faroe Islands -->
+    <div class="mt-12">
+      <h3
+        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+      >
+        {greenlandFaroeRepresentatives.heading}
+      </h3>
+      <div class="flex flex-wrap gap-10">
+        {
+          greenlandFaroeRepresentatives.members.map((member) => (
+            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+              <div class="flex-shrink-0">
+                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                  {member.imageSrc ? (
+                    <img
+                      src={member.imageSrc}
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src="/images/image_thumbnail.svg"
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <h4 class="text-xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h4>
+                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
+                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+
+                {member.linkedinUrl && (
+                  <div class="mt-4">
+                    <a
+                      href={member.linkedinUrl}
+                      aria-label={`${member.name}'s LinkedIn profile`}
+                      class="inline-flex text-gray-500 transition-colors duration-200 hover:text-gray-900 focus:outline-none focus-visible:text-gray-900"
+                    >
+                      <span class="sr-only">{member.name} on LinkedIn</span>
+                      <img
+                        src="/icons/socmed/linkedin.svg"
+                        alt=""
+                        class="h-7 w-7"
+                        aria-hidden="true"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Norway & Iceland -->
+    <div class="mt-12">
+      <h3
+        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+      >
+        {norwayIcelandRepresentatives.heading}
+      </h3>
+      <div class="flex flex-wrap gap-10">
+        {
+          norwayIcelandRepresentatives.members.map((member) => (
+            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+              <div class="flex-shrink-0">
+                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                  {member.imageSrc ? (
+                    <img
+                      src={member.imageSrc}
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src="/images/image_thumbnail.svg"
+                      alt={member.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <h4 class="text-xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h4>
+                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
+                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+
+                {member.linkedinUrl && (
+                  <div class="mt-4">
+                    <a
+                      href={member.linkedinUrl}
+                      aria-label={`${member.name}'s LinkedIn profile`}
+                      class="inline-flex text-gray-500 transition-colors duration-200 hover:text-gray-900 focus:outline-none focus-visible:text-gray-900"
+                    >
+                      <span class="sr-only">{member.name} on LinkedIn</span>
+                      <img
+                        src="/icons/socmed/linkedin.svg"
+                        alt=""
+                        class="h-7 w-7"
+                        aria-hidden="true"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
