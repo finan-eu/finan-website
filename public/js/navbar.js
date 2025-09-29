@@ -11,12 +11,29 @@ function initializeNavbar() {
     newMobileMenuButton.addEventListener('click', function () {
       const isExpanded =
         newMobileMenuButton.getAttribute('aria-expanded') === 'true';
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
 
       newMobileMenuButton.setAttribute(
         'aria-expanded',
         (!isExpanded).toString()
       );
       mobileMenu.classList.toggle('hidden');
+
+      // Toggle between hamburger and X icon
+      if (hamburgerIcon && closeIcon) {
+        if (isExpanded) {
+          hamburgerIcon.classList.remove('hidden');
+          hamburgerIcon.classList.add('block');
+          closeIcon.classList.remove('block');
+          closeIcon.classList.add('hidden');
+        } else {
+          hamburgerIcon.classList.remove('block');
+          hamburgerIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          closeIcon.classList.add('block');
+        }
+      }
     });
   }
 
