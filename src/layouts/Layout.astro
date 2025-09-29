@@ -69,7 +69,7 @@ const { metadata, social, seo } = siteConfig;
       setVH();
 
       // Update on resize and orientation change with debouncing
-      let resizeTimer;
+      let resizeTimer: ReturnType<typeof setTimeout> | undefined;
       function debouncedSetVH() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
