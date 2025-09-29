@@ -4,6 +4,4 @@ Please create a markdown changelog file inside the changelog/ directory with tod
 
 ## Run the commit-code.md command
 
-After completing the changelog file, run the commit-code.md command located at .claude/commands/commit-code.md.
-Always display the generated commit message to the user first.
-Then, explicitly ask the user whether they would like to proceed with committing the changes.
+After completing the changelog file, execute the commit-code.md command located at .claude/commands/commit-code.md.

@@ -1,9 +1,17 @@
 # Commit Code
 
-ADD all modified and new files to git. If you think there are files that should not be in version control, ask the user. If you see files that you think should be bundled into separate commits, ask the user.
+Add all modified and new files to Git.
 
-THEN commit with a clear and concise one-line commit message, using semantic commit notation.
+- If there are files that should probably not be version-controlled, ask me before adding them.
+- If some changes would make more sense as separate commits, ask me how I’d like to structure them.
 
-The user is EXPLICITLY asking you to perform these git tasks.
+Always display the full generated commit message to me first.
+Then explicitly ask if I’d like to proceed with committing the changes.
 
-Do not include code attribution or co-author information in commit messages.
+When committing:
+
+- Use a clear, concise, one-line commit message.
+- Follow semantic commit message notation.
+- Do not include code attribution or co-author information in commit messages.
+
+I am explicitly asking you to perform these Git tasks.
