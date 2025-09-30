@@ -41,7 +41,6 @@ cypress/screenshots/
 
 # --- IDE / Editor ---
 .idea/
-.vscode/
 .sublime-project
 .sublime-workspace
 *.swp
