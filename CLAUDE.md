@@ -8,18 +8,18 @@ FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-p
 
 ## Development Commands
 
-| Command              | Action                                       |
-| -------------------- | -------------------------------------------- |
-| `npm install`        | Install dependencies                         |
-| `npm run dev`        | Start development server at localhost:4321   |
-| `npm run build`      | Build production site to ./dist/             |
-| `npm run preview`    | Preview built site locally                   |
-| `npm run astro`      | Run Astro CLI commands                       |
-| `npm run lint`       | Run ESLint on codebase                       |
-| `npm run lint:fix`   | Run ESLint with auto-fix                     |
-| `npm run format`     | Format code with Prettier                    |
-| `npm run format:check` | Check code formatting                      |
-| `npm run security:audit` | Run npm security audit                   |
+| Command                  | Action                                     |
+| ------------------------ | ------------------------------------------ |
+| `npm install`            | Install dependencies                       |
+| `npm run dev`            | Start development server at localhost:4321 |
+| `npm run build`          | Build production site to ./dist/           |
+| `npm run preview`        | Preview built site locally                 |
+| `npm run astro`          | Run Astro CLI commands                     |
+| `npm run lint`           | Run ESLint on codebase                     |
+| `npm run lint:fix`       | Run ESLint with auto-fix                   |
+| `npm run format`         | Format code with Prettier                  |
+| `npm run format:check`   | Check code formatting                      |
+| `npm run security:audit` | Run npm security audit                     |
 
 ## Architecture
 
@@ -89,17 +89,19 @@ public/
 - **guides-resources.astro** - Resources for nurses
 - **contact-us.astro** - Contact information and form
 - **404.astro** - Custom 404 error page
-- **chapters/*.astro** - Individual pages for 7 Nordic countries/regions
+- **chapters/\*.astro** - Individual pages for 7 Nordic countries/regions
 
 ## Configuration Files
 
 ### Astro Configuration (astro.config.mjs)
+
 - Tailwind CSS integration via Vite plugin
 - Security headers (CSP, X-Frame-Options, etc.)
 - CSS code splitting and vendor chunking
 - Origin checking enabled for security
 
 ### Code Quality Tools
+
 - **eslint.config.js** - ESLint flat config with Astro plugin and Prettier integration
 - **.prettierrc** - Prettier configuration with Astro and Tailwind CSS plugins
   - Semi-colons enabled
@@ -108,6 +110,7 @@ public/
   - Tailwind class sorting enabled
 
 ### TypeScript
+
 - Full type safety across data configurations
 - Type definitions in `src/data/*/types.ts`
 - Interfaces for all configuration objects
@@ -167,6 +170,7 @@ npm run lint:fix && npm run format
 ```
 
 This ensures:
+
 - All ESLint rules are enforced and auto-fixable issues are resolved
 - Code formatting is consistent across the codebase
 - Tailwind CSS classes are automatically sorted

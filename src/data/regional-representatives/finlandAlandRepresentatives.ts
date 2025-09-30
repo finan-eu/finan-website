@@ -20,7 +20,7 @@ const finlandAlandRepresentatives: RegionalRepresentativesConfig = {
     },
     {
       name: 'Connie Maria Nordblom',
-      role: '',
+      role: 'RN',
       bio: 'Regional representative for Finland and Åland',
       imageAlt: 'Connie Maria Nordblom portrait',
       linkedinUrl: '#',
