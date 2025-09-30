@@ -21,10 +21,10 @@ import finanLogo from '../assets/finan-logo.svg';
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:block">
-        <div class="ml-10 flex items-baseline space-x-4">
+        <div class="flex items-baseline space-x-4">
           <a
             href="/about"
-            class="px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:text-gray-900"
+            class="rounded-md px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-gray-900"
           >
             About
           </a>
@@ -32,7 +32,7 @@ import finanLogo from '../assets/finan-logo.svg';
           <div class="group relative" id="chapters-dropdown">
             <button
               type="button"
-              class="flex cursor-pointer items-center px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:text-gray-900"
+              class="flex cursor-pointer items-center rounded-md px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-gray-900"
               id="chapters-button"
               aria-expanded="false"
               aria-haspopup="true"
@@ -52,7 +52,7 @@ import finanLogo from '../assets/finan-logo.svg';
               </svg>
             </button>
             <div
-              class="ring-opacity-5 invisible absolute left-0 z-50 mt-2 w-48 scale-95 transform overflow-hidden rounded-md bg-white opacity-0 shadow-lg ring-1 ring-black transition-all duration-200 ease-out group-hover:visible group-hover:scale-100 group-hover:opacity-100"
+              class="ring-opacity-5 invisible absolute left-0 z-50 mt-2 w-56 scale-95 transform overflow-hidden rounded-md bg-white opacity-0 shadow-lg ring-1 ring-black transition-all duration-200 ease-out group-hover:visible group-hover:scale-100 group-hover:opacity-100"
               id="chapters-menu"
               role="menu"
               aria-orientation="vertical"
@@ -61,63 +61,88 @@ import finanLogo from '../assets/finan-logo.svg';
               <div class="py-0" role="none">
                 <a
                   href="/chapters/denmark"
-                  class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  role="menuitem">Denmark</a
+                  class="flex items-center gap-3 px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  role="menuitem"
                 >
+                  <img src="/flags/190-denmark.svg" alt="" class="h-5 w-5" />
+                  <span>Denmark</span>
+                </a>
                 <a
                   href="/chapters/faroe-islands"
-                  class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  role="menuitem">Faroe Islands</a
+                  class="flex items-center gap-3 px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  role="menuitem"
                 >
+                  <img
+                    src="/flags/115-faroe islands.svg"
+                    alt=""
+                    class="h-5 w-5"
+                  />
+                  <span>Faroe Islands</span>
+                </a>
                 <a
                   href="/chapters/finland"
-                  class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  role="menuitem">Finland</a
+                  class="flex items-center gap-3 px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  role="menuitem"
                 >
+                  <img src="/flags/210-finland.svg" alt="" class="h-5 w-5" />
+                  <span>Finland</span>
+                </a>
                 <a
                   href="/chapters/greenland"
-                  class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  role="menuitem">Greenland</a
+                  class="flex items-center gap-3 px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  role="menuitem"
                 >
+                  <img src="/flags/078-greenland.svg" alt="" class="h-5 w-5" />
+                  <span>Greenland</span>
+                </a>
                 <a
                   href="/chapters/iceland"
-                  class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  role="menuitem">Iceland</a
+                  class="flex items-center gap-3 px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  role="menuitem"
                 >
+                  <img src="/flags/221-iceland.svg" alt="" class="h-5 w-5" />
+                  <span>Iceland</span>
+                </a>
                 <a
                   href="/chapters/norway"
-                  class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  role="menuitem">Norway</a
+                  class="flex items-center gap-3 px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  role="menuitem"
                 >
+                  <img src="/flags/204-norway.svg" alt="" class="h-5 w-5" />
+                  <span>Norway</span>
+                </a>
                 <a
                   href="/chapters/sweden"
-                  class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  role="menuitem">Sweden</a
+                  class="flex items-center gap-3 px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  role="menuitem"
                 >
+                  <img src="/flags/189-sweden.svg" alt="" class="h-5 w-5" />
+                  <span>Sweden</span>
+                </a>
               </div>
             </div>
           </div>
           <a
             href="/guides-resources"
-            class="px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:text-gray-900"
+            class="rounded-md px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-gray-900"
           >
             Guides & Resources
           </a>
           <a
             href="/news"
-            class="px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:text-gray-900"
+            class="rounded-md px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-gray-900"
           >
             News & Events
           </a>
           <a
             href="/faqs"
-            class="px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:text-gray-900"
+            class="rounded-md px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-gray-900"
           >
             FAQs
           </a>
           <a
             href="/contact"
-            class="px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:text-gray-900"
+            class="rounded-md px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-gray-900"
           >
             Contact
           </a>
@@ -223,39 +248,53 @@ import finanLogo from '../assets/finan-logo.svg';
           <div class="hidden space-y-1 pl-4" id="mobile-chapters-menu">
             <a
               href="/chapters/denmark"
-              class="block py-2 text-lg text-gray-600 hover:text-gray-900"
-              >Denmark</a
+              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
             >
+              <img src="/flags/190-denmark.svg" alt="" class="h-5 w-5" />
+              <span>Denmark</span>
+            </a>
             <a
               href="/chapters/faroe-islands"
-              class="block py-2 text-lg text-gray-600 hover:text-gray-900"
-              >Faroe Islands</a
+              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
             >
+              <img src="/flags/115-faroe islands.svg" alt="" class="h-5 w-5" />
+              <span>Faroe Islands</span>
+            </a>
             <a
               href="/chapters/finland"
-              class="block py-2 text-lg text-gray-600 hover:text-gray-900"
-              >Finland</a
+              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
             >
+              <img src="/flags/210-finland.svg" alt="" class="h-5 w-5" />
+              <span>Finland</span>
+            </a>
             <a
               href="/chapters/greenland"
-              class="block py-2 text-lg text-gray-600 hover:text-gray-900"
-              >Greenland</a
+              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
             >
+              <img src="/flags/078-greenland.svg" alt="" class="h-5 w-5" />
+              <span>Greenland</span>
+            </a>
             <a
               href="/chapters/iceland"
-              class="block py-2 text-lg text-gray-600 hover:text-gray-900"
-              >Iceland</a
+              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
             >
+              <img src="/flags/221-iceland.svg" alt="" class="h-5 w-5" />
+              <span>Iceland</span>
+            </a>
             <a
               href="/chapters/norway"
-              class="block py-2 text-lg text-gray-600 hover:text-gray-900"
-              >Norway</a
+              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
             >
+              <img src="/flags/204-norway.svg" alt="" class="h-5 w-5" />
+              <span>Norway</span>
+            </a>
             <a
               href="/chapters/sweden"
-              class="block py-2 text-lg text-gray-600 hover:text-gray-900"
-              >Sweden</a
+              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
             >
+              <img src="/flags/189-sweden.svg" alt="" class="h-5 w-5" />
+              <span>Sweden</span>
+            </a>
           </div>
         </div>
         <a
