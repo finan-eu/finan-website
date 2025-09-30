@@ -5,36 +5,36 @@ import finanLogo from '../assets/finan-logo.svg';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-white pt-20 pb-8 border-t border-gray-200">
-  <div class="max-w-screen-2xl mx-auto px-6">
+<footer class="border-t border-gray-200 bg-white pt-20 pb-8">
+  <div class="mx-auto max-w-screen-2xl px-6">
     <!-- Top section with logo and newsletter -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
+    <div class="mb-20 grid grid-cols-1 gap-20 lg:grid-cols-2">
       <div class="flex flex-col gap-8">
         <Image
           src={finanLogo}
           alt="FINAN"
-          class="w-30 h-auto"
+          class="h-auto w-30"
           width={120}
           height={64}
         />
         <div class="max-w-md">
-          <p class="text-base font-normal leading-6 text-gray-900 mb-6">
+          <p class="mb-6 text-base leading-6 font-normal text-gray-900">
             Join our newsletter to stay up to date on features and releases.
           </p>
-          <form class="flex flex-col sm:flex-row gap-3 mb-4">
+          <form class="mb-4 flex flex-col gap-3 sm:flex-row">
             <input
               type="email"
               placeholder="Enter your email"
-              class="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              class="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
               required
             />
             <button
               type="submit"
-              class="px-6 py-3 text-base font-medium bg-blue-900 text-white border-0 rounded-lg cursor-pointer hover:bg-blue-800 transition-colors"
+              class="cursor-pointer rounded-lg border-0 bg-blue-900 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-blue-800"
               >Subscribe</button
             >
           </form>
-          <p class="text-sm leading-5 text-gray-500 m-0">
+          <p class="m-0 text-sm leading-5 text-gray-500">
             By subscribing you agree to with our <a
               href="/privacy-policy"
               class="text-gray-900 underline hover:text-blue-500"
@@ -45,105 +45,117 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Navigation columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
         <div class="flex flex-col">
-          <h3 class="text-base font-semibold text-gray-900 mb-6">Services</h3>
-          <ul class="list-none p-0 m-0 flex flex-col gap-4">
+          <h3 class="mb-6 text-base font-semibold text-gray-900">Services</h3>
+          <ul class="m-0 flex list-none flex-col gap-4 p-0">
             <li>
               <a
                 href="#"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Services One</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Services One</a
+              >
             </li>
             <li>
               <a
                 href="#"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Services Two</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Services Two</a
+              >
             </li>
             <li>
               <a
                 href="#"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Services Three</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Services Three</a
+              >
             </li>
             <li>
               <a
                 href="#"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Services Four</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Services Four</a
+              >
             </li>
             <li>
               <a
                 href="#"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Services Five</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Services Five</a
+              >
             </li>
           </ul>
         </div>
 
         <div class="flex flex-col">
-          <h3 class="text-base font-semibold text-gray-900 mb-6">
+          <h3 class="mb-6 text-base font-semibold text-gray-900">
             Nordic Chapters
           </h3>
-          <ul class="list-none p-0 m-0 flex flex-col gap-4">
+          <ul class="m-0 flex list-none flex-col gap-4 p-0">
             <li>
               <a
                 href="/chapters/denmark"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Denmark</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Denmark</a
+              >
             </li>
             <li>
               <a
                 href="/chapters/faroe-islands"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Faroe Islands</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Faroe Islands</a
+              >
             </li>
             <li>
               <a
                 href="/chapters/finland"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Finland</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Finland</a
+              >
             </li>
             <li>
               <a
                 href="/chapters/greenland"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Greenland</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Greenland</a
+              >
             </li>
             <li>
               <a
                 href="/chapters/iceland"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Iceland</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Iceland</a
+              >
             </li>
             <li>
               <a
                 href="/chapters/norway"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Norway</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Norway</a
+              >
             </li>
             <li>
               <a
                 href="/chapters/sweden"
-                class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
-                >Sweden</a>
+                class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                >Sweden</a
+              >
             </li>
           </ul>
         </div>
 
         <div class="flex flex-col">
-          <h3 class="text-base font-semibold text-gray-900 mb-6">Follow Us</h3>
-          <ul class="list-none p-0 m-0 flex flex-col gap-4">
+          <h3 class="mb-6 text-base font-semibold text-gray-900">Follow Us</h3>
+          <ul class="m-0 flex list-none flex-col gap-4 p-0">
             <li>
               <a
                 href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
               >
                 <img
                   src="/icons/socmed/facebook.svg"
                   alt="Facebook"
-                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
                 />
                 <span>Facebook</span>
               </a>
@@ -151,12 +163,12 @@ const currentYear = new Date().getFullYear();
             <li>
               <a
                 href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
               >
                 <img
                   src="/icons/socmed/instagram.svg"
                   alt="Instagram"
-                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
                 />
                 <span>Instagram</span>
               </a>
@@ -164,12 +176,12 @@ const currentYear = new Date().getFullYear();
             <li>
               <a
                 href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
               >
                 <img
                   src="/icons/socmed/x-twitter.svg"
                   alt="X"
-                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
                 />
                 <span>X</span>
               </a>
@@ -177,12 +189,12 @@ const currentYear = new Date().getFullYear();
             <li>
               <a
                 href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
               >
                 <img
                   src="/icons/socmed/linkedin.svg"
                   alt="LinkedIn"
-                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
                 />
                 <span>LinkedIn</span>
               </a>
@@ -190,12 +202,12 @@ const currentYear = new Date().getFullYear();
             <li>
               <a
                 href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
               >
                 <img
                   src="/icons/socmed/youtube.svg"
                   alt="Youtube"
-                  class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
                 />
                 <span>Youtube</span>
               </a>
@@ -207,24 +219,24 @@ const currentYear = new Date().getFullYear();
 
     <!-- Bottom section with copyright and legal links -->
     <div class="border-t border-gray-200 pt-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-base font-normal text-gray-500 m-0">
+      <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <p class="m-0 text-base font-normal text-gray-500">
           © {currentYear} FiNAN. All rights reserved.
         </p>
-        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+        <div class="flex flex-col gap-4 md:flex-row md:gap-8">
           <a
             href="/privacy-policy"
-            class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+            class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
             >Privacy Policy</a
           >
           <a
             href="/terms-of-service"
-            class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+            class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
             >Terms of Service</a
           >
           <a
             href="/cookies-settings"
-            class="text-base font-normal text-gray-500 no-underline hover:text-gray-900 transition-colors"
+            class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
             >Cookies Settings</a
           >
         </div>

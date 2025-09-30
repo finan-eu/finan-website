@@ -29,7 +29,4 @@ export {
   swedenCommittee,
 };
 
-export type {
-  WorkingCommitteeConfig,
-  WorkingCommitteeMember,
-} from './types';
+export type { WorkingCommitteeConfig, WorkingCommitteeMember } from './types';

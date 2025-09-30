@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { siteConfig } from '../data/siteConfig';
-import { ClientRouter } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions';
 
 const { metadata, social, seo } = siteConfig;
 ---
@@ -14,20 +14,39 @@ const { metadata, social, seo } = siteConfig;
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
+    <meta
+      http-equiv="Cache-Control"
+      content="public, max-age=31536000, immutable"
+    />
 
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Google Fonts - Optimized Loading -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700&display=swap" /></noscript>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700&display=swap"
+      /></noscript
+    >
 
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self';" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self';"
+    />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
     <meta name="author" content={metadata.author} />
@@ -47,7 +66,11 @@ const { metadata, social, seo } = siteConfig;
     <meta property="twitter:title" content={metadata.title} />
     <meta property="twitter:description" content={metadata.description} />
     {social.image && <meta property="twitter:image" content={social.image} />}
-    {social.twitter && <meta property="twitter:site" content={`@${social.twitter}`} />}
+    {
+      social.twitter && (
+        <meta property="twitter:site" content={`@${social.twitter}`} />
+      )
+    }
 
     <!-- View Transitions -->
     <ClientRouter />
@@ -72,13 +95,13 @@ const { metadata, social, seo } = siteConfig;
       let resizeTimer: ReturnType<typeof setTimeout> | undefined;
       function debouncedSetVH() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
+        resizeTimer = setTimeout(function () {
           setVH();
         }, 100);
       }
 
       window.addEventListener('resize', debouncedSetVH);
-      window.addEventListener('orientationchange', function() {
+      window.addEventListener('orientationchange', function () {
         // Wait a bit for orientation change to complete
         setTimeout(setVH, 100);
       });

@@ -36,13 +36,13 @@ const description =
 const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
 ---
 
-<section class="py-16 bg-white">
-  <div class="max-w-screen-xl mx-auto px-6">
+<section class="bg-white py-16">
+  <div class="mx-auto max-w-screen-xl px-6">
     <header class="max-w-2xl">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
         {heading}
       </h2>
-      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+      <p class="mt-4 text-lg leading-relaxed text-gray-600">
         {description}
       </p>
     </header>
@@ -50,18 +50,18 @@ const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
     <div class="mt-12 flex flex-wrap gap-10">
       {
         members.map((member) => (
-          <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+          <article class="flex max-w-sm min-w-xs flex-1 items-start gap-6">
             <div class="flex-shrink-0">
-              <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+              <div class="relative h-24 w-24 overflow-hidden rounded-full bg-gray-200">
                 {member.imageSrc ? (
                   <img
                     src={member.imageSrc}
                     alt={member.imageAlt}
-                    class="w-full h-full object-cover"
+                    class="h-full w-full object-cover"
                     loading="lazy"
                   />
                 ) : (
-                  <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                  <div class="flex h-full w-full items-center justify-center bg-gray-200">
                     <svg
                       class="h-8 w-8 text-gray-400"
                       viewBox="0 0 48 48"
@@ -75,12 +75,12 @@ const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
               </div>
             </div>
 
-            <div class="flex-1 min-w-0">
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
+            <div class="min-w-0 flex-1">
+              <h3 class="mb-2 text-xl font-bold text-gray-900">
                 {member.name}
               </h3>
-              <p class="text-lg text-gray-900 mb-3">{member.role}</p>
-              <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+              <p class="mb-3 text-lg text-gray-900">{member.role}</p>
+              <p class="text-sm leading-relaxed text-gray-700">{member.bio}</p>
 
               {member.linkedinUrl && (
                 <div class="mt-4">

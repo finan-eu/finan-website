@@ -21,13 +21,13 @@ export const securityHeaders = {
 export const contentSecurityPolicy = {
   'default-src': ["'self'"],
   'style-src': ["'self'", "'unsafe-inline'"], // Tailwind requires unsafe-inline
-  'img-src': ["'self'", "data:"],
+  'img-src': ["'self'", 'data:'],
   'font-src': ["'self'"],
   'script-src': ["'self'"],
   'connect-src': ["'self'"],
   'frame-ancestors': ["'none'"],
   'base-uri': ["'self'"],
-  'form-action': ["'self'"]
+  'form-action': ["'self'"],
 };
 
 // Convert CSP object to string format
@@ -44,5 +44,5 @@ export const securityChecklist = [
   '✅ Dependencies vulnerability-free',
   '✅ Static site with minimal attack surface',
   '⚠️  HTTPS enforcement (enable in production)',
-  '⚠️  Regular dependency updates recommended'
+  '⚠️  Regular dependency updates recommended',
 ];

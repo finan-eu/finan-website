@@ -11,7 +11,8 @@ export const regionalRepresentativesConfigs = {
   'norway-iceland': norwayIcelandRepresentatives,
 } as const satisfies Record<string, RegionalRepresentativesConfig>;
 
-export type RegionalRepresentativesRegion = keyof typeof regionalRepresentativesConfigs;
+export type RegionalRepresentativesRegion =
+  keyof typeof regionalRepresentativesConfigs;
 
 export {
   finlandAlandRepresentatives,

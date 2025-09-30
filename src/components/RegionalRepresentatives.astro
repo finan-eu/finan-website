@@ -7,13 +7,13 @@ import {
 } from '../data/regional-representatives/index';
 ---
 
-<section class="py-16 bg-white">
-  <div class="max-w-screen-xl mx-auto px-6">
+<section class="bg-white py-16">
+  <div class="mx-auto max-w-screen-xl px-6">
     <header class="max-w-2xl">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
         Regional Representatives
       </h2>
-      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+      <p class="mt-4 text-lg leading-relaxed text-gray-600">
         Official regional representatives of the Filipino Nurses Association in
         the Nordic Region
       </p>
@@ -22,40 +22,42 @@ import {
     <!-- Finland & Åland -->
     <div class="mt-12">
       <h3
-        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+        class="mb-8 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
       >
         {finlandAlandRepresentatives.heading}
       </h3>
       <div class="flex flex-wrap gap-10">
         {
           finlandAlandRepresentatives.members.map((member) => (
-            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+            <article class="flex max-w-sm min-w-xs flex-1 items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                <div class="relative h-24 w-24 overflow-hidden rounded-full bg-gray-200">
                   {member.imageSrc ? (
                     <img
                       src={member.imageSrc}
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   ) : (
                     <img
                       src="/images/image_thumbnail.svg"
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   )}
                 </div>
               </div>
 
-              <div class="flex-1 min-w-0">
-                <h4 class="text-xl font-bold text-gray-900 mb-2">
+              <div class="min-w-0 flex-1">
+                <h4 class="mb-2 text-xl font-bold text-gray-900">
                   {member.name}
                 </h4>
-                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
-                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+                <p class="mb-3 text-lg text-gray-900">{member.role}</p>
+                <p class="text-sm leading-relaxed text-gray-700">
+                  {member.bio}
+                </p>
 
                 {member.linkedinUrl && (
                   <div class="mt-4">
@@ -85,40 +87,42 @@ import {
     <!-- Sweden -->
     <div class="mt-12">
       <h3
-        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+        class="mb-8 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
       >
         {swedenRepresentatives.heading}
       </h3>
       <div class="flex flex-wrap gap-10">
         {
           swedenRepresentatives.members.map((member) => (
-            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+            <article class="flex max-w-sm min-w-xs flex-1 items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                <div class="relative h-24 w-24 overflow-hidden rounded-full bg-gray-200">
                   {member.imageSrc ? (
                     <img
                       src={member.imageSrc}
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   ) : (
                     <img
                       src="/images/image_thumbnail.svg"
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   )}
                 </div>
               </div>
 
-              <div class="flex-1 min-w-0">
-                <h4 class="text-xl font-bold text-gray-900 mb-2">
+              <div class="min-w-0 flex-1">
+                <h4 class="mb-2 text-xl font-bold text-gray-900">
                   {member.name}
                 </h4>
-                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
-                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+                <p class="mb-3 text-lg text-gray-900">{member.role}</p>
+                <p class="text-sm leading-relaxed text-gray-700">
+                  {member.bio}
+                </p>
 
                 {member.linkedinUrl && (
                   <div class="mt-4">
@@ -148,40 +152,42 @@ import {
     <!-- Greenland & Faroe Islands -->
     <div class="mt-12">
       <h3
-        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+        class="mb-8 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
       >
         {greenlandFaroeRepresentatives.heading}
       </h3>
       <div class="flex flex-wrap gap-10">
         {
           greenlandFaroeRepresentatives.members.map((member) => (
-            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+            <article class="flex max-w-sm min-w-xs flex-1 items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                <div class="relative h-24 w-24 overflow-hidden rounded-full bg-gray-200">
                   {member.imageSrc ? (
                     <img
                       src={member.imageSrc}
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   ) : (
                     <img
                       src="/images/image_thumbnail.svg"
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   )}
                 </div>
               </div>
 
-              <div class="flex-1 min-w-0">
-                <h4 class="text-xl font-bold text-gray-900 mb-2">
+              <div class="min-w-0 flex-1">
+                <h4 class="mb-2 text-xl font-bold text-gray-900">
                   {member.name}
                 </h4>
-                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
-                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+                <p class="mb-3 text-lg text-gray-900">{member.role}</p>
+                <p class="text-sm leading-relaxed text-gray-700">
+                  {member.bio}
+                </p>
 
                 {member.linkedinUrl && (
                   <div class="mt-4">
@@ -211,40 +217,42 @@ import {
     <!-- Norway & Iceland -->
     <div class="mt-12">
       <h3
-        class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8"
+        class="mb-8 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
       >
         {norwayIcelandRepresentatives.heading}
       </h3>
       <div class="flex flex-wrap gap-10">
         {
           norwayIcelandRepresentatives.members.map((member) => (
-            <article class="flex items-start gap-6 flex-1 min-w-xs max-w-sm">
+            <article class="flex max-w-sm min-w-xs flex-1 items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="overflow-hidden rounded-full bg-gray-200 relative w-24 h-24">
+                <div class="relative h-24 w-24 overflow-hidden rounded-full bg-gray-200">
                   {member.imageSrc ? (
                     <img
                       src={member.imageSrc}
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   ) : (
                     <img
                       src="/images/image_thumbnail.svg"
                       alt={member.imageAlt}
-                      class="w-full h-full object-cover"
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   )}
                 </div>
               </div>
 
-              <div class="flex-1 min-w-0">
-                <h4 class="text-xl font-bold text-gray-900 mb-2">
+              <div class="min-w-0 flex-1">
+                <h4 class="mb-2 text-xl font-bold text-gray-900">
                   {member.name}
                 </h4>
-                <p class="text-lg text-gray-900 mb-3">{member.role}</p>
-                <p class="text-sm text-gray-700 leading-relaxed">{member.bio}</p>
+                <p class="mb-3 text-lg text-gray-900">{member.role}</p>
+                <p class="text-sm leading-relaxed text-gray-700">
+                  {member.bio}
+                </p>
 
                 {member.linkedinUrl && (
                   <div class="mt-4">

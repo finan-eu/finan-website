@@ -31,72 +31,73 @@ export interface RegistrationSectionContent {
 
 export const registrationSectionConfig: RegistrationSectionContent = {
   title: {
-    highlight: "The Filipino Nurses Association in the Nordic Region",
-    normal: "is a registered non-profit organization in the Nordic Region."
+    highlight: 'The Filipino Nurses Association in the Nordic Region',
+    normal: 'is a registered non-profit organization in the Nordic Region.',
   },
-  description: "The Filipino Nurses Association in the Nordic Region is a registered non-profit organization in the Nordic Region.",
+  description:
+    'The Filipino Nurses Association in the Nordic Region is a registered non-profit organization in the Nordic Region.',
   entities: [
     {
-      id: "finland-prh",
-      country: "Finland",
-      organizationName: "Finnish Patent and Registration Office",
-      organizationNameLocal: "Patentti- ja rekisterihallitus",
-      registrationNumber: "3084026-2",
-      registrationLabel: "Y-tunnus",
+      id: 'finland-prh',
+      country: 'Finland',
+      organizationName: 'Finnish Patent and Registration Office',
+      organizationNameLocal: 'Patentti- ja rekisterihallitus',
+      registrationNumber: '3084026-2',
+      registrationLabel: 'Y-tunnus',
       image: {
         src: finlandPrhImg,
-        alt: "Finnish Patent and Registration Office (PRH)",
+        alt: 'Finnish Patent and Registration Office (PRH)',
         width: 360,
-        loading: "lazy",
-        format: "webp"
-      }
+        loading: 'lazy',
+        format: 'webp',
+      },
     },
     {
-      id: "denmark-erhvervsstyrelsen",
-      country: "Denmark",
-      organizationName: "Danish Business Authority",
-      organizationNameLocal: "Erhvervsstyrelsen",
-      registrationNumber: "40349367",
-      registrationLabel: "CVR number",
+      id: 'denmark-erhvervsstyrelsen',
+      country: 'Denmark',
+      organizationName: 'Danish Business Authority',
+      organizationNameLocal: 'Erhvervsstyrelsen',
+      registrationNumber: '40349367',
+      registrationLabel: 'CVR number',
       image: {
         src: denmarkErhvervsstyrelsenImg,
-        alt: "Danish Business Authority (Erhvervsstyrelsen)",
+        alt: 'Danish Business Authority (Erhvervsstyrelsen)',
         width: 360,
-        loading: "lazy",
-        format: "webp"
-      }
+        loading: 'lazy',
+        format: 'webp',
+      },
     },
     {
-      id: "sweden-skatteverket",
-      country: "Sweden",
-      organizationName: "Swedish Tax Agency",
-      organizationNameLocal: "Skatteverket",
-      registrationNumber: "802537-7097",
-      registrationLabel: "Organisation number",
+      id: 'sweden-skatteverket',
+      country: 'Sweden',
+      organizationName: 'Swedish Tax Agency',
+      organizationNameLocal: 'Skatteverket',
+      registrationNumber: '802537-7097',
+      registrationLabel: 'Organisation number',
       image: {
         src: swedenSkatteverketImg,
-        alt: "Swedish Tax Agency (Skatteverket)",
+        alt: 'Swedish Tax Agency (Skatteverket)',
         width: 360,
-        loading: "lazy",
-        format: "webp"
-      }
+        loading: 'lazy',
+        format: 'webp',
+      },
     },
     {
-      id: "iceland-rikisskattstjori",
-      country: "Iceland",
-      organizationName: "Directorate of Internal Revenue",
-      organizationNameLocal: "Ríkisskattstjóri",
-      registrationNumber: "5208190450",
-      registrationLabel: "Registration number",
+      id: 'iceland-rikisskattstjori',
+      country: 'Iceland',
+      organizationName: 'Directorate of Internal Revenue',
+      organizationNameLocal: 'Ríkisskattstjóri',
+      registrationNumber: '5208190450',
+      registrationLabel: 'Registration number',
       image: {
         src: icelandRikisskattstjoriImg,
-        alt: "Directorate of Internal Revenue (Ríkisskattstjóri)",
+        alt: 'Directorate of Internal Revenue (Ríkisskattstjóri)',
         width: 360,
-        loading: "lazy",
-        format: "webp"
-      }
-    }
-  ]
+        loading: 'lazy',
+        format: 'webp',
+      },
+    },
+  ],
 };
 
 export type { ImageMetadata };

@@ -25,7 +25,7 @@ const {
       <Image
         src={backgroundImage}
         alt={backgroundAlt}
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 h-full w-full object-cover"
         loading="eager"
         format="webp"
         width={1920}
@@ -39,16 +39,16 @@ const {
 
   <!-- Content -->
   <div
-    class="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 text-white w-full"
+    class="relative z-10 mx-auto w-full max-w-screen-xl px-4 text-white sm:px-6"
   >
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+    <div class="mx-auto max-w-4xl text-center">
+      <h1 class="mb-6 text-5xl leading-tight font-bold lg:text-6xl">
         {title}
       </h1>
 
       {
         description && (
-          <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p class="mx-auto max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
             {description}
           </p>
         )

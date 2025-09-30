@@ -3,34 +3,33 @@
 import { statisticsConfig } from '../data/statisticsConfig';
 ---
 
-<section class="py-16 md:py-24 bg-gray-50">
-  <div class="max-w-screen-xl mx-auto px-6">
+<section class="bg-gray-50 py-16 md:py-24">
+  <div class="mx-auto max-w-screen-xl px-6">
     <!-- Header -->
     <div class="mb-16">
-      <p class="text-sm text-gray-600 mb-4 font-medium">
+      <p class="mb-4 text-sm font-medium text-gray-600">
         {statisticsConfig.section.subtitle}
       </p>
 
-      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+      <div class="grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <h2
-            class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+            class="mb-6 text-4xl leading-tight font-bold text-gray-900 md:text-5xl"
             set:html={statisticsConfig.section.title}
-          >
-          </h2>
+          />
         </div>
 
         <div>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p class="mb-8 text-lg leading-relaxed text-gray-600">
             {statisticsConfig.section.description}
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col gap-4 sm:flex-row">
             <a
               href={statisticsConfig.section.buttons.primary.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block px-6 py-3 bg-blue-900 text-white font-medium rounded-lg hover:bg-blue-800 transition-colors text-center"
+              class="inline-block rounded-lg bg-blue-900 px-6 py-3 text-center font-medium text-white transition-colors hover:bg-blue-800"
             >
               {statisticsConfig.section.buttons.primary.text}
             </a>
@@ -38,11 +37,11 @@ import { statisticsConfig } from '../data/statisticsConfig';
               href={statisticsConfig.section.buttons.secondary.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center px-6 py-3 text-gray-900 font-medium hover:text-gray-700 transition-colors text-center"
+              class="inline-flex items-center justify-center px-6 py-3 text-center font-medium text-gray-900 transition-colors hover:text-gray-700"
             >
               {statisticsConfig.section.buttons.secondary.text}
               <svg
-                class="ml-2 w-4 h-4"
+                class="ml-2 h-4 w-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -60,20 +59,20 @@ import { statisticsConfig } from '../data/statisticsConfig';
     </div>
 
     <!-- Statistics Cards -->
-    <div class="grid md:grid-cols-3 gap-8">
-      {statisticsConfig.cards.map((card) => (
-        <div class="bg-white p-8 border border-gray-200 rounded-lg">
-          <div class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            {card.value}
+    <div class="grid gap-8 md:grid-cols-3">
+      {
+        statisticsConfig.cards.map((card) => (
+          <div class="rounded-lg border border-gray-200 bg-white p-8">
+            <div class="mb-4 text-5xl font-bold text-gray-900 md:text-6xl">
+              {card.value}
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-gray-900">
+              {card.title}
+            </h3>
+            <p class="leading-relaxed text-gray-600">{card.description}</p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">
-            {card.title}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {card.description}
-          </p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

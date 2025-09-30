@@ -75,7 +75,6 @@ src/
 #### Priority: High
 
 1. **Semantic Improvements**
-
    - Add `aria-label` to action buttons (`HeroHeader.astro:50-66`)
    - Improve flag alt text with country context
    - Add skip-to-content links
@@ -91,13 +90,11 @@ src/
 #### SEO Priority: High
 
 1. **Structured Data**
-
    - Add JSON-LD schema for Organization
    - Include contact information and registration details
    - Add breadcrumb navigation schema
 
 2. **Meta Improvements**
-
    - Add Open Graph image
    - Implement canonical URLs
    - Create robots.txt and sitemap.xml
@@ -124,7 +121,6 @@ src/
 **Priority: Medium**
 
 1. **Font Optimization**
-
    - Current Inter fonts: ~114KB each (6 files = ~684KB total)
    - **Recommendation:** Use Google Fonts or subset fonts to reduce by 60-70%
    - Add preload hints for critical fonts
@@ -198,13 +194,11 @@ src/
 **Priority: Low-Medium**
 
 1. **Contact Form**
-
    - Newsletter subscription
    - Contact form with Netlify Forms or similar
    - Form validation and success states
 
 2. **Analytics & Monitoring**
-
    - Google Analytics 4 or privacy-focused alternative
    - Error tracking (Sentry)
    - Performance monitoring

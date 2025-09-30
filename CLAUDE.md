@@ -20,7 +20,6 @@ This is an Astro-based website project for "finan-website" using the basic Astro
 
 - **Framework**: Astro 5.x (static site generator with island architecture)
 - **Structure**: Standard Astro project layout
-
   - `src/pages/` - File-based routing for pages
   - `src/layouts/` - Reusable layout components
   - `src/components/` - Astro components

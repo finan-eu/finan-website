@@ -6,7 +6,10 @@ function initializeNavbar() {
   if (mobileMenuButton && mobileMenu) {
     // Remove any existing listeners
     const newMobileMenuButton = mobileMenuButton.cloneNode(true);
-    mobileMenuButton.parentNode.replaceChild(newMobileMenuButton, mobileMenuButton);
+    mobileMenuButton.parentNode.replaceChild(
+      newMobileMenuButton,
+      mobileMenuButton
+    );
 
     newMobileMenuButton.addEventListener('click', function () {
       const isExpanded =
@@ -48,7 +51,8 @@ function initializeNavbar() {
 
     newChaptersButton.addEventListener('click', function (e) {
       e.stopPropagation();
-      const isExpanded = newChaptersButton.getAttribute('aria-expanded') === 'true';
+      const isExpanded =
+        newChaptersButton.getAttribute('aria-expanded') === 'true';
 
       newChaptersButton.setAttribute('aria-expanded', (!isExpanded).toString());
 
@@ -70,19 +74,30 @@ function initializeNavbar() {
   }
 
   // Mobile Chapters dropdown functionality
-  const mobileChaptersButton = document.getElementById('mobile-chapters-button');
+  const mobileChaptersButton = document.getElementById(
+    'mobile-chapters-button'
+  );
   const mobileChaptersMenu = document.getElementById('mobile-chapters-menu');
 
   if (mobileChaptersButton && mobileChaptersMenu) {
     // Remove any existing listeners
     const newMobileChaptersButton = mobileChaptersButton.cloneNode(true);
-    mobileChaptersButton.parentNode.replaceChild(newMobileChaptersButton, mobileChaptersButton);
+    mobileChaptersButton.parentNode.replaceChild(
+      newMobileChaptersButton,
+      mobileChaptersButton
+    );
 
     newMobileChaptersButton.addEventListener('click', function () {
-      const isExpanded = newMobileChaptersButton.getAttribute('aria-expanded') === 'true';
-      const mobileChaptersIcon = document.getElementById('mobile-chapters-icon');
+      const isExpanded =
+        newMobileChaptersButton.getAttribute('aria-expanded') === 'true';
+      const mobileChaptersIcon = document.getElementById(
+        'mobile-chapters-icon'
+      );
 
-      newMobileChaptersButton.setAttribute('aria-expanded', (!isExpanded).toString());
+      newMobileChaptersButton.setAttribute(
+        'aria-expanded',
+        (!isExpanded).toString()
+      );
       mobileChaptersMenu.classList.toggle('hidden');
 
       // Rotate the chevron icon

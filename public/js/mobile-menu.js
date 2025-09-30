@@ -8,10 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const isExpanded =
         mobileMenuButton.getAttribute('aria-expanded') === 'true';
 
-      mobileMenuButton.setAttribute(
-        'aria-expanded',
-        (!isExpanded).toString()
-      );
+      mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
       mobileMenu.classList.toggle('hidden');
     });
   }
@@ -23,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (chaptersButton && chaptersMenu) {
     chaptersButton.addEventListener('click', function (e) {
       e.stopPropagation();
-      const isExpanded = chaptersButton.getAttribute('aria-expanded') === 'true';
+      const isExpanded =
+        chaptersButton.getAttribute('aria-expanded') === 'true';
 
       chaptersButton.setAttribute('aria-expanded', (!isExpanded).toString());
 
@@ -45,15 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Mobile Chapters dropdown functionality
-  const mobileChaptersButton = document.getElementById('mobile-chapters-button');
+  const mobileChaptersButton = document.getElementById(
+    'mobile-chapters-button'
+  );
   const mobileChaptersMenu = document.getElementById('mobile-chapters-menu');
   const mobileChaptersIcon = document.getElementById('mobile-chapters-icon');
 
   if (mobileChaptersButton && mobileChaptersMenu && mobileChaptersIcon) {
     mobileChaptersButton.addEventListener('click', function () {
-      const isExpanded = mobileChaptersButton.getAttribute('aria-expanded') === 'true';
+      const isExpanded =
+        mobileChaptersButton.getAttribute('aria-expanded') === 'true';
 
-      mobileChaptersButton.setAttribute('aria-expanded', (!isExpanded).toString());
+      mobileChaptersButton.setAttribute(
+        'aria-expanded',
+        (!isExpanded).toString()
+      );
       mobileChaptersMenu.classList.toggle('hidden');
 
       // Rotate the chevron icon
