@@ -1,0 +1,9 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Crawl rate limits to prevent abuse
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://finan.eu.com/sitemap.xml
