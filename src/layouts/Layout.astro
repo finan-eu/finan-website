@@ -92,18 +92,16 @@ const { metadata, social, seo } = siteConfig;
       setVH();
 
       // Update on resize and orientation change with debouncing
-      let resizeTimer: ReturnType<typeof setTimeout> | undefined;
+      let resizeTimer = 0;
       function debouncedSetVH() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-          setVH();
-        }, 100);
+        resizeTimer = window.setTimeout(setVH, 100);
       }
 
       window.addEventListener('resize', debouncedSetVH);
       window.addEventListener('orientationchange', function () {
         // Wait a bit for orientation change to complete
-        setTimeout(setVH, 100);
+        window.setTimeout(setVH, 100);
       });
 
       // Also set on page show (for back/forward navigation)
