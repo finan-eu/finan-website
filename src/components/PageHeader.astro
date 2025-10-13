@@ -19,7 +19,7 @@ const {
 } = Astro.props;
 ---
 
-<section class={`relative flex items-center py-20 md:py-32 ${className}`}>
+<section class={`relative flex items-center py-20 md:py-60 ${className}`}>
   {
     backgroundImage && (
       <Image
@@ -35,7 +35,7 @@ const {
   }
 
   <!-- Gray overlay -->
-  <div class="absolute inset-0 bg-gray-900/90"></div>
+  <div class="absolute inset-0 bg-gray-900/70"></div>
 
   <!-- Content -->
   <div
