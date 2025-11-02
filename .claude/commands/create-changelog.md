@@ -1,7 +1,13 @@
 # Create Changelog
 
-Please create a markdown changelog file inside the changelog/ directory with today's date and current time (using the Europe/Helsinki timezone), formatted as YYYY-MM-DD_HH-MM. Document the latest changes I've made to the project.
+## 1. Changelog File Creation
 
-## Run the commit-code.md command
+1. Create a new markdown `YYYY-MM-DD_HH-MM.md` file in the `docs/changelog/` directory.
+2. Use the Europe/Helsinki timezone for time stamping.
+3. Name the file using the current date and time in the format: `YYYY-MM-DD_HH-MM.md`
 
-After completing the changelog file, execute the commit-code.md command located at .claude/commands/commit-code.md.
+## 2. Changelog Content
+
+1. In the newly created file, include a concise summary of the latest updates or changes made to the project since the last changelog entry.
+2. Use clear section headings where appropriate (e.g., Added, Fixed, Changed, Removed).
+3. Ensure the content is human-readable and formatted in valid Markdown.

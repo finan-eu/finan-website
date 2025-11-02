@@ -8,19 +8,19 @@ FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-p
 
 ## Development Commands
 
-| Command                    | Action                                                    |
-| -------------------------- | --------------------------------------------------------- |
-| `npm install`              | Install dependencies                                      |
-| `npm run dev`              | Start development server at localhost:4321               |
-| `npm run build`            | Build production site to ./dist/                         |
-| `npm run preview`          | Preview built site locally                                |
-| `npm run astro`            | Run Astro CLI commands                                    |
-| `npm run lint`             | Run ESLint on codebase                                    |
-| `npm run lint:fix`         | Run ESLint with auto-fix                                  |
-| `npm run format`           | Format code with Prettier                                 |
-| `npm run format:check`     | Check code formatting                                     |
-| `npm run security:audit`   | Run npm security audit (moderate threshold)              |
-| `npm run security:check`   | Display security configuration reminder                   |
+| Command                  | Action                                      |
+| ------------------------ | ------------------------------------------- |
+| `npm install`            | Install dependencies                        |
+| `npm run dev`            | Start development server at localhost:4321  |
+| `npm run build`          | Build production site to ./dist/            |
+| `npm run preview`        | Preview built site locally                  |
+| `npm run astro`          | Run Astro CLI commands                      |
+| `npm run lint`           | Run ESLint on codebase                      |
+| `npm run lint:fix`       | Run ESLint with auto-fix                    |
+| `npm run format`         | Format code with Prettier                   |
+| `npm run format:check`   | Check code formatting                       |
+| `npm run security:audit` | Run npm security audit (moderate threshold) |
+| `npm run security:check` | Display security configuration reminder     |
 
 ### Quality Workflow
 
@@ -37,7 +37,7 @@ This ensures ESLint rules are enforced and Prettier formatting (including Tailwi
 ### Framework & Tech Stack
 
 - **Astro 5.14.1**: Static site generator with island architecture and partial hydration
-- **Tailwind CSS 4.1.13**: Utility-first styling with Vite integration  
+- **Tailwind CSS 4.1.13**: Utility-first styling with Vite integration
 - **TypeScript**: Full type safety throughout the application
 - **ESLint + Prettier**: Code quality with Astro-specific plugins and Tailwind class sorting
 
@@ -47,7 +47,7 @@ The project uses a centralized, type-safe data layer in `src/data/` with TypeScr
 
 - **siteConfig.ts**: Site metadata, SEO settings, social links
 - **working-committee/**: Committee member data structured by Nordic country
-- **regional-representatives/**: Contact information for regional support  
+- **regional-representatives/**: Contact information for regional support
 - **Component configs**: Type-safe configurations for reusable components (hero, CTA, registration, statistics)
 
 All data files define TypeScript interfaces first, then use `as const satisfies` to ensure type compliance while preserving literal types.
@@ -55,18 +55,21 @@ All data files define TypeScript interfaces first, then use `as const satisfies`
 ### Security Configuration
 
 Security is centralized in two places:
+
 - **security.config.js**: Exportable security headers and CSP configuration
 - **astro.config.mjs**: Applies security headers to dev server
 
 Key security features:
+
 - Content Security Policy (CSP) with strict directives
-- Security headers (X-Frame-Options, X-Content-Type-Options, etc.)  
+- Security headers (X-Frame-Options, X-Content-Type-Options, etc.)
 - Origin checking enabled
 - HTTPS enforcement ready for production
 
 ### Component Architecture
 
 14 reusable Astro components in `src/components/` including:
+
 - **Layout components**: Navbar, Footer, PageHeader
 - **Content sections**: HeroHeader, Statistics, NordicChapters, WorkingCommittee
 - **Interactive elements**: CTABanner, RegistrationSection, TopBanner
@@ -76,6 +79,7 @@ Components consume data from the centralized data layer rather than hardcoding c
 ### File-Based Routing
 
 Pages in `src/pages/` with automatic route generation:
+
 - **Marketing pages**: index, about, membership, faq, guides-resources, contact-us
 - **chapters/**: Individual Nordic country detail pages (7 countries)
 - **sitemap.xml.ts**: Dynamic sitemap generation
@@ -92,7 +96,7 @@ Pages in `src/pages/` with automatic route generation:
 ### Code Organization
 
 - Keep UI components in `src/components/` - they consume data from `src/data/` configs
-- Add new pages to `src/pages/` (routes auto-generated from filenames)  
+- Add new pages to `src/pages/` (routes auto-generated from filenames)
 - Store reusable data/copy in `src/data/` TypeScript modules instead of hardcoding in components
 - Place bundled assets in `src/assets/`, static files in `public/`
 - Global styling flows through Tailwind utilities imported in `src/styles/global.css`
@@ -101,7 +105,7 @@ Pages in `src/pages/` with automatic route generation:
 
 When adding new features that require structured data:
 
-1. Create TypeScript interfaces in `types.ts` 
+1. Create TypeScript interfaces in `types.ts`
 2. Create configuration file using `as const satisfies` pattern
 3. Export type-safe helper functions for components to consume
 4. Update components to use centralized data rather than hardcoded strings
@@ -132,6 +136,7 @@ export const siteConfig = {
 ### Security Updates
 
 When modifying security configurations:
+
 - Update both `security.config.js` (for production headers) and `astro.config.mjs` (for dev server)
 - Run `npm run security:audit` after dependency updates
 - Ensure CSP directives cover any new external origins or assets

@@ -1,17 +1,28 @@
 # Commit Code
 
-Add all modified and new files to Git.
+## 1. File Staging Rules
 
-- If there are files that should probably not be version-controlled, ask me before adding them.
-- If some changes would make more sense as separate commits, ask me how I’d like to structure them.
+1. Stage all modified and newly created files.
+2. Prompt the user to confirm whether they should be included.
+   - If changes appear logically distinct (e.g., feature vs. refactor), ask how to segment commits before proceeding.
 
-Always display the full generated commit message to me first.
-Then explicitly ask if I’d like to proceed with committing the changes.
+## 2. Commit Message Generation
 
-When committing:
+1. Automatically generate a concise and descriptive message summarizing all staged changes.
+2. Follow Conventional Commit syntax:
+   - feat: – new feature
+   - fix: – bug fix
+   - refactor: – internal code change
+   - docs: – documentation-only changes
+   - chore: – maintenance or tooling updates
+3. Do not include author, co-author, or metadata tags in the message.
 
-- Use a clear, concise, one-line commit message.
-- Follow semantic commit message notation.
-- Do not include code attribution or co-author information in commit messages.
+## 3. Commit Execution
 
-I am explicitly asking you to perform these Git tasks.
+1. Display the complete, generated commit message for review.
+2. Execute the commit immediately without requiring user confirmation.
+
+## 4. Commit Structure Guidance
+
+1. If multiple logical commits are warranted, suggest possible commit groupings based on file or change context.
+2. Proceed with the commit automatically using the generated message.

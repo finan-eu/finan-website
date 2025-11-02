@@ -11,27 +11,28 @@ This audit captures actionable improvements observed in the current `finan-websi
   **Issue:** The inline script ships the TypeScript-only annotation `let resizeTimer: ReturnType<typeof setTimeout>`, which browsers treat as a syntax error. The viewport height fix then never runs.  
   **Why it breaks:** When Astro renders this layout, the browser executes the `<script>` tag exactly as written. Because plain JavaScript does not understand TypeScript annotations, parsing stops at `: ReturnType<…>` and the console logs an `Unexpected token ':'` error before any of the helper functions run. As a result `setVH()` is never called and mobile height calculations fall back to the incorrect default.  
   **Recommendation:** Drop the annotation (or move the logic to a compiled TS module) so the mobile viewport sizing helper executes reliably.  
-  **Fix example:**  
-    ```html
-    <script>
-      function setVH() {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      }
+  **Fix example:**
 
-      setVH();
+  ```html
+  <script>
+    function setVH() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
 
-      let resizeTimer;
-      function debouncedSetVH() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(setVH, 100);
-      }
+    setVH();
 
-      window.addEventListener('resize', debouncedSetVH);
-      window.addEventListener('orientationchange', () => setTimeout(setVH, 100));
-      window.addEventListener('pageshow', setVH);
-    </script>
-    ```
+    let resizeTimer;
+    function debouncedSetVH() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setVH, 100);
+    }
+
+    window.addEventListener('resize', debouncedSetVH);
+    window.addEventListener('orientationchange', () => setTimeout(setVH, 100));
+    window.addEventListener('pageshow', setVH);
+  </script>
+  ```
 
 - **Provide per-page metadata hooks in the layout**  
   **Location:** `src/layouts/Layout.astro:50`  

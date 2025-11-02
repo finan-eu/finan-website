@@ -23,7 +23,7 @@ FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-p
 
 ## Architecture
 
-- **Framework**: Astro 5.14.1 (static site generator with island architecture)
+- **Framework**: Astro 5.15.3 (static site generator with island architecture)
 - **Styling**: Tailwind CSS 4.1.13 with Vite integration
 - **TypeScript**: Full TypeScript support with type checking enabled
 - **Code Quality**: ESLint + Prettier with Astro-specific plugins
@@ -43,14 +43,15 @@ src/
 │   ├── registrationSectionConfig.ts
 │   └── statisticsConfig.ts
 ├── layouts/         # Page layout templates
-├── pages/           # File-based routing (9 pages + 7 chapter pages)
+├── pages/           # File-based routing (8 pages + 7 chapter pages)
 │   ├── chapters/    # Individual Nordic country pages
 │   ├── index.astro
 │   ├── about.astro
 │   ├── membership.astro
-│   ├── faqs.astro
+│   ├── faq.astro
 │   ├── guides-resources.astro
 │   ├── contact-us.astro
+│   ├── sitemap.xml.ts
 │   └── 404.astro
 ├── scripts/         # Client-side JavaScript
 └── styles/          # Global CSS styles
@@ -85,9 +86,10 @@ public/
 - **index.astro** - Home page with hero, statistics, chapters overview
 - **about.astro** - Organization information, mission, working committee
 - **membership.astro** - Membership benefits and registration
-- **faqs.astro** - Frequently asked questions
+- **faq.astro** - Frequently asked questions
 - **guides-resources.astro** - Resources for nurses
 - **contact-us.astro** - Contact information and form
+- **sitemap.xml.ts** - Dynamic XML sitemap generation
 - **404.astro** - Custom 404 error page
 - **chapters/\*.astro** - Individual pages for 7 Nordic countries/regions
 
