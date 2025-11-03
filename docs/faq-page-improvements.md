@@ -31,16 +31,16 @@
 - Consider a two-column layout on desktop for better space utilization
 - Add a subtle hover effect on FAQ items
 
-## 6. Content Organization
+## ✅ 6. Content Organization
 
 - Group FAQs by category (e.g., "About FiNAN", "Membership", "Recruitment")
-- Add a table of contents at the top for quick navigation
+<!-- - Add a table of contents at the top for quick navigation -->
 - Consider a "Still have questions?" contact section at the bottom
 
 ## 7. Code Consistency
 
-- The CTABanner placement is inconsistent (inside `<section>` here vs outside in about.astro)
-- Footer placement (inside `<main>` here vs outside in about.astro)
+- ✅ The CTABanner placement is inconsistent (inside `<section>` here vs outside in about.astro)
+- ✅ Footer placement (inside `<main>` here vs outside in about.astro)
 
 ## 8. Data Structure Enhancement
 
