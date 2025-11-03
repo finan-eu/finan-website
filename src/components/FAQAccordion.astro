@@ -1,71 +1,100 @@
 ---
-import type { FAQ } from '../data/pages/faq/faqData';
+import type { FAQCategory } from '../data/pages/faq/faqData';
 
 interface Props {
-  faqs: readonly FAQ[];
+  categories: readonly FAQCategory[];
 }
 
-const { faqs } = Astro.props;
+const { categories } = Astro.props;
+
+// Generate a global counter for unique IDs across all categories
+let globalFaqIndex = 0;
 ---
 
 <div class="mx-auto max-w-screen-xl px-4 sm:px-6">
   <!-- Hidden heading for screen readers to improve document outline -->
-  <h2 id="faq-heading" class="sr-only">
-    List of Frequently Asked Questions
-  </h2>
-  <div class="space-y-4" role="list" aria-label="Frequently asked questions">
+  <h2 id="faq-heading" class="sr-only">List of Frequently Asked Questions</h2>
+
+  <div class="space-y-12">
     {
-      faqs.map((faq, index) => (
-        <div
-          class="group rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
-          role="listitem"
-        >
-            <button
-              type="button"
-              class="faq-toggle flex w-full items-start justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
-              aria-expanded="false"
-              aria-controls={`faq-answer-${index + 1}`}
-              data-faq-index={index}
-            >
-              <div class="flex-1">
-                <h3
-                  id={`faq-question-${index + 1}`}
-                  class="pr-4 text-lg font-semibold text-gray-900 md:text-xl"
-                >
-                  <span class="mr-2 text-gray-900">{index + 1}.</span>
-                  {faq.question}
-                </h3>
-              </div>
-              <div class="flex items-center gap-2">
-                <!-- Expand/collapse icon -->
-                <svg
-                  class="chevron h-6 w-6 flex-shrink-0 text-gray-500 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </button>
-            <div
-              id={`faq-answer-${index + 1}`}
-              class="faq-content overflow-hidden transition-all duration-300 ease-in-out"
-              style="max-height: 0;"
-              aria-labelledby={`faq-question-${index + 1}`}
-              role="region"
-            >
-              <div class="border-t border-gray-100 px-6 py-5">
-                <p class="text-base text-gray-700 md:text-lg">{faq.answer}</p>
-              </div>
-            </div>
+      categories.map((category) => (
+        <div class="category-section">
+          {/* Category header */}
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-gray-900 md:text-3xl">
+              {category.categoryName}
+            </h3>
+            {category.categoryDescription && (
+              <p class="mt-2 text-base text-gray-600 md:text-lg">
+                {category.categoryDescription}
+              </p>
+            )}
           </div>
-        ))
+
+          {/* FAQs within the category */}
+          <div
+            class="space-y-4"
+            role="list"
+            aria-label={`${category.categoryName} questions`}
+          >
+            {category.faqs.map((faq) => {
+              const currentIndex = ++globalFaqIndex;
+              return (
+                <div
+                  class="group rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+                  role="listitem"
+                >
+                  <button
+                    type="button"
+                    class="faq-toggle flex w-full items-start justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-gray-50 focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 focus:outline-none"
+                    aria-expanded="false"
+                    aria-controls={`faq-answer-${currentIndex}`}
+                    data-faq-index={currentIndex}
+                  >
+                    <div class="flex-1">
+                      <h4
+                        id={`faq-question-${currentIndex}`}
+                        class="pr-4 text-lg font-semibold text-gray-900 md:text-xl"
+                      >
+                        {faq.question}
+                      </h4>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      {/* Expand/collapse icon */}
+                      <svg
+                        class="chevron h-6 w-6 flex-shrink-0 text-gray-500 transition-transform duration-200"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    id={`faq-answer-${currentIndex}`}
+                    class="faq-content overflow-hidden transition-all duration-300 ease-in-out"
+                    style="max-height: 0;"
+                    aria-labelledby={`faq-question-${currentIndex}`}
+                    role="region"
+                  >
+                    <div class="border-t border-gray-100 px-6 py-5">
+                      <p class="text-base text-gray-700 md:text-lg">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))
     }
   </div>
 </div>
