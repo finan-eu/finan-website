@@ -1,6 +1,6 @@
 # Potential Improvements for faq.astro
 
-## 1. SEO Enhancements
+## ✅ 1. SEO Enhancements
 
 - Add FAQ schema markup (structured data) for better search engine visibility
 - FAQs are perfect for rich snippets in Google search results

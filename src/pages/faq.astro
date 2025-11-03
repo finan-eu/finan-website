@@ -17,6 +17,13 @@ const faqSchema = generateFAQSchema();
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
   <main>
+    <!-- Skip to content link for keyboard navigation -->
+    <a
+      href="#faq-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+    >
+      Skip to FAQ content
+    </a>
     <TopBanner />
     <Navbar />
     <PageHeader
@@ -27,18 +34,41 @@ const faqSchema = generateFAQSchema();
     />
 
     <!-- FAQ content sections -->
-    <section class="bg-white py-16">
+    <section
+      id="faq-content"
+      class="bg-white py-16"
+      aria-labelledby="faq-heading"
+    >
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6">
+        <!-- Hidden heading for screen readers to improve document outline -->
+        <h2 id="faq-heading" class="sr-only">
+          List of Frequently Asked Questions
+        </h2>
         <ol
           class="list-decimal space-y-12 pl-8 marker:text-2xl marker:font-semibold marker:text-gray-900"
+          role="list"
+          aria-label="Frequently asked questions"
         >
           {
-            faqs.map((faq) => (
-              <li class="border-b border-gray-200 pb-8 last:border-b-0">
-                <h2 class="mb-4 text-2xl font-semibold text-gray-900 md:text-3xl">
+            faqs.map((faq, index) => (
+              <li
+                class="border-b border-gray-200 pb-8 last:border-b-0"
+                role="listitem"
+                aria-labelledby={`faq-question-${index + 1}`}
+              >
+                <h3
+                  id={`faq-question-${index + 1}`}
+                  class="mb-4 text-2xl font-semibold text-gray-900 md:text-3xl"
+                >
                   {faq.question}
-                </h2>
-                <p class="text-base text-gray-700 md:text-lg">{faq.answer}</p>
+                </h3>
+                <p
+                  class="text-base text-gray-700 md:text-lg"
+                  id={`faq-answer-${index + 1}`}
+                  aria-describedby={`faq-question-${index + 1}`}
+                >
+                  {faq.answer}
+                </p>
               </li>
             ))
           }
