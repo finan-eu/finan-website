@@ -6,6 +6,7 @@ import PageHeader from '../components/PageHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.jpg';
+import { faqs, faqIntro } from '../data/pages/faq/faqData';
 ---
 
 <Layout title="FAQ - FiNAN">
@@ -14,7 +15,7 @@ import heroImage from '../assets/images/hero-image.jpg';
     <Navbar />
     <PageHeader
       title="Frequently Asked Questions"
-      description="Find answers to common questions about FiNAN and our services for Filipino healthcare professionals in the Nordic countries."
+      description={faqIntro}
       backgroundImage={heroImage}
       backgroundAlt="Beautiful landscape representing the Philippines"
     />
@@ -22,117 +23,23 @@ import heroImage from '../assets/images/hero-image.jpg';
     <!-- FAQ content sections -->
     <section class="bg-white py-16">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6">
-        <div class="prose prose-lg">
-          <h2 class="mb-8 text-3xl font-bold text-gray-900">
-            General Questions
-          </h2>
-
-          <div class="space-y-8">
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                What is FiNAN?
-              </h3>
-              <p class="mb-6 text-gray-700">
-                FiNAN is a network connecting Filipino healthcare professionals
-                working in the Nordic countries (Denmark, Finland, Iceland,
-                Norway, and Sweden). We provide support, resources, and
-                community for healthcare workers from the Philippines.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                Who can join FiNAN?
-              </h3>
-              <p class="mb-6 text-gray-700">
-                FiNAN is open to all Filipino healthcare professionals working
-                in the Nordic countries, including nurses, doctors, therapists,
-                healthcare assistants, and other medical professionals.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                What services does FiNAN provide?
-              </h3>
-              <p class="mb-6 text-gray-700">
-                We offer professional networking opportunities, cultural events,
-                career development resources, mentorship programs, and support
-                for healthcare professionals transitioning to Nordic healthcare
-                systems.
-              </p>
-            </div>
-          </div>
-
-          <h2 class="mt-12 mb-8 text-3xl font-bold text-gray-900">
-            Membership & Participation
-          </h2>
-
-          <div class="space-y-8">
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                How do I become a member?
-              </h3>
-              <p class="mb-6 text-gray-700">
-                Membership information and application processes are available
-                through our contact channels. Please reach out to us for
-                specific details about joining our community.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                Are there membership fees?
-              </h3>
-              <p class="mb-6 text-gray-700">
-                Please contact us directly for information about membership
-                structure and any associated fees.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                What events does FiNAN organize?
-              </h3>
-              <p class="mb-6 text-gray-700">
-                We organize professional development workshops, cultural
-                celebrations, networking events, and educational seminars across
-                the Nordic countries.
-              </p>
-            </div>
-          </div>
-
-          <h2 class="mt-12 mb-8 text-3xl font-bold text-gray-900">
-            Support & Resources
-          </h2>
-
-          <div class="space-y-8">
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                Do you provide career guidance?
-              </h3>
-              <p class="mb-6 text-gray-700">
-                Yes, we offer mentorship programs and career development
-                resources to help Filipino healthcare professionals advance in
-                their Nordic careers.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="mb-4 text-2xl font-semibold text-gray-900">
-                How can I get help with Nordic healthcare system navigation?
-              </h3>
-              <p class="text-gray-700">
-                Our experienced members provide guidance on understanding Nordic
-                healthcare systems, workplace culture, and professional
-                requirements. Connect with us to access our support network.
-              </p>
-            </div>
-          </div>
-        </div>
+        <ol
+          class="list-decimal space-y-12 pl-8 marker:text-2xl marker:font-semibold marker:text-gray-900"
+        >
+          {
+            faqs.map((faq) => (
+              <li class="border-b border-gray-200 pb-8 last:border-b-0">
+                <h2 class="mb-4 text-2xl font-semibold text-gray-900 md:text-3xl">
+                  {faq.question}
+                </h2>
+                <p class="text-base text-gray-700 md:text-lg">{faq.answer}</p>
+              </li>
+            ))
+          }
+        </ol>
       </div>
     </section>
     <CTABanner />
+    <Footer />
   </main>
-  <Footer />
 </Layout>
