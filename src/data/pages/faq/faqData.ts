@@ -3,6 +3,15 @@ export interface FAQ {
   answer: string;
 }
 
+export interface FAQSchemaItem {
+  '@type': 'Question';
+  name: string;
+  acceptedAnswer: {
+    '@type': 'Answer';
+    text: string;
+  };
+}
+
 export const faqIntro = `FiNAN is a non-profit organization that empowers Filipino nurses in the Nordic Region. Facing challenges due to the new trend of international recruitment and the lack of national strategic plans for foreign nurse integration, FiNAN actively seeks bilateral labor agreements with stakeholders in both the Philippines and Nordic countries.`;
 
 export const faqs: FAQ[] = [
@@ -43,3 +52,23 @@ export const faqs: FAQ[] = [
       "For just 20 euros a year, you're essentially spending the cost of a cup of coffee each month for ten months.",
   },
 ] as const;
+
+/**
+ * Generate FAQ Page schema markup (JSON-LD) for SEO
+ * This helps search engines display rich snippets in search results
+ * @see https://developers.google.com/search/docs/appearance/structured-data/faqpage
+ */
+export function generateFAQSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}

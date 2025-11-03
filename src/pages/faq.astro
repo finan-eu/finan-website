@@ -6,10 +6,16 @@ import PageHeader from '../components/PageHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.jpg';
-import { faqs, faqIntro } from '../data/pages/faq/faqData';
+import { faqs, faqIntro, generateFAQSchema } from '../data/pages/faq/faqData';
+
+const faqSchema = generateFAQSchema();
 ---
 
 <Layout title="FAQ - FiNAN">
+  <Fragment slot="head">
+    <!-- FAQ Schema Markup for SEO and Rich Snippets -->
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main>
     <TopBanner />
     <Navbar />

@@ -74,6 +74,9 @@ const { metadata, social, seo } = siteConfig;
 
     <!-- View Transitions -->
     <ClientRouter />
+
+    <!-- Additional head content from pages -->
+    <slot name="head" />
   </head>
   <body>
     <div id="page-content" transition:animate="fade">
