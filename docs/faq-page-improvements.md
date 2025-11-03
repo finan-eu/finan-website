@@ -12,17 +12,17 @@
 - Consider using a FAQ-specific hero image (like about.astro and membership.astro could also benefit
   from this)
 
-## 3. Enhanced Accessibility
+## ✅ 3. Enhanced Accessibility
 
 - Add ARIA labels for better screen reader support
 - Consider adding skip-to-content links for keyboard navigation
 - The `<h2>` inside `<li>` elements might cause heading hierarchy issues (jumping from h1 in PageHeader to
   h2)
 
-## 4. Interactive Features
+## ✅ 4. Interactive Features
 
-- Convert to an accordion/collapsible FAQ pattern to reduce initial page length
-- Add search/filter functionality if FAQ list grows
+- ✅ Convert to an accordion/collapsible FAQ pattern to reduce initial page length
+<!-- - Add search/filter functionality if FAQ list grows -->
 - Add anchor links to individual FAQs for easy sharing
 
 ## 5. Visual Improvements

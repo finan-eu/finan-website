@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImage from '../assets/images/hero-image.jpg';
 import { faqs, faqIntro, generateFAQSchema } from '../data/pages/faq/faqData';
 
@@ -36,44 +37,10 @@ const faqSchema = generateFAQSchema();
     <!-- FAQ content sections -->
     <section
       id="faq-content"
-      class="bg-white py-16"
+      class="bg-gray-50 py-16"
       aria-labelledby="faq-heading"
     >
-      <div class="mx-auto max-w-screen-xl px-4 sm:px-6">
-        <!-- Hidden heading for screen readers to improve document outline -->
-        <h2 id="faq-heading" class="sr-only">
-          List of Frequently Asked Questions
-        </h2>
-        <ol
-          class="list-decimal space-y-12 pl-8 marker:text-2xl marker:font-semibold marker:text-gray-900"
-          role="list"
-          aria-label="Frequently asked questions"
-        >
-          {
-            faqs.map((faq, index) => (
-              <li
-                class="border-b border-gray-200 pb-8 last:border-b-0"
-                role="listitem"
-                aria-labelledby={`faq-question-${index + 1}`}
-              >
-                <h3
-                  id={`faq-question-${index + 1}`}
-                  class="mb-4 text-2xl font-semibold text-gray-900 md:text-3xl"
-                >
-                  {faq.question}
-                </h3>
-                <p
-                  class="text-base text-gray-700 md:text-lg"
-                  id={`faq-answer-${index + 1}`}
-                  aria-describedby={`faq-question-${index + 1}`}
-                >
-                  {faq.answer}
-                </p>
-              </li>
-            ))
-          }
-        </ol>
-      </div>
+      <FAQAccordion faqs={faqs} />
     </section>
     <CTABanner />
     <Footer />
