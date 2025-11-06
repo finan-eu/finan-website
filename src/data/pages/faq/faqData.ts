@@ -1,6 +1,12 @@
+export interface RegistrationInfo {
+  organization: string;
+  registrationNumber: string;
+}
+
 export interface FAQ {
   question: string;
   answer: string;
+  registrationDetails?: RegistrationInfo[];
 }
 
 export interface FAQCategory {
@@ -30,6 +36,24 @@ export const faqCategories: FAQCategory[] = [
         question: 'Is FiNAN a registered NGO?',
         answer:
           'Yes. FiNAN is a registered non-profit organization in Finland, Denmark, and Iceland. We are currently in the process of registering it in Norway and Sweden.',
+        registrationDetails: [
+          {
+            organization: 'Patentti- ja rekisterihallitus',
+            registrationNumber: 'Y-tunnus: 3084026-2',
+          },
+          {
+            organization: 'Erhvervsstyrelsen',
+            registrationNumber: 'CVR number: 40349367',
+          },
+          {
+            organization: 'Skatteverket',
+            registrationNumber: 'Organisation number: 802537-7097',
+          },
+          {
+            organization: 'Ríkisskattstjóri',
+            registrationNumber: 'Registration number: 5208190450',
+          },
+        ],
       },
       {
         question: 'What are the affiliations of FiNAN?',

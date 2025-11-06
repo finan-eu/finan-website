@@ -48,7 +48,13 @@
       "mcp__chrome-devtools__evaluate_script",
       "mcp__chrome-devtools__wait_for",
       "mcp__chrome-devtools__take_screenshot",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(gh pr checkout:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh api:*)",
+      "mcp__astro-docs__search_astro_docs",
+      "mcp__playwright__browser_press_key"
     ],
     "deny": [],
     "ask": []
