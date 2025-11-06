@@ -54,7 +54,8 @@
       "Bash(gh pr list:*)",
       "Bash(gh api:*)",
       "mcp__astro-docs__search_astro_docs",
-      "mcp__playwright__browser_press_key"
+      "mcp__playwright__browser_press_key",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
