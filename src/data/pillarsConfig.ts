@@ -31,12 +31,12 @@ export const pillarsConfig: PillarsData = {
       'FiNAN is built on four core pillars that guide our mission and values. These pillars represent our commitment to humanity, empowerment, research, and professional development.',
     buttons: {
       primary: {
-        text: 'Learn More',
-        href: '/about',
+        text: 'Join FiNAN',
+        href: '/membership',
       },
       secondary: {
-        text: 'Join Us',
-        href: '/membership',
+        text: 'Learn More',
+        href: '/about',
       },
     },
   },
