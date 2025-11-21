@@ -23,6 +23,11 @@
     @apply text-lg;
   }
 
+  ul,
+  ol {
+    @apply text-lg;
+  }
+
   /* Mobile Viewport Height Classes */
   /* .min-h-screen-mobile {
     min-height: 100vh;
