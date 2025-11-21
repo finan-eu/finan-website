@@ -57,8 +57,8 @@ const STATIC_PAGES: Entry[] = [
     priority: 0.7,
   },
   {
-    loc: `${SITE}/contact-us`,
-    file: 'src/pages/contact-us.astro',
+    loc: `${SITE}/contact`,
+    file: 'src/pages/contact.astro',
     changefreq: 'monthly',
     priority: 0.6,
   },
