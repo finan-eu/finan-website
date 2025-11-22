@@ -2,6 +2,7 @@ export interface PillarCard {
   title: string;
   description: string;
   icon: string;
+  href: string;
 }
 
 export interface PillarsData {
@@ -46,23 +47,27 @@ export const pillarsConfig: PillarsData = {
       description:
         'Helping to achieve the Sustainable Development Goals (SDGs).',
       icon: '/icons/pillars/pillars-humanity.svg',
+      href: '#',
     },
     {
       title: 'Empowerment',
       description:
         'Giving voice to Filipino Nurses living in the Nordic Region as a minority group in the decision-making process.',
       icon: '/icons/pillars/pillars-empowerment.svg',
+      href: '#',
     },
     {
       title: 'Research',
       description:
         'Evidence-based practice shall be the basis in making decisions and implementing policies.',
       icon: '/icons/pillars/pillars-research.svg',
+      href: '#',
     },
     {
       title: 'Professional Development',
       description: 'Professional Networking and Continuing Education',
       icon: '/icons/pillars/pillars-professional-development.svg',
+      href: '#',
     },
   ],
 };
