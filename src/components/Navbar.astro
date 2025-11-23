@@ -2,8 +2,8 @@
 // Navbar.astro - Main navigation component
 ---
 
-<nav class="relative z-50 border-b border-gray-200 bg-white py-5 shadow-sm">
-  <div class="mx-auto max-w-screen-2xl px-6">
+<nav class="py-5X relative z-50 border-b border-gray-200 bg-white shadow-sm">
+  <div class="mx-auto max-w-screen-2xl px-6 py-4">
     <div class="flex h-14 items-center justify-between xl:h-20">
       <!-- Logo/Brand -->
       <div class="flex-shrink-0">
@@ -11,7 +11,7 @@
           <img
             src="/finan-logo.svg"
             alt="FiNAN Logo"
-            class="h-12 w-auto xl:h-16"
+            class="h-16 w-auto xl:h-16"
             loading="eager"
           />
         </a>
@@ -165,12 +165,12 @@
 
       <!-- Mobile CTA and menu button -->
       <div class="flex items-center space-x-3 xl:hidden">
-        <a
+        <!-- <a
           href="/membership"
           class="text-md flex h-10 items-center rounded-md bg-blue-900 px-4 font-medium text-white transition-colors hover:bg-blue-800"
         >
           Join FiNAN
-        </a>
+        </a> -->
         <button
           id="mobile-menu-button"
           type="button"
