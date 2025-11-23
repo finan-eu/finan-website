@@ -1,7 +1,5 @@
 ---
 // Navbar.astro - Main navigation component
-import { Image } from 'astro:assets';
-import finanLogo from '../assets/finan-logo.svg';
 ---
 
 <nav class="relative z-50 border-b border-gray-200 bg-white py-2 shadow-sm">
@@ -10,10 +8,10 @@ import finanLogo from '../assets/finan-logo.svg';
       <!-- Logo/Brand -->
       <div class="flex-shrink-0">
         <a href="/" class="block">
-          <Image
-            src={finanLogo}
+          <img
+            src="/finan-logo.svg"
             alt="FiNAN Logo"
-            class="h-9 w-auto xl:h-12"
+            class="h-12 w-auto xl:h-16"
             loading="eager"
           />
         </a>
