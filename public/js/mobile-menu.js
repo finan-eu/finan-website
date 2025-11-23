@@ -13,58 +13,58 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Desktop Chapters dropdown functionality
-  const chaptersButton = document.getElementById('chapters-button');
-  const chaptersMenu = document.getElementById('chapters-menu');
+  // Desktop Representation dropdown functionality
+  const representationButton = document.getElementById('representation-button');
+  const representationMenu = document.getElementById('representation-menu');
 
-  if (chaptersButton && chaptersMenu) {
-    chaptersButton.addEventListener('click', function (e) {
+  if (representationButton && representationMenu) {
+    representationButton.addEventListener('click', function (e) {
       e.stopPropagation();
       const isExpanded =
-        chaptersButton.getAttribute('aria-expanded') === 'true';
+        representationButton.getAttribute('aria-expanded') === 'true';
 
-      chaptersButton.setAttribute('aria-expanded', (!isExpanded).toString());
+      representationButton.setAttribute('aria-expanded', (!isExpanded).toString());
 
       if (isExpanded) {
-        chaptersMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-        chaptersMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+        representationMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+        representationMenu.classList.remove('opacity-100', 'visible', 'scale-100');
       } else {
-        chaptersMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
-        chaptersMenu.classList.add('opacity-100', 'visible', 'scale-100');
+        representationMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+        representationMenu.classList.add('opacity-100', 'visible', 'scale-100');
       }
     });
 
     // Close dropdown when clicking outside
     document.addEventListener('click', function () {
-      chaptersButton.setAttribute('aria-expanded', 'false');
-      chaptersMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-      chaptersMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+      representationButton.setAttribute('aria-expanded', 'false');
+      representationMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      representationMenu.classList.remove('opacity-100', 'visible', 'scale-100');
     });
   }
 
-  // Mobile Chapters dropdown functionality
-  const mobileChaptersButton = document.getElementById(
-    'mobile-chapters-button'
+  // Mobile Representation dropdown functionality
+  const mobileRepresentationButton = document.getElementById(
+    'mobile-representation-button'
   );
-  const mobileChaptersMenu = document.getElementById('mobile-chapters-menu');
-  const mobileChaptersIcon = document.getElementById('mobile-chapters-icon');
+  const mobileRepresentationMenu = document.getElementById('mobile-representation-menu');
+  const mobileRepresentationIcon = document.getElementById('mobile-representation-icon');
 
-  if (mobileChaptersButton && mobileChaptersMenu && mobileChaptersIcon) {
-    mobileChaptersButton.addEventListener('click', function () {
+  if (mobileRepresentationButton && mobileRepresentationMenu && mobileRepresentationIcon) {
+    mobileRepresentationButton.addEventListener('click', function () {
       const isExpanded =
-        mobileChaptersButton.getAttribute('aria-expanded') === 'true';
+        mobileRepresentationButton.getAttribute('aria-expanded') === 'true';
 
-      mobileChaptersButton.setAttribute(
+      mobileRepresentationButton.setAttribute(
         'aria-expanded',
         (!isExpanded).toString()
       );
-      mobileChaptersMenu.classList.toggle('hidden');
+      mobileRepresentationMenu.classList.toggle('hidden');
 
       // Rotate the chevron icon
       if (isExpanded) {
-        mobileChaptersIcon.classList.remove('rotate-180');
+        mobileRepresentationIcon.classList.remove('rotate-180');
       } else {
-        mobileChaptersIcon.classList.add('rotate-180');
+        mobileRepresentationIcon.classList.add('rotate-180');
       }
     });
   }

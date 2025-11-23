@@ -7,9 +7,9 @@ const finlandCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Aino Korhonen',
-      role: 'Chapter President',
+      role: 'Representation President',
       bio: 'Oversees partnerships with Finnish hospitals and coordinates strategic programs that empower members to thrive in bilingual care settings.',
-      imageAlt: 'Portrait of Aino Korhonen, Finland Chapter President',
+      imageAlt: 'Portrait of Aino Korhonen, Finland Representation President',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/aino-korhonen',
     },
@@ -32,7 +32,7 @@ const finlandCommittee: WorkingCommitteeConfig = {
     {
       name: 'Rafael Dela Cruz',
       role: 'Policy & Advocacy Liaison',
-      bio: 'Represents the chapter in Nordic labor forums and advocates for streamlined recognition of Filipino nursing credentials across Finland.',
+      bio: 'Represents the representation in Nordic labor forums and advocates for streamlined recognition of Filipino nursing credentials across Finland.',
       imageAlt: 'Portrait of Rafael Dela Cruz, Policy and Advocacy Liaison',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/rafael-delacruz-fi',

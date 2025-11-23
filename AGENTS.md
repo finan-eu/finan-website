@@ -2,8 +2,8 @@
 
 ## Project Structure & Module Organization
 
-- `src/` contains the Astro application. Feature UI lives in `components/` (Navbar, HeroHeader, TopBanner, CTABanner, RegistrationSection, NordicChapters, WorkingCommittee, etc.).
-- Page shells reside in `pages/` with marketing routes (`index`, `about`, `membership`, `contact-us`, `faq`, `guides-resources`) plus a `chapters/` directory for Nordic country detail pages and `sitemap.xml.ts` for sitemap generation.
+- `src/` contains the Astro application. Feature UI lives in `components/` (Navbar, HeroHeader, TopBanner, CTABanner, RegistrationSection, NordicRepresentation, WorkingCommittee, etc.).
+- Page shells reside in `pages/` with marketing routes (`index`, `about`, `membership`, `contact-us`, `faq`, `guides-resources`) plus a `representation/` directory for Nordic country detail pages and `sitemap.xml.ts` for sitemap generation.
 - Reusable data and copy are centralized in `src/data/` TypeScript modules (hero, CTA banner, statistics, registration, regional-representatives, working-committee, siteConfig). Update these configs instead of hard-coding strings inside components.
 - Global styling flows through Tailwind (imported in `src/styles/global.css`) with a small number of custom utilities. Co-locate images and SVGs under `src/assets/` when they are bundled, and place static files (flags, icons, JS enhancements like `public/js/navbar.js` and `public/js/mobile-menu.js`, robots.txt) inside `public/`.
 - Shared chrome sits in `src/layouts/Layout.astro`. Keep additional layout wrappers here.

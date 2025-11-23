@@ -65,12 +65,12 @@ const STATIC_PAGES: Entry[] = [
   // Note: exclude 404.astro from sitemap on purpose.
 ];
 
-// ----- Chapters: auto-discover from folder -----
-const CHAPTER_DIR = path.join(ROOT, 'src/pages/chapters');
-const CHAPTER_PAGES: Entry[] = (() => {
+// ----- Representation: auto-discover from folder -----
+const REPRESENTATION_DIR = path.join(ROOT, 'src/pages/representation');
+const REPRESENTATION_PAGES: Entry[] = (() => {
   let files: string[] = [];
   try {
-    files = fs.readdirSync(CHAPTER_DIR).filter((f) => f.endsWith('.astro'));
+    files = fs.readdirSync(REPRESENTATION_DIR).filter((f) => f.endsWith('.astro'));
   } catch {
     // folder might not exist in some environments
     return [];
@@ -79,15 +79,15 @@ const CHAPTER_PAGES: Entry[] = (() => {
   return files.map((filename) => {
     const slug = filename.replace(/\.astro$/, '');
     return {
-      loc: `${SITE}/chapters/${slug}`,
-      file: path.join(CHAPTER_DIR, filename),
+      loc: `${SITE}/representation/${slug}`,
+      file: path.join(REPRESENTATION_DIR, filename),
       changefreq: 'monthly',
       priority: 0.6,
     } as Entry;
   });
 })();
 
-const PAGES: Entry[] = [...STATIC_PAGES, ...CHAPTER_PAGES];
+const PAGES: Entry[] = [...STATIC_PAGES, ...REPRESENTATION_PAGES];
 
 export const GET: APIRoute = () => {
   const urls = PAGES.map(({ loc, file, changefreq, priority }) => {

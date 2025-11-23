@@ -7,9 +7,9 @@ const greenlandCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Inuuteq Kristensen',
-      role: 'Chapter President',
+      role: 'Representation President',
       bio: 'Coordinates with Greenlandic health authorities to streamline credential assessments for Filipino nurses working in Arctic environments.',
-      imageAlt: 'Portrait of Inuuteq Kristensen, Greenland Chapter President',
+      imageAlt: 'Portrait of Inuuteq Kristensen, Greenland Representation President',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/inuuteq-kristensen',
     },
