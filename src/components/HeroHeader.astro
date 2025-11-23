@@ -29,34 +29,17 @@ import { heroConfig } from '../data/heroConfig';
     class="relative z-10 mx-auto w-full max-w-screen-xl px-4 py-8 text-left text-white sm:px-6 sm:py-12 sm:text-center md:py-16"
   >
     <h1
-      class="mb-6 text-5xl font-bold leading-tight sm:mb-8 lg:text-6x"
+      class="lg:text-6x mb-6 text-5xl leading-tight font-bold sm:mb-8"
       set:html={heroConfig.title.replace(
         'Filipino Nurses in the Nordics',
         '<br /> Filipino Nurses in the Nordics'
       )}
     />
 
-    <p class="mb-8 max-w-3xl text-base sm:mx-auto sm:mb-12 sm:text-lg md:text-xl">
-      {heroConfig.description}
-    </p>
-
     <p
-      class="mb-6 max-w-3xl text-base text-gray-200 sm:mx-auto sm:mb-8 sm:text-lg md:text-xl"
+      class="mb-8 max-w-3xl text-base sm:mx-auto sm:mb-12 sm:text-lg md:text-xl"
     >
-      {heroConfig.contact.websiteText}
-      <a
-        href={heroConfig.contact.websiteUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="font-bold underline transition-colors hover:text-white"
-        >{heroConfig.contact.websiteLabel}</a
-      >
-      {heroConfig.contact.emailText}
-      <a
-        href={`mailto:${heroConfig.contact.email}`}
-        class="font-bold underline transition-colors hover:text-white"
-        >{heroConfig.contact.email}</a
-      >
+      {heroConfig.description}
     </p>
 
     <!-- Action Links -->
