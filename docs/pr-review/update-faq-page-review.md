@@ -84,7 +84,10 @@ const shouldCloseOthers = true; // Could be a prop
 
 if (!isExpanded && shouldCloseOthers) {
   toggleButtons.forEach((otherButton) => {
-    if (otherButton !== button && otherButton.getAttribute('aria-expanded') === 'true') {
+    if (
+      otherButton !== button &&
+      otherButton.getAttribute('aria-expanded') === 'true'
+    ) {
       // Close other expanded items
     }
   });
@@ -101,7 +104,7 @@ The `FAQSchemaItem` interface is defined but never used. Either use it in the `g
 export function generateFAQSchema(): {
   '@context': string;
   '@type': string;
-  mainEntity: FAQSchemaItem[]
+  mainEntity: FAQSchemaItem[];
 } {
   // ...
 }
@@ -116,7 +119,9 @@ The `opacity` transition isn't utilized. Remove it or implement it:
 ```css
 .faq-content {
   opacity: 0;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 .faq-toggle[aria-expanded='true'] + .faq-content {
@@ -135,9 +140,9 @@ export interface FAQ {
   question: string;
   answer: string;
   lastUpdated?: string; // For showing freshness
-  priority?: number;    // For sorting
-  tags?: string[];      // For future filtering
-  id?: string;          // For anchor links
+  priority?: number; // For sorting
+  tags?: string[]; // For future filtering
+  id?: string; // For anchor links
 }
 ```
 
@@ -166,7 +171,7 @@ Using `let globalFaqIndex = 0` with `++globalFaqIndex` in the template is unconv
 const allFaqs = categories.flatMap((cat, catIdx) =>
   cat.faqs.map((faq, faqIdx) => ({
     ...faq,
-    globalIndex: catIdx * 100 + faqIdx // Ensures uniqueness
+    globalIndex: catIdx * 100 + faqIdx, // Ensures uniqueness
   }))
 );
 ```
