@@ -9,7 +9,8 @@ const faroeIslandsCommittee: WorkingCommitteeConfig = {
       name: 'Elin Johannesen',
       role: 'Representation President',
       bio: 'Oversees island-wide outreach and collaborates with the national hospital to secure fair working conditions for members.',
-      imageAlt: 'Portrait of Elin Johannesen, Faroe Islands Representation President',
+      imageAlt:
+        'Portrait of Elin Johannesen, Faroe Islands Representation President',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/elin-johannesen',
     },

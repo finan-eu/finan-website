@@ -9,7 +9,8 @@ const icelandCommittee: WorkingCommitteeConfig = {
       name: 'Edda Sigurðardóttir',
       role: 'Representation President',
       bio: 'Collaborates with Icelandic nursing councils to champion recognition of Filipino qualifications and secure equitable contracts.',
-      imageAlt: 'Portrait of Edda Sigurðardóttir, Iceland Representation President',
+      imageAlt:
+        'Portrait of Edda Sigurðardóttir, Iceland Representation President',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/edda-sigurdardottir',
     },

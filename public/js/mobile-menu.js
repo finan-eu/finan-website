@@ -23,13 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
       const isExpanded =
         representationButton.getAttribute('aria-expanded') === 'true';
 
-      representationButton.setAttribute('aria-expanded', (!isExpanded).toString());
+      representationButton.setAttribute(
+        'aria-expanded',
+        (!isExpanded).toString()
+      );
 
       if (isExpanded) {
         representationMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-        representationMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+        representationMenu.classList.remove(
+          'opacity-100',
+          'visible',
+          'scale-100'
+        );
       } else {
-        representationMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+        representationMenu.classList.remove(
+          'opacity-0',
+          'invisible',
+          'scale-95'
+        );
         representationMenu.classList.add('opacity-100', 'visible', 'scale-100');
       }
     });
@@ -38,7 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', function () {
       representationButton.setAttribute('aria-expanded', 'false');
       representationMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-      representationMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+      representationMenu.classList.remove(
+        'opacity-100',
+        'visible',
+        'scale-100'
+      );
     });
   }
 
@@ -46,10 +61,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobileRepresentationButton = document.getElementById(
     'mobile-representation-button'
   );
-  const mobileRepresentationMenu = document.getElementById('mobile-representation-menu');
-  const mobileRepresentationIcon = document.getElementById('mobile-representation-icon');
+  const mobileRepresentationMenu = document.getElementById(
+    'mobile-representation-menu'
+  );
+  const mobileRepresentationIcon = document.getElementById(
+    'mobile-representation-icon'
+  );
 
-  if (mobileRepresentationButton && mobileRepresentationMenu && mobileRepresentationIcon) {
+  if (
+    mobileRepresentationButton &&
+    mobileRepresentationMenu &&
+    mobileRepresentationIcon
+  ) {
     mobileRepresentationButton.addEventListener('click', function () {
       const isExpanded =
         mobileRepresentationButton.getAttribute('aria-expanded') === 'true';

@@ -70,7 +70,9 @@ const REPRESENTATION_DIR = path.join(ROOT, 'src/pages/representation');
 const REPRESENTATION_PAGES: Entry[] = (() => {
   let files: string[] = [];
   try {
-    files = fs.readdirSync(REPRESENTATION_DIR).filter((f) => f.endsWith('.astro'));
+    files = fs
+      .readdirSync(REPRESENTATION_DIR)
+      .filter((f) => f.endsWith('.astro'));
   } catch {
     // folder might not exist in some environments
     return [];
