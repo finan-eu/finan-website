@@ -43,8 +43,8 @@ src/
 │   ├── registrationSectionConfig.ts
 │   └── statisticsConfig.ts
 ├── layouts/         # Page layout templates
-├── pages/           # File-based routing (8 pages + 7 chapter pages)
-│   ├── chapters/    # Individual Nordic country pages
+├── pages/           # File-based routing (8 pages + 7 representation pages)
+│   ├── representation/    # Individual Nordic country pages
 │   ├── index.astro
 │   ├── about.astro
 │   ├── membership.astro
@@ -70,7 +70,7 @@ public/
 - **HeroHeader.astro** - Landing page hero section
 - **Navbar.astro** - Main navigation with responsive design
 - **Footer.astro** - Site footer with links and information
-- **NordicChapters.astro** - Display all Nordic country chapters
+- **NordicRepresentation.astro** - Display all Nordic country representation
 - **WorkingCommittee.astro** - Display committee members by country
 - **RegionalRepresentatives.astro** - Regional contact information
 - **Statistics.astro** - Display organization statistics
@@ -83,7 +83,7 @@ public/
 
 ### Pages
 
-- **index.astro** - Home page with hero, statistics, chapters overview
+- **index.astro** - Home page with hero, statistics, representation overview
 - **about.astro** - Organization information, mission, working committee
 - **membership.astro** - Membership benefits and registration
 - **faq.astro** - Frequently asked questions
@@ -91,7 +91,7 @@ public/
 - **contact-us.astro** - Contact information and form
 - **sitemap.xml.ts** - Dynamic XML sitemap generation
 - **404.astro** - Custom 404 error page
-- **chapters/\*.astro** - Individual pages for 7 Nordic countries/regions
+- **representation/\*.astro** - Individual pages for 7 Nordic countries/regions
 
 ## Configuration Files
 

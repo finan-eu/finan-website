@@ -7,9 +7,9 @@ const norwayCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Ingrid Nilsen',
-      role: 'Chapter President',
+      role: 'Representation President',
       bio: 'Represents members in national health dialogues and drives strategic collaborations with Norwegian municipalities.',
-      imageAlt: 'Portrait of Ingrid Nilsen, Norway Chapter President',
+      imageAlt: 'Portrait of Ingrid Nilsen, Norway Representation President',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/ingrid-nilsen-no',
     },

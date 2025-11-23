@@ -7,9 +7,9 @@ const swedenCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Linnea Andersson',
-      role: 'Chapter President',
+      role: 'Representation President',
       bio: 'Leads advocacy efforts with Socialstyrelsen and coordinates national programs that elevate Filipino nurse leadership.',
-      imageAlt: 'Portrait of Linnea Andersson, Sweden Chapter President',
+      imageAlt: 'Portrait of Linnea Andersson, Sweden Representation President',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/linnea-andersson-se',
     },

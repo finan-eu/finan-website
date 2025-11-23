@@ -7,9 +7,9 @@ const denmarkCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Sofie Jensen',
-      role: 'Chapter President',
+      role: 'Representation President',
       bio: 'Coordinates strategic partnerships with Danish healthcare trusts and ensures Filipino nurses are represented in policy discussions.',
-      imageAlt: 'Portrait of Sofie Jensen, Denmark Chapter President',
+      imageAlt: 'Portrait of Sofie Jensen, Denmark Representation President',
       imageSrc: '/images/image_thumbnail.svg',
       linkedinUrl: 'https://www.linkedin.com/in/sofie-jensen-dk',
     },
