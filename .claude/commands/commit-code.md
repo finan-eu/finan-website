@@ -20,7 +20,7 @@
 ## 3. Commit Execution
 
 1. Display the complete, generated commit message for review.
-2. Execute the commit immediately without requiring user confirmation.
+2. Wait for the user to approve before finalizing the commit.
 
 ## 4. Commit Structure Guidance
 

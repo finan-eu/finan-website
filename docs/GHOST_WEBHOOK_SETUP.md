@@ -30,9 +30,11 @@ When you publish or update a post on Ghost, it will automatically trigger a rebu
 
 5. **Copy the Webhook URL**
    - After saving, you'll see a webhook URL like:
+
    ```
    https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
    ```
+
    - **Copy this URL** - you'll need it in the next step
    - ⚠️ **Important**: Keep this URL secure - anyone with this URL can trigger deployments
 
@@ -132,12 +134,14 @@ When you publish or update a post on Ghost, it will automatically trigger a rebu
 ### Webhook Not Firing
 
 **Check Ghost Webhook Status:**
+
 1. In Ghost Admin → Settings → Integrations
 2. Click on your custom integration
 3. In the Webhooks section, you'll see a status for each webhook
 4. If there are errors, they'll be listed there
 
 **Common Issues:**
+
 - ❌ **Invalid URL**: Double-check the Cloudflare deploy hook URL
 - ❌ **Network issues**: Ensure Ghost can reach Cloudflare (no firewall blocking)
 - ❌ **Wrong event type**: Verify you selected the correct event (e.g., "Post published")
@@ -145,6 +149,7 @@ When you publish or update a post on Ghost, it will automatically trigger a rebu
 ### Deployment Triggered But Fails
 
 **Check Cloudflare Pages Build Logs:**
+
 1. Go to Cloudflare Pages → Your Project → Deployments
 2. Click on the failed deployment
 3. Review the build logs for errors
@@ -156,6 +161,7 @@ When you publish or update a post on Ghost, it will automatically trigger a rebu
 ### Deployment Takes Too Long
 
 **Build Time Optimization:**
+
 - Cloudflare Pages free tier: 500 builds/month, 1 concurrent build
 - Builds typically take 1-3 minutes for Astro sites
 - If builds are slow, check:
@@ -166,6 +172,7 @@ When you publish or update a post on Ghost, it will automatically trigger a rebu
 ### Content Not Updating
 
 **Cache Issues:**
+
 1. **Hard refresh** your browser: `Ctrl+F5` (Windows) or `Cmd+Shift+R` (Mac)
 2. **Check Cloudflare Cache**:
    - Go to your domain in Cloudflare
@@ -198,6 +205,7 @@ Ghost webhooks don't include authentication by default. If you need secure webho
 ### Check Webhook Health
 
 **Monthly Review:**
+
 1. Visit Ghost Admin → Settings → Integrations
 2. Check your custom integration
 3. Review webhook status and delivery history
@@ -206,11 +214,13 @@ Ghost webhooks don't include authentication by default. If you need secure webho
 ### Monitor Build Quota
 
 **Cloudflare Pages Free Tier:**
+
 - 500 builds/month
 - ~16 builds/day average
 - Monitor usage in Cloudflare dashboard
 
 **If You Hit Limits:**
+
 - Reduce webhook events (e.g., only use "Post published", not "Post updated")
 - Upgrade to Cloudflare Pages Pro ($20/month, 5000 builds)
 - Batch content updates to reduce builds
@@ -229,24 +239,27 @@ If you want to rebuild only for specific posts or tags:
    - Only trigger deploy hook for specific conditions
 
 2. **Example: Only rebuild for published posts with "important" tag**
+
    ```javascript
    // Cloudflare Worker example (requires custom setup)
-   addEventListener('fetch', event => {
-     event.respondWith(handleRequest(event.request))
-   })
+   addEventListener('fetch', (event) => {
+     event.respondWith(handleRequest(event.request));
+   });
 
    async function handleRequest(request) {
-     const payload = await request.json()
+     const payload = await request.json();
 
      // Check if post has "important" tag
-     const hasImportantTag = payload.post?.tags?.some(tag => tag.slug === 'important')
+     const hasImportantTag = payload.post?.tags?.some(
+       (tag) => tag.slug === 'important'
+     );
 
      if (hasImportantTag) {
        // Trigger Cloudflare Pages deploy hook
-       await fetch('YOUR_DEPLOY_HOOK_URL', { method: 'POST' })
+       await fetch('YOUR_DEPLOY_HOOK_URL', { method: 'POST' });
      }
 
-     return new Response('OK', { status: 200 })
+     return new Response('OK', { status: 200 });
    }
    ```
 
@@ -261,6 +274,7 @@ You've successfully set up:
 ✅ **Auto-deployment pipeline** - New/updated posts automatically appear on your site
 
 **Expected Workflow:**
+
 1. You publish/update a post in Ghost →
 2. Ghost sends webhook to Cloudflare →
 3. Cloudflare builds your site →
