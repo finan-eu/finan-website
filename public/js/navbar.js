@@ -40,72 +40,93 @@ function initializeNavbar() {
     });
   }
 
-  // Desktop Chapters dropdown functionality
-  const chaptersButton = document.getElementById('chapters-button');
-  const chaptersMenu = document.getElementById('chapters-menu');
+  // Desktop Representation dropdown functionality
+  const representationButton = document.getElementById('representation-button');
+  const representationMenu = document.getElementById('representation-menu');
 
-  if (chaptersButton && chaptersMenu) {
+  if (representationButton && representationMenu) {
     // Remove any existing listeners
-    const newChaptersButton = chaptersButton.cloneNode(true);
-    chaptersButton.parentNode.replaceChild(newChaptersButton, chaptersButton);
+    const newRepresentationButton = representationButton.cloneNode(true);
+    representationButton.parentNode.replaceChild(
+      newRepresentationButton,
+      representationButton
+    );
 
-    newChaptersButton.addEventListener('click', function (e) {
+    newRepresentationButton.addEventListener('click', function (e) {
       e.stopPropagation();
       const isExpanded =
-        newChaptersButton.getAttribute('aria-expanded') === 'true';
+        newRepresentationButton.getAttribute('aria-expanded') === 'true';
 
-      newChaptersButton.setAttribute('aria-expanded', (!isExpanded).toString());
+      newRepresentationButton.setAttribute(
+        'aria-expanded',
+        (!isExpanded).toString()
+      );
 
       if (isExpanded) {
-        chaptersMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-        chaptersMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+        representationMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+        representationMenu.classList.remove(
+          'opacity-100',
+          'visible',
+          'scale-100'
+        );
       } else {
-        chaptersMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
-        chaptersMenu.classList.add('opacity-100', 'visible', 'scale-100');
+        representationMenu.classList.remove(
+          'opacity-0',
+          'invisible',
+          'scale-95'
+        );
+        representationMenu.classList.add('opacity-100', 'visible', 'scale-100');
       }
     });
 
     // Close dropdown when clicking outside
     document.addEventListener('click', function () {
-      newChaptersButton.setAttribute('aria-expanded', 'false');
-      chaptersMenu.classList.add('opacity-0', 'invisible', 'scale-95');
-      chaptersMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+      newRepresentationButton.setAttribute('aria-expanded', 'false');
+      representationMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      representationMenu.classList.remove(
+        'opacity-100',
+        'visible',
+        'scale-100'
+      );
     });
   }
 
-  // Mobile Chapters dropdown functionality
-  const mobileChaptersButton = document.getElementById(
-    'mobile-chapters-button'
+  // Mobile Representation dropdown functionality
+  const mobileRepresentationButton = document.getElementById(
+    'mobile-representation-button'
   );
-  const mobileChaptersMenu = document.getElementById('mobile-chapters-menu');
+  const mobileRepresentationMenu = document.getElementById(
+    'mobile-representation-menu'
+  );
 
-  if (mobileChaptersButton && mobileChaptersMenu) {
+  if (mobileRepresentationButton && mobileRepresentationMenu) {
     // Remove any existing listeners
-    const newMobileChaptersButton = mobileChaptersButton.cloneNode(true);
-    mobileChaptersButton.parentNode.replaceChild(
-      newMobileChaptersButton,
-      mobileChaptersButton
+    const newMobileRepresentationButton =
+      mobileRepresentationButton.cloneNode(true);
+    mobileRepresentationButton.parentNode.replaceChild(
+      newMobileRepresentationButton,
+      mobileRepresentationButton
     );
 
-    newMobileChaptersButton.addEventListener('click', function () {
+    newMobileRepresentationButton.addEventListener('click', function () {
       const isExpanded =
-        newMobileChaptersButton.getAttribute('aria-expanded') === 'true';
-      const mobileChaptersIcon = document.getElementById(
-        'mobile-chapters-icon'
+        newMobileRepresentationButton.getAttribute('aria-expanded') === 'true';
+      const mobileRepresentationIcon = document.getElementById(
+        'mobile-representation-icon'
       );
 
-      newMobileChaptersButton.setAttribute(
+      newMobileRepresentationButton.setAttribute(
         'aria-expanded',
         (!isExpanded).toString()
       );
-      mobileChaptersMenu.classList.toggle('hidden');
+      mobileRepresentationMenu.classList.toggle('hidden');
 
       // Rotate the chevron icon
-      if (mobileChaptersIcon) {
+      if (mobileRepresentationIcon) {
         if (isExpanded) {
-          mobileChaptersIcon.classList.remove('rotate-180');
+          mobileRepresentationIcon.classList.remove('rotate-180');
         } else {
-          mobileChaptersIcon.classList.add('rotate-180');
+          mobileRepresentationIcon.classList.add('rotate-180');
         }
       }
     });
