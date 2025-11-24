@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { siteConfig } from '../data/siteConfig';
 import { ClientRouter } from 'astro:transitions';
+import { cspString } from '../../security.config.js';
 
 const { metadata, social, seo } = siteConfig;
 ---
@@ -59,10 +60,7 @@ const { metadata, social, seo } = siteConfig;
     >
 
     <!-- Security Headers -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.ghost.io https://*.ghost.org https://*.ghostcdn.com https://*.cloudfront.net https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self';"
-    />
+    <meta http-equiv="Content-Security-Policy" content={cspString} />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta
       http-equiv="Referrer-Policy"

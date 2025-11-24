@@ -2,6 +2,9 @@
 // Blog.astro - News & Events section showcasing FiNAN's latest updates
 import { getBlogPosts } from '../lib/ghost';
 
+// Constants
+const EXCERPT_MAX_LENGTH = 200;
+
 // Fetch latest 6 blog posts from Ghost CMS
 const posts = await getBlogPosts(6);
 
@@ -22,10 +25,10 @@ function getPrimaryTag(post: any) {
   return post.tags && post.tags.length > 0 ? post.tags[0].name : 'News';
 }
 
-// Helper function to truncate excerpt to 200 characters
+// Helper function to truncate excerpt
 function truncateExcerpt(
   text: string | null | undefined,
-  maxLength: number = 200
+  maxLength: number = EXCERPT_MAX_LENGTH
 ) {
   if (!text || text.length <= maxLength) {
     return text || '';
@@ -49,45 +52,57 @@ function truncateExcerpt(
       </p>
     </div>
 
-    <!-- Blog Grid -->
-    <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {
-        posts.map((post) => (
-          <article class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg">
-            <a
-              href={post.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block"
-            >
-              <div class="aspect-[3/2] bg-gray-200">
-                <img
-                  src={post.feature_image || '/images/image_thumbnail.svg'}
-                  alt={post.title}
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div class="p-6">
-                <div class="mb-3 flex items-center gap-2">
-                  <span class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900">
-                    {getPrimaryTag(post)}
-                  </span>
-                  <span class="text-sm text-gray-600">
-                    {formatDate(post.published_at)}
-                  </span>
+    <!-- Blog Grid or Empty State -->
+    {
+      posts.length > 0 ? (
+        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <article class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg">
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <div class="aspect-[3/2] bg-gray-200">
+                  <img
+                    src={post.feature_image || '/images/image_thumbnail.svg'}
+                    alt={post.title}
+                    class="h-full w-full object-cover"
+                  />
                 </div>
-                <h3 class="mb-3 text-xl font-bold text-gray-900">
-                  {post.title}
-                </h3>
-                <p class="leading-relaxed text-gray-700">
-                  {truncateExcerpt(post.excerpt)}
-                </p>
-              </div>
-            </a>
-          </article>
-        ))
-      }
-    </div>
+                <div class="p-6">
+                  <div class="mb-3 flex items-center gap-2">
+                    <span class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900">
+                      {getPrimaryTag(post)}
+                    </span>
+                    <span class="text-sm text-gray-600">
+                      {formatDate(post.published_at)}
+                    </span>
+                  </div>
+                  <h3 class="mb-3 text-xl font-bold text-gray-900">
+                    {post.title}
+                    <span class="sr-only">(opens in new tab)</span>
+                  </h3>
+                  <p class="leading-relaxed text-gray-700">
+                    {truncateExcerpt(post.excerpt)}
+                  </p>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="mb-12 text-center">
+          <div class="mx-auto max-w-2xl rounded-lg border border-gray-200 bg-white p-12">
+            <p class="text-lg text-gray-600">
+              No news or events are currently available. Check back soon for
+              updates!
+            </p>
+          </div>
+        </div>
+      )
+    }
 
     <!-- View All Button -->
     <div class="text-center">
@@ -98,6 +113,7 @@ function truncateExcerpt(
         class="inline-flex items-center rounded-lg border-2 border-blue-900 px-8 py-3 font-medium text-blue-900 transition-all duration-300 hover:bg-blue-900 hover:text-white"
       >
         View All News & Events
+        <span class="sr-only">(opens in new tab)</span>
       </a>
     </div>
   </div>
