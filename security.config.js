@@ -20,9 +20,17 @@ export const securityHeaders = {
 
 export const contentSecurityPolicy = {
   'default-src': ["'self'"],
-  'style-src': ["'self'", "'unsafe-inline'"], // Tailwind requires unsafe-inline
-  'img-src': ["'self'", 'data:'],
-  'font-src': ["'self'"],
+  'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'], // Tailwind requires unsafe-inline
+  'img-src': [
+    "'self'",
+    'data:',
+    'https://*.ghost.io',
+    'https://*.ghost.org',
+    'https://*.ghostcdn.com',
+    'https://*.cloudfront.net',
+    'https://images.unsplash.com',
+  ],
+  'font-src': ["'self'", 'https://fonts.gstatic.com'],
   'script-src': ["'self'"],
   'connect-src': ["'self'"],
   'frame-ancestors': ["'none'"],

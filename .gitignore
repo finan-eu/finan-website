@@ -10,7 +10,8 @@ node_modules/.vite/
 .netlify/
 
 # --- Environment files ---
-.env*
+.env
+.env.*
 !.env.example
 
 # --- Logs ---
