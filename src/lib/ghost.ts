@@ -5,12 +5,33 @@
 
 import { TSGhostContentAPI } from '@ts-ghost/content-api';
 
-// Initialize Ghost Content API client
-export const ghostAPI = new TSGhostContentAPI(
-  import.meta.env.GHOST_URL || '',
-  import.meta.env.GHOST_CONTENT_API_KEY || '',
-  'v5.0'
-);
+// Lazy initialization of Ghost Content API client
+let ghostAPI: TSGhostContentAPI | null = null;
+
+function getGhostAPI(): TSGhostContentAPI | null {
+  if (ghostAPI) {
+    return ghostAPI;
+  }
+
+  const ghostUrl = import.meta.env.GHOST_URL;
+  const ghostApiKey = import.meta.env.GHOST_CONTENT_API_KEY;
+
+  // Return null if environment variables are not configured
+  if (!ghostUrl || !ghostApiKey) {
+    console.warn(
+      'Ghost CMS environment variables not configured. Blog posts will not be available.'
+    );
+    return null;
+  }
+
+  try {
+    ghostAPI = new TSGhostContentAPI(ghostUrl, ghostApiKey, 'v5.0');
+    return ghostAPI;
+  } catch (error) {
+    console.error('Failed to initialize Ghost API client:', error);
+    return null;
+  }
+}
 
 /**
  * Fetch blog posts from Ghost CMS
@@ -18,8 +39,13 @@ export const ghostAPI = new TSGhostContentAPI(
  * @returns Array of blog posts with selected fields
  */
 export async function getBlogPosts(limit = 10) {
+  const api = getGhostAPI();
+  if (!api) {
+    return [];
+  }
+
   try {
-    const response = await ghostAPI.posts
+    const response = await api.posts
       .browse({
         limit,
         order: 'published_at DESC',
@@ -48,8 +74,13 @@ export async function getBlogPosts(limit = 10) {
  * @returns Single blog post or null if not found
  */
 export async function getPostBySlug(slug: string) {
+  const api = getGhostAPI();
+  if (!api) {
+    return null;
+  }
+
   try {
-    const response = await ghostAPI.posts
+    const response = await api.posts
       .read({ slug })
       .include({
         authors: true,
@@ -74,8 +105,13 @@ export async function getPostBySlug(slug: string) {
  * @returns Array of post slugs
  */
 export async function getAllPostSlugs() {
+  const api = getGhostAPI();
+  if (!api) {
+    return [];
+  }
+
   try {
-    const response = await ghostAPI.posts
+    const response = await api.posts
       .browse({
         limit: 'all',
       })
