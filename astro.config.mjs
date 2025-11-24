@@ -1,7 +1,27 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
+import { cspString, securityHeaders as headers } from './security.config.js';
+
+// Custom Vite plugin to set security headers
+function securityHeaders() {
+  return {
+    name: 'security-headers',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        // Set CSP from centralized config
+        res.setHeader('Content-Security-Policy', cspString);
+
+        // Set other security headers from centralized config
+        Object.entries(headers).forEach(([header, value]) => {
+          res.setHeader(header, value);
+        });
+
+        next();
+      });
+    },
+  };
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +32,7 @@ export default defineConfig({
     checkOrigin: true,
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), securityHeaders()],
     build: {
       cssCodeSplit: true,
       rollupOptions: {
@@ -21,17 +41,6 @@ export default defineConfig({
             vendor: ['astro'],
           },
         },
-      },
-    },
-    server: {
-      headers: {
-        'Content-Security-Policy':
-          "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';",
-        'X-Frame-Options': 'DENY',
-        'X-Content-Type-Options': 'nosniff',
-        'Referrer-Policy': 'strict-origin-when-cross-origin',
-        'Permissions-Policy':
-          'camera=(), microphone=(), geolocation=(), payment=()',
       },
     },
   },

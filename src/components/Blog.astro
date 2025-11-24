@@ -1,5 +1,40 @@
 ---
 // Blog.astro - News & Events section showcasing FiNAN's latest updates
+import { getBlogPosts } from '../lib/ghost';
+
+// Constants
+const EXCERPT_MAX_LENGTH = 200;
+
+// Fetch latest 6 blog posts from Ghost CMS
+const posts = await getBlogPosts(6);
+
+// Helper function to format date
+function formatDate(dateString: string | null | undefined) {
+  if (!dateString) {
+    return 'Date unavailable';
+  }
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// Helper function to get primary tag
+function getPrimaryTag(post: any) {
+  return post.tags && post.tags.length > 0 ? post.tags[0].name : 'News';
+}
+
+// Helper function to truncate excerpt
+function truncateExcerpt(
+  text: string | null | undefined,
+  maxLength: number = EXCERPT_MAX_LENGTH
+) {
+  if (!text || text.length <= maxLength) {
+    return text || '';
+  }
+  return text.slice(0, maxLength).trim() + '...';
+}
 ---
 
 <!-- News & Events Section -->
@@ -17,298 +52,68 @@
       </p>
     </div>
 
-    <!-- Blog Grid -->
-    <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Blog Post 1 -->
-      <article
-        class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
-      >
-        <div class="aspect-[3/2] bg-gray-200">
-          <img
-            src="/images/image_thumbnail.svg"
-            alt="International Nursing Conference 2025 in Switzerland"
-            class="h-full w-full object-cover"
-          />
+    <!-- Blog Grid or Empty State -->
+    {
+      posts.length > 0 ? (
+        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <article class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg">
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <div class="aspect-[3/2] bg-gray-200">
+                  <img
+                    src={post.feature_image || '/images/image_thumbnail.svg'}
+                    alt={post.title}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="mb-3 flex items-center gap-2">
+                    <span class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900">
+                      {getPrimaryTag(post)}
+                    </span>
+                    <span class="text-sm text-gray-600">
+                      {formatDate(post.published_at)}
+                    </span>
+                  </div>
+                  <h3 class="mb-3 text-xl font-bold text-gray-900">
+                    {post.title}
+                    <span class="sr-only">(opens in new tab)</span>
+                  </h3>
+                  <p class="leading-relaxed text-gray-700">
+                    {truncateExcerpt(post.excerpt)}
+                  </p>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
-        <div class="p-6">
-          <div class="mb-3 flex items-center gap-2">
-            <span
-              class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900"
-              >Event</span
-            >
-            <span class="text-sm text-gray-600">April 1, 2025</span>
+      ) : (
+        <div class="mb-12 text-center">
+          <div class="mx-auto max-w-2xl rounded-lg border border-gray-200 bg-white p-12">
+            <p class="text-lg text-gray-600">
+              No news or events are currently available. Check back soon for
+              updates!
+            </p>
           </div>
-          <h3 class="mb-3 text-xl font-bold text-gray-900">
-            International Nursing Conference 2025 in Switzerland
-          </h3>
-          <p class="mb-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center font-medium text-gray-900 transition-colors hover:text-gray-700"
-          >
-            Learn More
-            <svg
-              class="ml-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
         </div>
-      </article>
-
-      <!-- Blog Post 2 -->
-      <article
-        class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
-      >
-        <div class="aspect-[3/2] bg-gray-200">
-          <img
-            src="/images/image_thumbnail.svg"
-            alt="Policy Update: RN License Recognition in Sweden"
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="p-6">
-          <div class="mb-3 flex items-center gap-2">
-            <span
-              class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900"
-              >News</span
-            >
-            <span class="text-sm text-gray-600">April 1, 2025</span>
-          </div>
-          <h3 class="mb-3 text-xl font-bold text-gray-900">
-            Policy Update: RN License Recognition in Sweden
-          </h3>
-          <p class="mb-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center font-medium text-gray-900 transition-colors hover:text-gray-700"
-          >
-            Learn More
-            <svg
-              class="ml-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Blog Post 3 -->
-      <article
-        class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
-      >
-        <div class="aspect-[3/2] bg-gray-200">
-          <img
-            src="/images/image_thumbnail.svg"
-            alt="FiNAN Cultural Integration Workshop"
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="p-6">
-          <div class="mb-3 flex items-center gap-2">
-            <span
-              class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900"
-              >Event</span
-            >
-            <span class="text-sm text-gray-600">April 1, 2025</span>
-          </div>
-          <h3 class="mb-3 text-xl font-bold text-gray-900">
-            FiNAN Cultural Integration Workshop
-          </h3>
-          <p class="mb-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center font-medium text-gray-900 transition-colors hover:text-gray-700"
-          >
-            Learn More
-            <svg
-              class="ml-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Blog Post 4 -->
-      <article
-        class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
-      >
-        <div class="aspect-[3/2] bg-gray-200">
-          <img
-            src="/images/image_thumbnail.svg"
-            alt="FiNAN Partners with Nordic University"
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="p-6">
-          <div class="mb-3 flex items-center gap-2">
-            <span
-              class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900"
-              >News</span
-            >
-            <span class="text-sm text-gray-600">April 1, 2025</span>
-          </div>
-          <h3 class="mb-3 text-xl font-bold text-gray-900">
-            FiNAN Partners with Nordic University
-          </h3>
-          <p class="mb-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center font-medium text-gray-900 transition-colors hover:text-gray-700"
-          >
-            Learn More
-            <svg
-              class="ml-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Blog Post 5 -->
-      <article
-        class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
-      >
-        <div class="aspect-[3/2] bg-gray-200">
-          <img
-            src="/images/image_thumbnail.svg"
-            alt="Trade Union Membership Info Session"
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="p-6">
-          <div class="mb-3 flex items-center gap-2">
-            <span
-              class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900"
-              >Event</span
-            >
-            <span class="text-sm text-gray-600">April 1, 2025</span>
-          </div>
-          <h3 class="mb-3 text-xl font-bold text-gray-900">
-            Trade Union Membership Info Session
-          </h3>
-          <p class="mb-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center font-medium text-gray-900 transition-colors hover:text-gray-700"
-          >
-            Learn More
-            <svg
-              class="ml-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Blog Post 6 -->
-      <article
-        class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
-      >
-        <div class="aspect-[3/2] bg-gray-200">
-          <img
-            src="/images/image_thumbnail.svg"
-            alt="Humanitarian Fundraising Milestone Reached"
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="p-6">
-          <div class="mb-3 flex items-center gap-2">
-            <span
-              class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900"
-              >News</span
-            >
-            <span class="text-sm text-gray-600">April 1, 2025</span>
-          </div>
-          <h3 class="mb-3 text-xl font-bold text-gray-900">
-            Humanitarian Fundraising Milestone Reached
-          </h3>
-          <p class="mb-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center font-medium text-gray-900 transition-colors hover:text-gray-700"
-          >
-            Learn More
-            <svg
-              class="ml-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-    </div>
+      )
+    }
 
     <!-- View All Button -->
     <div class="text-center">
       <a
-        href="#"
+        href="https://puls.finan.eu.com/"
+        target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center rounded-lg border-2 border-blue-900 px-8 py-3 font-medium text-blue-900 transition-all duration-300 hover:bg-blue-900 hover:text-white"
       >
         View All News & Events
+        <span class="sr-only">(opens in new tab)</span>
       </a>
     </div>
   </div>
