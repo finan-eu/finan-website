@@ -1,41 +1,49 @@
 import type { WorkingCommitteeConfig } from './types';
+import floroCubeloImage from '../../assets/images/working-committee/finland/floro-cubelo.jpg';
+import ryannDelosoImage from '../../assets/images/working-committee/finland/ryann-deloso.jpg';
+import jeannyMaeBantingTuominenImage from '../../assets/images/working-committee/finland/jeanny-mae-banting-tuominen.jpg';
+import marieLagundiImage from '../../assets/images/working-committee/finland/marie-lagundi.jpg';
 
 const finlandCommittee: WorkingCommitteeConfig = {
-  heading: 'Committee',
+  heading: 'Working Committee',
   description:
     "Leading initiatives that guide Filipino nurses through Finland's licensing process, community integration, and continuing education opportunities.",
   members: [
     {
-      name: 'Aino Korhonen',
-      role: 'Representation President',
-      bio: 'Oversees partnerships with Finnish hospitals and coordinates strategic programs that empower members to thrive in bilingual care settings.',
-      imageAlt: 'Portrait of Aino Korhonen, Finland Representation President',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/aino-korhonen',
+      name: 'Floro Cubelo',
+      affiliations: 'TtT, Sh, CGNC, FFNMRCSI, FETNA',
+      role: 'Puheenjohtaja',
+      bio: 'Akuuttihoitotyö, hoitotiede, kansanterveystiede, hoitotyön koulutus, kansainvälisten sairaanhoitajien integroitomis-ja pätevöitymiskoulutus.',
+      imageAlt: 'Portrait of Floro Cubelo',
+      imageSrc: floroCubeloImage,
+      linkedinUrl: '',
     },
     {
-      name: 'Miguel Santos',
-      role: 'Professional Development Lead',
-      bio: 'Designs continuing-education roadmaps that align with Valvira requirements and supports nurses preparing for language proficiency exams.',
-      imageAlt: 'Portrait of Miguel Santos, Professional Development Lead',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/miguel-santos-fi',
+      name: 'Ryann Deloso',
+      affiliations: 'SAMK, Sh',
+      role: 'Edustaja, Uusimaa',
+      bio: 'Hoitotyön yrittäjys, akuuttiosasto, hanke osaaja.',
+      imageAlt: 'Portrait of Ryann Deloso',
+      imageSrc: ryannDelosoImage,
+      linkedinUrl: 'https://www.linkedin.com/in/ryann-deloso/',
     },
     {
-      name: 'Kristiina Laine',
-      role: 'Community Engagement Officer',
-      bio: 'Hosts peer mentorship circles across Helsinki, Tampere, and Oulu to ensure every member has social and cultural integration support.',
-      imageAlt: 'Portrait of Kristiina Laine, Community Engagement Officer',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/kristiina-laine',
+      name: 'Jeanny Mae Banting Tuominen',
+      affiliations: 'YAMK, Sh',
+      role: 'Edustaja, Uusimaa',
+      bio: 'Dialyysi ja perioperatiivinen hoitotyö.',
+      imageAlt: 'Portrait of Jeanny Mae Banting Tuominen',
+      imageSrc: jeannyMaeBantingTuominenImage,
+      linkedinUrl: '',
     },
     {
-      name: 'Rafael Dela Cruz',
-      role: 'Policy & Advocacy Liaison',
-      bio: 'Represents the representation in Nordic labor forums and advocates for streamlined recognition of Filipino nursing credentials across Finland.',
-      imageAlt: 'Portrait of Rafael Dela Cruz, Policy and Advocacy Liaison',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/rafael-delacruz-fi',
+      name: 'Marie Lagundi',
+      affiliations: 'Sh',
+      role: 'Edustaja, Pohjois-Suomi',
+      bio: 'Hoitotyön yrittäjys, akuuttiosasto, hanke osaaja.',
+      imageAlt: 'Portrait of Marie Lagundi',
+      imageSrc: marieLagundiImage,
+      linkedinUrl: '',
     },
   ],
 } as const;
