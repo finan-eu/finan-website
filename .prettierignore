@@ -1,0 +1,8 @@
+# Exclude markdown files
+*.md
+
+# Keep other common ignore patterns
+node_modules/
+dist/
+.astro/
+package-lock.json

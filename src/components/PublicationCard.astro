@@ -1,0 +1,61 @@
+---
+import type { Publication } from '../data/representation-publication';
+
+interface Props {
+  publications: Publication[];
+}
+
+const { publications } = Astro.props;
+---
+
+<div class="mt-8 space-y-6">
+  {
+    publications.map((publication) => (
+      <div class="flex items-start gap-6 rounded-lg border border-gray-300 p-6">
+        <div class="flex-shrink-0">
+          <img src="/icons/icon-docs.svg" alt="Document" class="h-12 w-12" />
+        </div>
+
+        <div class="flex-1">
+          <p class="mb-2 text-lg font-bold text-gray-900">
+            {publication.title}
+          </p>
+          <p class="mb-3 text-base text-gray-700">{publication.journal}</p>
+          <div class="space-y-1 text-sm text-gray-600">
+            {publication.doi && (
+              <p>
+                <strong>DOI:</strong>{' '}
+                <a
+                  href={`https://doi.org/${publication.doi}`}
+                  class="text-blue-800 hover:text-blue-900 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {publication.doi}
+                </a>
+              </p>
+            )}
+            {publication.urn && (
+              <p>
+                <strong>URN:</strong>{' '}
+                <a
+                  href={`https://urn.fi/${publication.urn}`}
+                  class="text-blue-800 hover:text-blue-900 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {publication.urn}
+                </a>
+              </p>
+            )}
+            {publication.isbn && (
+              <p>
+                <strong>ISBN:</strong> {publication.isbn}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

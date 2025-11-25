@@ -1,9 +1,12 @@
+import type { ImageMetadata } from 'astro';
+
 export interface WorkingCommitteeMember {
   readonly name: string;
+  readonly affiliations?: string;
   readonly role: string;
   readonly bio: string;
   readonly imageAlt: string;
-  readonly imageSrc?: string;
+  readonly imageSrc?: string | ImageMetadata;
   readonly linkedinUrl?: string;
 }
 

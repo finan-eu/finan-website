@@ -5,6 +5,9 @@ export default [
   ...eslintPluginAstro.configs.recommended,
   eslintConfigPrettier,
   {
+    ignores: ['**/*.md'],
+  },
+  {
     rules: {
       // Add custom rules here if needed
     },
