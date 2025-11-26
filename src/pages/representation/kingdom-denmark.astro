@@ -1,0 +1,247 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBanner from '../../components/TopBanner.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Footer from '../../components/Footer.astro';
+import heroImage from '../../assets/images/representation/denmark/denmark-banner.webp';
+import WorkingCommittee from '../../components/WorkingCommittee.astro';
+import PublicationCard from '../../components/PublicationCard.astro';
+import { finlandPublications } from '../../data/representation-publication';
+---
+
+<Layout title="Kingdom of Denmark - FiNAN">
+  <main>
+    <TopBanner />
+    <Navbar />
+    <PageHeader
+      title="Kingdom of Denmark"
+      description="Welcome to the Regional Representation Site of the Filipino Nurses Association in the Nordic Region – Kingdom of Denmark (FiNAN Denmark)"
+      contactEmail="denmark@finan.eu.com"
+      backgroundImage={heroImage}
+      backgroundAlt="Copenhagen, Denmark"
+    />
+
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <!-- FiNAN Denmark -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          FiNAN Denmark
+        </h2>
+
+        <p class="mb-10 text-lg text-gray-700">
+          Since 2018, FiNAN Denmark has served as the voice of Filipino
+          Internationally Educated Nurses (FIENs) in Denmark. We advocate for
+          ethical recruitment, recognition of qualifications and credentialing
+          pathways, career advancement, and policy influence. Our work is
+          grounded in research and international standards, including the WHO
+          Global Code of Practice on the International Recruitment of Health
+          Personnel.
+        </p>
+
+        <!-- Our Commitment -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Our Commitment
+        </h2>
+        <p class="mb-10 text-lg text-gray-700">
+          FiNAN Denmark is dedicated to creating a fair, inclusive, and
+          sustainable environment for Filipino nurses. We believe that migration
+          should be ethical, transparent, and mutually beneficial—for nurses,
+          employers, and the healthcare system.
+        </p>
+
+        <!-- Key Focus Areas -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Key Focus Areas
+        </h2>
+
+        <!-- 1. Ethical Recruitment -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          1. Ethical Recruitment
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          We champion recruitment practices that uphold human rights,
+          professional dignity, and sustainability. Evidence from Cubelo's
+          doctoral research highlights the importance of structured migration
+          models that prevent exploitation and ensure long-term retention of
+          nurses in the Nordic region.
+        </p>
+
+        <!-- 2. Recognition and Credentialing -->
+
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          2. Recognition and Credentialing
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          Navigating the Danish qualification system can be challenging for
+          internationally educated nurses. FiNAN Denmark works with different
+          stakeholders to simplify and clarify credentialing pathways,
+          advocating for transparent processes and bridging programs that align
+          with EU standards.
+        </p>
+
+        <!-- 3. Career Advancement -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          3. Career Advancement
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          We support Filipino nurses in achieving professional growth through
+          continuing education, specialization opportunities, and leadership
+          development. Research shows that career progression improves retention
+          and enhances healthcare quality.
+        </p>
+
+        <!-- 4. Policy Engagement -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          4. Policy Engagement
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          FiNAN Denmark actively participates in policy dialogues to influence
+          reforms that promote integration, workforce sustainability, and mutual
+          recognition agreements across Nordic countries.
+        </p>
+      </div>
+    </section>
+
+    <WorkingCommittee country="denmark" />
+
+    <!-- Partnership -->
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <!-- FiNAN Denmark -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Partnership
+        </h2>
+
+        <!-- OAMK Partnership -->
+        <div
+          class="mt-8 flex flex-col items-center gap-8 md:flex-row md:items-start"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src="/assets/partners/oamk-logo.png"
+              alt="Oulu University of Applied Sciences"
+              class="h-auto w-60"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1">
+            <p class="pb-4 text-lg text-gray-700">
+              Study Nursing in Northern Finland at <strong
+                >Oulu University of Applied Sciences</strong
+              >! The application period is from January 5-25, 2026.
+            </p>
+            <p class="pb-4 text-lg text-gray-700">
+              The Head of the Degree Programme is a Filipino!
+            </p>
+            <p class="text-lg text-gray-700">
+              <a
+                href="https://opintopolku.fi/konfo/en/toteutus/1.2.246.562.17.00000000000000001744"
+                class="text-blue-800 underline hover:text-blue-900"
+                >Learn more about the OAMK nursing program</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <!-- Arcada Partnership -->
+        <div
+          class="mt-12 flex flex-col items-center gap-8 md:flex-row md:items-start"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src="/assets/partners/arcada-logo.png"
+              alt="Arcada University of Applied Sciences"
+              class="h-auto w-60"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1">
+            <p class="pb-4 text-lg text-gray-700">
+              The Arcada University of Applied Sciences and the Filipino Nurses
+              Association in the Nordic Region signed a Memorandum of Agreement
+              to address the needs and challenges of Internationally Educated
+              Nurses through nursing education.
+            </p>
+            <p class="text-lg text-gray-700">
+              The main aim of the collaboration is to enhance the nursing skills
+              of internationally educated nurses (IENs) that will adhere to the
+              Finnish standards under European Union Directive 55.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evidence-Based Sources -->
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Evidence-Based Sources
+        </h2>
+
+        <PublicationCard publications={finlandPublications.publications} />
+      </div>
+    </section>
+
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <!-- Why Our Work Matters -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Why Our Work Matters
+        </h2>
+
+        <p class="mb-10 text-lg text-gray-700">
+          Denmark faces a <strong>critical nursing shortage</strong>, with
+          projections indicating that <strong
+            >10% of the health workforce by 2030 will come from abroad</strong
+          >. Ethical recruitment and structured integration are essential to
+          address this challenge while safeguarding nurses' rights and
+          well-being.
+        </p>
+
+        <!-- Join Us -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Join Us
+        </h2>
+
+        <p class="mb-10 text-lg text-gray-700">
+          Be part of a community of excellence that values professional
+          integrity, evidence-based practice, and collaborative growth.
+          Together, we can build pathways that empower Filipino nurses and
+          strengthen Denmark's healthcare system.
+        </p>
+      </div>
+    </section>
+
+    <CTABanner />
+    <Footer />
+  </main>
+</Layout>
