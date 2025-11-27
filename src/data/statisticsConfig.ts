@@ -31,7 +31,7 @@ export const statisticsConfig: StatisticsData = {
       "From building a strong professional community to guiding nurses through licensing and integration, FiNAN's work is reflected in the numbers. These stats highlight our reach, impact, and dedication to our members.",
     buttons: {
       primary: {
-        text: 'Join FiNAN',
+        text: 'Be a Member',
         href: 'https://filnan.com/membership-form',
       },
       secondary: {
