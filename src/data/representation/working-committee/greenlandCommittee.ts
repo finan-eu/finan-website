@@ -1,9 +1,6 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const greenlandCommittee: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    'Ensuring nurses stationed in Nuuk, Ilulissat, and remote clinics receive consistent professional support, cultural orientation, and advocacy.',
   members: [
     {
       name: 'Inuuteq Kristensen',

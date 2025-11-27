@@ -1,9 +1,6 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const swedenCommittee: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    'Championing pathways for Filipino nurses to obtain Swedish licensure, pursue specialization, and build vibrant local communities.',
   members: [
     {
       name: 'Linnea Andersson',

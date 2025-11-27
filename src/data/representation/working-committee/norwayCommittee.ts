@@ -1,9 +1,6 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const norwayCommittee: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    'Delivering nationwide support for authorization, language proficiency, and union engagement for Filipino nurses across Norway.',
   members: [
     {
       name: 'Ingrid Nilsen',

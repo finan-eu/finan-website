@@ -1,9 +1,6 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const icelandCommittee: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    'Guiding members through professional registration in Iceland while cultivating strong community bonds across Reykjavik and beyond.',
   members: [
     {
       name: 'Edda Sigurðardóttir',

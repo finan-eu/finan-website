@@ -5,9 +5,6 @@ import jeannyMaeBantingTuominenImage from '../../../assets/images/working-commit
 import marieLagundiImage from '../../../assets/images/working-committee/finland/marie-lagundi.jpg';
 
 const finlandCommittee: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    "Leading initiatives that guide Filipino nurses through Finland's licensing process, community integration, and continuing education opportunities.",
   members: [
     {
       name: 'Floro Cubelo',

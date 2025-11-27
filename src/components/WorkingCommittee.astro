@@ -9,12 +9,10 @@ import {
 
 interface WorkingCommitteeProps extends Partial<WorkingCommitteeConfig> {
   country?: WorkingCommitteeCountry;
+  heading?: string;
 }
 
 const fallbackConfig: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
   members: [
     {
       name: 'Full name',
@@ -26,14 +24,14 @@ const fallbackConfig: WorkingCommitteeConfig = {
   ] satisfies ReadonlyArray<WorkingCommitteeMember>,
 };
 
+const defaultHeading = 'Working Committee';
+
 const props = Astro.props as WorkingCommitteeProps;
 const baseConfig = props.country
   ? workingCommitteeConfigs[props.country]
   : undefined;
 
-const heading = props.heading ?? baseConfig?.heading ?? fallbackConfig.heading;
-const description =
-  props.description ?? baseConfig?.description ?? fallbackConfig.description;
+const heading = props.heading ?? defaultHeading;
 const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
 ---
 
@@ -45,9 +43,6 @@ const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
       >
         {heading}
       </h2>
-      <p class="mt-4 text-lg leading-relaxed text-gray-600">
-        {description}
-      </p>
     </header>
 
     <div class="mt-12 flex flex-wrap gap-10">

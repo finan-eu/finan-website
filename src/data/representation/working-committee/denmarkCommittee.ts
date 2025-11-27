@@ -1,9 +1,6 @@
 import type { WorkingCommitteeConfig } from './types';
 
 const denmarkCommittee: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    'Supporting members across Copenhagen, Aarhus, and Odense with credential validation, community outreach, and Danish language immersion.',
   members: [
     {
       name: 'Sofie Jensen',
