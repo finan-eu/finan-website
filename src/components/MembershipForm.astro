@@ -1,0 +1,442 @@
+---
+// MembershipForm.astro - Membership application form component
+---
+
+<div class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+  <form class="space-y-8">
+    <!-- Name Fields -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div>
+        <!-- First Name -->
+        <label
+          for="firstName"
+          class="block text-base font-semibold text-gray-900"
+        >
+          First name<span class="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <!-- Last Name -->
+        <label
+          for="lastName"
+          class="block text-base font-semibold text-gray-900"
+        >
+          Last name<span class="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          required
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div>
+        <label for="email" class="block text-base font-semibold text-gray-900">
+          Email<span class="text-red-600">*</span>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- Country of Residence -->
+    <fieldset>
+      <legend class="block text-base font-semibold text-gray-900">
+        Country of Residence<span class="text-red-600">*</span>
+      </legend>
+      <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="residence-denmark"
+            name="countryOfResidence"
+            value="Denmark"
+            required
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="residence-denmark" class="ml-3 text-base text-gray-900">
+            Denmark
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="residence-iceland"
+            name="countryOfResidence"
+            value="Iceland"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="residence-iceland" class="ml-3 text-base text-gray-900">
+            Iceland
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="residence-faroe"
+            name="countryOfResidence"
+            value="Faroe Islands"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="residence-faroe" class="ml-3 text-base text-gray-900">
+            Faroe Islands
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="residence-norway"
+            name="countryOfResidence"
+            value="Norway"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="residence-norway" class="ml-3 text-base text-gray-900">
+            Norway
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="residence-finland"
+            name="countryOfResidence"
+            value="Finland"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="residence-finland" class="ml-3 text-base text-gray-900">
+            Finland
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="residence-sweden"
+            name="countryOfResidence"
+            value="Sweden"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="residence-sweden" class="ml-3 text-base text-gray-900">
+            Sweden
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="residence-greenland"
+            name="countryOfResidence"
+            value="Greenland"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="residence-greenland" class="ml-3 text-base text-gray-900">
+            Greenland
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Registered Nurse in Philippines -->
+    <fieldset class="md:max-w-xl">
+      <legend class="block text-base font-semibold text-gray-900">
+        Are you a Registered Nurse in the Philippines? All Filipinos who studied
+        and graduated nursing in the Nordic Region are also welcome.<span
+          class="text-red-600">*</span
+        >
+      </legend>
+      <div class="mt-4 space-y-4">
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="registered-yes"
+            name="registeredNursePhilippines"
+            value="Yes"
+            required
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="registered-yes" class="ml-3 text-base text-gray-900">
+            Yes
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="registered-no"
+            name="registeredNursePhilippines"
+            value="No"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="registered-no" class="ml-3 text-base text-gray-900">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Philippines License Number -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div>
+        <label
+          for="philippinesLicenseNumber"
+          class="block text-base font-semibold text-gray-900"
+        >
+          Philippine License Number <span class="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="philippinesLicenseNumber"
+          name="philippinesLicenseNumber"
+          required
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- Current Nursing Status -->
+    <fieldset>
+      <legend class="block text-base font-semibold text-gray-900">
+        What is your current nursing status in the Nordic region?<span
+          class="text-red-600">*</span
+        >
+      </legend>
+      <div class="mt-4 space-y-4">
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="status-registered"
+            name="nursingStatus"
+            value="Registered Nurse"
+            required
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="status-registered" class="ml-3 text-base text-gray-900">
+            Registered Nurse
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="status-licensed"
+            name="nursingStatus"
+            value="Licensed Practical Nurse"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="status-licensed" class="ml-3 text-base text-gray-900">
+            Licensed Practical Nurse
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="status-assistant"
+            name="nursingStatus"
+            value="Nursing Assistant"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="status-assistant" class="ml-3 text-base text-gray-900">
+            Nursing Assistant
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="status-studying"
+            name="nursingStatus"
+            value="Studying/Training"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="status-studying" class="ml-3 text-base text-gray-900">
+            Studying/Training
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Nordic Country Working In -->
+    <fieldset>
+      <legend class="block text-base font-semibold text-gray-900">
+        Which Nordic Country? <span class="text-red-600">*</span>
+      </legend>
+      <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="nordic-denmark"
+            name="nordicCountry"
+            value="Denmark"
+            required
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="nordic-denmark" class="ml-3 text-base text-gray-900">
+            Denmark
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="nordic-iceland"
+            name="nordicCountry"
+            value="Iceland"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="nordic-iceland" class="ml-3 text-base text-gray-900">
+            Iceland
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="nordic-faroe"
+            name="nordicCountry"
+            value="Faroe Islands"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="nordic-faroe" class="ml-3 text-base text-gray-900">
+            Faroe Islands
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="nordic-norway"
+            name="nordicCountry"
+            value="Norway"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="nordic-norway" class="ml-3 text-base text-gray-900">
+            Norway
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="nordic-finland"
+            name="nordicCountry"
+            value="Finland"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="nordic-finland" class="ml-3 text-base text-gray-900">
+            Finland
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="nordic-sweden"
+            name="nordicCountry"
+            value="Sweden"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="nordic-sweden" class="ml-3 text-base text-gray-900">
+            Sweden
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="nordic-greenland"
+            name="nordicCountry"
+            value="Greenland"
+            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+          />
+          <label for="nordic-greenland" class="ml-3 text-base text-gray-900">
+            Greenland
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Nordic License Number -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div>
+        <label
+          for="nordicLicenseNumber"
+          class="block text-base font-semibold text-gray-900"
+        >
+          License Number (If ongoing, type 000000 and update the membership
+          director later) <span class="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="nordicLicenseNumber"
+          name="nordicLicenseNumber"
+          required
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- Terms & Agreement -->
+    <div class="border-t border-gray-200 pt-8">
+      <fieldset>
+        <legend class="block text-base font-semibold text-gray-900">
+          Terms & Agreement<span class="text-red-600">*</span>
+        </legend>
+        <div class="space-y-4 pt-4">
+          <div class="flex items-start">
+            <input
+              type="checkbox"
+              id="dataAgreement"
+              name="dataAgreement"
+              required
+              class="mt-1 h-8 w-8 rounded border-gray-900 text-gray-900 focus:ring-gray-900"
+            />
+            <label for="dataAgreement" class="ml-3 text-base text-gray-900">
+              I am aware that my information will be stored in the FiNAN's data
+              storage and shall only be used for data collection. All
+              information gathered are protected under EU Directive.
+            </label>
+          </div>
+
+          <p class="text-base text-gray-900">
+            By submitting this form, you agree to the <a
+              href="#"
+              class="underline hover:text-gray-700">Terms and Privacy Policy</a
+            > of FiNAN
+          </p>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+      <button
+        type="submit"
+        class="cursor-pointer rounded-none bg-gray-900 px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:outline-none"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

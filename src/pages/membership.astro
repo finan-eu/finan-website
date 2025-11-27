@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
 import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.jpg';
+import MembershipForm from '../components/MembershipForm.astro';
 ---
 
 <Layout title="Membership - FiNAN">
@@ -72,6 +73,15 @@ import heroImage from '../assets/images/hero-image.jpg';
           </p>
         </div>
       </div>
+    </section>
+
+    <section id="membership-form" class="bg-gray-50 py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+          Membership Application
+        </h2>
+      </div>
+      <MembershipForm />
     </section>
   </main>
   <Footer />
