@@ -7,10 +7,6 @@ import CTABanner from '../../components/CTABanner.astro';
 import Footer from '../../components/Footer.astro';
 import heroImage from '../../assets/images/representation/denmark/denmark-banner.webp';
 import WorkingCommittee from '../../components/WorkingCommittee.astro';
-import PublicationCard from '../../components/PublicationCard.astro';
-import Partnership from '../../components/Partnership.astro';
-import { finlandPublications } from '../../data/representation/publication';
-import { kingdomDenmarkPartners } from '../../data/representation/partnership/kingdomDenmarkPartnership';
 ---
 
 <Layout title="Kingdom of Denmark - FiNAN">
@@ -128,21 +124,6 @@ import { kingdomDenmarkPartners } from '../../data/representation/partnership/ki
     </section>
 
     <WorkingCommittee country="denmark" heading="Working Committee" />
-
-    <Partnership partners={kingdomDenmarkPartners} />
-
-    <!-- Evidence-Based Sources -->
-    <section class="bg-white pb-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Evidence-Based Sources
-        </h2>
-
-        <PublicationCard publications={finlandPublications.publications} />
-      </div>
-    </section>
 
     <section class="bg-white pb-16">
       <div class="mx-auto max-w-4xl px-4 sm:px-6">
