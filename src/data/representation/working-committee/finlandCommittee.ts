@@ -1,13 +1,10 @@
 import type { WorkingCommitteeConfig } from './types';
-import floroCubeloImage from '../../assets/images/working-committee/finland/floro-cubelo.jpg';
-import ryannDelosoImage from '../../assets/images/working-committee/finland/ryann-deloso.jpg';
-import jeannyMaeBantingTuominenImage from '../../assets/images/working-committee/finland/jeanny-mae-banting-tuominen.jpg';
-import marieLagundiImage from '../../assets/images/working-committee/finland/marie-lagundi.jpg';
+import floroCubeloImage from '../../../assets/images/working-committee/finland/floro-cubelo.jpg';
+import ryannDelosoImage from '../../../assets/images/working-committee/finland/ryann-deloso.jpg';
+import jeannyMaeBantingTuominenImage from '../../../assets/images/working-committee/finland/jeanny-mae-banting-tuominen.jpg';
+import marieLagundiImage from '../../../assets/images/working-committee/finland/marie-lagundi.jpg';
 
 const finlandCommittee: WorkingCommitteeConfig = {
-  heading: 'Working Committee',
-  description:
-    "Leading initiatives that guide Filipino nurses through Finland's licensing process, community integration, and continuing education opportunities.",
   members: [
     {
       name: 'Floro Cubelo',
