@@ -1,4 +1,4 @@
-import type { Partner } from '../../../components/Partnership.astro';
+import type { Partner } from './types';
 
 export const kingdomDenmarkPartners: Partner[] = [
   {

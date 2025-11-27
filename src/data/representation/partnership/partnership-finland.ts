@@ -1,6 +1,6 @@
-import type { Partner } from '../components/Partnership.astro';
+import type { Partner } from './types';
 
-export const denmarkPartners: Partner[] = [
+export const finlandPartners: Partner[] = [
   {
     logo: '/assets/partners/oamk-logo.png',
     alt: 'Oulu University of Applied Sciences',

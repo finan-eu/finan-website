@@ -8,7 +8,9 @@ import Footer from '../../components/Footer.astro';
 import heroImage from '../../assets/images/representation/finland/finland-banner.webp';
 import WorkingCommittee from '../../components/WorkingCommittee.astro';
 import PublicationCard from '../../components/PublicationCard.astro';
+import Partnership from '../../components/Partnership.astro';
 import { finlandPublications } from '../../data/representation/publication';
+import { finlandPartners } from '../../data/representation/partnership/partnership-finland';
 ---
 
 <Layout title="Finland - FiNAN">
@@ -120,79 +122,7 @@ import { finlandPublications } from '../../data/representation/publication';
 
     <WorkingCommittee country="finland" heading="Working Committee" />
 
-    <!-- Partnership -->
-    <section class="bg-white pb-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <!-- FiNAN Finland -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Partnership
-        </h2>
-
-        <!-- OAMK Partnership -->
-        <div
-          class="mt-8 flex flex-col items-center gap-8 md:flex-row md:items-start"
-        >
-          <!-- Logo -->
-          <div class="flex-shrink-0">
-            <img
-              src="/assets/partners/oamk-logo.png"
-              alt="Oulu University of Applied Sciences"
-              class="h-auto w-60"
-            />
-          </div>
-
-          <!-- Content -->
-          <div class="flex-1">
-            <p class="pb-4 text-lg text-gray-700">
-              Study Nursing in Northern Finland at <strong
-                >Oulu University of Applied Sciences</strong
-              >! The application period is from January 5-25, 2026.
-            </p>
-            <p class="pb-4 text-lg text-gray-700">
-              The Head of the Degree Programme is a Filipino!
-            </p>
-            <p class="text-lg text-gray-700">
-              <a
-                href="https://opintopolku.fi/konfo/en/toteutus/1.2.246.562.17.00000000000000001744"
-                class="text-blue-800 underline hover:text-blue-900"
-                >Learn more about the OAMK nursing program</a
-              >.
-            </p>
-          </div>
-        </div>
-
-        <!-- Arcada Partnership -->
-        <div
-          class="mt-12 flex flex-col items-center gap-8 md:flex-row md:items-start"
-        >
-          <!-- Logo -->
-          <div class="flex-shrink-0">
-            <img
-              src="/assets/partners/arcada-logo.png"
-              alt="Arcada University of Applied Sciences"
-              class="h-auto w-60"
-            />
-          </div>
-
-          <!-- Content -->
-          <div class="flex-1">
-            <p class="pb-4 text-lg text-gray-700">
-              The Arcada University of Applied Sciences and the Filipino Nurses
-              Association in the Nordic Region signed a Memorandum of Agreement
-              to address the needs and challenges of Internationally Educated
-              Nurses through nursing education.
-            </p>
-            <p class="text-lg text-gray-700">
-              The main aim of the collaboration is to enhance the nursing skills
-              of internationally educated nurses (IENs) that will adhere to the
-              Finnish standards under European Union Directive 55.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Partnership partners={finlandPartners} />
 
     <!-- Evidence-Based Sources -->
     <section class="bg-white pb-16">
