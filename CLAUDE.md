@@ -35,8 +35,9 @@ src/
 ├── assets/          # Static assets optimized by Astro
 ├── components/      # Reusable Astro components (14 components)
 ├── data/            # TypeScript data files and configurations
-│   ├── working-committee/     # Committee member data by country
-│   ├── regional-representatives/ # Regional rep data
+│   ├── representation/        # Regional representation data
+│   │   ├── working-committee/ # Committee member data by country
+│   │   └── partnership/       # Partnership data
 │   ├── siteConfig.ts          # Site metadata and SEO config
 │   ├── ctaBannerConfig.ts     # CTA banner configuration
 │   ├── heroConfig.ts          # Hero section configuration
