@@ -10,7 +10,7 @@ import WorkingCommittee from '../../components/WorkingCommittee.astro';
 import PublicationCard from '../../components/PublicationCard.astro';
 import Partnership from '../../components/Partnership.astro';
 import { finlandPublications } from '../../data/representation-publication';
-import { denmarkPartners } from '../../data/representation/partnership/partnership';
+import { kingdomDenmarkPartners } from '../../data/representation/partnership/partnership-kingdom-denmark';
 ---
 
 <Layout title="Kingdom of Denmark - FiNAN">
@@ -129,7 +129,7 @@ import { denmarkPartners } from '../../data/representation/partnership/partnersh
 
     <WorkingCommittee country="denmark" />
 
-    <Partnership partners={denmarkPartners} />
+    <Partnership partners={kingdomDenmarkPartners} />
 
     <!-- Evidence-Based Sources -->
     <section class="bg-white pb-16">
