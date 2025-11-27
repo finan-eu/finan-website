@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBanner from '../../components/TopBanner.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Footer from '../../components/Footer.astro';
+import heroImage from '../../assets/images/representation/denmark/denmark-banner.webp';
+import WorkingCommittee from '../../components/WorkingCommittee.astro';
+import PublicationCard from '../../components/PublicationCard.astro';
+import Partnership from '../../components/Partnership.astro';
+import { finlandPublications } from '../../data/representation-publication';
+import { denmarkPartners } from '../../data/regional-representation/partnership/partnership';
+---
+
+<Layout title="Kingdom of Denmark - FiNAN">
+  <main>
+    <TopBanner />
+    <Navbar />
+    <PageHeader
+      title="Kingdom of Denmark, Faroe Islands and Greenland"
+      description="Welcome to the Regional Representation Site of the Filipino Nurses Association in the Nordic Region – Kingdom of Denmark (FiNAN Denmark)"
+      contactEmail="denmark@finan.eu.com"
+      backgroundImage={heroImage}
+      backgroundAlt="Copenhagen, Denmark"
+    />
+
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <!-- Velkommen! Mabuhay! -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Velkommen! Mabuhay!
+        </h2>
+
+        <p class="mb-10 text-lg text-gray-700">
+          Our regional representation was established to support Filipino nurses
+          living and working in Denmark, Greenland, and the Faroe Islands. Since
+          2018, we have been committed to addressing the unique challenges faced
+          by internationally educated nurses (IENs) in these regions. Greenland
+          and the Faroe Islands joined our network in 2020, strengthening our
+          collective voice and advocacy.
+        </p>
+
+        <!-- Who We Are -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Who We Are
+        </h2>
+        <p class="mb-10 text-lg text-gray-700">
+          We are a registered non-profit organization under the umbrella of the
+          Filipino Nurses Association in the Nordic Region (FiNAN). Our chapter
+          represents Filipino nurses across clinical practice, nursing
+          management, and academia. We work collaboratively to ensure fair
+          integration, professional development, and ethical recruitment
+          practices in line with the <strong
+            >WHO Global Code of Practice on the International Recruitment of
+            Health Personnel</strong
+          >.
+        </p>
+
+        <!-- What We Do -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          What We Do
+        </h2>
+
+        <!-- Integration Support -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          Integration Support
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          We assist Filipino nurses in navigating local healthcare systems,
+          language requirements, and cultural adaptation.
+        </p>
+
+        <!-- Professional Development -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          Professional Development
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          Through seminars, mentorship, and continuing education, we help nurses
+          maintain evidence-based competencies, including infection control,
+          ageing care, and leadership.
+        </p>
+
+        <!-- Advocacy -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          Advocacy
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          We engage with policymakers and healthcare institutions to improve
+          working conditions and uphold nurses' rights.
+        </p>
+
+        <!-- Road Back to Nursing Campaign -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          Road Back to Nursing Campaign
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          For nurses in Denmark, Greenland, and the Faroe Islands who are not
+          currently registered, we provide guidance and resources to regain
+          professional status.
+        </p>
+
+        <!-- Community Engagement -->
+        <h3
+          class="pb-4 text-xl font-bold tracking-tight text-gray-900 md:text-2xl"
+        >
+          Community Engagement
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          We organize events and forums to foster solidarity and share best
+          practices among Filipino nurses in the Nordic region.
+        </p>
+      </div>
+    </section>
+
+    <WorkingCommittee country="denmark" />
+
+    <Partnership partners={denmarkPartners} />
+
+    <!-- Evidence-Based Sources -->
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Evidence-Based Sources
+        </h2>
+
+        <PublicationCard publications={finlandPublications.publications} />
+      </div>
+    </section>
+
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <!-- Why Our Work Matters -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Why Our Work Matters
+        </h2>
+
+        <p class="mb-10 text-lg text-gray-700">
+          Filipino nurses play a vital role in strengthening healthcare systems
+          in Denmark, Greenland, and the Faroe Islands. Evidence shows that
+          internationally educated nurses contribute significantly to addressing
+          workforce shortages, improving patient outcomes, and promoting
+          cultural competence in care delivery. Our efforts ensure that
+          migration pathways are ethical, sustainable, and beneficial for both
+          nurses and host countries.
+        </p>
+
+        <!-- Join Us -->
+        <h2
+          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Join Us
+        </h2>
+
+        <p class="mb-10 text-lg text-gray-700">
+          Be part of a growing network that empowers Filipino nurses across the
+          Nordic region. Membership provides access to resources, advocacy
+          initiatives, and opportunities for professional growth. Together, we
+          build bridges—not barriers.
+        </p>
+      </div>
+    </section>
+
+    <CTABanner />
+    <Footer />
+  </main>
+</Layout>

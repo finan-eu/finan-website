@@ -1,0 +1,56 @@
+---
+export interface Partner {
+  logo: string;
+  alt: string;
+  content: string[];
+}
+
+interface Props {
+  partners: Partner[];
+}
+
+const { partners } = Astro.props;
+---
+
+<section class="bg-white pb-16">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6">
+    <h2
+      class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+    >
+      Partnership
+    </h2>
+
+    {
+      partners.map((partner, index) => (
+        <div
+          class:list={[
+            'flex flex-col items-center gap-8 md:flex-row md:items-start',
+            index > 0 ? 'mt-12' : 'mt-8',
+          ]}
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src={partner.logo}
+              alt={partner.alt}
+              class="h-auto w-60"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1">
+            {partner.content.map((paragraph, pIndex) => (
+              <p
+                class:list={[
+                  'text-lg text-gray-700',
+                  pIndex < partner.content.length - 1 ? 'pb-4' : '',
+                ]}
+                set:html={paragraph}
+              />
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

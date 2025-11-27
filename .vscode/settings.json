@@ -22,5 +22,6 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.markdownlint": "explicit"
     }
-  }
+  },
+  "kiroAgent.configureMCP": "Enabled"
 }

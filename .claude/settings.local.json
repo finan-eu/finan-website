@@ -56,7 +56,8 @@
       "mcp__astro-docs__search_astro_docs",
       "mcp__playwright__browser_press_key",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []
