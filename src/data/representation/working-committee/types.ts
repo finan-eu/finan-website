@@ -11,7 +11,5 @@ export interface WorkingCommitteeMember {
 }
 
 export interface WorkingCommitteeConfig {
-  readonly heading: string;
-  readonly description: string;
   readonly members: ReadonlyArray<WorkingCommitteeMember>;
 }
