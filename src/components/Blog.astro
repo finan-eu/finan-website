@@ -57,13 +57,13 @@ function truncateExcerpt(
       posts.length > 0 ? (
         <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <article class="overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg">
-              <a
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block"
-              >
+            <a
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
+            >
+              <article>
                 <div class="aspect-[3/2] bg-gray-200">
                   <img
                     src={post.feature_image || '/images/image_thumbnail.svg'}
@@ -76,7 +76,7 @@ function truncateExcerpt(
                     <span class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900">
                       {getPrimaryTag(post)}
                     </span>
-                    <span class="text-sm whitespace-nowrap text-gray-600">
+                    <span class="whitespace-nowrap text-sm text-gray-600">
                       {formatDate(post.published_at)}
                     </span>
                   </div>
@@ -88,8 +88,8 @@ function truncateExcerpt(
                     {truncateExcerpt(post.excerpt)}
                   </p>
                 </div>
-              </a>
-            </article>
+              </article>
+            </a>
           ))}
         </div>
       ) : (
