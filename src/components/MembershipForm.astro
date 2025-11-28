@@ -19,7 +19,7 @@
           id="firstName"
           name="firstName"
           required
-          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
       </div>
 
@@ -36,7 +36,7 @@
           id="lastName"
           name="lastName"
           required
-          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
       </div>
     </div>
@@ -52,7 +52,7 @@
           id="email"
           name="email"
           required
-          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
       </div>
     </div>
@@ -70,7 +70,7 @@
             name="countryOfResidence"
             value="Denmark"
             required
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="residence-denmark" class="ml-3 text-base text-gray-900">
             Denmark
@@ -83,7 +83,7 @@
             id="residence-iceland"
             name="countryOfResidence"
             value="Iceland"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="residence-iceland" class="ml-3 text-base text-gray-900">
             Iceland
@@ -96,7 +96,7 @@
             id="residence-faroe"
             name="countryOfResidence"
             value="Faroe Islands"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="residence-faroe" class="ml-3 text-base text-gray-900">
             Faroe Islands
@@ -109,7 +109,7 @@
             id="residence-norway"
             name="countryOfResidence"
             value="Norway"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="residence-norway" class="ml-3 text-base text-gray-900">
             Norway
@@ -122,7 +122,7 @@
             id="residence-finland"
             name="countryOfResidence"
             value="Finland"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="residence-finland" class="ml-3 text-base text-gray-900">
             Finland
@@ -135,7 +135,7 @@
             id="residence-sweden"
             name="countryOfResidence"
             value="Sweden"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="residence-sweden" class="ml-3 text-base text-gray-900">
             Sweden
@@ -148,7 +148,7 @@
             id="residence-greenland"
             name="countryOfResidence"
             value="Greenland"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="residence-greenland" class="ml-3 text-base text-gray-900">
             Greenland
@@ -173,7 +173,7 @@
             name="registeredNursePhilippines"
             value="Yes"
             required
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="registered-yes" class="ml-3 text-base text-gray-900">
             Yes
@@ -186,7 +186,7 @@
             id="registered-no"
             name="registeredNursePhilippines"
             value="No"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="registered-no" class="ml-3 text-base text-gray-900">
             No
@@ -196,7 +196,10 @@
     </fieldset>
 
     <!-- Philippines License Number -->
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div
+      id="philippinesLicenseField"
+      class="hidden grid-cols-1 gap-6 md:grid-cols-2"
+    >
       <div>
         <label
           for="philippinesLicenseNumber"
@@ -208,8 +211,7 @@
           type="text"
           id="philippinesLicenseNumber"
           name="philippinesLicenseNumber"
-          required
-          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
       </div>
     </div>
@@ -229,7 +231,7 @@
             name="nursingStatus"
             value="Registered Nurse"
             required
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="status-registered" class="ml-3 text-base text-gray-900">
             Registered Nurse
@@ -242,7 +244,7 @@
             id="status-licensed"
             name="nursingStatus"
             value="Licensed Practical Nurse"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="status-licensed" class="ml-3 text-base text-gray-900">
             Licensed Practical Nurse
@@ -255,7 +257,7 @@
             id="status-assistant"
             name="nursingStatus"
             value="Nursing Assistant"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="status-assistant" class="ml-3 text-base text-gray-900">
             Nursing Assistant
@@ -268,7 +270,7 @@
             id="status-studying"
             name="nursingStatus"
             value="Studying/Training"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="status-studying" class="ml-3 text-base text-gray-900">
             Studying/Training
@@ -290,7 +292,7 @@
             name="nordicCountry"
             value="Denmark"
             required
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="nordic-denmark" class="ml-3 text-base text-gray-900">
             Denmark
@@ -303,7 +305,7 @@
             id="nordic-iceland"
             name="nordicCountry"
             value="Iceland"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="nordic-iceland" class="ml-3 text-base text-gray-900">
             Iceland
@@ -316,7 +318,7 @@
             id="nordic-faroe"
             name="nordicCountry"
             value="Faroe Islands"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="nordic-faroe" class="ml-3 text-base text-gray-900">
             Faroe Islands
@@ -329,7 +331,7 @@
             id="nordic-norway"
             name="nordicCountry"
             value="Norway"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="nordic-norway" class="ml-3 text-base text-gray-900">
             Norway
@@ -342,7 +344,7 @@
             id="nordic-finland"
             name="nordicCountry"
             value="Finland"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="nordic-finland" class="ml-3 text-base text-gray-900">
             Finland
@@ -355,7 +357,7 @@
             id="nordic-sweden"
             name="nordicCountry"
             value="Sweden"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="nordic-sweden" class="ml-3 text-base text-gray-900">
             Sweden
@@ -368,7 +370,7 @@
             id="nordic-greenland"
             name="nordicCountry"
             value="Greenland"
-            class="h-5 w-5 border-gray-900 text-gray-900 focus:ring-gray-900"
+            class="h-5 w-5 border-gray-900 text-blue-800 focus:ring-blue-800"
           />
           <label for="nordic-greenland" class="ml-3 text-base text-gray-900">
             Greenland
@@ -392,7 +394,7 @@
           id="nordicLicenseNumber"
           name="nordicLicenseNumber"
           required
-          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none"
+          class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
       </div>
     </div>
@@ -410,7 +412,7 @@
               id="dataAgreement"
               name="dataAgreement"
               required
-              class="mt-1 h-8 w-8 rounded border-gray-900 text-gray-900 focus:ring-gray-900"
+              class="mt-1 h-6 min-h-6 w-6 min-w-6 shrink-0 rounded border-gray-900 text-blue-800 focus:ring-blue-800"
             />
             <label for="dataAgreement" class="ml-3 text-base text-gray-900">
               I am aware that my information will be stored in the FiNAN's data
@@ -433,10 +435,54 @@
     <div>
       <button
         type="submit"
-        class="cursor-pointer rounded-none bg-gray-900 px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:outline-none"
+        class="cursor-pointer rounded-lg bg-blue-900 px-8 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:bg-blue-800 hover:shadow-xl focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 focus:outline-none"
       >
-        Submit
+        Submit form
       </button>
     </div>
   </form>
 </div>
+
+<script>
+  // Handle Philippines License Number field visibility
+  const registeredYes = document.getElementById(
+    'registered-yes'
+  ) as HTMLInputElement | null;
+  const registeredNo = document.getElementById(
+    'registered-no'
+  ) as HTMLInputElement | null;
+  const philippinesLicenseField = document.getElementById(
+    'philippinesLicenseField'
+  );
+  const philippinesLicenseInput = document.getElementById(
+    'philippinesLicenseNumber'
+  ) as HTMLInputElement | null;
+
+  function updatePhilippinesLicenseFieldVisibility() {
+    if (registeredYes?.checked) {
+      // Show field and make required
+      philippinesLicenseField?.classList.remove('hidden');
+      philippinesLicenseField?.classList.add('grid');
+      philippinesLicenseInput?.setAttribute('required', 'required');
+    } else {
+      // Hide field and remove required
+      philippinesLicenseField?.classList.add('hidden');
+      philippinesLicenseField?.classList.remove('grid');
+      philippinesLicenseInput?.removeAttribute('required');
+      // Clear the value when hidden
+      if (philippinesLicenseInput) {
+        philippinesLicenseInput.value = '';
+      }
+    }
+  }
+
+  // Add event listeners
+  registeredYes?.addEventListener(
+    'change',
+    updatePhilippinesLicenseFieldVisibility
+  );
+  registeredNo?.addEventListener(
+    'change',
+    updatePhilippinesLicenseFieldVisibility
+  );
+</script>
