@@ -3,7 +3,12 @@
 ---
 
 <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-  <form class="space-y-8">
+  <form
+    name="membershipApplication"
+    class="space-y-8"
+    aria-label="Membership Application Form"
+    novalidate
+  >
     <!-- Name Fields -->
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       <div>
@@ -18,9 +23,13 @@
           type="text"
           id="firstName"
           name="firstName"
+          autocomplete="given-name"
           required
+          aria-required="true"
+          aria-describedby="firstName-error"
           class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
+        <span id="firstName-error" class="sr-only" role="alert"></span>
       </div>
 
       <div>
@@ -35,9 +44,13 @@
           type="text"
           id="lastName"
           name="lastName"
+          autocomplete="family-name"
           required
+          aria-required="true"
+          aria-describedby="lastName-error"
           class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
+        <span id="lastName-error" class="sr-only" role="alert"></span>
       </div>
     </div>
 
@@ -51,9 +64,13 @@
           type="email"
           id="email"
           name="email"
+          autocomplete="email"
           required
+          aria-required="true"
+          aria-describedby="email-error"
           class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
+        <span id="email-error" class="sr-only" role="alert"></span>
       </div>
     </div>
 
@@ -62,7 +79,11 @@
       <legend class="block text-base font-semibold text-gray-900">
         Country of Residence<span class="text-red-600">*</span>
       </legend>
-      <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div
+        class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2"
+        role="radiogroup"
+        aria-required="true"
+      >
         <div class="flex items-center">
           <input
             type="radio"
@@ -165,7 +186,16 @@
           class="text-red-600">*</span
         >
       </legend>
-      <div class="mt-4 space-y-4">
+      <div
+        class="mt-4 space-y-4"
+        role="radiogroup"
+        aria-required="true"
+        aria-describedby="registered-nurse-description"
+      >
+        <span id="registered-nurse-description" class="sr-only">
+          Select whether you are a registered nurse in the Philippines or
+          studied nursing in the Nordic Region
+        </span>
         <div class="flex items-center">
           <input
             type="radio"
@@ -199,6 +229,7 @@
     <div
       id="philippinesLicenseField"
       class="hidden grid-cols-1 gap-6 md:grid-cols-2"
+      aria-live="polite"
     >
       <div>
         <label
@@ -211,8 +242,11 @@
           type="text"
           id="philippinesLicenseNumber"
           name="philippinesLicenseNumber"
+          aria-describedby="philippinesLicenseNumber-error"
           class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
+        <span id="philippinesLicenseNumber-error" class="sr-only" role="alert"
+        ></span>
       </div>
     </div>
 
@@ -223,7 +257,7 @@
           class="text-red-600">*</span
         >
       </legend>
-      <div class="mt-4 space-y-4">
+      <div class="mt-4 space-y-4" role="radiogroup" aria-required="true">
         <div class="flex items-center">
           <input
             type="radio"
@@ -284,7 +318,11 @@
       <legend class="block text-base font-semibold text-gray-900">
         Which Nordic Country? <span class="text-red-600">*</span>
       </legend>
-      <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div
+        class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2"
+        role="radiogroup"
+        aria-required="true"
+      >
         <div class="flex items-center">
           <input
             type="radio"
@@ -386,16 +424,22 @@
           for="nordicLicenseNumber"
           class="block text-base font-semibold text-gray-900"
         >
-          License Number (If ongoing, type 000000 and update the membership
-          director later) <span class="text-red-600">*</span>
+          License Number <span class="text-red-600">*</span>
         </label>
+        <p id="nordicLicenseNumber-hint" class="mt-1 text-sm text-gray-600">
+          If ongoing, type 000000 and update the membership director later
+        </p>
         <input
           type="text"
           id="nordicLicenseNumber"
           name="nordicLicenseNumber"
           required
+          aria-required="true"
+          aria-describedby="nordicLicenseNumber-hint nordicLicenseNumber-error"
           class="mt-2 block w-full rounded-none border border-gray-900 px-4 py-3 text-base focus:border-blue-800 focus:ring-1 focus:ring-blue-800 focus:outline-none"
         />
+        <span id="nordicLicenseNumber-error" class="sr-only" role="alert"
+        ></span>
       </div>
     </div>
 
@@ -412,6 +456,8 @@
               id="dataAgreement"
               name="dataAgreement"
               required
+              aria-required="true"
+              aria-describedby="dataAgreement-error"
               class="mt-1 h-6 min-h-6 w-6 min-w-6 shrink-0 rounded border-gray-900 text-blue-800 focus:ring-blue-800"
             />
             <label for="dataAgreement" class="ml-3 text-base text-gray-900">
@@ -419,12 +465,15 @@
               storage and shall only be used for data collection. All
               information gathered are protected under EU Directive.
             </label>
+            <span id="dataAgreement-error" class="sr-only" role="alert"></span>
           </div>
 
           <p class="text-base text-gray-900">
             By submitting this form, you agree to the <a
               href="#"
-              class="underline hover:text-gray-700">Terms and Privacy Policy</a
+              class="underline hover:text-gray-700"
+              aria-label="FiNAN Terms and Privacy Policy (opens in new context)"
+              >Terms and Privacy Policy</a
             > of FiNAN
           </p>
         </div>
@@ -464,11 +513,15 @@
       philippinesLicenseField?.classList.remove('hidden');
       philippinesLicenseField?.classList.add('grid');
       philippinesLicenseInput?.setAttribute('required', 'required');
+      philippinesLicenseInput?.setAttribute('aria-required', 'true');
+      // Announce to screen readers
+      philippinesLicenseInput?.focus();
     } else {
       // Hide field and remove required
       philippinesLicenseField?.classList.add('hidden');
       philippinesLicenseField?.classList.remove('grid');
       philippinesLicenseInput?.removeAttribute('required');
+      philippinesLicenseInput?.removeAttribute('aria-required');
       // Clear the value when hidden
       if (philippinesLicenseInput) {
         philippinesLicenseInput.value = '';
@@ -485,4 +538,99 @@
     'change',
     updatePhilippinesLicenseFieldVisibility
   );
+
+  // Form validation with accessibility support
+  const form = document.querySelector(
+    'form[name="membershipApplication"]'
+  ) as HTMLFormElement | null;
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      // Clear previous error messages
+      const errorSpans = form.querySelectorAll('[role="alert"]');
+      errorSpans.forEach((span) => {
+        span.textContent = '';
+      });
+
+      // Let native HTML5 validation run first
+      if (!form.checkValidity()) {
+        e.preventDefault();
+
+        // Find first invalid field and focus it
+        const firstInvalid = form.querySelector(
+          ':invalid'
+        ) as HTMLInputElement | null;
+        if (firstInvalid) {
+          firstInvalid.focus();
+
+          // Show error message for screen readers
+          const errorId = firstInvalid.getAttribute('aria-describedby');
+          if (errorId) {
+            const errorIds = errorId.split(' ');
+            const errorSpan = document.getElementById(
+              errorIds[errorIds.length - 1]
+            );
+            if (errorSpan && errorSpan.hasAttribute('role')) {
+              if (firstInvalid.validity.valueMissing) {
+                errorSpan.textContent = 'This field is required';
+              } else if (firstInvalid.validity.typeMismatch) {
+                errorSpan.textContent = 'Please enter a valid value';
+              } else {
+                errorSpan.textContent = 'Please correct this field';
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Real-time validation feedback
+    const inputs = form.querySelectorAll(
+      'input[required], input[type="email"]'
+    );
+    inputs.forEach((input) => {
+      input.addEventListener('blur', function () {
+        const htmlInput = input as HTMLInputElement;
+        const errorId = htmlInput.getAttribute('aria-describedby');
+
+        if (errorId) {
+          const errorIds = errorId.split(' ');
+          const errorSpan = document.getElementById(
+            errorIds[errorIds.length - 1]
+          );
+
+          if (errorSpan && errorSpan.hasAttribute('role')) {
+            if (!htmlInput.validity.valid) {
+              if (htmlInput.validity.valueMissing) {
+                errorSpan.textContent = 'This field is required';
+              } else if (htmlInput.validity.typeMismatch) {
+                errorSpan.textContent = 'Please enter a valid email address';
+              } else {
+                errorSpan.textContent = 'Please correct this field';
+              }
+            } else {
+              errorSpan.textContent = '';
+            }
+          }
+        }
+      });
+
+      // Clear error on input
+      input.addEventListener('input', function () {
+        const htmlInput = input as HTMLInputElement;
+        const errorId = htmlInput.getAttribute('aria-describedby');
+
+        if (errorId) {
+          const errorIds = errorId.split(' ');
+          const errorSpan = document.getElementById(
+            errorIds[errorIds.length - 1]
+          );
+
+          if (errorSpan && errorSpan.hasAttribute('role')) {
+            errorSpan.textContent = '';
+          }
+        }
+      });
+    });
+  }
 </script>
