@@ -1,5 +1,13 @@
 ---
 // Partners.astro - Partners section showcasing FiNAN's partnerships
+import { Image } from 'astro:assets';
+import arcadaLogo from '../assets/images/partners/arcada-logo.png';
+import euResearchLogo from '../assets/images/partners/eu-research-innovation.png';
+import fdnLogo from '../assets/images/partners/filipino-nursing-diaspora-network.png';
+import finnishGovtEmblem from '../assets/images/partners/finnish_government_emblem.svg';
+import ianpcLogo from '../assets/images/partners/ianpc.png';
+import oamkLogo from '../assets/images/partners/oamk-logo.png';
+import wsdnLogo from '../assets/images/partners/wsdn-logo.png';
 ---
 
 <section class="bg-white py-16 md:py-24">
@@ -12,92 +20,60 @@
     </div>
 
     <!-- Partner Logos Grid -->
-    <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-1.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+      <div class="flex items-center justify-center px-4">
+        <Image
+          src={finnishGovtEmblem}
+          alt="Finnish Government"
+          class="h-16 w-auto object-contain md:h-20"
         />
       </div>
 
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-2.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
+      <div class="flex items-center justify-center px-4">
+        <Image
+          src={oamkLogo}
+          alt="Oulu University of Applied Sciences"
+          class="max-h-16 w-auto object-contain md:max-h-20"
         />
       </div>
 
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-1.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
+      <div class="flex items-center justify-center px-4">
+        <Image
+          src={arcadaLogo}
+          alt="Arcada University of Applied Sciences"
+          class="max-h-16 w-auto object-contain md:max-h-25"
         />
       </div>
 
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-2.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
+      <div class="flex items-center justify-center px-4">
+        <Image
+          src={euResearchLogo}
+          alt="European Union Research and Innovation"
+          class="max-h-16 w-auto object-contain md:max-h-30"
         />
       </div>
 
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-1.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
+      <div class="flex items-center justify-center px-4">
+        <Image
+          src={fdnLogo}
+          alt="Filipino Nursing Diaspora Network"
+          class="max-h-16 w-auto object-contain md:max-h-20"
         />
       </div>
 
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-2.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
+      <div class="flex items-center justify-center px-4">
+        <Image
+          src={ianpcLogo}
+          alt="International Assembly for National Nursing Associations"
+          class="max-h-16 w-auto object-contain md:max-h-25"
         />
       </div>
 
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-1.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
-        />
-      </div>
-
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-2.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
-        />
-      </div>
-
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-1.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
-        />
-      </div>
-
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-2.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
-        />
-      </div>
-
-      <div class="flex h-12 items-center justify-center md:h-16">
-        <img
-          src="/images/partners/placeholder-logo-1.svg"
-          alt="Partner Logo"
-          class="h-10 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-12"
+      <div class="flex items-center justify-center px-4">
+        <Image
+          src={wsdnLogo}
+          alt="World Sustainable Development Network"
+          class="max-h-16 w-auto object-contain md:max-h-25"
         />
       </div>
     </div>
