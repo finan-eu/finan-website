@@ -10,6 +10,7 @@ import {
 interface WorkingCommitteeProps extends Partial<WorkingCommitteeConfig> {
   country?: WorkingCommitteeCountry;
   heading?: string;
+  description?: string;
 }
 
 const fallbackConfig: WorkingCommitteeConfig = {
@@ -32,6 +33,7 @@ const baseConfig = props.country
   : undefined;
 
 const heading = props.heading ?? defaultHeading;
+const description = props.description;
 const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
 ---
 
@@ -43,6 +45,7 @@ const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
       >
         {heading}
       </h2>
+      {description && <p class="mt-4 text-lg text-gray-700">{description}</p>}
     </header>
 
     <div class="mt-12 flex flex-wrap gap-10">
