@@ -26,7 +26,7 @@ export const socialMediaLinks = [
     alt: 'Instagram',
   },
   {
-    name: 'Twitter/X',
+    name: 'X/Twitter',
     url: '#',
     icon: '/icons/socmed/x-twitter.svg',
     alt: 'Twitter/X',
