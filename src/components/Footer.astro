@@ -1,10 +1,12 @@
 ---
+import { socialMediaLinks } from '../data/socialMediaConfig';
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t border-gray-200 bg-white pt-20 pb-8">
   <div class="mx-auto max-w-screen-2xl px-6">
-    <!-- Top section with logo and newsletter -->
+    <!-- Top section with logo and social media -->
     <div class="mb-20 grid grid-cols-1 gap-20 lg:grid-cols-2">
       <div class="flex flex-col items-start gap-8">
         <img
@@ -13,35 +15,36 @@ const currentYear = new Date().getFullYear();
           class="h-16 w-auto xl:h-24"
           loading="eager"
         />
-        <div class="max-w-md">
-          <p class="mb-6 text-base leading-6 font-normal text-gray-900">
-            Join our newsletter to stay up to date on features and releases.
-          </p>
-          <form class="mb-4 flex flex-col gap-3 sm:flex-row">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
-              required
-            />
-            <button
-              type="submit"
-              class="cursor-pointer rounded-full border-0 bg-blue-900 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-blue-800"
-              >Subscribe</button
-            >
-          </form>
-          <p class="m-0 text-sm leading-5 text-gray-500">
-            By subscribing you agree to with our <a
-              href="/privacy-policy"
-              class="text-gray-900 underline hover:text-blue-500"
-              >Privacy Policy</a
-            > and provide consent to receive updates from our company.
-          </p>
+        <p class="max-w-md text-base leading-6 font-normal text-gray-900">
+          FiNAN is a non-profit organization that connects, supports, and
+          advocates for Filipino nurses across the Nordic region.
+        </p>
+        <div class="flex flex-col">
+          <h3 class="mb-6 text-base font-semibold text-gray-900">Follow Us</h3>
+          <ul class="m-0 flex list-none flex-col gap-4 p-0">
+            {
+              socialMediaLinks.map((social) => (
+                <li>
+                  <a
+                    href={social.url}
+                    class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
+                  >
+                    <img
+                      src={social.icon}
+                      alt={social.alt}
+                      class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
+                    />
+                    <span>{social.name}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
 
       <!-- Navigation columns -->
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
         <div class="flex flex-col">
           <h3 class="mb-6 text-base font-semibold text-gray-900">Services</h3>
           <ul class="m-0 flex list-none flex-col gap-4 p-0">
@@ -90,9 +93,9 @@ const currentYear = new Date().getFullYear();
           <ul class="m-0 flex list-none flex-col gap-4 p-0">
             <li>
               <a
-                href="/representation/denmark"
+                href="/representation/kingdom-denmark"
                 class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
-                >Denmark</a
+                >Kingdom of Denmark</a
               >
             </li>
             <li>
@@ -136,77 +139,6 @@ const currentYear = new Date().getFullYear();
                 class="text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
                 >Sweden</a
               >
-            </li>
-          </ul>
-        </div>
-
-        <div class="flex flex-col">
-          <h3 class="mb-6 text-base font-semibold text-gray-900">Follow Us</h3>
-          <ul class="m-0 flex list-none flex-col gap-4 p-0">
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
-              >
-                <img
-                  src="/icons/socmed/facebook.svg"
-                  alt="Facebook"
-                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
-                />
-                <span>Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
-              >
-                <img
-                  src="/icons/socmed/instagram.svg"
-                  alt="Instagram"
-                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
-                />
-                <span>Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
-              >
-                <img
-                  src="/icons/socmed/x-twitter.svg"
-                  alt="X"
-                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
-                />
-                <span>X</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
-              >
-                <img
-                  src="/icons/socmed/linkedin.svg"
-                  alt="LinkedIn"
-                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
-                />
-                <span>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-base font-normal text-gray-500 no-underline transition-colors hover:text-gray-900"
-              >
-                <img
-                  src="/icons/socmed/youtube.svg"
-                  alt="Youtube"
-                  class="h-5 w-5 opacity-70 transition-opacity hover:opacity-100"
-                />
-                <span>Youtube</span>
-              </a>
             </li>
           </ul>
         </div>
