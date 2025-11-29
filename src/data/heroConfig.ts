@@ -18,7 +18,7 @@ export const heroConfig: HeroData = {
     'FiNAN is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region, providing trusted guidance on licensing, cultural integration, and professional growth.',
   buttons: {
     primary: {
-      text: 'Be a Member',
+      text: 'Be a member',
       url: 'https://filnan.com/membership-form',
     },
     secondary: {
