@@ -23,7 +23,7 @@ FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-p
 
 ## Architecture
 
-- **Framework**: Astro 5.15.3 (static site generator with island architecture)
+- **Framework**: Astro 5.15.9 (static site generator with island architecture)
 - **Styling**: Tailwind CSS 4.1.13 with Vite integration
 - **TypeScript**: Full TypeScript support with type checking enabled
 - **Code Quality**: ESLint + Prettier with Astro-specific plugins
@@ -33,25 +33,29 @@ FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-p
 ```
 src/
 ├── assets/          # Static assets optimized by Astro
-├── components/      # Reusable Astro components (14 components)
+├── components/      # Reusable Astro components (19 components)
 ├── data/            # TypeScript data files and configurations
 │   ├── representation/        # Regional representation data
 │   │   ├── working-committee/ # Committee member data by country
-│   │   └── partnership/       # Partnership data
+│   │   ├── partnership/       # Partnership data
+│   │   └── publication/       # Publication data
+│   ├── pages/                 # Page-specific data configurations
+│   │   └── faq/               # FAQ data
 │   ├── siteConfig.ts          # Site metadata and SEO config
 │   ├── ctaBannerConfig.ts     # CTA banner configuration
 │   ├── heroConfig.ts          # Hero section configuration
+│   ├── pillarsConfig.ts       # Organizational pillars configuration
 │   ├── registrationSectionConfig.ts
 │   └── statisticsConfig.ts
 ├── layouts/         # Page layout templates
-├── pages/           # File-based routing (8 pages + 7 representation pages)
-│   ├── representation/    # Individual Nordic country pages
+├── pages/           # File-based routing (7 pages + 8 representation pages)
+│   ├── representation/    # Individual Nordic country pages (8 pages)
 │   ├── index.astro
 │   ├── about.astro
 │   ├── membership.astro
 │   ├── faq.astro
 │   ├── guides-resources.astro
-│   ├── contact-us.astro
+│   ├── contact.astro
 │   ├── sitemap.xml.ts
 │   └── 404.astro
 ├── scripts/         # Client-side JavaScript
@@ -73,14 +77,19 @@ public/
 - **Footer.astro** - Site footer with links and information
 - **NordicRepresentation.astro** - Display all Nordic country representation
 - **WorkingCommittee.astro** - Display committee members by country
-- **RegionalRepresentatives.astro** - Regional contact information
+- **RegionalRepresentation.astro** - Regional contact information (country-specific)
+- **RegionalRepresentationSection.astro** - Regional representation container
 - **Statistics.astro** - Display organization statistics
 - **Partners.astro** - Partner organizations showcase
+- **Partnership.astro** - Partnership details display
 - **HowWeHelp.astro** - Services and support information
 - **CTABanner.astro** - Call-to-action sections
 - **RegistrationSection.astro** - Member registration
 - **TopBanner.astro** - Top page announcements
 - **Blog.astro** - Blog/news section
+- **FAQAccordion.astro** - FAQ accordion component
+- **Pillars.astro** - Organization pillars display
+- **PublicationCard.astro** - Publication display card
 
 ### Pages
 
@@ -89,10 +98,18 @@ public/
 - **membership.astro** - Membership benefits and registration
 - **faq.astro** - Frequently asked questions
 - **guides-resources.astro** - Resources for nurses
-- **contact-us.astro** - Contact information and form
+- **contact.astro** - Contact information and form
 - **sitemap.xml.ts** - Dynamic XML sitemap generation
 - **404.astro** - Custom 404 error page
-- **representation/\*.astro** - Individual pages for 7 Nordic countries/regions
+- **representation/\*.astro** - Individual pages for 8 Nordic countries/regions:
+  - denmark.astro
+  - faroe-islands.astro
+  - finland.astro
+  - greenland.astro
+  - iceland.astro
+  - kingdom-denmark.astro (collective page)
+  - norway.astro
+  - sweden.astro
 
 ## Configuration Files
 
@@ -123,9 +140,18 @@ public/
 The project uses a centralized, type-safe data layer:
 
 - **siteConfig.ts** - Site metadata, SEO settings, social links
-- **Working Committee** - Structured by country with member roles
-- **Regional Representatives** - Contact information for regional support
+- **representation/** - Regional representation data
+  - **working-committee/** - Committee member data by country (7 countries)
+  - **partnership/** - Partnership data by country
+  - **publication/** - Publication data by country
+- **pages/** - Page-specific data configurations
+  - **faq/** - FAQ data
 - **Configuration files** - Type-safe configs for components
+  - ctaBannerConfig.ts
+  - heroConfig.ts
+  - pillarsConfig.ts
+  - registrationSectionConfig.ts
+  - statisticsConfig.ts
 
 All data files use TypeScript interfaces and the `as const satisfies` pattern for type safety.
 
