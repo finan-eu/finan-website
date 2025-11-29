@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 export interface Partner {
-  logo: string;
+  logo: ImageMetadata;
   alt: string;
   content: string[];
 }
@@ -30,7 +33,7 @@ const { partners } = Astro.props;
         >
           {/* Logo */}
           <div class="flex-shrink-0">
-            <img src={partner.logo} alt={partner.alt} class="h-auto w-60" />
+            <Image src={partner.logo} alt={partner.alt} class="h-auto w-60" />
           </div>
 
           {/* Content */}

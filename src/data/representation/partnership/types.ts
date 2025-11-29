@@ -1,5 +1,7 @@
+import type { ImageMetadata } from 'astro';
+
 export interface Partner {
-  logo: string;
+  logo: ImageMetadata;
   alt: string;
   content: string[];
 }
