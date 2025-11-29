@@ -1,14 +1,64 @@
 ---
 import '../styles/global.css';
-import { siteConfig } from '../data/siteConfig';
 import { ClientRouter } from 'astro:transitions';
 import { cspString } from '../../security.config.js';
+import { SEO } from 'astro-seo';
+import { seoConfig, getFullUrl, getPageTitle } from '../data/seo.config';
 
-const { metadata, social, seo } = siteConfig;
+// Props interface for page-level SEO overrides
+interface Props {
+  /** Page title (will be formatted with titleTemplate) */
+  title?: string;
+  /** Page description */
+  description?: string;
+  /** Social sharing image path or URL */
+  image?: string;
+  /** Whether this is an article page */
+  article?: boolean;
+  /** Article published time (ISO 8601) */
+  publishedTime?: string;
+  /** Article modified time (ISO 8601) */
+  modifiedTime?: string;
+  /** Prevent search engine indexing */
+  noindex?: boolean;
+  /** Prevent search engines from following links */
+  nofollow?: boolean;
+  /** Additional keywords to append */
+  keywords?: string[];
+}
+
+const {
+  title,
+  description = seoConfig.basic.description,
+  image = seoConfig.openGraph.image,
+  article = false,
+  publishedTime,
+  modifiedTime,
+  noindex = false,
+  nofollow = false,
+  keywords,
+} = Astro.props;
+
+// Process title with template if provided
+const pageTitle = title ? getPageTitle(title) : seoConfig.basic.title;
+
+// Construct full image URL
+const fullImageUrl = getFullUrl(image);
+
+// Merge keywords
+const allKeywords = keywords
+  ? [...seoConfig.meta.keywords, ...keywords]
+  : seoConfig.meta.keywords;
+
+// Construct robots meta value
+const robotsValue =
+  noindex || nofollow
+    ? `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`
+    : seoConfig.meta.robots;
 ---
 
 <!doctype html>
-<html lang={metadata.language}>
+<html lang={seoConfig.basic.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,30 +116,75 @@ const { metadata, social, seo } = siteConfig;
       http-equiv="Referrer-Policy"
       content="strict-origin-when-cross-origin"
     />
-    <title>{metadata.title}</title>
-    <meta name="description" content={metadata.description} />
-    <meta name="author" content={metadata.author} />
-    <meta name="keywords" content={seo.keywords.join(', ')} />
-    <meta name="robots" content={seo.robots} />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content={seo.ogType} />
-    <meta property="og:url" content={metadata.url} />
-    <meta property="og:title" content={metadata.title} />
-    <meta property="og:description" content={metadata.description} />
-    {social.image && <meta property="og:image" content={social.image} />}
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content={seo.twitterCard} />
-    <meta property="twitter:url" content={metadata.url} />
-    <meta property="twitter:title" content={metadata.title} />
-    <meta property="twitter:description" content={metadata.description} />
-    {social.image && <meta property="twitter:image" content={social.image} />}
-    {
-      social.twitter && (
-        <meta property="twitter:site" content={`@${social.twitter}`} />
-      )
-    }
+    <!-- SEO Component -->
+    <SEO
+      title={pageTitle}
+      description={description}
+      canonical={seoConfig.additional.enableCanonical
+        ? Astro.url.href
+        : undefined}
+      noindex={noindex}
+      nofollow={nofollow}
+      openGraph={{
+        basic: {
+          title: pageTitle,
+          type: article ? 'article' : seoConfig.openGraph.type,
+          image: fullImageUrl,
+          url: Astro.url.href,
+        },
+        optional: {
+          description: description,
+          siteName: seoConfig.openGraph.siteName,
+          locale: seoConfig.openGraph.locale,
+        },
+        image: {
+          width: seoConfig.openGraph.imageWidth,
+          height: seoConfig.openGraph.imageHeight,
+          alt: seoConfig.openGraph.imageAlt,
+        },
+        ...(article &&
+          publishedTime &&
+          modifiedTime && {
+            article: {
+              publishedTime: publishedTime,
+              modifiedTime: modifiedTime,
+            },
+          }),
+      }}
+      twitter={{
+        card: seoConfig.twitter.cardType,
+        site: seoConfig.twitter.site ? `@${seoConfig.twitter.site}` : undefined,
+        creator: seoConfig.twitter.creator
+          ? `@${seoConfig.twitter.creator}`
+          : undefined,
+        title: pageTitle,
+        description: description,
+        image: fullImageUrl,
+        imageAlt: seoConfig.twitter.imageAlt,
+      }}
+      extend={{
+        meta: [
+          { name: 'author', content: seoConfig.basic.author },
+          { name: 'keywords', content: allKeywords.join(', ') },
+          { name: 'robots', content: robotsValue },
+          ...(seoConfig.meta.themeColor
+            ? [{ name: 'theme-color', content: seoConfig.meta.themeColor }]
+            : []),
+          ...(seoConfig.meta.mobileWebAppCapable
+            ? [{ name: 'mobile-web-app-capable', content: 'yes' }]
+            : []),
+          ...(seoConfig.meta.appleMobileWebAppStatusBarStyle
+            ? [
+                {
+                  name: 'apple-mobile-web-app-status-bar-style',
+                  content: seoConfig.meta.appleMobileWebAppStatusBarStyle,
+                },
+              ]
+            : []),
+        ],
+      }}
+    />
 
     <!-- View Transitions -->
     <ClientRouter />
