@@ -163,6 +163,15 @@ All data files use TypeScript interfaces and the `as const satisfies` pattern fo
 - Custom color schemes and typography
 - Class sorting automated via Prettier plugin
 
+### Button Styling Conventions
+
+**Primary Buttons**: All primary action buttons (e.g., "Be a Member", CTA buttons) must include the following shadow and transition effects:
+```
+shadow-lg transition-all duration-200 hover:shadow-xl
+```
+
+This creates a consistent, elevated appearance with smooth hover effects across all primary buttons in the application.
+
 ## Security Features
 
 - Content Security Policy (CSP) headers
