@@ -12,7 +12,7 @@ const { publications } = Astro.props;
   {
     publications.map((publication) => (
       <div class="flex items-start gap-6 rounded-lg border border-gray-300 p-6">
-        <div class="flex-shrink-0">
+        <div class="hidden flex-shrink-0 md:block">
           <img src="/icons/icon-docs.svg" alt="Document" class="h-12 w-12" />
         </div>
 
