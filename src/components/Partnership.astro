@@ -27,7 +27,7 @@ const { partners } = Astro.props;
       partners.map((partner, index) => (
         <div
           class:list={[
-            'flex flex-col items-center gap-8 md:flex-row md:items-start',
+            'flex flex-col items-start gap-8 md:flex-row',
             index > 0 ? 'mt-12' : 'mt-8',
           ]}
         >
