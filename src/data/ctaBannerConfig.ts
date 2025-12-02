@@ -41,7 +41,7 @@ export const ctaBannerConfig: CTABannerContent = {
   buttons: {
     primary: {
       text: 'Be a member',
-      href: '#membership',
+      href: '/membership',
     },
     secondary: {
       text: 'Donate',
