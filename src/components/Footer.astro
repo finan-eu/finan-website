@@ -4,7 +4,7 @@ import { socialMediaLinks } from '../data/socialMediaConfig';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-gray-200 bg-white pt-20 pb-8">
+<footer class="border-t border-gray-200 bg-white pt-12 pb-8 md:pt-20">
   <div class="mx-auto max-w-screen-xl px-6">
     <!-- Top section with logo and social media -->
     <div class="mb-20 grid grid-cols-1 gap-20 lg:grid-cols-2">
@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear();
         <img
           src="/finan-logo.svg"
           alt="FINAN"
-          class="h-16 w-auto xl:h-24"
+          class="h-20 w-auto xl:h-24"
           loading="eager"
         />
         <p class="max-w-md text-base leading-6 font-normal text-gray-900">
@@ -44,7 +44,9 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Navigation columns -->
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:justify-self-end">
+      <div
+        class="grid grid-cols-1 gap-12 justify-self-start sm:justify-self-end md:grid-cols-2"
+      >
         <div class="flex flex-col">
           <h3 class="mb-6 text-base font-semibold text-gray-900">Services</h3>
           <ul class="m-0 flex list-none flex-col gap-4 p-0">
