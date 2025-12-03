@@ -19,11 +19,11 @@ export const heroConfig: HeroData = {
   buttons: {
     primary: {
       text: 'Be a member',
-      url: 'https://filnan.com/membership-form',
+      url: '/membership',
     },
     secondary: {
       text: 'About FiNAN',
-      url: 'https://filnan.com/',
+      url: '/about',
     },
   },
 };
