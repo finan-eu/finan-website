@@ -26,7 +26,7 @@ import { registrationSectionConfig } from '../data/registrationSectionConfig';
                 <Image
                   src={entity.image.src}
                   alt={entity.image.alt}
-                  class="max-h-24 w-full object-contain"
+                  class={`w-full object-contain ${entity.id === 'iceland-rikisskattstjori' ? 'max-h-16' : 'max-h-24'}`}
                   loading={entity.image.loading}
                   format={entity.image.format}
                   width={entity.image.width}
