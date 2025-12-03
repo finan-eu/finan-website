@@ -6,7 +6,7 @@ import PageHeader from '../components/PageHeader.astro';
 import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.jpg';
 import CTABanner from '../components/CTABanner.astro';
-import RegionalRepresentation from '../components/RegionalRepresentation.astro';
+import WorkingCommittee from '../components/WorkingCommittee.astro';
 ---
 
 <Layout title="About FiNAN">
@@ -88,7 +88,30 @@ import RegionalRepresentation from '../components/RegionalRepresentation.astro';
         </div>
       </div>
     </section>
-    <RegionalRepresentation />
+
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-6">
+        <header class="max-w-4xl">
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+          >
+            Regional Representation Working Committees
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-gray-600">
+            Official regional representatives of the Filipino Nurses Association
+            in the Nordic Region
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <WorkingCommittee country="finland" heading="Finland & Åland" />
+    <WorkingCommittee country="sweden" heading="Sweden" />
+    <WorkingCommittee country="norway" heading="Norway" />
+    <WorkingCommittee country="denmark" heading="Denmark" />
+    <WorkingCommittee country="faroe-islands" heading="Faroe Islands" />
+    <WorkingCommittee country="greenland" heading="Greenland" />
+    <WorkingCommittee country="iceland" heading="Iceland" />
     <CTABanner />
   </main>
   <Footer />
