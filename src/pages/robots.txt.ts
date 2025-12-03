@@ -21,7 +21,7 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://${CUSTOM_DOMAIN}/sitemap.xml
+Sitemap: https://${CUSTOM_DOMAIN}/sitemap-index.xml
 `;
 
 // Robots.txt for pages.dev domain (disallow crawling)
