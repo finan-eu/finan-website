@@ -14,33 +14,34 @@ export interface SocialMediaLink {
 
 export const socialMediaLinks = [
   {
-    name: 'Facebook',
-    url: '#',
-    icon: '/icons/socmed/facebook.svg',
-    alt: 'Facebook',
-  },
-  {
-    name: 'Instagram',
-    url: '#',
-    icon: '/icons/socmed/instagram.svg',
-    alt: 'Instagram',
-  },
-  {
-    name: 'X/Twitter',
-    url: '#',
-    icon: '/icons/socmed/x-twitter.svg',
-    alt: 'Twitter/X',
-  },
-  {
     name: 'LinkedIn',
-    url: '#',
+    url: 'https://www.linkedin.com/company/fnanordic',
     icon: '/icons/socmed/linkedin.svg',
     alt: 'LinkedIn',
   },
   {
-    name: 'Youtube',
-    url: '#',
-    icon: '/icons/socmed/youtube.svg',
-    alt: 'Youtube',
+    name: 'Facebook',
+    url: 'https://www.facebook.com/FNANordic/',
+    icon: '/icons/socmed/facebook.svg',
+    alt: 'Facebook',
   },
+  // Uncomment when links are available
+  // {
+  //   name: 'Instagram',
+  //   url: '#',
+  //   icon: '/icons/socmed/instagram.svg',
+  //   alt: 'Instagram',
+  // },
+  // {
+  //   name: 'X/Twitter',
+  //   url: '#',
+  //   icon: '/icons/socmed/x-twitter.svg',
+  //   alt: 'Twitter/X',
+  // },
+  // {
+  //   name: 'Youtube',
+  //   url: '#',
+  //   icon: '/icons/socmed/youtube.svg',
+  //   alt: 'Youtube',
+  // },
 ] as const satisfies readonly SocialMediaLink[];
