@@ -5,6 +5,15 @@ import { cspString } from '../../security.config.js';
 import { SEO } from 'astro-seo';
 import { seoConfig, getFullUrl, getPageTitle } from '../data/seo.config';
 
+// Domain detection for automatic noindex on pages.dev
+const PAGES_DEV_PATTERN = /\.pages\.dev$/i;
+const hostname = Astro.url.hostname;
+const isPagesDevDomain = PAGES_DEV_PATTERN.test(hostname);
+
+// Force noindex/nofollow on pages.dev domains
+const forceNoIndex = isPagesDevDomain;
+const forceNoFollow = isPagesDevDomain;
+
 // Props interface for page-level SEO overrides
 interface Props {
   /** Page title (will be formatted with titleTemplate) */
@@ -34,8 +43,8 @@ const {
   article = false,
   publishedTime,
   modifiedTime,
-  noindex = false,
-  nofollow = false,
+  noindex = forceNoIndex,
+  nofollow = forceNoFollow,
   keywords,
 } = Astro.props;
 
