@@ -4,7 +4,17 @@ import TopBanner from '../components/TopBanner.astro';
 import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
 import heroImage from '../assets/images/hero-image.jpg';
+import arcadaLogo from '../assets/images/partners/arcada-logo.png';
+import euResearchLogo from '../assets/images/partners/eu-research-innovation.png';
+import fdnLogo from '../assets/images/partners/filipino-nursing-diaspora-network.png';
+import finnishGovtEmblem from '../assets/images/partners/finnish_government_emblem.svg';
+import ianpcLogo from '../assets/images/partners/ianpc.png';
+import moniheliLogo from '../assets/images/partners/moniheli-logo.png';
+import oamkLogo from '../assets/images/partners/oamk-logo.png';
+import siennaLogo from '../assets/images/partners/sienna-logo.png';
+import wsdnLogo from '../assets/images/partners/wsdn-logo.png';
 ---
 
 <Layout title="Membership - FiNAN">
@@ -13,63 +23,150 @@ import heroImage from '../assets/images/hero-image.jpg';
     <Navbar />
     <PageHeader
       title="Membership"
-      description="Join the Filipino Nurses Association of the Nordic countries and connect with a vibrant community of healthcare professionals."
+      description="The Filipino Nurses Association in the Nordic Region (FiNAN) is the only regional registered non-profit organization that represents and bridges Filipino Nurses in the Nordic Region."
       backgroundImage={heroImage}
       backgroundAlt="Filipino healthcare professionals in the Nordic countries"
     />
 
-    <!-- Additional content sections can be added here -->
+    <!-- Membership content -->
     <section class="bg-white py-16">
       <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <header class="max-w-2xl">
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          >
-            Join Our Community
+        <div class="space-y-12">
+          <div>
+            <h2
+              class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+            >
+              Representation
+            </h2>
+            <p class="text-lg text-gray-700">
+              The Filipino Nurses Association in the Nordic Region (FiNAN) is a
+              registered non-profit organization in the Nordic Region
+              representing the voice of Filipino Nurses for important issues in
+              the form of integration plan, migration issues, equality,
+              healthcare and workplace protection to the policy and
+              decision-makers.
+            </p>
+          </div>
+
+          <div>
+            <h2
+              class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+            >
+              Opportunities
+            </h2>
+            <p class="mb-6 text-lg text-gray-700">
+              FiNAN is actively invited in events, seminars, conferences both
+              locally and internationally. You can be part of these
+              opportunities.
+            </p>
+            <ul class="list-inside list-disc space-y-2 text-lg text-gray-700">
+              <li>Discounted entries in the Annual General Assembly</li>
+              <li>
+                Updates in the welfare of Filipino Nurses in the Nordic
+                Countries
+              </li>
+              <li>Nordic Puls Digital Magazine</li>
+              <li>
+                Advice and Councelling on Professional Development (Master's and
+                Doctorate Degree)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <!-- Header -->
+        <div class="mb-16">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Our Partners in Healthcare, Education & Policy
           </h2>
-        </header>
+        </div>
 
-        <div class="mt-4">
-          <p class="mb-6 text-lg text-gray-700">
-            Be a member and join a supportive network of Filipino healthcare
-            professionals working across the Nordic countries. Our membership
-            provides access to professional development opportunities,
-            networking events, and valuable resources to help you thrive in your
-            career and personal life in the Nordic region.
-          </p>
+        <!-- Partner Logos Grid -->
+        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={finnishGovtEmblem}
+              alt="Finnish Government"
+              class="h-16 w-auto object-contain md:h-20"
+            />
+          </div>
 
-          <p class="mb-6 text-lg text-gray-700">
-            Whether you're already working in Denmark, Finland, Iceland, Norway,
-            or Sweden, or planning to make the transition, FiNAN membership
-            offers the support and connections you need to succeed in your
-            healthcare career.
-          </p>
+          <!-- OAMK -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={oamkLogo}
+              alt="Oulu University of Applied Sciences"
+              class="max-h-16 w-auto object-contain md:max-h-20"
+            />
+          </div>
 
-          <h3
-            class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-          >
-            Membership Benefits
-          </h3>
-          <p class="mb-6 text-lg text-gray-700">
-            As a FiNAN member, you'll gain access to exclusive resources
-            including professional development workshops, credential recognition
-            guidance, language learning support, and mentorship programs. Our
-            community events provide opportunities to connect with fellow
-            professionals and build lasting relationships across the Nordic
-            countries.
-          </p>
+          <!-- Arcada -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={arcadaLogo}
+              alt="Arcada University of Applied Sciences"
+              class="max-h-20 w-auto object-contain md:max-h-25"
+            />
+          </div>
 
-          <h3
-            class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-          >
-            How to Join
-          </h3>
-          <p class="text-lg text-gray-700">
-            Membership is open to all Filipino healthcare professionals working
-            or planning to work in the Nordic countries. Join us today and
-            become part of a community dedicated to supporting each other's
-            professional growth and personal well-being in the Nordic region.
-          </p>
+          <!-- EU Research -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={euResearchLogo}
+              alt="European Union Research and Innovation"
+              class="max-h-25 w-auto object-contain md:max-h-30"
+            />
+          </div>
+
+          <!-- Moniheli -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={moniheliLogo}
+              alt="Moniheli"
+              class="max-h-5 w-auto object-contain md:max-h-8"
+            />
+          </div>
+
+          <!-- Filipino Nursing Diaspora Network -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={fdnLogo}
+              alt="Filipino Nursing Diaspora Network"
+              class="max-h-16 w-auto object-contain md:max-h-20"
+            />
+          </div>
+
+          <!-- SIENNA -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={siennaLogo}
+              alt="Society of Internationally Educated Nurses in North America"
+              class="max-h-18 w-auto object-contain md:max-h-25"
+            />
+          </div>
+
+          <!-- IANPC -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={ianpcLogo}
+              alt="International Assembly for National Nursing Associations"
+              class="max-h-18 w-auto object-contain md:max-h-25"
+            />
+          </div>
+
+          <!-- WSDN -->
+          <div class="flex items-center justify-center px-4">
+            <Image
+              src={wsdnLogo}
+              alt="World Sustainable Development Network"
+              class="max-h-18 w-auto object-contain md:max-h-25"
+            />
+          </div>
         </div>
       </div>
     </section>
