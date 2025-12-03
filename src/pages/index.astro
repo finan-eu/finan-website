@@ -12,9 +12,13 @@ import RegistrationSection from '../components/RegistrationSection.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
+import StructuredData from '../components/StructuredData.astro';
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <StructuredData schemas={['organization', 'website']} />
+  </Fragment>
   <main>
     <TopBanner />
     <HeroHeader />

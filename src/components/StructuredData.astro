@@ -1,0 +1,38 @@
+---
+/**
+ * StructuredData Component
+ *
+ * Injects Schema.org structured data (JSON-LD) into the page <head>.
+ * This helps search engines understand the organization and display
+ * the correct site name ("FiNAN") in search results.
+ *
+ * Usage:
+ * ```astro
+ * <StructuredData schemas={['organization', 'website']} />
+ * ```
+ *
+ * @see https://schema.org/Organization
+ * @see https://schema.org/WebSite
+ */
+
+import { generateStructuredData } from '../data/structuredData.config';
+
+interface Props {
+  /**
+   * Array of schema types to include
+   * @default ['organization', 'website']
+   */
+  schemas?: ('organization' | 'website')[];
+}
+
+const { schemas = ['organization', 'website'] } = Astro.props;
+
+// Generate the requested schemas
+const schemaObjects = generateStructuredData(schemas);
+---
+
+{
+  schemaObjects.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))
+}
