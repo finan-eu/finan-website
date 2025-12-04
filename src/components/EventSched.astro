@@ -50,7 +50,7 @@ let globalEventIndex = 0;
                   {day.date}
                 </h4>
                 {day.description && (
-                  <p class="mt-1 text-sm text-gray-600">{day.description}</p>
+                  <p class="mt-1 text-base text-gray-600">{day.description}</p>
                 )}
               </div>
               <div class="flex items-center gap-2">
@@ -79,45 +79,45 @@ let globalEventIndex = 0;
             >
               <div class="overflow-hidden">
                 <div class="border-t border-gray-100 px-6 py-5">
-                <div class="space-y-4">
-                  {day.events.map((event) => (
-                    <div class="event-item flex flex-col gap-3 sm:grid sm:grid-cols-[auto_1fr] sm:gap-8">
-                      {/* Left side - Time */}
-                      <div>
-                        {event.time && (
-                          <span class="inline-flex items-center gap-1.5 rounded-lg border-1 border-blue-100 bg-blue-50 px-3 py-1 text-base font-semibold text-blue-900 md:text-lg">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                              class="h-4 w-4 md:h-5 md:w-5"
-                            >
-                              <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM13 12H17V14H11V7H13V12Z" />
-                            </svg>
-                            {event.time}
-                          </span>
-                        )}
+                  <div class="space-y-4">
+                    {day.events.map((event) => (
+                      <div class="event-item flex flex-col gap-3 sm:grid sm:grid-cols-[auto_1fr] sm:gap-8">
+                        {/* Left side - Time */}
+                        <div>
+                          {event.time && (
+                            <span class="inline-flex items-center gap-1.5 rounded-lg border-1 border-blue-100 bg-blue-50 px-3 py-1 font-mono text-base font-semibold text-blue-900 md:text-lg">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="h-4 w-4 md:h-5 md:w-5"
+                              >
+                                <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM13 12H17V14H11V7H13V12Z" />
+                              </svg>
+                              {event.time}
+                            </span>
+                          )}
+                        </div>
+                        {/* Right side - Title, Speaker, Details */}
+                        <div>
+                          <h5 class="text-base font-semibold text-gray-900 md:text-lg">
+                            {event.title}
+                          </h5>
+                          {event.speaker && (
+                            <p class="mt-1 text-base font-medium text-gray-800 md:text-lg">
+                              {event.speaker}
+                            </p>
+                          )}
+                          {event.details && (
+                            <p class="mt-1 text-base text-gray-700 md:text-lg">
+                              {event.details}
+                            </p>
+                          )}
+                        </div>
                       </div>
-                      {/* Right side - Title, Speaker, Details */}
-                      <div>
-                        <h5 class="text-base font-semibold text-gray-900 md:text-lg">
-                          {event.title}
-                        </h5>
-                        {event.speaker && (
-                          <p class="mt-1 text-base font-medium text-gray-800 md:text-lg">
-                            {event.speaker}
-                          </p>
-                        )}
-                        {event.details && (
-                          <p class="mt-1 text-base text-gray-700 md:text-lg">
-                            {event.details}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>

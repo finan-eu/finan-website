@@ -1,7 +1,7 @@
 export const triennialGathering2026Schedule = [
   {
-    date: 'March 29, 2026 — Arrival Day',
-    description: 'Day 1',
+    date: 'March 29, 2026',
+    description: 'Arrival Day',
     events: [
       {
         time: '11:00',
@@ -11,8 +11,8 @@ export const triennialGathering2026Schedule = [
     ],
   },
   {
-    date: 'March 30, 2026 — Conference Day',
-    description: 'Day 2',
+    date: 'March 30, 2026',
+    description: 'Conference Day',
     events: [
       {
         time: '09:00 – 09:15',
@@ -43,8 +43,8 @@ export const triennialGathering2026Schedule = [
     ],
   },
   {
-    date: 'March 31, 2026 — Blue Lagoon',
-    description: 'Day 3',
+    date: 'March 31, 2026',
+    description: 'Blue Lagoon',
     events: [
       {
         time: '10:00 – 17:00',
@@ -55,8 +55,8 @@ export const triennialGathering2026Schedule = [
     ],
   },
   {
-    date: 'April 1, 2026 — Goodbye Iceland',
-    description: 'Day 4',
+    date: 'April 1, 2026',
+    description: 'Goodbye Iceland',
     events: [
       {
         time: 'TBA',
