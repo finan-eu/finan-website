@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import bannerImage from '../assets/images/events/banner-triennial-gathering-2026.jpg';
 ---
 
 <Layout
@@ -12,9 +14,24 @@ import Footer from '../components/Footer.astro';
 
   <!-- Event Header Section -->
   <section
-    class="relative flex min-h-[600px] items-center justify-center bg-gray-600 py-16 text-white"
+    class="relative flex min-h-[600px] items-center justify-center py-30 text-white"
   >
-    <div class="container mx-auto px-4 text-center">
+    <!-- Background Image -->
+    <Image
+      src={bannerImage}
+      alt="Northern Lights over Reykjavik, Iceland"
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      format="webp"
+      width={1920}
+      height={1080}
+    />
+
+    <!-- Gray overlay -->
+    <div class="absolute inset-0 bg-gray-900/70"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 text-center">
       <!-- Conference Label -->
       <p class="mb-4 text-sm font-medium tracking-wide text-gray-200 uppercase">
         FiNAN Conference
