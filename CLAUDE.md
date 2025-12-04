@@ -82,7 +82,7 @@ public/
 - **Statistics.astro** - Display organization statistics
 - **Partners.astro** - Partner organizations showcase
 - **Partnership.astro** - Partnership details display
-- **HowWeHelp.astro** - Services and support information
+- **OurAdvocacy.astro** - Services and support information
 - **CTABanner.astro** - Call-to-action sections
 - **RegistrationSection.astro** - Member registration
 - **TopBanner.astro** - Top page announcements
