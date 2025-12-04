@@ -14,7 +14,7 @@ import bannerImage from '../assets/images/events/banner-triennial-gathering-2026
 
   <!-- Event Header Section -->
   <section
-    class="relative flex min-h-[600px] items-center justify-center py-30 text-white"
+    class="relative flex min-h-[600px] items-center justify-center py-40 text-white"
   >
     <!-- Background Image -->
     <Image
@@ -33,7 +33,7 @@ import bannerImage from '../assets/images/events/banner-triennial-gathering-2026
     <!-- Content -->
     <div class="relative z-10 container mx-auto px-4 text-center">
       <!-- Conference Label -->
-      <p class="mb-4 text-sm font-medium tracking-wide text-gray-200 uppercase">
+      <p class="mb-4 text-lg font-medium tracking-wide text-gray-200">
         FiNAN Conference
       </p>
 
@@ -52,47 +52,18 @@ import bannerImage from '../assets/images/events/banner-triennial-gathering-2026
         class="mb-10 flex flex-col items-center justify-center gap-4 text-gray-200 md:flex-row md:gap-8"
       >
         <div class="flex items-center gap-2">
-          <svg
-            class="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            ></path>
-          </svg>
-          <span>March 30 – April 1, 2026</span>
+          <img src="/icons/calendar-line.svg" alt="Calendar" class="h-5 w-5" />
+          <span class="text-lg">March 30 – April 1, 2026</span>
         </div>
         <div class="flex items-center gap-2">
-          <svg
-            class="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            ></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-          </svg>
-          <span>Reykjavik, Iceland</span>
+          <img src="/icons/map-pin-line.svg" alt="Location" class="h-5 w-5" />
+          <span class="text-lg">Reykjavik, Iceland</span>
         </div>
       </div>
 
       <!-- Countdown Timer -->
       <div
-        class="mb-10 inline-block border-2 border-white/30 bg-gray-600/50 p-6 backdrop-blur-sm"
+        class="mb-10 inline-block rounded-lg border-2 border-white/30 bg-gray-600/50 p-6 backdrop-blur-sm"
       >
         <div class="flex gap-8" id="countdown">
           <div class="flex flex-col items-center">
@@ -118,17 +89,35 @@ import bannerImage from '../assets/images/events/banner-triennial-gathering-2026
       <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
         <a
           href="#register"
-          class="rounded bg-white px-8 py-3 font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl"
+          class="rounded-full bg-white px-8 py-3 font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl"
         >
           Register Now
         </a>
         <a
           href="#schedule"
-          class="rounded border-2 border-white px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-white/10"
+          class="rounded-full border-2 border-white px-[30px] py-[10px] font-semibold text-white transition-all duration-200 hover:bg-white/10"
         >
           View Schedule
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Event Information Section -->
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Welcome to FiNAN Triennial Gathering 2026!
+      </h2>
+      <p class="mb-10 text-lg text-gray-700">
+        Join us for an inspiring three-day conference bringing together Filipino
+        nurses from across the Nordic region. This triennial gathering will
+        feature keynote speakers, workshops, networking opportunities, and
+        discussions on equity, leadership, and the evolving landscape of global
+        healthcare migration.
+      </p>
     </div>
   </section>
 
