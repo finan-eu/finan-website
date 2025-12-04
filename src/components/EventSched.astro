@@ -1,0 +1,186 @@
+---
+interface Event {
+  readonly time?: string;
+  readonly title: string;
+  readonly speaker?: string;
+  readonly details?: string;
+}
+
+interface EventDay {
+  readonly date: string;
+  readonly description?: string;
+  readonly events: readonly Event[];
+}
+
+interface Props {
+  schedule: readonly EventDay[];
+}
+
+const { schedule } = Astro.props;
+
+// Generate a global counter for unique IDs across all dates
+let globalEventIndex = 0;
+---
+
+<div class="mx-auto max-w-4xl px-4 sm:px-6">
+  <!-- Hidden heading for screen readers to improve document outline -->
+  <h2 id="event-heading" class="sr-only">Event Schedule</h2>
+
+  <div class="space-y-4">
+    {
+      schedule.map((day) => {
+        const currentIndex = ++globalEventIndex;
+        return (
+          <div
+            class="group rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+            role="listitem"
+          >
+            <button
+              type="button"
+              class="event-toggle flex w-full items-start justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2"
+              aria-expanded="false"
+              aria-controls={`event-content-${currentIndex}`}
+              data-event-index={currentIndex}
+            >
+              <div class="flex-1">
+                <h4
+                  id={`event-date-${currentIndex}`}
+                  class="pr-4 text-lg font-semibold text-gray-900 md:text-xl"
+                >
+                  {day.date}
+                </h4>
+                {day.description && (
+                  <p class="mt-1 text-sm text-gray-600">{day.description}</p>
+                )}
+              </div>
+              <div class="flex items-center gap-2">
+                {/* Expand/collapse icon */}
+                <svg
+                  class="chevron h-6 w-6 flex-shrink-0 text-gray-500 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div
+              id={`event-content-${currentIndex}`}
+              class="event-content overflow-hidden transition-all duration-300 ease-in-out"
+              style="max-height: 0;"
+              aria-labelledby={`event-date-${currentIndex}`}
+              role="region"
+            >
+              <div class="border-t border-gray-100 px-6 py-5">
+                <div class="space-y-4">
+                  {day.events.map((event) => (
+                    <div class="event-item flex flex-col gap-3 sm:grid sm:grid-cols-[auto_1fr] sm:gap-8">
+                      {/* Left side - Time */}
+                      <div>
+                        {event.time && (
+                          <span class="inline-flex items-center gap-1.5 rounded-lg border-1 border-blue-100 bg-blue-50 px-3 py-1 text-base font-semibold text-blue-900 md:text-lg">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="h-4 w-4 md:h-5 md:w-5"
+                            >
+                              <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM13 12H17V14H11V7H13V12Z" />
+                            </svg>
+                            {event.time}
+                          </span>
+                        )}
+                      </div>
+                      {/* Right side - Title, Speaker, Details */}
+                      <div>
+                        <h5 class="text-base font-semibold text-gray-900 md:text-lg">
+                          {event.title}
+                        </h5>
+                        {event.speaker && (
+                          <p class="mt-1 text-base font-medium text-gray-800 md:text-lg">
+                            {event.speaker}
+                          </p>
+                        )}
+                        {event.details && (
+                          <p class="mt-1 text-base text-gray-700 md:text-lg">
+                            {event.details}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
+
+<script>
+  // Event Schedule Accordion functionality
+  function initEventAccordion() {
+    const toggleButtons = document.querySelectorAll('.event-toggle');
+
+    toggleButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling as HTMLElement;
+        const chevron = button.querySelector('.chevron');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+        // Toggle the current event day
+        if (isExpanded) {
+          button.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0';
+          chevron?.classList.remove('rotate-180');
+        } else {
+          button.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          chevron?.classList.add('rotate-180');
+        }
+      });
+    });
+  }
+
+  // Initialize on page load and after navigation
+  document.addEventListener('astro:page-load', initEventAccordion);
+</script>
+
+<style>
+  .event-content {
+    transition:
+      max-height 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
+  .chevron {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* When collapsed, button should have rounded bottom corners too */
+  .event-toggle[aria-expanded='false'] {
+    border-radius: 0.5rem; /* rounded-lg */
+  }
+
+  /* When expanded, only top corners should be rounded */
+  .event-toggle[aria-expanded='true'] {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .event-item:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    margin-bottom: 1rem;
+  }
+</style>
