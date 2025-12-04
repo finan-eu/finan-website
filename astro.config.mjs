@@ -26,7 +26,7 @@ function securityHeaders() {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://finan.eu.com',
+  site: 'https://www.finan.eu.com',
   integrations: [sitemap()],
   build: {
     inlineStylesheets: 'auto',

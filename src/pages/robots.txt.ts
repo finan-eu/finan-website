@@ -9,7 +9,7 @@
 import type { APIRoute } from 'astro';
 
 // Configuration
-const CUSTOM_DOMAIN = 'finan.eu.com';
+const CUSTOM_DOMAIN = 'www.finan.eu.com';
 const PAGES_DEV_PATTERN = /\.pages\.dev$/i;
 
 // Robots.txt for custom domain (allow crawling)
