@@ -148,8 +148,8 @@ export async function getBlogPostsByTag(tag: string, limit = 6) {
     // Convert tag name to slug format (lowercase, hyphenated)
     const tagSlug = tag.toLowerCase().replace(/\s+/g, '-');
 
-    // Try using Ghost API filter first (more efficient)
-    // Note: ts-ghost uses "tags:" (plural) not "tag:" (singular)
+    // Use Ghost API filter with proper syntax: tags:slug (note: plural "tags")
+    // Reference: https://ghost.org/docs/content-api/#filtering
     const response = await api.posts
       .browse({
         limit,
@@ -172,48 +172,7 @@ export async function getBlogPostsByTag(tag: string, limit = 6) {
 
     return response.data;
   } catch (error) {
-    // Fallback to client-side filtering if Ghost API filter fails
-    console.warn(
-      `Ghost API filter failed for tag "${tag}", falling back to client-side filtering:`,
-      error
-    );
-
-    try {
-      const response = await api.posts
-        .browse({
-          limit: 'all',
-          order: 'published_at DESC',
-        })
-        .include({
-          authors: true,
-          tags: true,
-        })
-        .fetch();
-
-      if (!response.success) {
-        console.error(
-          'Error fetching Ghost posts:',
-          response.errors.join(', ')
-        );
-        return [];
-      }
-
-      // Filter posts by tag name and limit the results
-      const filteredPosts = response.data
-        .filter((post) =>
-          post.tags?.some(
-            (postTag) => postTag.name?.toLowerCase() === tag.toLowerCase()
-          )
-        )
-        .slice(0, limit);
-
-      return filteredPosts;
-    } catch (fallbackError) {
-      console.error(
-        `Failed to fetch blog posts with tag "${tag}":`,
-        fallbackError
-      );
-      return [];
-    }
+    console.error(`Failed to fetch blog posts with tag "${tag}":`, error);
+    return [];
   }
 }
