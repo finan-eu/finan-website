@@ -1,0 +1,130 @@
+---
+// BlogRepresentation.astro - Regional blog section for representation pages
+import { getBlogPostsByTag } from '../lib/ghost';
+import type { RepresentationCountry } from '../data/representation/blogRepresentation';
+import { blogRepresentationConfig } from '../data/representation/blogRepresentation';
+
+// Props
+interface Props {
+  country: RepresentationCountry;
+}
+
+const { country } = Astro.props;
+
+// Get configuration for this country
+const config = blogRepresentationConfig[country];
+
+// Constants
+const EXCERPT_MAX_LENGTH = 200;
+
+// Fetch latest 6 blog posts filtered by country tag
+const posts = await getBlogPostsByTag(config.tag, 6);
+
+// Helper function to format date
+function formatDate(dateString: string | null | undefined) {
+  if (!dateString) {
+    return 'Date unavailable';
+  }
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// Helper function to get primary tag
+function getPrimaryTag(post: any) {
+  return post.tags && post.tags.length > 0 ? post.tags[0].name : 'News';
+}
+
+// Helper function to truncate excerpt
+function truncateExcerpt(
+  text: string | null | undefined,
+  maxLength: number = EXCERPT_MAX_LENGTH
+) {
+  if (!text || text.length <= maxLength) {
+    return text || '';
+  }
+  return text.slice(0, maxLength).trim() + '...';
+}
+---
+
+<!-- Regional Blog Section -->
+<section class="bg-gray-50 py-16 md:py-24">
+  <div class="mx-auto max-w-screen-xl px-6">
+    <!-- Header -->
+    <div class="mb-16 text-center">
+      <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-5xl">
+        {config.heading}
+      </h2>
+      <p class="mx-auto max-w-4xl text-lg leading-relaxed text-gray-700">
+        {config.description}
+      </p>
+    </div>
+
+    <!-- Blog Grid or Empty State -->
+    {
+      posts.length > 0 ? (
+        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <a
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
+            >
+              <article>
+                <div class="aspect-[3/2] overflow-hidden bg-gray-200">
+                  <img
+                    src={post.feature_image || '/images/image_thumbnail.svg'}
+                    alt={post.title}
+                    class="h-full w-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="mb-3 flex flex-wrap items-center gap-2">
+                    <span class="rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-900">
+                      {getPrimaryTag(post)}
+                    </span>
+                    <span class="text-sm whitespace-nowrap text-gray-600">
+                      {formatDate(post.published_at)}
+                    </span>
+                  </div>
+                  <h3 class="mb-3 text-xl font-bold text-gray-900">
+                    {post.title}
+                    <span class="sr-only">(opens in new tab)</span>
+                  </h3>
+                  <p class="leading-relaxed text-gray-700">
+                    {truncateExcerpt(post.excerpt)}
+                  </p>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="mb-12 text-center">
+          <div class="mx-auto max-w-2xl rounded-lg border border-gray-200 bg-white p-12">
+            <p class="text-lg text-gray-600">
+              No news or events are currently available for {config.tag}. Check
+              back soon for updates!
+            </p>
+          </div>
+        </div>
+      )
+    }
+
+    <!-- View All Button -->
+    <div class="text-center">
+      <a
+        href="https://puls.finan.eu.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center rounded-full border-2 border-blue-900 px-8 py-3 font-medium text-blue-900 shadow-lg transition-all duration-200 hover:bg-blue-900 hover:text-white hover:shadow-xl"
+      >
+        Read more on FiNAN Puls
+        <span class="sr-only">(opens in new tab)</span>
+      </a>
+    </div>
+  </div>
+</section>

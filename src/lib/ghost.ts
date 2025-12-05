@@ -131,3 +131,52 @@ export async function getAllPostSlugs() {
     return [];
   }
 }
+
+/**
+ * Fetch blog posts filtered by tag
+ * @param tag - The tag to filter posts by
+ * @param limit - Maximum number of posts to fetch (default: 6)
+ * @returns Array of blog posts with the specified tag
+ */
+export async function getBlogPostsByTag(tag: string, limit = 6) {
+  const api = getGhostAPI();
+  if (!api) {
+    return [];
+  }
+
+  try {
+    // Fetch all posts with tags included, then filter in JavaScript
+    const response = await api.posts
+      .browse({
+        limit: 'all',
+        order: 'published_at DESC',
+      })
+      .include({
+        authors: true,
+        tags: true,
+      })
+      .fetch();
+
+    if (!response.success) {
+      console.error(
+        'Error fetching Ghost posts by tag:',
+        response.errors.join(', ')
+      );
+      return [];
+    }
+
+    // Filter posts by tag name and limit the results
+    const filteredPosts = response.data
+      .filter((post) =>
+        post.tags?.some(
+          (postTag) => postTag.name?.toLowerCase() === tag.toLowerCase()
+        )
+      )
+      .slice(0, limit);
+
+    return filteredPosts;
+  } catch (error) {
+    console.error(`Failed to fetch blog posts with tag "${tag}":`, error);
+    return [];
+  }
+}
