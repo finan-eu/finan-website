@@ -4,8 +4,8 @@ const denmarkCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Sofie Jensen',
-      affiliations: '',
       role: 'Representation President',
+      affiliations: '',
       bio: 'Coordinates strategic partnerships with Danish healthcare trusts and ensures Filipino nurses are represented in policy discussions.',
       imageAlt: 'Portrait of Sofie Jensen',
       imageSrc: '/images/image_thumbnail.svg',
@@ -13,8 +13,8 @@ const denmarkCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Jerome Bautista',
-      affiliations: '',
       role: 'Licensing Navigator',
+      affiliations: '',
       bio: 'Guides nurses through SOR registration, bridging programs, and clinical adaptation pathways within Denmark.',
       imageAlt: 'Portrait of Jerome Bautista',
       imageSrc: '/images/image_thumbnail.svg',
@@ -22,8 +22,8 @@ const denmarkCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Camilla Sørensen',
-      affiliations: '',
       role: 'Well-being Coordinator',
+      affiliations: '',
       bio: "Leads wellness initiatives, including peer counseling and family integration support tailored to Denmark's social systems.",
       imageAlt: 'Portrait of Camilla Sørensen',
       imageSrc: '/images/image_thumbnail.svg',

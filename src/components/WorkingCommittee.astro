@@ -91,10 +91,10 @@ const members = props.members ?? baseConfig?.members ?? fallbackConfig.members;
               <h3 class="mb-1 text-xl font-bold text-gray-900">
                 {member.name}
               </h3>
+              <p class="mb-2 text-lg text-gray-900">{member.role}</p>
               {member.affiliations && (
-                <p class="mb-2 text-sm text-gray-900">{member.affiliations}</p>
+                <p class="mb-3 text-sm text-gray-900">{member.affiliations}</p>
               )}
-              <p class="mb-3 text-lg text-gray-900">{member.role}</p>
               <p class="text-sm leading-relaxed text-gray-700">{member.bio}</p>
 
               {member.linkedinUrl && (

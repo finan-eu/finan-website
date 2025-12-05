@@ -4,8 +4,8 @@ const greenlandCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Inuuteq Kristensen',
-      affiliations: '',
       role: 'Representation President',
+      affiliations: '',
       bio: 'Coordinates with Greenlandic health authorities to streamline credential assessments for Filipino nurses working in Arctic environments.',
       imageAlt: 'Portrait of Inuuteq Kristensen',
       imageSrc: '/images/image_thumbnail.svg',
@@ -13,8 +13,8 @@ const greenlandCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Lara Mendoza',
-      affiliations: '',
       role: 'Remote Practice Advisor',
+      affiliations: '',
       bio: 'Provides guidance on telehealth protocols and emergency preparedness for members assigned to outpost clinics.',
       imageAlt: 'Portrait of Lara Mendoza',
       imageSrc: '/images/image_thumbnail.svg',
@@ -22,8 +22,8 @@ const greenlandCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Anders Lund',
-      affiliations: '',
       role: 'Housing & Transit Coordinator',
+      affiliations: '',
       bio: 'Supports relocation logistics, including winter travel planning and temporary housing arrangements for incoming nurses.',
       imageAlt: 'Portrait of Anders Lund',
       imageSrc: '/images/image_thumbnail.svg',
@@ -31,8 +31,8 @@ const greenlandCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Janice Pineda',
-      affiliations: '',
       role: 'Wellness Facilitator',
+      affiliations: '',
       bio: 'Hosts virtual wellness sessions and resilience workshops tailored for remote practitioners facing long winters.',
       imageAlt: 'Portrait of Janice Pineda',
       imageSrc: '/images/image_thumbnail.svg',

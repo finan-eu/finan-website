@@ -8,8 +8,8 @@ const finlandCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Floro Cubelo',
-      affiliations: 'TtT, Sh, CGNC, FFNMRCSI, FETNA',
       role: 'Puheenjohtaja',
+      affiliations: 'TtT, Sh, CGNC, FFNMRCSI, FETNA',
       bio: 'Akuuttihoitotyö, hoitotiede, kansanterveystiede, hoitotyön koulutus, kansainvälisten sairaanhoitajien integroitomis-ja pätevöitymiskoulutus.',
       imageAlt: 'Portrait of Floro Cubelo',
       imageSrc: floroCubeloImage,
@@ -17,8 +17,8 @@ const finlandCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Ryann Deloso',
-      affiliations: 'SAMK, Sh',
       role: 'Edustaja, Uusimaa',
+      affiliations: 'SAMK, Sh',
       bio: 'Hoitotyön yrittäjys, akuuttiosasto, hanke osaaja.',
       imageAlt: 'Portrait of Ryann Deloso',
       imageSrc: ryannDelosoImage,
@@ -26,8 +26,8 @@ const finlandCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Jeanny Mae Banting Tuominen',
-      affiliations: 'YAMK, Sh',
       role: 'Edustaja, Uusimaa',
+      affiliations: 'YAMK, Sh',
       bio: 'Dialyysi ja perioperatiivinen hoitotyö.',
       imageAlt: 'Portrait of Jeanny Mae Banting Tuominen',
       imageSrc: jeannyMaeBantingTuominenImage,
@@ -35,8 +35,8 @@ const finlandCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Marie Lagundi',
-      affiliations: 'Sh',
       role: 'Edustaja, Pohjois-Suomi',
+      affiliations: 'Sh',
       bio: 'Hoitotyön yrittäjys, akuuttiosasto, hanke osaaja.',
       imageAlt: 'Portrait of Marie Lagundi',
       imageSrc: marieLagundiImage,

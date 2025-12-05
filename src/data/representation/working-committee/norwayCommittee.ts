@@ -4,8 +4,8 @@ const norwayCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Ingrid Nilsen',
-      affiliations: '',
       role: 'Representation President',
+      affiliations: '',
       bio: 'Represents members in national health dialogues and drives strategic collaborations with Norwegian municipalities.',
       imageAlt: 'Portrait of Ingrid Nilsen',
       imageSrc: '/images/image_thumbnail.svg',
@@ -13,8 +13,8 @@ const norwayCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Christian Del Rosario',
-      affiliations: '',
       role: 'Authorization Advisor',
+      affiliations: '',
       bio: 'Helps nurses prepare complete Helsedirektoratet applications and navigate specialization pathways.',
       imageAlt: 'Portrait of Christian Del Rosario',
       imageSrc: '/images/image_thumbnail.svg',
@@ -22,8 +22,8 @@ const norwayCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Solveig Lundberg',
-      affiliations: '',
       role: 'Labor Relations Coordinator',
+      affiliations: '',
       bio: 'Guides members through union membership benefits, contract reviews, and workplace mediation best practices.',
       imageAlt: 'Portrait of Solveig Lundberg',
       imageSrc: '/images/image_thumbnail.svg',
@@ -31,8 +31,8 @@ const norwayCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Althea Gonzales',
-      affiliations: '',
       role: 'Regional Outreach Lead',
+      affiliations: '',
       bio: 'Travels across Oslo, Bergen, and Trondheim delivering workshops on cultural adaptation and professional growth.',
       imageAlt: 'Portrait of Althea Gonzales',
       imageSrc: '/images/image_thumbnail.svg',
