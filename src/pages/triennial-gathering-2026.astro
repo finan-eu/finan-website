@@ -114,84 +114,94 @@ import { triennialGathering2026Schedule } from '../data/events/triennialGatherin
       <h2
         class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
       >
-        Welcome to FiNAN Triennial Gathering 2026!
+        Welcome to the Triennial Gathering 2026 in Reykjavik, Iceland!
       </h2>
+      <p class="pb-4 text-lg text-gray-700">
+        The <strong
+          >Filipino Nurses Association in the Nordic Region (FiNAN)</strong
+        > proudly invites you to our landmark event on <strong
+          >March 30 – April 1, 2026</strong
+        >, where we bring together <strong
+          >Filipino Internationally Educated Nurses (IENs)</strong
+        >, other internationally educated nurses, healthcare leaders,
+        policy-makers, employers, and recruiters under one roof.
+      </p>
       <p class="mb-10 text-lg text-gray-700">
-        Join us for an inspiring three-day conference bringing together Filipino
-        nurses from across the Nordic region. This triennial gathering will
-        feature keynote speakers, workshops, networking opportunities, and
-        discussions on equity, leadership, and the evolving landscape of global
-        healthcare migration.
+        This gathering is more than a meeting, it is a platform for dialogue,
+        collaboration, and action. Together, we will explore the most pressing
+        issues shaping the nursing profession today, including workforce
+        mobility, ethical recruitment, integration, retention, and the future of
+        nursing in a globalized healthcare landscape.
       </p>
     </div>
-  </section>
 
-  <!-- Event Schedule Section -->
-  <section class="bg-white pb-16">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6">
-      <!-- Schedule Banner Image -->
-      <div>
-        <Image
-          src={scheduleBanner}
-          alt="Triennial Gathering 2026 Schedule Banner"
-          class="w-full rounded-lg"
-          loading="lazy"
-          format="webp"
-        />
+    <!-- Event Schedule Section -->
+    <section class="bg-white pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <!-- Schedule Banner Image -->
+        <div>
+          <Image
+            src={scheduleBanner}
+            alt="Triennial Gathering 2026 Schedule Banner"
+            class="w-full rounded-lg"
+            loading="lazy"
+            format="webp"
+          />
+        </div>
+
+        <h2
+          class="pt-10 pb-6 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+          id="schedule"
+        >
+          Schedule
+        </h2>
       </div>
+      <EventSched schedule={triennialGathering2026Schedule} />
+    </section>
 
-      <h2
-        class="pt-10 pb-6 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        id="schedule"
-      >
-        Schedule
-      </h2>
-    </div>
-    <EventSched schedule={triennialGathering2026Schedule} />
-  </section>
+    <Footer />
 
-  <Footer />
+    <script>
+      // Countdown Timer Logic
+      function updateCountdown() {
+        const eventDate = new Date('2026-03-30T00:00:00').getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
 
-  <script>
-    // Countdown Timer Logic
-    function updateCountdown() {
-      const eventDate = new Date('2026-03-30T00:00:00').getTime();
-      const now = new Date().getTime();
-      const distance = eventDate - now;
+        if (distance < 0) {
+          document.getElementById('days')!.textContent = '00';
+          document.getElementById('hours')!.textContent = '00';
+          document.getElementById('minutes')!.textContent = '00';
+          document.getElementById('seconds')!.textContent = '00';
+          return;
+        }
 
-      if (distance < 0) {
-        document.getElementById('days')!.textContent = '00';
-        document.getElementById('hours')!.textContent = '00';
-        document.getElementById('minutes')!.textContent = '00';
-        document.getElementById('seconds')!.textContent = '00';
-        return;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days')!.textContent = String(days).padStart(
+          2,
+          '0'
+        );
+        document.getElementById('hours')!.textContent = String(hours).padStart(
+          2,
+          '0'
+        );
+        document.getElementById('minutes')!.textContent = String(
+          minutes
+        ).padStart(2, '0');
+        document.getElementById('seconds')!.textContent = String(
+          seconds
+        ).padStart(2, '0');
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById('days')!.textContent = String(days).padStart(
-        2,
-        '0'
-      );
-      document.getElementById('hours')!.textContent = String(hours).padStart(
-        2,
-        '0'
-      );
-      document.getElementById('minutes')!.textContent = String(
-        minutes
-      ).padStart(2, '0');
-      document.getElementById('seconds')!.textContent = String(
-        seconds
-      ).padStart(2, '0');
-    }
-
-    // Update countdown immediately and then every second
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+      // Update countdown immediately and then every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
+  </section>
 </Layout>
