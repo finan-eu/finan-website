@@ -1,6 +1,7 @@
 ---
 import TopBanner from '../components/TopBanner.astro';
 import HeroHeader from '../components/HeroHeader.astro';
+import EventHeaderSection from '../components/EventHeaderSection.astro';
 import Statistics from '../components/Statistics.astro';
 import Pillars from '../components/Pillars.astro';
 import Partners from '../components/Partners.astro';
@@ -22,6 +23,10 @@ import StructuredData from '../components/StructuredData.astro';
   <main>
     <TopBanner />
     <HeroHeader />
+    <EventHeaderSection
+      secondaryButtonText="More info"
+      secondaryButtonLink="/triennial-gathering-2026"
+    />
     <!-- <Statistics /> -->
     <Pillars />
     <Partners />
