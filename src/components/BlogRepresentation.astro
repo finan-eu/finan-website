@@ -1,12 +1,24 @@
 ---
-// Blog.astro - News & Events section showcasing FiNAN's latest updates
-import { getBlogPosts } from '../lib/ghost';
+// BlogRepresentation.astro - Regional blog section for representation pages
+import { getBlogPostsByTag } from '../lib/ghost';
+import type { RepresentationCountry } from '../data/representation/blogRepresentation';
+import { blogRepresentationConfig } from '../data/representation/blogRepresentation';
+
+// Props
+interface Props {
+  country: RepresentationCountry;
+}
+
+const { country } = Astro.props;
+
+// Get configuration for this country
+const config = blogRepresentationConfig[country];
 
 // Constants
 const EXCERPT_MAX_LENGTH = 200;
 
-// Fetch latest 6 blog posts from Ghost CMS
-const posts = await getBlogPosts(6);
+// Fetch latest 6 blog posts filtered by country tag
+const posts = await getBlogPostsByTag(config.tag, 6);
 
 // Helper function to format date
 function formatDate(dateString: string | null | undefined) {
@@ -37,18 +49,16 @@ function truncateExcerpt(
 }
 ---
 
-<!-- News & Events Section -->
+<!-- Regional Blog Section -->
 <section class="bg-gray-50 py-16 md:py-24">
   <div class="mx-auto max-w-screen-xl px-6">
     <!-- Header -->
     <div class="mb-16 text-center">
       <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-5xl">
-        FiNAN Puls
+        {config.heading}
       </h2>
       <p class="mx-auto max-w-4xl text-lg leading-relaxed text-gray-700">
-        Stay up to date with FiNAN's latest news, policy updates, and community
-        events. Join us in our mission to support and empower Filipino nurses
-        across the Nordic region.
+        {config.description}
       </p>
     </div>
 
@@ -96,8 +106,8 @@ function truncateExcerpt(
         <div class="mb-12 text-center">
           <div class="mx-auto max-w-2xl rounded-lg border border-gray-200 bg-white p-12">
             <p class="text-lg text-gray-600">
-              No news or events are currently available. Check back soon for
-              updates!
+              No news or events are currently available for {config.tag}. Check
+              back soon for updates!
             </p>
           </div>
         </div>
@@ -110,7 +120,7 @@ function truncateExcerpt(
         href="https://puls.finan.eu.com/"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center rounded-full border-2 border-blue-900 px-8 py-3 font-medium text-blue-900 transition-all duration-300 hover:bg-blue-900 hover:text-white"
+        class="inline-flex items-center rounded-full border-2 border-blue-900 px-8 py-3 font-medium text-blue-900 shadow-lg transition-all duration-200 hover:bg-blue-900 hover:text-white hover:shadow-xl"
       >
         Read more on FiNAN Puls
         <span class="sr-only">(opens in new tab)</span>
