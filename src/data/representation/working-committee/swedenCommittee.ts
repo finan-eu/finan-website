@@ -1,4 +1,10 @@
 import type { WorkingCommitteeConfig } from './types';
+import joyKongWallanderImage from '../../../assets/images/working-committee/sweden/joy-kong-wallander.jpg';
+import maryroseVelazcoMartenssonImage from '../../../assets/images/working-committee/sweden/maryrose-velazco-martensson.jpg';
+import gemmaLilacEplerImage from '../../../assets/images/working-committee/sweden/gemma-lilac-epler.png';
+import cherishMizonaImage from '../../../assets/images/working-committee/sweden/cherish-mizona.jpeg';
+import jezylleJoyTiuImage from '../../../assets/images/working-committee/sweden/jezylle-joy-tiu.jpg';
+import janiceKarenVelazcoImage from '../../../assets/images/working-committee/sweden/janice-karen-velazco.jpg';
 
 const swedenCommittee: WorkingCommitteeConfig = {
   members: [
@@ -9,8 +15,7 @@ const swedenCommittee: WorkingCommitteeConfig = {
         'Legitimerad Sjuksköterska, Vård och omsorg, Kungsbacka Kommun',
       bio: '',
       imageAlt: 'Portrait of Joy Kong Wallander',
-      imageSrc:
-        '/src/assets/images/working-committee/sweden/joy-kong-wallander.jpg',
+      imageSrc: joyKongWallanderImage,
     },
     {
       name: 'Maryrose Velazco Mårtensson',
@@ -18,8 +23,7 @@ const swedenCommittee: WorkingCommitteeConfig = {
       affiliations: 'Legitimerad Sjuksköterska, Lotsen Äldreboende, Göteborg',
       bio: '',
       imageAlt: 'Portrait of Maryrose Velazco Mårtensson',
-      imageSrc:
-        '/src/assets/images/working-committee/sweden/maryrose-velazco-martensson.jpg',
+      imageSrc: maryroseVelazcoMartenssonImage,
     },
     {
       name: 'Gemma Lilac Epler',
@@ -28,8 +32,7 @@ const swedenCommittee: WorkingCommitteeConfig = {
         'Legitimerad Sjuksköterska, HSL ansvarig, Attendo Äldreboende, Ytterby, Kungälv',
       bio: '',
       imageAlt: 'Portrait of Gemma Lilac Epler',
-      imageSrc:
-        '/src/assets/images/working-committee/sweden/gemma-lilac-epler.png',
+      imageSrc: gemmaLilacEplerImage,
     },
     {
       name: 'Cherish Mizona',
@@ -38,8 +41,7 @@ const swedenCommittee: WorkingCommitteeConfig = {
         'Legitimerad Sjuksköterska, Psykisk omvårdnad, Mölndals Sjukhus / Region Halland',
       bio: '',
       imageAlt: 'Portrait of Cherish Mizona',
-      imageSrc:
-        '/src/assets/images/working-committee/sweden/cherish-mizona.jpeg',
+      imageSrc: cherishMizonaImage,
     },
     {
       name: 'Jezylle Joy Tiu',
@@ -48,8 +50,7 @@ const swedenCommittee: WorkingCommitteeConfig = {
         'Legitimerad Sjuksköterska, Ortopedkliniken, Uddevalla Sjukhus & NÄL Trollhättan',
       bio: '',
       imageAlt: 'Portrait of Jezylle Joy Tiu',
-      imageSrc:
-        '/src/assets/images/working-committee/sweden/jezylle-joy-tiu.jpg',
+      imageSrc: jezylleJoyTiuImage,
     },
     {
       name: 'Janice Karen Velazco',
@@ -58,8 +59,7 @@ const swedenCommittee: WorkingCommitteeConfig = {
         'Legitimerad Sjuksköterska, Lungavdelning / Covidavdelning, Södra Älvsborgs Sjukhus, Borås',
       bio: '',
       imageAlt: 'Portrait of Janice Karen Velazco',
-      imageSrc:
-        '/src/assets/images/working-committee/sweden/janice-karen-velazco.jpg',
+      imageSrc: janiceKarenVelazcoImage,
     },
   ],
 } as const;
