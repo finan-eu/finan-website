@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-import sitemap from '@astrojs/sitemap';
 import { cspString, securityHeaders as headers } from './security.config.js';
 
 // Custom Vite plugin to set security headers
@@ -27,7 +26,7 @@ function securityHeaders() {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.finan.eu.com',
-  integrations: [sitemap()],
+  integrations: [],
   build: {
     inlineStylesheets: 'auto',
   },
