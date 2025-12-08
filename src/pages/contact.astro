@@ -6,6 +6,8 @@ import PageHeader from '../components/PageHeader.astro';
 import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.jpg';
 import CTABanner from '../components/CTABanner.astro';
+import RepresentationContactSection from '../components/RepresentationContactSection.astro';
+import Blog from '../components/Blog.astro';
 ---
 
 <Layout title="Contact Us - FiNAN">
@@ -20,7 +22,7 @@ import CTABanner from '../components/CTABanner.astro';
     />
 
     <!-- Contact Information Section -->
-    <section class="bg-white py-16">
+    <section class="bg-white pt-16 pb-8">
       <div class="mx-auto max-w-4xl px-4 sm:px-6">
         <header class="max-w-2xl">
           <h2
@@ -37,84 +39,11 @@ import CTABanner from '../components/CTABanner.astro';
             community support, or want to get involved with our initiatives,
             we'd love to hear from you.
           </p>
-
-          <div class="mb-12 grid gap-8 md:grid-cols-2">
-            <div>
-              <h3
-                class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-              >
-                Contact Information
-              </h3>
-              <div class="space-y-4">
-                <div>
-                  <h4 class="font-semibold text-gray-900">Email</h4>
-                  <p class="text-gray-700">info@finan.eu.com</p>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Phone</h4>
-                  <p class="text-gray-700">+45 XX XX XX XX</p>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Address</h4>
-                  <p class="text-gray-700">
-                    FiNAN Headquarters<br />
-                    Copenhagen, Denmark
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3
-                class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-              >
-                Office Hours
-              </h3>
-              <div class="space-y-2">
-                <p class="text-gray-700">
-                  <span class="font-semibold">Monday - Friday:</span> 9:00 AM - 5:00
-                  PM CET
-                </p>
-                <p class="text-gray-700">
-                  <span class="font-semibold">Saturday:</span> 10:00 AM - 2:00 PM
-                  CET
-                </p>
-                <p class="text-gray-700">
-                  <span class="font-semibold">Sunday:</span> Closed
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <h3
-            class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-          >
-            How We Can Help
-          </h3>
-          <ul class="mb-8 space-y-2 text-lg text-gray-700">
-            <li>Career guidance and professional development support</li>
-            <li>
-              Information about licensing and certification in Nordic countries
-            </li>
-            <li>Community events and networking opportunities</li>
-            <li>Cultural integration and adaptation resources</li>
-            <li>Mentorship program connections</li>
-            <li>Professional advocacy and representation</li>
-          </ul>
-
-          <h3
-            class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-          >
-            Join Our Community
-          </h3>
-          <p class="text-lg text-gray-700">
-            Stay connected with fellow Filipino nurses across Denmark, Finland,
-            Iceland, Norway, and Sweden. Follow us on social media for updates
-            on events, opportunities, and community news.
-          </p>
         </div>
       </div>
     </section>
+    <RepresentationContactSection />
+    <Blog />
     <CTABanner />
   </main>
   <Footer />
