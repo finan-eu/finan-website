@@ -7,7 +7,7 @@ interface Props {
   secondaryButtonLink?: string;
   headingLevel?: 'h1' | 'h2';
   subtitleSize?: 'md:text-xl' | 'md:text-2xl';
-  countdownSize?: 'md:text-4xl' | 'md:text-5xl';
+  countdownSize?: 'lg:text-4xl' | 'lg:text-5xl';
 }
 
 const {
@@ -15,7 +15,7 @@ const {
   secondaryButtonLink = '#schedule',
   headingLevel = 'h1',
   subtitleSize = 'md:text-2xl',
-  countdownSize = 'md:text-5xl',
+  countdownSize = 'lg:text-5xl',
 } = Astro.props;
 ---
 
@@ -47,11 +47,11 @@ const {
     <!-- Main Title -->
     {
       headingLevel === 'h1' ? (
-        <h1 class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl">
+        <h1 class="mb-6 text-4xl font-bold lg:text-6xl">
           Triennial Gathering 2026
         </h1>
       ) : (
-        <h2 class="mb-6 text-4xl font-bold md:text-5xl">
+        <h2 class="mb-6 text-4xl font-bold lg:text-5xl">
           Triennial Gathering 2026
         </h2>
       )
