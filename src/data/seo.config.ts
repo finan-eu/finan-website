@@ -144,7 +144,7 @@ export const seoConfig = {
     creator: 'yourhandle',
     image: '/images/og-image.jpg',
     imageAlt:
-      'FiNAN - Filipino Nurses Association in the Nordic Region - Connecting and supporting Filipino nurses',
+      'The Filipino Nurses Association in the Nordic Region (FiNAN) - Connecting and supporting Filipino nurses',
   },
   meta: {
     keywords: [
