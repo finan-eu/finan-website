@@ -5,11 +5,17 @@ import bannerImage from '../assets/images/events/banner-triennial-gathering-2026
 interface Props {
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
+  headingLevel?: 'h1' | 'h2';
+  subtitleSize?: 'md:text-xl' | 'md:text-2xl';
+  countdownSize?: 'md:text-4xl' | 'md:text-5xl';
 }
 
 const {
   secondaryButtonText = 'View Schedule',
   secondaryButtonLink = '/triennial-gathering-2026#schedule',
+  headingLevel = 'h1',
+  subtitleSize = 'md:text-2xl',
+  countdownSize = 'md:text-5xl',
 } = Astro.props;
 ---
 
@@ -39,12 +45,20 @@ const {
     </p>
 
     <!-- Main Title -->
-    <h1 class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl">
-      Triennial Gathering 2026
-    </h1>
+    {
+      headingLevel === 'h1' ? (
+        <h1 class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl">
+          Triennial Gathering 2026
+        </h1>
+      ) : (
+        <h2 class="mb-6 text-4xl font-bold md:text-5xl">
+          Triennial Gathering 2026
+        </h2>
+      )
+    }
 
     <!-- Subtitle -->
-    <p class="mb-8 text-xl text-gray-200 md:text-2xl">
+    <p class={`mb-8 text-xl text-gray-200 ${subtitleSize}`}>
       Amplifying Voices: Navigating Equity, Leadership, and Global Migration
     </p>
 
@@ -53,11 +67,19 @@ const {
       class="mb-10 flex flex-col items-center justify-center gap-4 text-gray-200 md:flex-row md:gap-8"
     >
       <div class="flex items-center gap-2">
-        <img src="/assets/icons/calendar-line.svg" alt="Calendar" class="h-5 w-5" />
+        <img
+          src="/assets/icons/calendar-line.svg"
+          alt="Calendar"
+          class="h-5 w-5"
+        />
         <span class="text-lg">March 30 – April 1, 2026</span>
       </div>
       <div class="flex items-center gap-2">
-        <img src="/assets/icons/map-pin-line.svg" alt="Location" class="h-5 w-5" />
+        <img
+          src="/assets/icons/map-pin-line.svg"
+          alt="Location"
+          class="h-5 w-5"
+        />
         <span class="text-lg">Reykjavik, Iceland</span>
       </div>
     </div>
@@ -68,19 +90,26 @@ const {
     >
       <div class="flex gap-8" id="countdown">
         <div class="flex flex-col items-center">
-          <span class="text-4xl font-bold md:text-5xl" id="days">00</span>
+          <span class={`text-4xl font-bold ${countdownSize}`} id="days">00</span
+          >
           <span class="mt-2 text-sm text-gray-300">Days</span>
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-4xl font-bold md:text-5xl" id="hours">00</span>
+          <span class={`text-4xl font-bold ${countdownSize}`} id="hours"
+            >00</span
+          >
           <span class="mt-2 text-sm text-gray-300">Hours</span>
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-4xl font-bold md:text-5xl" id="minutes">00</span>
+          <span class={`text-4xl font-bold ${countdownSize}`} id="minutes"
+            >00</span
+          >
           <span class="mt-2 text-sm text-gray-300">Min</span>
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-4xl font-bold md:text-5xl" id="seconds">00</span>
+          <span class={`text-4xl font-bold ${countdownSize}`} id="seconds"
+            >00</span
+          >
           <span class="mt-2 text-sm text-gray-300">Secs</span>
         </div>
       </div>
