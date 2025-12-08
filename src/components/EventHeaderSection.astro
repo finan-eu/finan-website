@@ -3,25 +3,28 @@ import { Image } from 'astro:assets';
 import bannerImage from '../assets/images/events/banner-triennial-gathering-2026.jpg';
 
 interface Props {
-  secondaryButtonText?: string;
-  secondaryButtonLink?: string;
+  secondaryButtonText: string;
+  secondaryButtonLink: string;
   headingLevel?: 'h1' | 'h2';
   subtitleSize?: 'md:text-xl' | 'md:text-2xl';
   countdownSize?: 'lg:text-4xl' | 'lg:text-5xl';
+  id?: string;
 }
 
 const {
-  secondaryButtonText = 'View Schedule',
-  secondaryButtonLink = '#schedule',
+  secondaryButtonText,
+  secondaryButtonLink,
   headingLevel = 'h1',
   subtitleSize = 'md:text-2xl',
   countdownSize = 'lg:text-5xl',
+  id = 'triennial-gathering-2026',
 } = Astro.props;
 ---
 
 <!-- Event Header Section -->
 <section
   class="relative flex items-center justify-center py-16 text-white md:py-30"
+  id={id}
 >
   <!-- Background Image -->
   <Image
