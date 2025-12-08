@@ -64,16 +64,16 @@ export interface SiteConfig {
  */
 export const siteConfig = {
   metadata: {
-    title: 'FiNAN — Filipino Nurses Association in the Nordic Region',
+    title: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     description:
-      'FiNAN is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region, providing trusted guidance on licensing, cultural integration, and professional growth.',
+      'The Filipino Nurses Association in the Nordic Region (FiNAN) is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region, providing trusted guidance on licensing, cultural integration, and professional growth.',
     url: 'https://www.finan.eu.com',
-    author: 'FiNAN',
+    author: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     language: 'en',
   },
   social: {
-    twitter: 'yourhandle',
-    github: 'https://github.com/yourusername',
+    facebook: 'https://www.facebook.com/FNANordic/',
+    linkedin: 'https://www.linkedin.com/company/fnanordic',
     image: '/images/og-image.jpg',
   },
   seo: {
