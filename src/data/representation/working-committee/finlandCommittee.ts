@@ -17,7 +17,7 @@ const finlandCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Ryann Deloso',
-      affiliations: 'SAMK, Sh',
+      affiliations: 'YAMK, Sh',
       role: 'Edustaja, Uusimaa',
       bio: 'Hoitotyön yrittäjys, akuuttiosasto, hanke osaaja.',
       imageAlt: 'Portrait of Ryann Deloso',
