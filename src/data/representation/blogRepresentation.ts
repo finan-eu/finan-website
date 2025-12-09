@@ -6,7 +6,7 @@
 export interface BlogRepresentationConfig {
   heading: string;
   description: string;
-  tag: string;
+  tag: string | string[];
 }
 
 export const blogRepresentationConfig = {
@@ -56,7 +56,7 @@ export const blogRepresentationConfig = {
     heading: 'Latest from Kingdom of Denmark',
     description:
       'Stay updated with the latest news, events, and insights from FiNAN Kingdom of Denmark. Explore our recent activities, policy updates, and community highlights.',
-    tag: 'Kingdom of Denmark',
+    tag: ['Kingdom of Denmark', 'Denmark', 'Faroe Islands', 'Greenland'],
   },
 } as const satisfies Record<string, BlogRepresentationConfig>;
 
