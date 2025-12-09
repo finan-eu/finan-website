@@ -129,7 +129,7 @@ export const seoConfig = {
   },
   openGraph: {
     type: 'website',
-    image: '/images/og-image.jpg',
+    image: '/ogimg_finan.jpg',
     imageWidth: 1200,
     imageHeight: 630,
     imageAlt:
@@ -142,7 +142,7 @@ export const seoConfig = {
     cardType: 'summary_large_image',
     site: 'yourhandle',
     creator: 'yourhandle',
-    image: '/images/og-image.jpg',
+    image: '/ogimg_finan.jpg',
     imageAlt:
       'The Filipino Nurses Association in the Nordic Region (FiNAN) - Connecting and supporting Filipino nurses',
   },

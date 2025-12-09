@@ -74,7 +74,7 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/FNANordic/',
     linkedin: 'https://www.linkedin.com/company/fnanordic',
-    image: '/images/og-image.jpg',
+    image: '/ogimg_finan.jpg',
   },
   seo: {
     keywords: [
