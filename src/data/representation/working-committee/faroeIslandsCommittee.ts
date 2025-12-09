@@ -4,8 +4,8 @@ const faroeIslandsCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Elin Johannesen',
-      role: 'Representation President',
       affiliations: '',
+      role: 'Representation President',
       bio: 'Oversees island-wide outreach and collaborates with the national hospital to secure fair working conditions for members.',
       imageAlt: 'Portrait of Elin Johannesen',
       imageSrc: '/images/image_thumbnail.svg',
@@ -13,8 +13,8 @@ const faroeIslandsCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Maribel Flores',
-      role: 'Logistics Coordinator',
       affiliations: '',
+      role: 'Logistics Coordinator',
       bio: 'Arranges travel, housing, and onboarding resources for Filipino nurses assigned to clinics throughout the Faroe Islands.',
       imageAlt: 'Portrait of Maribel Flores',
       imageSrc: '/images/image_thumbnail.svg',
@@ -22,8 +22,8 @@ const faroeIslandsCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Páll Hentze',
-      role: 'Language Mentor',
       affiliations: '',
+      role: 'Language Mentor',
       bio: 'Facilitates small-group Faroese lessons and creates learning materials that focus on clinical terminology for nurses.',
       imageAlt: 'Portrait of Páll Hentze',
       imageSrc: '/images/image_thumbnail.svg',
@@ -31,8 +31,8 @@ const faroeIslandsCommittee: WorkingCommitteeConfig = {
     },
     {
       name: 'Rowena Garcia',
-      role: 'Community Events Lead',
       affiliations: '',
+      role: 'Community Events Lead',
       bio: 'Organizes outreach missions and cultural events that bring together Filipino families and local healthcare partners.',
       imageAlt: 'Portrait of Rowena Garcia',
       imageSrc: '/images/image_thumbnail.svg',

@@ -4,9 +4,9 @@ const icelandCommittee: WorkingCommitteeConfig = {
   members: [
     {
       name: 'Marvi Gil, RN',
-      role: 'Deputy Manager',
       affiliations:
         'Forensic Psychiatry Department, Landspítali University Hospital',
+      role: 'Deputy Manager',
       bio: 'Marvi Gil leads the Iceland Chapter with dedication and passion for advancing nursing practice and supporting Filipino nurses in their professional journey. Her leadership ensures that FiNAN Iceland remains a trusted resource and community for all members.',
       imageAlt: 'Portrait of Marvi Gil',
       imageSrc: '/images/image_thumbnail.svg',
