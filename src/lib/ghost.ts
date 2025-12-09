@@ -133,28 +133,29 @@ export async function getAllPostSlugs() {
 }
 
 /**
- * Fetch blog posts filtered by tag
- * @param tag - The tag to filter posts by
+ * Fetch blog posts filtered by tag(s)
+ * @param tag - The tag or array of tags to filter posts by
  * @param limit - Maximum number of posts to fetch (default: 6)
- * @returns Array of blog posts with the specified tag
+ * @returns Array of blog posts with the specified tag(s)
  */
-export async function getBlogPostsByTag(tag: string, limit = 6) {
+export async function getBlogPostsByTag(tag: string | string[], limit = 6) {
   const api = getGhostAPI();
   if (!api) {
     return [];
   }
 
   try {
-    // Convert tag name to slug format (lowercase, hyphenated)
-    const tagSlug = tag.toLowerCase().replace(/\s+/g, '-');
+    // Convert tag(s) to slug format for matching
+    const tagSlugs = Array.isArray(tag)
+      ? tag.map((t) => t.toLowerCase().replace(/\s+/g, '-'))
+      : [tag.toLowerCase().replace(/\s+/g, '-')];
 
-    // Use Ghost API filter with proper syntax: tags:slug (note: plural "tags")
-    // Reference: https://ghost.org/docs/content-api/#filtering
+    // Fetch more posts than needed to account for filtering
+    // We'll filter in-memory since ts-ghost library doesn't support tag filters in browse params
     const response = await api.posts
       .browse({
-        limit,
+        limit: 'all',
         order: 'published_at DESC',
-        filter: `tags:${tagSlug}`,
       })
       .include({
         authors: true,
@@ -170,9 +171,22 @@ export async function getBlogPostsByTag(tag: string, limit = 6) {
       return [];
     }
 
-    return response.data;
+    // Filter posts by matching tag slugs
+    const filteredPosts = response.data.filter((post) => {
+      if (!post.tags || post.tags.length === 0) {
+        return false;
+      }
+      // Check if any of the post's tags match any of the requested tag slugs
+      return post.tags.some((postTag) => tagSlugs.includes(postTag.slug));
+    });
+
+    // Return only the requested limit
+    return filteredPosts.slice(0, limit);
   } catch (error) {
-    console.error(`Failed to fetch blog posts with tag "${tag}":`, error);
+    console.error(
+      `Failed to fetch blog posts with tag "${Array.isArray(tag) ? tag.join(', ') : tag}":`,
+      error
+    );
     return [];
   }
 }

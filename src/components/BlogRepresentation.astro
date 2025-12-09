@@ -106,8 +106,9 @@ function truncateExcerpt(
         <div class="mb-12 text-center">
           <div class="mx-auto max-w-2xl rounded-lg border border-gray-200 bg-white p-12">
             <p class="text-lg text-gray-600">
-              No news or events are currently available for {config.tag}. Check
-              back soon for updates!
+              No news or events are currently available for{' '}
+              {Array.isArray(config.tag) ? config.tag.join(', ') : config.tag}.
+              Check back soon for updates!
             </p>
           </div>
         </div>
