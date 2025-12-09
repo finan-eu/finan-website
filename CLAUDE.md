@@ -33,7 +33,7 @@ FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-p
 ```
 src/
 ├── assets/          # Static assets optimized by Astro
-├── components/      # Reusable Astro components (19 components)
+├── components/      # Reusable Astro components (25 components)
 ├── data/            # TypeScript data files and configurations
 │   ├── representation/        # Regional representation data
 │   │   ├── working-committee/ # Committee member data by country
@@ -48,7 +48,7 @@ src/
 │   ├── registrationSectionConfig.ts
 │   └── statisticsConfig.ts
 ├── layouts/         # Page layout templates
-├── pages/           # File-based routing (7 pages + 8 representation pages)
+├── pages/           # File-based routing (10 pages + 8 representation pages)
 │   ├── representation/    # Individual Nordic country pages (8 pages)
 │   ├── index.astro
 │   ├── about.astro
@@ -56,6 +56,8 @@ src/
 │   ├── faq.astro
 │   ├── guides-resources.astro
 │   ├── contact.astro
+│   ├── terms-agreement.astro
+│   ├── triennial-gathering-2026.astro
 │   ├── sitemap.xml.ts
 │   └── 404.astro
 ├── scripts/         # Client-side JavaScript
@@ -71,45 +73,68 @@ public/
 
 ### Key Components
 
-- **PageHeader.astro** - Reusable page header with consistent styling
-- **HeroHeader.astro** - Landing page hero section
+**Core Navigation & Layout:**
 - **Navbar.astro** - Main navigation with responsive design
 - **Footer.astro** - Site footer with links and information
+- **TopBanner.astro** - Top page announcements
+- **PageHeader.astro** - Reusable page header with consistent styling
+
+**Hero & Landing Components:**
+- **HeroHeader.astro** - Landing page hero section
+- **EventHeaderSection.astro** - Event page hero with countdown timer
+
+**Representation & Contact:**
 - **NordicRepresentation.astro** - Display all Nordic country representation
 - **WorkingCommittee.astro** - Display committee members by country
 - **RegionalRepresentation.astro** - Regional contact information (country-specific)
 - **RegionalRepresentationSection.astro** - Regional representation container
+- **RepresentationContactSection.astro** - Contact information for regional pages
+
+**Content & Information:**
 - **Statistics.astro** - Display organization statistics
+- **Pillars.astro** - Organization pillars display
+- **OurAdvocacy.astro** - Services and support information (original advocacy section)
+- **HowWeHelp.astro** - How We Help section (updated advocacy display)
 - **Partners.astro** - Partner organizations showcase
 - **Partnership.astro** - Partnership details display
-- **OurAdvocacy.astro** - Services and support information
+- **PublicationCard.astro** - Publication display card
+
+**Interactive Components:**
+- **FAQAccordion.astro** - FAQ accordion component
+- **EventSched.astro** - Event schedule accordion component
 - **CTABanner.astro** - Call-to-action sections
 - **RegistrationSection.astro** - Member registration
-- **TopBanner.astro** - Top page announcements
-- **Blog.astro** - Blog/news section
-- **FAQAccordion.astro** - FAQ accordion component
-- **Pillars.astro** - Organization pillars display
-- **PublicationCard.astro** - Publication display card
+
+**Blog & News:**
+- **Blog.astro** - Main blog/news section
+- **BlogRepresentation.astro** - Regional blog section for representation pages
+
+**SEO & Data:**
+- **StructuredData.astro** - Structured data/schema markup for SEO
 
 ### Pages
 
+**Main Pages:**
 - **index.astro** - Home page with hero, statistics, representation overview
 - **about.astro** - Organization information, mission, working committee
 - **membership.astro** - Membership benefits and registration
 - **faq.astro** - Frequently asked questions
 - **guides-resources.astro** - Resources for nurses
 - **contact.astro** - Contact information and form
+- **terms-agreement.astro** - Terms and agreements page
+- **triennial-gathering-2026.astro** - Dedicated event page for FiNAN's 2026 conference
 - **sitemap.xml.ts** - Dynamic XML sitemap generation
 - **404.astro** - Custom 404 error page
-- **representation/\*.astro** - Individual pages for 8 Nordic countries/regions:
-  - denmark.astro
-  - faroe-islands.astro
-  - finland.astro
-  - greenland.astro
-  - iceland.astro
-  - kingdom-denmark.astro (collective page)
-  - norway.astro
-  - sweden.astro
+
+**Representation Pages (8 Nordic Countries/Regions):**
+- **representation/denmark.astro** - Denmark representation
+- **representation/faroe-islands.astro** - Faroe Islands representation
+- **representation/finland.astro** - Finland & Åland representation
+- **representation/greenland.astro** - Greenland representation
+- **representation/iceland.astro** - Iceland representation
+- **representation/kingdom-denmark.astro** - Kingdom of Denmark collective page
+- **representation/norway.astro** - Norway representation
+- **representation/sweden.astro** - Sweden representation
 
 ## Configuration Files
 
@@ -141,12 +166,24 @@ The project uses a centralized, type-safe data layer:
 
 - **siteConfig.ts** - Site metadata, SEO settings, social links
 - **representation/** - Regional representation data
-  - **working-committee/** - Committee member data by country (7 countries)
+  - **working-committee/** - Committee member data by country (9 files including types.ts and index.ts)
+    - denmarkCommittee.ts
+    - faroeIslandsCommittee.ts
+    - finlandCommittee.ts
+    - greenlandCommittee.ts
+    - icelandCommittee.ts
+    - norwayCommittee.ts
+    - swedenCommittee.ts
+    - types.ts (TypeScript interfaces)
+    - index.ts (exports all committees)
   - **partnership/** - Partnership data by country
   - **publication/** - Publication data by country
+  - **blogRepresentation.ts** - Blog configuration for representation pages
+- **events/** - Event-specific data configurations
+  - **triennialGathering2026Schedule.ts** - Event schedule data
 - **pages/** - Page-specific data configurations
   - **faq/** - FAQ data
-- **Configuration files** - Type-safe configs for components
+- **Component configuration files** - Type-safe configs
   - ctaBannerConfig.ts
   - heroConfig.ts
   - pillarsConfig.ts
@@ -154,6 +191,74 @@ The project uses a centralized, type-safe data layer:
   - statisticsConfig.ts
 
 All data files use TypeScript interfaces and the `as const satisfies` pattern for type safety.
+
+### Image Import Standards
+
+**IMPORTANT**: When adding images to committee member data or any data configuration files, ALWAYS use the import pattern for proper Astro asset optimization.
+
+**Correct Pattern** (as used in `finlandCommittee.ts`):
+
+```typescript
+import type { WorkingCommitteeConfig } from './types';
+import floroCubeloImage from '../../../assets/images/working-committee/finland/floro-cubelo.jpg';
+import ryannDelosoImage from '../../../assets/images/working-committee/finland/ryann-deloso.jpg';
+
+const finlandCommittee: WorkingCommitteeConfig = {
+  members: [
+    {
+      name: 'Floro Cubelo',
+      imageSrc: floroCubeloImage,
+      imageAlt: 'Portrait of Floro Cubelo',
+      // ... other properties
+    },
+    {
+      name: 'Ryann Deloso',
+      imageSrc: ryannDelosoImage,
+      imageAlt: 'Portrait of Ryann Deloso',
+      // ... other properties
+    },
+  ],
+} as const;
+```
+
+**Key Requirements**:
+1. Import images from `src/assets/` directory (NOT from `public/`)
+2. Use descriptive variable names following the pattern: `[firstName][LastName]Image`
+3. Import at the top of the file with other imports
+4. Store images in the appropriate subdirectory: `src/assets/images/working-committee/[country]/`
+5. Use the imported reference in the `imageSrc` property
+
+**Why This Matters**:
+- Astro optimizes imported images (compression, format conversion, responsive images)
+- Type safety ensures image paths are valid at build time
+- Build fails immediately if image files are missing
+- Images in `public/` are NOT optimized by Astro
+
+**Image File Naming Convention**:
+- Use kebab-case for image filenames: `first-last.jpg`
+- Example: `floro-cubelo.jpg`, `ryann-deloso.jpg`
+- Supported formats: `.jpg`, `.png`, `.webp`
+
+### Asset Organization
+
+**Optimized Assets (src/assets/):**
+Images in `src/assets/` are automatically optimized by Astro:
+- **Committee Images**: `src/assets/images/working-committee/[country]/`
+  - finland/ - Finnish committee member photos
+  - sweden/ - Swedish committee member photos
+  - norway/ - Norwegian committee member photos
+- **Event Images**: `src/assets/images/events/`
+  - Event banners and promotional images
+
+**Static Assets (public/):**
+Assets in `public/` are served as-is without optimization:
+- **Flags**: `/assets/flags/` - Country and regional flag SVGs
+- **Icons**: `/assets/icons/` - UI icons and graphics
+- **Images**: `/assets/images/` - General static images
+- **JavaScript**: `/assets/js/` - Public JavaScript files (if any)
+- **Favicon**: `/favicon.svg`
+
+**Important**: Always use `src/assets/` for images that benefit from optimization (photos, large images). Use `public/` only for assets that must remain unchanged (SVGs, specific icons).
 
 ## Styling Approach
 
@@ -172,6 +277,19 @@ shadow-lg transition-all duration-200 hover:shadow-xl
 
 This creates a consistent, elevated appearance with smooth hover effects across all primary buttons in the application.
 
+## Third-Party Integrations
+
+### Ghost CMS Integration
+
+The project integrates with Ghost CMS (hosted at `puls.finan.eu.com`) for blog content:
+
+- **Library**: `@ts-ghost/content-api` - Type-safe Ghost Content API client
+- **Blog Components**: BlogRepresentation.astro fetches posts filtered by country tags
+- **Regional Filtering**: Each representation page shows relevant blog posts by tag
+- **External Links**: Blog posts link to the external Ghost site with proper security attributes
+
+**Ghost Configuration Location**: `src/lib/ghost.ts`
+
 ## Security Features
 
 - Content Security Policy (CSP) headers
@@ -180,6 +298,8 @@ This creates a consistent, elevated appearance with smooth hover effects across 
 - Referrer-Policy: strict-origin-when-cross-origin
 - Permissions-Policy for camera, microphone, etc.
 - Origin checking enabled in Astro config
+- External links use `rel="noopener noreferrer"` for security
+- Email links properly formatted with `mailto:` protocol and `data-email` attributes
 
 ## SEO & Performance
 
@@ -190,6 +310,26 @@ This creates a consistent, elevated appearance with smooth hover effects across 
 - Vendor chunk separation
 - Auto inline stylesheets for critical CSS
 
+## Special Features
+
+### Event Features (Triennial Gathering 2026)
+- **Countdown Timer**: Live JavaScript countdown to event date
+- **Event Schedule**: Accordion-based schedule with collapsible days
+- **Event Hero**: Responsive hero section with overlay and CTA buttons
+- **Registration Section**: Integrated registration forms and links
+
+### Interactive Components
+- **Accordion Components**: FAQAccordion and EventSched with smooth animations
+- **Dynamic Navigation**: Client-side navigation handling
+- **Responsive Design**: Mobile-first approach with breakpoints
+- **Smooth Transitions**: CSS transitions and animations throughout
+
+### Accessibility Features
+- **Semantic HTML**: Proper heading structure and ARIA attributes
+- **Screen Reader Support**: Hidden headings and descriptive labels
+- **Keyboard Navigation**: Focus states and keyboard-accessible components
+- **Alt Text**: Descriptive alt text for all images
+
 ## Development Notes
 
 - Project uses ES modules (`"type": "module"` in package.json)
@@ -198,6 +338,7 @@ This creates a consistent, elevated appearance with smooth hover effects across 
 - Astro's partial hydration for optimal performance
 - File-based routing for automatic page generation
 - Component-driven architecture with reusable patterns
+- Client-side scripts use `astro:page-load` for SPA-like navigation
 
 ## Code Quality Workflow
 
