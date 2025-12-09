@@ -3,40 +3,13 @@ import type { WorkingCommitteeConfig } from './types';
 const icelandCommittee: WorkingCommitteeConfig = {
   members: [
     {
-      name: 'Edda Sigurðardóttir',
-      role: 'Representation President',
-      affiliations: '',
-      bio: 'Collaborates with Icelandic nursing councils to champion recognition of Filipino qualifications and secure equitable contracts.',
-      imageAlt: 'Portrait of Edda Sigurðardóttir',
+      name: 'Marvi Gil, RN',
+      role: 'Deputy Manager',
+      affiliations:
+        'Forensic Psychiatry Department, Landspítali University Hospital',
+      bio: 'Marvi Gil leads the Iceland Chapter with dedication and passion for advancing nursing practice and supporting Filipino nurses in their professional journey. Her leadership ensures that FiNAN Iceland remains a trusted resource and community for all members.',
+      imageAlt: 'Portrait of Marvi Gil',
       imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/edda-sigurdardottir',
-    },
-    {
-      name: 'Patrick Rivera',
-      role: 'Mentorship Program Lead',
-      affiliations: '',
-      bio: 'Pairs new arrivals with seasoned mentors and develops Iceland-specific onboarding resources for community health roles.',
-      imageAlt: 'Portrait of Patrick Rivera',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/patrick-rivera-is',
-    },
-    {
-      name: 'Sara Bjarnadóttir',
-      role: 'Education Liaison',
-      affiliations: '',
-      bio: 'Partners with universities and training centers to offer continuing education credits aligned with Icelandic regulations.',
-      imageAlt: 'Portrait of Sara Bjarnadóttir',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/sara-bjarnadottir',
-    },
-    {
-      name: 'Joana Custodio',
-      role: 'Events Coordinator',
-      affiliations: '',
-      bio: 'Leads cultural events and seasonal gatherings that spotlight Filipino heritage within Icelandic communities.',
-      imageAlt: 'Portrait of Joana Custodio',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/joana-custodio',
     },
   ],
 } as const;
