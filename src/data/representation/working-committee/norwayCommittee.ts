@@ -1,4 +1,5 @@
 import type { WorkingCommitteeConfig } from './types';
+import ianFaigonesImage from '../../../assets/images/working-committee/norway/ian-faigones.png';
 
 const norwayCommittee: WorkingCommitteeConfig = {
   members: [
@@ -8,7 +9,7 @@ const norwayCommittee: WorkingCommitteeConfig = {
       role: 'Representative',
       bio: 'Nurse Anesthetist',
       imageAlt: 'Portrait of Ian Faigones',
-      imageSrc: '/images/image_thumbnail.svg',
+      imageSrc: ianFaigonesImage,
       linkedinUrl: '',
     },
   ],
