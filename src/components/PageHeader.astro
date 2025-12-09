@@ -60,7 +60,12 @@ const {
         contactEmail && (
           <p class="mt-4 text-base text-gray-300 md:text-lg">
             Contact us:{' '}
-            <span class="font-medium text-white">{contactEmail}</span>
+            <a
+              href={`mailto:${contactEmail}`}
+              class="font-medium text-white underline hover:text-gray-100"
+            >
+              {contactEmail}
+            </a>
           </p>
         )
       }
