@@ -1,4 +1,5 @@
 import type { WorkingCommitteeConfig } from './types';
+import marviGilImage from '../../../assets/images/working-committee/iceland/marvi-gil.png';
 
 const icelandCommittee: WorkingCommitteeConfig = {
   members: [
@@ -9,7 +10,7 @@ const icelandCommittee: WorkingCommitteeConfig = {
       role: 'Deputy Manager',
       bio: 'Marvi Gil leads the Iceland Chapter with dedication and passion for advancing nursing practice and supporting Filipino nurses in their professional journey. Her leadership ensures that FiNAN Iceland remains a trusted resource and community for all members.',
       imageAlt: 'Portrait of Marvi Gil',
-      imageSrc: '/images/image_thumbnail.svg',
+      imageSrc: marviGilImage,
     },
   ],
 } as const;
