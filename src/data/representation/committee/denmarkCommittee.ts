@@ -1,33 +1,26 @@
 import type { CommitteeConfig } from './types';
+import cristalTolosaWarburgImage from '../../../assets/images/committee/kingdom-denmark/cristal-tolosa-warburg.png';
+import katherinePerezLuckmannImage from '../../../assets/images/committee/kingdom-denmark/katherine-perez-luckmann.png';
 
 const denmarkCommittee: CommitteeConfig = {
   members: [
     {
-      name: 'Sofie Jensen',
-      affiliations: '',
-      role: 'Representation President',
-      bio: 'Coordinates strategic partnerships with Danish healthcare trusts and ensures Filipino nurses are represented in policy discussions.',
-      imageAlt: 'Portrait of Sofie Jensen',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/sofie-jensen-dk',
+      name: 'Cristal Tolosa Warburg',
+      affiliations: 'Herlev Hospital',
+      role: 'Chair',
+      bio: 'Assisterende Afdelingsygeplejerske, Infektionssygdomme Sengeafsnit, Herlev Hospital',
+      imageAlt: 'Portrait of Cristal Tolosa Warburg',
+      imageSrc: cristalTolosaWarburgImage,
+      linkedinUrl: '',
     },
     {
-      name: 'Jerome Bautista',
-      affiliations: '',
-      role: 'Licensing Navigator',
-      bio: 'Guides nurses through SOR registration, bridging programs, and clinical adaptation pathways within Denmark.',
-      imageAlt: 'Portrait of Jerome Bautista',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/jerome-bautista',
-    },
-    {
-      name: 'Camilla Sørensen',
-      affiliations: '',
-      role: 'Well-being Coordinator',
-      bio: "Leads wellness initiatives, including peer counseling and family integration support tailored to Denmark's social systems.",
-      imageAlt: 'Portrait of Camilla Sørensen',
-      imageSrc: '/images/image_thumbnail.svg',
-      linkedinUrl: 'https://www.linkedin.com/in/camilla-sorensen',
+      name: 'Katherine Perez Luckmann',
+      affiliations: 'Herlev Hospital',
+      role: 'Co-Chair',
+      bio: 'Klinisk Sygeplejevejleder, Infektionssygdomme Sengeafsnit, Herlev Hospital',
+      imageAlt: 'Portrait of Katherine Perez Luckmann',
+      imageSrc: katherinePerezLuckmannImage,
+      linkedinUrl: '',
     },
   ],
 } as const;

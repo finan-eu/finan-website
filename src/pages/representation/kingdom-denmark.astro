@@ -8,6 +8,7 @@ import Footer from '../../components/Footer.astro';
 import heroImage from '../../assets/images/representation/denmark/denmark-banner.webp';
 import Committee from '../../components/Committee.astro';
 import BlogRepresentation from '../../components/BlogRepresentation.astro';
+import kingdomDenmarkRepresentatives from '../../data/representation/committee/kingdom-denmark-representatives';
 ---
 
 <Layout title="Kingdom of Denmark - FiNAN">
@@ -134,6 +135,11 @@ import BlogRepresentation from '../../components/BlogRepresentation.astro';
     </section>
 
     <Committee country="denmark" heading="Committee" />
+
+    <Committee
+      members={kingdomDenmarkRepresentatives.members}
+      heading="Representatives"
+    />
 
     <BlogRepresentation country="kingdom-denmark" />
 
