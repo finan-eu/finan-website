@@ -33,7 +33,7 @@ FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-p
 ```
 src/
 ├── assets/          # Static assets optimized by Astro
-├── components/      # Reusable Astro components (25 components)
+├── components/      # Reusable Astro components (23 components)
 ├── data/            # TypeScript data files and configurations
 │   ├── representation/        # Regional representation data
 │   │   ├── working-committee/ # Committee member data by country
@@ -86,8 +86,6 @@ public/
 **Representation & Contact:**
 - **NordicRepresentation.astro** - Display all Nordic country representation
 - **WorkingCommittee.astro** - Display committee members by country
-- **RegionalRepresentation.astro** - Regional contact information (country-specific)
-- **RegionalRepresentationSection.astro** - Regional representation container
 - **RepresentationContactSection.astro** - Contact information for regional pages
 
 **Content & Information:**
