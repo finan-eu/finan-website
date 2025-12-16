@@ -1,0 +1,10 @@
+# robots.txt for FiNAN website
+# Allow all crawlers on production domain
+User-agent: *
+Allow: /
+
+# Crawl rate limits to prevent abuse
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.finan.eu.com/sitemap.xml

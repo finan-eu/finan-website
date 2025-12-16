@@ -1,6 +1,8 @@
 # Cloudflare Pages Redirect Rules
-# Redirect all pages.dev traffic to custom domain
 
-# Catch-all redirect from pages.dev to custom domain
+# Redirect all pages.dev traffic to www custom domain
 # :splat captures entire path and preserves it
-https://finan-website.pages.dev/* https://finan.eu.com/:splat 301
+https://finan-website.pages.dev/* https://www.finan.eu.com/:splat 301!
+
+# Redirect non-www to www
+https://finan.eu.com/* https://www.finan.eu.com/:splat 301!
