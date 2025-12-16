@@ -1,7 +1,7 @@
-import type { WorkingCommitteeConfig } from './types';
-import ianFaigonesImage from '../../../assets/images/working-committee/norway/ian-faigones.png';
+import type { CommitteeConfig } from './types';
+import ianFaigonesImage from '../../../assets/images/committee/norway/ian-faigones.png';
 
-const norwayCommittee: WorkingCommitteeConfig = {
+const norwayCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Ian Faigones',

@@ -36,7 +36,7 @@ src/
 ├── components/      # Reusable Astro components (23 components)
 ├── data/            # TypeScript data files and configurations
 │   ├── representation/        # Regional representation data
-│   │   ├── working-committee/ # Committee member data by country
+│   │   ├── committee/         # Committee member data by country
 │   │   ├── partnership/       # Partnership data
 │   │   └── publication/       # Publication data
 │   ├── pages/                 # Page-specific data configurations
@@ -85,7 +85,7 @@ public/
 
 **Representation & Contact:**
 - **NordicRepresentation.astro** - Display all Nordic country representation
-- **WorkingCommittee.astro** - Display committee members by country
+- **Committee.astro** - Display committee members by country
 - **RepresentationContactSection.astro** - Contact information for regional pages
 
 **Content & Information:**
@@ -114,7 +114,7 @@ public/
 
 **Main Pages:**
 - **index.astro** - Home page with hero, statistics, representation overview
-- **about.astro** - Organization information, mission, working committee
+- **about.astro** - Organization information, mission, committee
 - **membership.astro** - Membership benefits and registration
 - **faq.astro** - Frequently asked questions
 - **guides-resources.astro** - Resources for nurses
@@ -164,7 +164,7 @@ The project uses a centralized, type-safe data layer:
 
 - **siteConfig.ts** - Site metadata, SEO settings, social links
 - **representation/** - Regional representation data
-  - **working-committee/** - Committee member data by country (9 files including types.ts and index.ts)
+  - **committee/** - Committee member data by country (9 files including types.ts and index.ts)
     - denmarkCommittee.ts
     - faroeIslandsCommittee.ts
     - finlandCommittee.ts
@@ -197,11 +197,11 @@ All data files use TypeScript interfaces and the `as const satisfies` pattern fo
 **Correct Pattern** (as used in `finlandCommittee.ts`):
 
 ```typescript
-import type { WorkingCommitteeConfig } from './types';
-import floroCubeloImage from '../../../assets/images/working-committee/finland/floro-cubelo.jpg';
-import ryannDelosoImage from '../../../assets/images/working-committee/finland/ryann-deloso.jpg';
+import type { CommitteeConfig } from './types';
+import floroCubeloImage from '../../../assets/images/committee/finland/floro-cubelo.jpg';
+import ryannDelosoImage from '../../../assets/images/committee/finland/ryann-deloso.jpg';
 
-const finlandCommittee: WorkingCommitteeConfig = {
+const finlandCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Floro Cubelo',
@@ -223,7 +223,7 @@ const finlandCommittee: WorkingCommitteeConfig = {
 1. Import images from `src/assets/` directory (NOT from `public/`)
 2. Use descriptive variable names following the pattern: `[firstName][LastName]Image`
 3. Import at the top of the file with other imports
-4. Store images in the appropriate subdirectory: `src/assets/images/working-committee/[country]/`
+4. Store images in the appropriate subdirectory: `src/assets/images/committee/[country]/`
 5. Use the imported reference in the `imageSrc` property
 
 **Why This Matters**:
@@ -241,7 +241,7 @@ const finlandCommittee: WorkingCommitteeConfig = {
 
 **Optimized Assets (src/assets/):**
 Images in `src/assets/` are automatically optimized by Astro:
-- **Committee Images**: `src/assets/images/working-committee/[country]/`
+- **Committee Images**: `src/assets/images/committee/[country]/`
   - finland/ - Finnish committee member photos
   - sweden/ - Swedish committee member photos
   - norway/ - Norwegian committee member photos

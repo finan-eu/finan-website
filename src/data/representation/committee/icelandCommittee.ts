@@ -1,7 +1,7 @@
-import type { WorkingCommitteeConfig } from './types';
-import marviGilImage from '../../../assets/images/working-committee/iceland/marvi-gil.png';
+import type { CommitteeConfig } from './types';
+import marviGilImage from '../../../assets/images/committee/iceland/marvi-gil.png';
 
-const icelandCommittee: WorkingCommitteeConfig = {
+const icelandCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Marvi Gil, RN',

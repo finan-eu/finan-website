@@ -1,10 +1,10 @@
-import type { WorkingCommitteeConfig } from './types';
-import floroCubeloImage from '../../../assets/images/working-committee/finland/floro-cubelo.jpg';
-import ryannDelosoImage from '../../../assets/images/working-committee/finland/ryann-deloso.jpg';
-import jeannyMaeBantingTuominenImage from '../../../assets/images/working-committee/finland/jeanny-mae-banting-tuominen.jpg';
-import marieLagundiImage from '../../../assets/images/working-committee/finland/marie-lagundi.jpg';
+import type { CommitteeConfig } from './types';
+import floroCubeloImage from '../../../assets/images/committee/finland/floro-cubelo.jpg';
+import ryannDelosoImage from '../../../assets/images/committee/finland/ryann-deloso.jpg';
+import jeannyMaeBantingTuominenImage from '../../../assets/images/committee/finland/jeanny-mae-banting-tuominen.jpg';
+import marieLagundiImage from '../../../assets/images/committee/finland/marie-lagundi.jpg';
 
-const finlandCommittee: WorkingCommitteeConfig = {
+const finlandCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Floro Cubelo',

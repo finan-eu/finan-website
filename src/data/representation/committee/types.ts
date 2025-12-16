@@ -1,6 +1,6 @@
 import type { ImageMetadata } from 'astro';
 
-export interface WorkingCommitteeMember {
+export interface CommitteeMember {
   readonly name: string;
   readonly affiliations?: string;
   readonly role: string;
@@ -10,6 +10,6 @@ export interface WorkingCommitteeMember {
   readonly linkedinUrl?: string;
 }
 
-export interface WorkingCommitteeConfig {
-  readonly members: ReadonlyArray<WorkingCommitteeMember>;
+export interface CommitteeConfig {
+  readonly members: ReadonlyArray<CommitteeMember>;
 }

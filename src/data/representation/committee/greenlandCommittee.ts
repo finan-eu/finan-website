@@ -1,6 +1,6 @@
-import type { WorkingCommitteeConfig } from './types';
+import type { CommitteeConfig } from './types';
 
-const greenlandCommittee: WorkingCommitteeConfig = {
+const greenlandCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Inuuteq Kristensen',

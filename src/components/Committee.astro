@@ -1,19 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import {
-  workingCommitteeConfigs,
-  type WorkingCommitteeConfig,
-  type WorkingCommitteeCountry,
-  type WorkingCommitteeMember,
-} from '../data/representation/working-committee';
+  committeeConfigs,
+  type CommitteeConfig,
+  type CommitteeCountry,
+  type CommitteeMember,
+} from '../data/representation/committee';
 
-interface WorkingCommitteeProps extends Partial<WorkingCommitteeConfig> {
-  country?: WorkingCommitteeCountry;
+interface CommitteeProps extends Partial<CommitteeConfig> {
+  country?: CommitteeCountry;
   heading?: string;
   description?: string;
 }
 
-const fallbackConfig: WorkingCommitteeConfig = {
+const fallbackConfig: CommitteeConfig = {
   members: [
     {
       name: 'Full name',
@@ -22,15 +22,13 @@ const fallbackConfig: WorkingCommitteeConfig = {
       imageAlt: 'Placeholder portrait',
       linkedinUrl: '#',
     },
-  ] satisfies ReadonlyArray<WorkingCommitteeMember>,
+  ] satisfies ReadonlyArray<CommitteeMember>,
 };
 
-const defaultHeading = 'Working Committee';
+const defaultHeading = 'Committee';
 
-const props = Astro.props as WorkingCommitteeProps;
-const baseConfig = props.country
-  ? workingCommitteeConfigs[props.country]
-  : undefined;
+const props = Astro.props as CommitteeProps;
+const baseConfig = props.country ? committeeConfigs[props.country] : undefined;
 
 const heading = props.heading ?? defaultHeading;
 const description = props.description;

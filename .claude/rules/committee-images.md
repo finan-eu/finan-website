@@ -1,22 +1,22 @@
-# Working Committee Image Import Pattern
+# Committee Image Import Pattern
 
-When adding or updating working committee member photos, **ALWAYS** follow this pattern to ensure proper Astro asset optimization.
+When adding or updating committee member photos, **ALWAYS** follow this pattern to ensure proper Astro asset optimization.
 
 ## Required Pattern
 
-### 1. Import images from `src/assets/images/working-committee/[country]/` directory
+### 1. Import images from `src/assets/images/committee/[country]/` directory
 
 **Correct Location:**
 
 ```
-src/assets/images/working-committee/[country]/[first-last].png
+src/assets/images/committee/[country]/[first-last].png
 ```
 
 **Examples:**
 
-- `src/assets/images/working-committee/finland/floro-cubelo.jpg`
-- `src/assets/images/working-committee/iceland/marvi-gil.png`
-- `src/assets/images/working-committee/sweden/anna-smith.jpg`
+- `src/assets/images/committee/finland/floro-cubelo.jpg`
+- `src/assets/images/committee/iceland/marvi-gil.png`
+- `src/assets/images/committee/sweden/anna-smith.jpg`
 
 ### 2. Import at the top of the committee file
 
@@ -25,10 +25,10 @@ src/assets/images/working-committee/[country]/[first-last].png
 **Example:**
 
 ```typescript
-import type { WorkingCommitteeConfig } from './types';
-import floroCubeloImage from '../../../assets/images/working-committee/finland/floro-cubelo.jpg';
-import ryannDelosoImage from '../../../assets/images/working-committee/finland/ryann-deloso.jpg';
-import marviGilImage from '../../../assets/images/working-committee/iceland/marvi-gil.png';
+import type { CommitteeConfig } from './types';
+import floroCubeloImage from '../../../assets/images/committee/finland/floro-cubelo.jpg';
+import ryannDelosoImage from '../../../assets/images/committee/finland/ryann-deloso.jpg';
+import marviGilImage from '../../../assets/images/committee/iceland/marvi-gil.png';
 ```
 
 ### 3. Use the imported reference in `imageSrc`
@@ -36,7 +36,7 @@ import marviGilImage from '../../../assets/images/working-committee/iceland/marv
 **Correct:**
 
 ```typescript
-const finlandCommittee: WorkingCommitteeConfig = {
+const finlandCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Floro Cubelo',
@@ -51,12 +51,12 @@ const finlandCommittee: WorkingCommitteeConfig = {
 **Incorrect:**
 
 ```typescript
-const finlandCommittee: WorkingCommitteeConfig = {
+const finlandCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Floro Cubelo',
       imageSrc: '/images/floro-cubelo.jpg',  // ❌ Don't use string paths
-      imageSrc: '../../../assets/images/working-committee/finland/floro-cubelo.jpg',  // ❌ Don't use relative paths
+      imageSrc: '../../../assets/images/committee/finland/floro-cubelo.jpg',  // ❌ Don't use relative paths
       // ... other properties
     },
   ],
@@ -65,16 +65,16 @@ const finlandCommittee: WorkingCommitteeConfig = {
 
 ## Complete Example
 
-Reference: `src/data/representation/working-committee/finlandCommittee.ts`
+Reference: `src/data/representation/committee/finlandCommittee.ts`
 
 ```typescript
-import type { WorkingCommitteeConfig } from './types';
-import floroCubeloImage from '../../../assets/images/working-committee/finland/floro-cubelo.jpg';
-import ryannDelosoImage from '../../../assets/images/working-committee/finland/ryann-deloso.jpg';
-import jeannyMaeBantingTuominenImage from '../../../assets/images/working-committee/finland/jeanny-mae-banting-tuominen.jpg';
-import marieLagundiImage from '../../../assets/images/working-committee/finland/marie-lagundi.jpg';
+import type { CommitteeConfig } from './types';
+import floroCubeloImage from '../../../assets/images/committee/finland/floro-cubelo.jpg';
+import ryannDelosoImage from '../../../assets/images/committee/finland/ryann-deloso.jpg';
+import jeannyMaeBantingTuominenImage from '../../../assets/images/committee/finland/jeanny-mae-banting-tuominen.jpg';
+import marieLagundiImage from '../../../assets/images/committee/finland/marie-lagundi.jpg';
 
-const finlandCommittee: WorkingCommitteeConfig = {
+const finlandCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Floro Cubelo',
@@ -136,7 +136,7 @@ export default finlandCommittee;
 
 ## Country-Specific Directories
 
-Each country has its own subdirectory under `src/assets/images/working-committee/`:
+Each country has its own subdirectory under `src/assets/images/committee/`:
 
 - `denmark/`
 - `faroe-islands/`
@@ -148,7 +148,7 @@ Each country has its own subdirectory under `src/assets/images/working-committee
 
 ## Checklist for Adding New Committee Member Photos
 
-- [ ] Place image in correct country directory: `src/assets/images/working-committee/[country]/`
+- [ ] Place image in correct country directory: `src/assets/images/committee/[country]/`
 - [ ] Name image file using kebab-case: `first-last.jpg`
 - [ ] Import image at top of committee file with pattern: `[firstName][LastName]Image`
 - [ ] Use imported reference in `imageSrc` property (not string path)
@@ -159,6 +159,6 @@ Each country has its own subdirectory under `src/assets/images/working-committee
 
 Always refer to these files as examples:
 
-- `src/data/representation/working-committee/finlandCommittee.ts` - Complete example with 4 members
-- `src/data/representation/working-committee/icelandCommittee.ts` - Single member example
-- `src/data/representation/working-committee/types.ts` - TypeScript interfaces
+- `src/data/representation/committee/finlandCommittee.ts` - Complete example with 4 members
+- `src/data/representation/committee/icelandCommittee.ts` - Single member example
+- `src/data/representation/committee/types.ts` - TypeScript interfaces

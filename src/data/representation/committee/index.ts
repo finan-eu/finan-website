@@ -5,9 +5,9 @@ import greenlandCommittee from './greenlandCommittee';
 import icelandCommittee from './icelandCommittee';
 import norwayCommittee from './norwayCommittee';
 import swedenCommittee from './swedenCommittee';
-import type { WorkingCommitteeConfig } from './types';
+import type { CommitteeConfig } from './types';
 
-export const workingCommitteeConfigs = {
+export const committeeConfigs = {
   denmark: denmarkCommittee,
   'faroe-islands': faroeIslandsCommittee,
   finland: finlandCommittee,
@@ -15,9 +15,9 @@ export const workingCommitteeConfigs = {
   iceland: icelandCommittee,
   norway: norwayCommittee,
   sweden: swedenCommittee,
-} as const satisfies Record<string, WorkingCommitteeConfig>;
+} as const satisfies Record<string, CommitteeConfig>;
 
-export type WorkingCommitteeCountry = keyof typeof workingCommitteeConfigs;
+export type CommitteeCountry = keyof typeof committeeConfigs;
 
 export {
   denmarkCommittee,
@@ -29,4 +29,4 @@ export {
   swedenCommittee,
 };
 
-export type { WorkingCommitteeConfig, WorkingCommitteeMember } from './types';
+export type { CommitteeConfig, CommitteeMember } from './types';

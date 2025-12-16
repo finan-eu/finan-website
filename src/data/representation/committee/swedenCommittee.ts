@@ -1,12 +1,12 @@
-import type { WorkingCommitteeConfig } from './types';
-import joyKongWallanderImage from '../../../assets/images/working-committee/sweden/joy-kong-wallander.jpg';
-import maryroseVelazcoMartenssonImage from '../../../assets/images/working-committee/sweden/maryrose-velazco-martensson.jpg';
-import gemmaLilacEplerImage from '../../../assets/images/working-committee/sweden/gemma-lilac-epler.png';
-import cherishMizonaImage from '../../../assets/images/working-committee/sweden/cherish-mizona.jpeg';
-import jezylleJoyTiuImage from '../../../assets/images/working-committee/sweden/jezylle-joy-tiu.jpg';
-import janiceKarenVelazcoImage from '../../../assets/images/working-committee/sweden/janice-karen-velazco.jpg';
+import type { CommitteeConfig } from './types';
+import joyKongWallanderImage from '../../../assets/images/committee/sweden/joy-kong-wallander.jpg';
+import maryroseVelazcoMartenssonImage from '../../../assets/images/committee/sweden/maryrose-velazco-martensson.jpg';
+import gemmaLilacEplerImage from '../../../assets/images/committee/sweden/gemma-lilac-epler.png';
+import cherishMizonaImage from '../../../assets/images/committee/sweden/cherish-mizona.jpeg';
+import jezylleJoyTiuImage from '../../../assets/images/committee/sweden/jezylle-joy-tiu.jpg';
+import janiceKarenVelazcoImage from '../../../assets/images/committee/sweden/janice-karen-velazco.jpg';
 
-const swedenCommittee: WorkingCommitteeConfig = {
+const swedenCommittee: CommitteeConfig = {
   members: [
     {
       name: 'Joy Kong Wallander',
