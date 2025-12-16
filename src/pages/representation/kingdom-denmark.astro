@@ -6,9 +6,11 @@ import PageHeader from '../../components/PageHeader.astro';
 import CTABanner from '../../components/CTABanner.astro';
 import Footer from '../../components/Footer.astro';
 import heroImage from '../../assets/images/representation/denmark/denmark-banner.webp';
+import denmarkChapterImage from '../../assets/images/representation/denmark/denmark-chapter.jpg';
 import Committee from '../../components/Committee.astro';
 import BlogRepresentation from '../../components/BlogRepresentation.astro';
 import kingdomDenmarkRepresentatives from '../../data/representation/committee/kingdom-denmark-representatives';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="Kingdom of Denmark - FiNAN">
@@ -41,6 +43,15 @@ import kingdomDenmarkRepresentatives from '../../data/representation/committee/k
           and the Faroe Islands joined our network in 2020, strengthening our
           collective voice and advocacy.
         </p>
+
+        <div class="mb-10">
+          <Image
+            src={denmarkChapterImage}
+            alt="Filipino Nurses Association - Kingdom of Denmark Chapter members at 'I support Nursing Now' campaign event"
+            class="w-full rounded-lg"
+            loading="lazy"
+          />
+        </div>
 
         <!-- Who We Are -->
         <h2
