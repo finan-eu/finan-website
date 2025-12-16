@@ -20,6 +20,7 @@
     "@ts-ghost/content-api": "^4.2.0",
     "astro": "^5.15.9",
     "astro-seo": "^0.8.4",
+    "photoswipe": "^5.4.4",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {

@@ -247,6 +247,8 @@ Images in `src/assets/` are automatically optimized by Astro:
   - norway/ - Norwegian committee member photos
 - **Event Images**: `src/assets/images/events/`
   - Event banners and promotional images
+- **Gallery Images**: `src/assets/images/gallery/[country]/`
+  - sweden/ - Sweden chapter photo gallery images
 
 **Static Assets (public/):**
 Assets in `public/` are served as-is without optimization:
@@ -288,6 +290,35 @@ The project integrates with Ghost CMS (hosted at `puls.finan.eu.com`) for blog c
 
 **Ghost Configuration Location**: `src/lib/ghost.ts`
 
+### PhotoSwipe Image Gallery Integration
+
+The project integrates PhotoSwipe v5.4.4 for image galleries and lightbox functionality:
+
+- **Library**: `photoswipe@5.4.4` - Modern JavaScript image gallery and lightbox
+- **Implementation**: Sweden representation page features a "Community Highlights" gallery
+- **Features**:
+  - Touch-friendly swipe gestures for mobile devices
+  - Keyboard navigation support
+  - Zoom and pan functionality
+  - Smooth opening/closing animations
+  - Responsive grid layout (1 column mobile, 2 tablet, 3 desktop)
+  - Optimized images using Astro's asset pipeline
+- **Usage Pattern**:
+  ```javascript
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery--[country]',
+    children: 'a',
+    pswpModule: () => import('photoswipe'),
+  });
+  lightbox.init();
+  ```
+- **Integration with Astro**: Uses `astro:page-load` event listener for SPA-like navigation support
+
+**Gallery Location**: `src/pages/representation/sweden.astro`
+
 ## Security Features
 
 - Content Security Policy (CSP) headers
@@ -318,6 +349,7 @@ The project integrates with Ghost CMS (hosted at `puls.finan.eu.com`) for blog c
 
 ### Interactive Components
 - **Accordion Components**: FAQAccordion and EventSched with smooth animations
+- **Photo Galleries**: PhotoSwipe-powered image lightbox with touch gestures and keyboard navigation
 - **Dynamic Navigation**: Client-side navigation handling
 - **Responsive Design**: Mobile-first approach with breakpoints
 - **Smooth Transitions**: CSS transitions and animations throughout
