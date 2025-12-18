@@ -51,7 +51,7 @@ This document provides a prioritized, trackable checklist of all improvement rec
 ### SEO
 
 - [ ] **#3: Update Twitter handles in SEO config**
-  - **File:** `src/data/seo.config.ts` (lines 143-144)
+  - **File:** `src/data/siteConfig.ts` (lines 143-144)
   - **Action:** Replace `'yourhandle'` with actual handle or remove
   - **Effort:** Very Low (2 minutes)
   - **Impact:** Medium (social media attribution)

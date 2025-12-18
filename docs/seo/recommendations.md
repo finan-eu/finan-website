@@ -14,7 +14,7 @@ This document provides a comprehensive analysis of the current SEO implementatio
 
 **Strengths:**
 
-- ✅ Well-structured centralized SEO configuration (`seo.config.ts`)
+- ✅ Well-structured centralized SEO configuration (`siteConfig.ts`)
 - ✅ `astro-seo` package properly implemented
 - ✅ Sitemap integration with `@astrojs/sitemap`
 - ✅ Robots.txt properly configured
@@ -90,7 +90,7 @@ This document provides a comprehensive analysis of the current SEO implementatio
      - `/images/og-membership.jpg`
      - `/images/og-representation.jpg`
 
-3. Update `src/data/seo.config.ts`:
+3. Update `src/data/siteConfig.ts`:
 
 ```typescript
 openGraph: {
@@ -122,7 +122,7 @@ twitter: {
    - LinkedIn
    - Instagram (for visual content)
 
-2. Update `src/data/seo.config.ts`:
+2. Update `src/data/siteConfig.ts`:
 
 ```typescript
 twitter: {
@@ -229,7 +229,7 @@ titleTemplate: '%s | FiNAN'
 
 ### 2.3 Content Quality & Keyword Density
 
-**Target Keywords:** (from `seo.config.ts`)
+**Target Keywords:** (from `siteConfig.ts`)
 
 - Primary: `filipino nurses`, `nordic nursing`, `nursing association`
 - Secondary: `nurse licensing support`, `healthcare career guidance`, `cultural integration support`

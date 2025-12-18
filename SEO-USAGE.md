@@ -4,7 +4,7 @@ This guide explains how to configure and use the SEO system in the FiNAN website
 
 ## Configuration File
 
-All SEO settings are centralized in `src/data/seo.config.ts`. This file contains:
+All SEO settings are centralized in `src/data/siteConfig.ts`. This file contains:
 
 - **Basic SEO**: Title, description, site URL, author
 - **Open Graph**: Social media sharing configuration
@@ -14,7 +14,7 @@ All SEO settings are centralized in `src/data/seo.config.ts`. This file contains
 
 ## Editing SEO Configuration
 
-To change the website's default SEO settings, edit `src/data/seo.config.ts`:
+To change the website's default SEO settings, edit `src/data/siteConfig.ts`:
 
 ```typescript
 export const seoConfig = {
@@ -253,7 +253,7 @@ cat dist/your-page/index.html | grep -E '<meta|<title'
 The config file provides helper functions you can import:
 
 ```typescript
-import { getFullUrl, getPageTitle, mergeSEOConfig } from '../data/seo.config';
+import { getFullUrl, getPageTitle, mergeSEOConfig } from '../data/siteConfig';
 
 // Convert relative path to full URL
 const imageUrl = getFullUrl('/images/banner.jpg');
@@ -278,7 +278,7 @@ const seo = mergeSEOConfig({
 - Check that image dimensions meet minimum requirements
 
 ### Wrong title showing
-- Verify `titleTemplate` format in `seo.config.ts`
+- Verify `titleTemplate` format in `siteConfig.ts`
 - Check if page is passing custom `title` prop
 - Ensure `titleDefault` is set as fallback
 
@@ -289,4 +289,4 @@ const seo = mergeSEOConfig({
 
 ## Updates
 
-When you update `seo.config.ts`, the changes apply to all pages using default values. Pages with custom props will keep their overrides.
+When you update `siteConfig.ts`, the changes apply to all pages using default values. Pages with custom props will keep their overrides.

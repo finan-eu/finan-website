@@ -8,7 +8,7 @@
  * help Google properly display "FiNAN" as the site name in search results.
  */
 
-import { seoConfig, getFullUrl } from './seo.config';
+import { seoConfig, getFullUrl } from './siteConfig';
 import { socialMediaLinks } from './socialMediaConfig';
 
 /**

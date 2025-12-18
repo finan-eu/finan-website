@@ -1187,7 +1187,7 @@ h1 - Page Title
 #### Exceptional SEO Implementation ⭐⭐
 
 **Comprehensive Configuration:**
-- Centralized SEO config in `src/data/seo.config.ts`
+- Centralized SEO config in `src/data/siteConfig.ts`
 - Type-safe SEO interfaces
 - Helper functions for URL construction and title templating
 
@@ -1274,7 +1274,7 @@ if (isPagesDevDomain) {
 
 #### 🔴 CRITICAL: Twitter Handle Placeholder
 
-**Location:** `src/data/seo.config.ts` (lines 143-144)
+**Location:** `src/data/siteConfig.ts` (lines 143-144)
 
 **Issue:**
 ```typescript
@@ -2399,7 +2399,7 @@ export async function getBlogPostsByTag(tag: string) {
 |---|-------|----------|--------|--------|
 | 1 | Remove duplicate JavaScript file | `/public/js/mobile-menu.js` | Low | High |
 | 2 | Fix Denmark committee placeholder images | `denmarkCommittee.ts` | Low-Med | High |
-| 3 | Update Twitter handles in SEO config | `seo.config.ts` | Very Low | Medium |
+| 3 | Update Twitter handles in SEO config | `siteConfig.ts` | Very Low | Medium |
 | 4 | Enable HSTS header | `security.config.js` | Very Low | High |
 
 **Total Estimated Effort:** 2-4 hours

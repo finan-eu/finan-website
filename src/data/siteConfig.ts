@@ -121,7 +121,7 @@ export const seoConfig = {
     titleDefault:
       'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     description:
-      'The Filipino Nurses Association in the Nordic Region (FiNAN) is a non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region, providing trusted guidance on licensing, cultural integration, and professional growth.',
+      'FiNAN supports Filipino nurses across the Nordic region with trusted guidance on licensing, integration, and career growth.',
     siteUrl: 'https://www.finan.eu.com',
     author: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     language: 'en',
