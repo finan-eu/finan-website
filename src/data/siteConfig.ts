@@ -134,7 +134,7 @@ export const seoConfig = {
     imageHeight: 630,
     imageAlt:
       'The Filipino Nurses Association in the Nordic Region (FiNAN) - Connecting and supporting Filipino nurses',
-    siteName: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
+    siteName: 'FiNAN',
     locale: 'en_US',
     alternateLocales: [],
   },

@@ -20,7 +20,7 @@ export interface OrganizationSchema {
   '@type': string;
   '@id': string;
   name: string;
-  alternateName: string;
+  alternateName: string[];
   url: string;
   logo: string;
   description: string;
@@ -36,7 +36,7 @@ export interface WebSiteSchema {
   '@type': string;
   '@id': string;
   name: string;
-  alternateName: string;
+  alternateName: string[];
   url: string;
   description: string;
   publisher: {
@@ -56,7 +56,7 @@ export interface WebSiteSchema {
 export function generateOrganizationSchema(): OrganizationSchema {
   // Extract organization name from title
   const organizationName = 'FiNAN';
-  const fullName = 'Filipino Nurses Association in the Nordic Region';
+  const alternateNames = ['Filipino Nurses Association in the Nordic Region'];
 
   // Construct full logo URL
   const logoUrl = getFullUrl('/finan-logo.svg');
@@ -69,7 +69,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     '@type': 'Organization',
     '@id': `${seoConfig.basic.siteUrl}/#organization`,
     name: organizationName,
-    alternateName: fullName,
+    alternateName: alternateNames,
     url: seoConfig.basic.siteUrl,
     logo: logoUrl,
     description: seoConfig.basic.description,
@@ -88,14 +88,14 @@ export function generateOrganizationSchema(): OrganizationSchema {
 export function generateWebSiteSchema(): WebSiteSchema {
   // Extract organization name from title
   const organizationName = 'FiNAN';
-  const fullName = 'Filipino Nurses Association in the Nordic Region';
+  const alternateNames = ['Filipino Nurses Association in the Nordic Region'];
 
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${seoConfig.basic.siteUrl}/#website`,
     name: organizationName,
-    alternateName: fullName,
+    alternateName: alternateNames,
     url: seoConfig.basic.siteUrl,
     description: seoConfig.basic.description,
     publisher: {
