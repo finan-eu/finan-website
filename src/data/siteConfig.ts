@@ -118,7 +118,8 @@ export const seoConfig = {
   basic: {
     title: 'FiNAN - The Filipino Nurses Association in the Nordic Region',
     titleTemplate: '%s | FiNAN',
-    titleDefault: 'FiNAN - The Filipino Nurses Association in the Nordic Region',
+    titleDefault:
+      'FiNAN - The Filipino Nurses Association in the Nordic Region',
     description:
       'FiNAN supports Filipino nurses across the Nordic region with trusted guidance on licensing, integration, and career growth.',
     siteUrl: 'https://www.finan.eu.com',
