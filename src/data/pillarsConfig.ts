@@ -36,7 +36,7 @@ export const pillarsConfig: PillarsData = {
         href: '/membership',
       },
       secondary: {
-        text: 'Learn more',
+        text: 'Learn more about FiNAN',
         href: '/about',
       },
     },
