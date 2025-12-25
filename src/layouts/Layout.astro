@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
-import { cspString } from '../../security.config.js';
 import { SEO } from 'astro-seo';
 import { seoConfig, getFullUrl, getPageTitle } from '../data/siteConfig';
 
@@ -104,14 +103,6 @@ const robotsValue =
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
       /></noscript
     >
-
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content={cspString} />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta
-      http-equiv="Referrer-Policy"
-      content="strict-origin-when-cross-origin"
-    />
 
     <!-- SEO Component -->
     <SEO
