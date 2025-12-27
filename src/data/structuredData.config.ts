@@ -54,9 +54,9 @@ export interface WebSiteSchema {
  * @returns Organization schema object
  */
 export function generateOrganizationSchema(): OrganizationSchema {
-  // Extract organization name from title
-  const organizationName = 'FiNAN';
-  const alternateNames = ['Filipino Nurses Association in the Nordic Region'];
+  // Follow Google's example: full name as primary, acronym as alternate
+  const organizationName = 'Filipino Nurses Association in the Nordic Region';
+  const alternateNames = ['FiNAN'];
 
   // Construct full logo URL
   const logoUrl = getFullUrl('/finan-logo.svg');
@@ -86,9 +86,9 @@ export function generateOrganizationSchema(): OrganizationSchema {
  * @returns WebSite schema object
  */
 export function generateWebSiteSchema(): WebSiteSchema {
-  // Extract organization name from title
-  const organizationName = 'FiNAN';
-  const alternateNames = ['Filipino Nurses Association in the Nordic Region'];
+  // Follow Google's example: full name as primary, acronym as alternate
+  const organizationName = 'Filipino Nurses Association in the Nordic Region';
+  const alternateNames = ['FiNAN'];
 
   return {
     '@context': 'https://schema.org',
