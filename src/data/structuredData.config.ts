@@ -86,15 +86,15 @@ export function generateOrganizationSchema(): OrganizationSchema {
  * @returns WebSite schema object
  */
 export function generateWebSiteSchema(): WebSiteSchema {
-  // Follow Google's example: full name as primary, acronym as alternate
-  const organizationName = 'Filipino Nurses Association in the Nordic Region';
-  const alternateNames = ['FiNAN'];
+  // Prioritize "FiNAN" for Google Search "Site Name"
+  const websiteName = 'FiNAN';
+  const alternateNames = ['Filipino Nurses Association in the Nordic Region'];
 
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${seoConfig.basic.siteUrl}/#website`,
-    name: organizationName,
+    name: websiteName,
     alternateName: alternateNames,
     url: seoConfig.basic.siteUrl,
     description: seoConfig.basic.description,

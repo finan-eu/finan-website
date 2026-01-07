@@ -167,9 +167,9 @@ export const seoConfig = {
   },
   additional: {
     enableCanonical: true,
-    favicon: '/favicon/favicon.ico',
-    appleTouchIcon: '/favicon/apple-touch-icon.png',
-    manifest: '/favicon/site.webmanifest',
+    favicon: '/favicon.ico',
+    appleTouchIcon: '/apple-touch-icon.png',
+    manifest: '/site.webmanifest',
   },
 } as const satisfies SEOConfig;
 
