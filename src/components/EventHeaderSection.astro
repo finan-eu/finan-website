@@ -124,7 +124,7 @@ const {
       <button
         type="button"
         data-modal-trigger="registration-modal"
-        class="w-full cursor-pointer rounded-full bg-white px-8 py-3 font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl md:w-auto"
+        class="w-full cursor-pointer rounded-full bg-white px-8 py-3 font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 md:w-auto"
       >
         Register Now
       </button>
@@ -141,64 +141,119 @@ const {
 <RegistrationModal />
 
 <script>
-  // Countdown Timer Logic
+  // TypeScript interface for modal elements with exposed API
+  interface ModalElement extends HTMLElement {
+    _openModal: (trigger: HTMLElement) => void;
+  }
+
+  // Updates countdown timer to 2026-03-30 event date. After event date passes,
+  // displays 00:00:00:00. Called immediately on load and then every 1 second.
+  // TODO: Update or remove this countdown after the 2026 event concludes.
   function updateCountdown() {
+    // Event date: March 30, 2026 (hardcoded for 2026 Triennial Gathering)
     const eventDate = new Date('2026-03-30T00:00:00').getTime();
     const now = new Date().getTime();
     const distance = eventDate - now;
 
-    if (distance < 0) {
-      document.getElementById('days')!.textContent = '00';
-      document.getElementById('hours')!.textContent = '00';
-      document.getElementById('minutes')!.textContent = '00';
-      document.getElementById('seconds')!.textContent = '00';
+    // Get countdown elements with validation
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    // Validate all elements exist
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+      console.error(
+        '[EventHeader] Countdown timer elements not found. Expected IDs: days, hours, minutes, seconds'
+      );
+      console.warn(
+        '[EventHeader] Countdown timer cannot update. Check DOM structure.'
+      );
       return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    if (distance < 0) {
+      daysEl.textContent = '00';
+      hoursEl.textContent = '00';
+      minutesEl.textContent = '00';
+      secondsEl.textContent = '00';
+      return;
+    }
 
-    document.getElementById('days')!.textContent = String(days).padStart(
-      2,
-      '0'
-    );
-    document.getElementById('hours')!.textContent = String(hours).padStart(
-      2,
-      '0'
-    );
-    document.getElementById('minutes')!.textContent = String(minutes).padStart(
-      2,
-      '0'
-    );
-    document.getElementById('seconds')!.textContent = String(seconds).padStart(
-      2,
-      '0'
-    );
+    try {
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    } catch (error) {
+      console.error('[EventHeader] Failed to update countdown:', error);
+    }
   }
 
-  // Update countdown immediately and then every second
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  // Update countdown immediately and then every 1 second
+  // Note: setInterval is not cleared as countdown runs for page lifetime
+  try {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  } catch (error) {
+    console.error('[EventHeader] Failed to initialize countdown timer:', error);
+  }
 
-  // Modal trigger logic
+  // Wires up registration modal trigger: finds button with data-modal-trigger="registration-modal"
+  // and calls the _openModal() method exposed by Modal.astro on the modal element.
+  // WARNING: Tightly coupled to Modal.astro's internal _openModal API.
   function initModalTrigger() {
     const trigger = document.querySelector(
       '[data-modal-trigger="registration-modal"]'
     );
     const modal = document.querySelector('[data-modal="registration-modal"]');
 
-    trigger?.addEventListener('click', () => {
-      const modalElement = modal as any;
-      if (modalElement && modalElement._openModal) {
-        modalElement._openModal(trigger);
+    if (!trigger) {
+      console.error(
+        '[EventHeader] Modal trigger button not found: [data-modal-trigger="registration-modal"]'
+      );
+      return;
+    }
+
+    if (!modal) {
+      console.error(
+        '[EventHeader] Modal element not found: [data-modal="registration-modal"]'
+      );
+      console.warn(
+        '[EventHeader] Make sure RegistrationModal component is included in the page'
+      );
+      return;
+    }
+
+    trigger.addEventListener('click', () => {
+      const modalElement = modal as ModalElement;
+
+      if (!modalElement._openModal) {
+        console.error(
+          '[EventHeader] Modal._openModal method not available. Modal may not be initialized yet.'
+        );
+        console.warn(
+          '[EventHeader] This is a timing issue - modal initialization must complete before trigger initialization'
+        );
+        return;
+      }
+
+      try {
+        modalElement._openModal(trigger as HTMLElement);
+      } catch (error) {
+        console.error('[EventHeader] Failed to open modal:', error);
       }
     });
   }
 
-  // Initialize modal trigger on page load
+  // Initialize modal trigger on page load and after Astro view transitions
+  // (astro:page-load supports SPA-like navigation)
   document.addEventListener('astro:page-load', initModalTrigger);
 </script>
