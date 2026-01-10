@@ -1,0 +1,302 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '4xl';
+}
+
+const { id, title, maxWidth = 'lg' } = Astro.props;
+
+const maxWidthClasses = {
+  sm: 'max-w-sm',
+  md: 'max-w-md',
+  lg: 'max-w-lg',
+  xl: 'max-w-xl',
+  '2xl': 'max-w-2xl',
+  '4xl': 'max-w-4xl',
+};
+---
+
+<div
+  data-modal={id}
+  aria-hidden="true"
+  aria-labelledby={`${id}-title`}
+  role="dialog"
+  aria-modal="true"
+  class="modal fixed inset-0 z-50 hidden items-center justify-center p-4"
+>
+  <!-- Overlay -->
+  <div
+    data-modal-overlay
+    class="fixed inset-0 bg-gray-900/80 transition-opacity duration-300"
+  >
+  </div>
+
+  <!-- Modal Content -->
+  <div
+    class={`modal-content relative z-10 w-full ${maxWidthClasses[maxWidth]} transform rounded-lg bg-white shadow-2xl transition-all duration-300 ease-in-out`}
+  >
+    <!-- Header -->
+    <div
+      class="flex items-start justify-between border-b border-gray-200 px-6 py-4"
+    >
+      <h2
+        id={`${id}-title`}
+        class="text-center text-2xl font-bold text-gray-900 md:text-3xl"
+      >
+        {title}
+      </h2>
+      <button
+        type="button"
+        data-modal-close
+        aria-label="Close modal"
+        class="rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2"
+      >
+        <!-- X icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="px-8 py-8">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  // TypeScript interface for modal elements with exposed API
+  interface ModalElement extends HTMLElement {
+    _openModal: (trigger: HTMLElement) => void;
+  }
+
+  // Track event listeners for cleanup
+  const eventListeners = new Map<
+    HTMLElement,
+    {
+      keydown: (e: KeyboardEvent) => void;
+      trapFocus: (e: KeyboardEvent) => void;
+    }
+  >();
+
+  // Modal functionality: sets up close handlers (X button, overlay, Escape key),
+  // manages body scroll lock for iOS Safari, implements focus trap for WCAG 2.1,
+  // and exposes _openModal() method on modal elements for external triggers
+  function initModal() {
+    const modals = document.querySelectorAll('[data-modal]');
+
+    modals.forEach((modal) => {
+      const modalElement = modal as HTMLElement;
+      const closeBtn = modal.querySelector('[data-modal-close]');
+      const overlay = modal.querySelector('[data-modal-overlay]');
+      let triggerElement: HTMLElement | null = null;
+
+      // Validate critical elements exist
+      if (!closeBtn) {
+        console.error(
+          `[Modal] Close button not found for modal: ${modalElement.dataset.modal}`
+        );
+      }
+
+      if (!overlay) {
+        console.error(
+          `[Modal] Overlay element not found for modal: ${modalElement.dataset.modal}`
+        );
+      }
+
+      // Closes modal and restores page state: unlocks body scroll,
+      // restores scroll position (iOS Safari workaround), and returns focus to trigger element
+      const closeModal = () => {
+        modalElement.classList.add('hidden');
+        modalElement.setAttribute('aria-hidden', 'true');
+
+        // Restore body scroll
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.top = '';
+
+        // Restore scroll position (for iOS Safari)
+        const scrollY = modalElement.dataset.scrollY;
+        if (scrollY) {
+          const scrollPosition = parseInt(scrollY, 10);
+
+          if (isNaN(scrollPosition)) {
+            console.error(
+              '[Modal] Invalid scroll position stored in dataset:',
+              scrollY
+            );
+          } else {
+            try {
+              window.scrollTo(0, scrollPosition);
+            } catch (error) {
+              console.error(
+                '[Modal] Failed to restore scroll position:',
+                error
+              );
+            }
+          }
+
+          delete modalElement.dataset.scrollY;
+        }
+
+        // Return focus to trigger button
+        if (triggerElement) {
+          triggerElement.focus();
+          triggerElement = null;
+        }
+
+        // Remove focus trap listener
+        const listeners = eventListeners.get(modalElement);
+        if (listeners) {
+          document.removeEventListener('keydown', listeners.trapFocus);
+        }
+      };
+
+      // Close on X button click (with validation)
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      } else {
+        console.warn(
+          '[Modal] Close button missing - users can only close with Escape key'
+        );
+      }
+
+      // Close on overlay click (with validation)
+      if (overlay) {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) {
+            closeModal();
+          }
+        });
+      } else {
+        console.warn(
+          '[Modal] Overlay missing - click-outside-to-close disabled'
+        );
+      }
+
+      // Close on Escape key
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape' && !modalElement.classList.contains('hidden')) {
+          closeModal();
+        }
+      };
+
+      // Focus trap for WCAG 2.1 compliance: contains Tab navigation within modal
+      const trapFocus = (e: KeyboardEvent) => {
+        if (e.key === 'Tab' && !modalElement.classList.contains('hidden')) {
+          const focusableElements = modalElement.querySelectorAll(
+            'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          );
+
+          if (focusableElements.length === 0) return;
+
+          const firstFocusable = focusableElements[0] as HTMLElement;
+          const lastFocusable = focusableElements[
+            focusableElements.length - 1
+          ] as HTMLElement;
+
+          if (e.shiftKey && document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable.focus();
+          } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable.focus();
+          }
+        }
+      };
+
+      // Store listeners for cleanup
+      eventListeners.set(modalElement, { keydown: handleKeyDown, trapFocus });
+
+      document.addEventListener('keydown', handleKeyDown);
+
+      // Store trigger element for focus restoration
+      const openModal = (trigger: HTMLElement) => {
+        triggerElement = trigger;
+
+        // Store current scroll position for iOS Safari
+        modalElement.dataset.scrollY = window.scrollY.toString();
+
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+
+        // iOS Safari scroll lock: prevents background scrolling on mobile Safari
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.top = `-${window.scrollY}px`;
+
+        // Show modal
+        modalElement.classList.remove('hidden');
+        modalElement.setAttribute('aria-hidden', 'false');
+
+        // Add focus trap listener when modal opens
+        document.addEventListener('keydown', trapFocus);
+
+        // Focus first focusable element after modal renders (10ms delay ensures visibility)
+        setTimeout(() => {
+          const firstFocusable = modalElement.querySelector(
+            'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          ) as HTMLElement;
+          if (firstFocusable) {
+            firstFocusable.focus();
+          }
+        }, 10);
+      };
+
+      // Expose open function for external triggers via non-standard _openModal property.
+      // External components (e.g., EventHeaderSection) call modalElement._openModal(trigger).
+      (modalElement as ModalElement)._openModal = openModal;
+    });
+  }
+
+  // Initialize on page load and after Astro view transitions
+  // (astro:page-load supports SPA-like navigation)
+  document.addEventListener('astro:page-load', initModal);
+
+  // Cleanup event listeners before page navigation to prevent memory leaks
+  document.addEventListener('astro:before-swap', () => {
+    eventListeners.forEach((listeners) => {
+      document.removeEventListener('keydown', listeners.keydown);
+      document.removeEventListener('keydown', listeners.trapFocus);
+    });
+    eventListeners.clear();
+  });
+</script>
+
+<style>
+  /* Modal display when not hidden */
+  .modal:not(.hidden) {
+    display: flex;
+  }
+
+  /* Modal content entrance animation */
+  .modal.hidden .modal-content {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  .modal:not(.hidden) .modal-content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* Smooth transitions */
+  .modal-content {
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+</style>
