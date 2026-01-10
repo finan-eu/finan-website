@@ -1,0 +1,49 @@
+---
+import Modal from './Modal.astro';
+---
+
+<Modal
+  id="registration-modal"
+  title="Register for Triennial Gathering 2026"
+  maxWidth="lg"
+>
+  <div class="space-y-6">
+    <!-- Introductory text -->
+    <p class="text-center text-lg text-gray-700">
+      Choose your registration category:
+    </p>
+
+    <!-- Registration buttons -->
+    <div class="space-y-4">
+      <!-- Button 1: FiNAN Members -->
+      <a
+        href="https://buy.stripe.com/aFa14o0tvftF2Eef1i53O00"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full rounded-full border-2 border-gray-200 bg-white px-8 py-4 text-center text-lg font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:border-blue-900 hover:bg-blue-900 hover:text-white hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2"
+      >
+        FiNAN Registered Members
+      </a>
+
+      <!-- Button 2: Non-FiNAN Members -->
+      <a
+        href="https://buy.stripe.com/bJe28sa45dlxgv46uM53O02"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full rounded-full border-2 border-gray-200 bg-white px-8 py-4 text-center text-lg font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:border-blue-900 hover:bg-blue-900 hover:text-white hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2"
+      >
+        Non-FiNAN Members
+      </a>
+
+      <!-- Button 3: Speakers -->
+      <a
+        href="https://buy.stripe.com/28E7sMa45epB2EeaL253O01"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full rounded-full border-2 border-gray-200 bg-white px-8 py-4 text-center text-lg font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:border-blue-900 hover:bg-blue-900 hover:text-white hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2"
+      >
+        Speakers
+      </a>
+    </div>
+  </div>
+</Modal>

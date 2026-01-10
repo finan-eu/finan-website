@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import bannerImage from '../assets/images/events/banner-triennial-gathering-2026.jpg';
+import RegistrationModal from './RegistrationModal.astro';
 
 interface Props {
   secondaryButtonText: string;
@@ -120,12 +121,13 @@ const {
 
     <!-- CTA Buttons -->
     <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
-      <a
-        href="/triennial-gathering-2026#register"
-        class="w-full rounded-full bg-white px-8 py-3 font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl md:w-auto"
+      <button
+        type="button"
+        data-modal-trigger="registration-modal"
+        class="w-full cursor-pointer rounded-full bg-white px-8 py-3 font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl md:w-auto"
       >
         Register Now
-      </a>
+      </button>
       <a
         href={secondaryButtonLink}
         class="w-full rounded-full border-2 border-white px-[30px] py-[10px] font-semibold text-white transition-all duration-200 hover:bg-white/10 md:w-auto"
@@ -135,6 +137,8 @@ const {
     </div>
   </div>
 </section>
+
+<RegistrationModal />
 
 <script>
   // Countdown Timer Logic
@@ -179,4 +183,22 @@ const {
   // Update countdown immediately and then every second
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  // Modal trigger logic
+  function initModalTrigger() {
+    const trigger = document.querySelector(
+      '[data-modal-trigger="registration-modal"]'
+    );
+    const modal = document.querySelector('[data-modal="registration-modal"]');
+
+    trigger?.addEventListener('click', () => {
+      const modalElement = modal as any;
+      if (modalElement && modalElement._openModal) {
+        modalElement._openModal(trigger);
+      }
+    });
+  }
+
+  // Initialize modal trigger on page load
+  document.addEventListener('astro:page-load', initModalTrigger);
 </script>
