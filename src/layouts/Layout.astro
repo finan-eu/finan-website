@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { SEO } from 'astro-seo';
+import StructuredData from '../components/StructuredData.astro';
 import { seoConfig, getFullUrl, getPageTitle } from '../data/siteConfig';
 
 // Domain detection for automatic noindex on pages.dev
@@ -75,8 +76,10 @@ const robotsValue =
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="application-name" content="FiNAN" />
     <meta name="apple-mobile-web-app-title" content="FiNAN" />
     <link rel="manifest" href="/site.webmanifest" />
 
@@ -172,6 +175,8 @@ const robotsValue =
         ],
       }}
     />
+
+    <StructuredData schemas={['organization', 'website']} />
 
     <!-- View Transitions -->
     <ClientRouter />
