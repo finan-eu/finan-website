@@ -14,17 +14,18 @@ export interface SocialMediaLink {
 
 export const socialMediaLinks = [
   {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/fnanordic',
-    icon: '/assets/icons/socmed/linkedin.svg',
-    alt: 'LinkedIn',
-  },
-  {
     name: 'Facebook',
     url: 'https://www.facebook.com/FNANordic/',
     icon: '/assets/icons/socmed/facebook.svg',
     alt: 'Facebook',
   },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/fnanordic',
+    icon: '/assets/icons/socmed/linkedin.svg',
+    alt: 'LinkedIn',
+  },
+
   // Uncomment when links are available
   // {
   //   name: 'Instagram',
