@@ -146,6 +146,9 @@ const {
     _openModal: (trigger: HTMLElement) => void;
   }
 
+  let countdownIntervalId: number | null = null;
+  let modalTriggerController: AbortController | null = null;
+
   // Updates countdown timer to 2026-03-30 event date. After event date passes,
   // displays 00:00:00:00. Called immediately on load and then every 1 second.
   // TODO: Update or remove this countdown after the 2026 event concludes.
@@ -197,11 +200,18 @@ const {
     }
   }
 
-  // Update countdown immediately and then every 1 second
-  // Note: setInterval is not cleared as countdown runs for page lifetime
-  try {
+  const startCountdown = () => {
+    if (countdownIntervalId) {
+      clearInterval(countdownIntervalId);
+    }
+
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    countdownIntervalId = window.setInterval(updateCountdown, 1000);
+  };
+
+  // Update countdown immediately and then every 1 second
+  try {
+    startCountdown();
   } catch (error) {
     console.error('[EventHeader] Failed to initialize countdown timer:', error);
   }
@@ -210,6 +220,13 @@ const {
   // and calls the _openModal() method exposed by Modal.astro on the modal element.
   // WARNING: Tightly coupled to Modal.astro's internal _openModal API.
   function initModalTrigger() {
+    if (modalTriggerController) {
+      modalTriggerController.abort();
+    }
+
+    modalTriggerController = new AbortController();
+    const { signal } = modalTriggerController;
+
     const trigger = document.querySelector(
       '[data-modal-trigger="registration-modal"]'
     );
@@ -219,6 +236,8 @@ const {
       console.error(
         '[EventHeader] Modal trigger button not found: [data-modal-trigger="registration-modal"]'
       );
+      modalTriggerController.abort();
+      modalTriggerController = null;
       return;
     }
 
@@ -229,31 +248,49 @@ const {
       console.warn(
         '[EventHeader] Make sure RegistrationModal component is included in the page'
       );
+      modalTriggerController.abort();
+      modalTriggerController = null;
       return;
     }
 
-    trigger.addEventListener('click', () => {
-      const modalElement = modal as ModalElement;
+    trigger.addEventListener(
+      'click',
+      () => {
+        const modalElement = modal as ModalElement;
 
-      if (!modalElement._openModal) {
-        console.error(
-          '[EventHeader] Modal._openModal method not available. Modal may not be initialized yet.'
-        );
-        console.warn(
-          '[EventHeader] This is a timing issue - modal initialization must complete before trigger initialization'
-        );
-        return;
-      }
+        if (!modalElement._openModal) {
+          console.error(
+            '[EventHeader] Modal._openModal method not available. Modal may not be initialized yet.'
+          );
+          console.warn(
+            '[EventHeader] This is a timing issue - modal initialization must complete before trigger initialization'
+          );
+          return;
+        }
 
-      try {
-        modalElement._openModal(trigger as HTMLElement);
-      } catch (error) {
-        console.error('[EventHeader] Failed to open modal:', error);
-      }
-    });
+        try {
+          modalElement._openModal(trigger as HTMLElement);
+        } catch (error) {
+          console.error('[EventHeader] Failed to open modal:', error);
+        }
+      },
+      { signal }
+    );
   }
 
   // Initialize modal trigger on page load and after Astro view transitions
   // (astro:page-load supports SPA-like navigation)
   document.addEventListener('astro:page-load', initModalTrigger);
+
+  document.addEventListener('astro:before-swap', () => {
+    if (countdownIntervalId) {
+      clearInterval(countdownIntervalId);
+      countdownIntervalId = null;
+    }
+
+    if (modalTriggerController) {
+      modalTriggerController.abort();
+      modalTriggerController = null;
+    }
+  });
 </script>

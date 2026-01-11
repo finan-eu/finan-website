@@ -88,6 +88,7 @@ const maxWidthClasses = {
     {
       keydown: (e: KeyboardEvent) => void;
       trapFocus: (e: KeyboardEvent) => void;
+      controller: AbortController;
     }
   >();
 
@@ -101,6 +102,8 @@ const maxWidthClasses = {
       const modalElement = modal as HTMLElement;
       const closeBtn = modal.querySelector('[data-modal-close]');
       const overlay = modal.querySelector('[data-modal-overlay]');
+      const controller = new AbortController();
+      const { signal } = controller;
       let triggerElement: HTMLElement | null = null;
 
       // Validate critical elements exist
@@ -167,7 +170,7 @@ const maxWidthClasses = {
 
       // Close on X button click (with validation)
       if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
+        closeBtn.addEventListener('click', closeModal, { signal });
       } else {
         console.warn(
           '[Modal] Close button missing - users can only close with Escape key'
@@ -176,11 +179,15 @@ const maxWidthClasses = {
 
       // Close on overlay click (with validation)
       if (overlay) {
-        overlay.addEventListener('click', (e) => {
-          if (e.target === overlay) {
-            closeModal();
-          }
-        });
+        overlay.addEventListener(
+          'click',
+          (e) => {
+            if (e.target === overlay) {
+              closeModal();
+            }
+          },
+          { signal }
+        );
       } else {
         console.warn(
           '[Modal] Overlay missing - click-outside-to-close disabled'
@@ -219,9 +226,13 @@ const maxWidthClasses = {
       };
 
       // Store listeners for cleanup
-      eventListeners.set(modalElement, { keydown: handleKeyDown, trapFocus });
+      eventListeners.set(modalElement, {
+        keydown: handleKeyDown,
+        trapFocus,
+        controller,
+      });
 
-      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('keydown', handleKeyDown, { signal });
 
       // Store trigger element for focus restoration
       const openModal = (trigger: HTMLElement) => {
@@ -243,7 +254,7 @@ const maxWidthClasses = {
         modalElement.setAttribute('aria-hidden', 'false');
 
         // Add focus trap listener when modal opens
-        document.addEventListener('keydown', trapFocus);
+        document.addEventListener('keydown', trapFocus, { signal });
 
         // Focus first focusable element after modal renders (10ms delay ensures visibility)
         setTimeout(() => {
@@ -269,6 +280,7 @@ const maxWidthClasses = {
   // Cleanup event listeners before page navigation to prevent memory leaks
   document.addEventListener('astro:before-swap', () => {
     eventListeners.forEach((listeners) => {
+      listeners.controller.abort();
       document.removeEventListener('keydown', listeners.keydown);
       document.removeEventListener('keydown', listeners.trapFocus);
     });

@@ -98,10 +98,21 @@ export interface AdditionalSEOConfig {
 }
 
 /**
+ * Organization profile for structured data
+ */
+export interface OrganizationProfile {
+  /** Organization display name */
+  name: string;
+  /** Alternate organization names */
+  alternateNames: string[];
+}
+
+/**
  * Complete SEO configuration interface
  */
 export interface SEOConfig {
   basic: BasicSEO;
+  organization: OrganizationProfile;
   openGraph: OpenGraphConfig;
   twitter: TwitterConfig;
   meta: MetaConfig;
@@ -116,16 +127,20 @@ export interface SEOConfig {
  */
 export const seoConfig = {
   basic: {
-    title: 'FiNAN - The Filipino Nurses Association in the Nordic Region',
+    title: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     titleTemplate: '%s | FiNAN',
     titleDefault:
-      'FiNAN - The Filipino Nurses Association in the Nordic Region',
+      'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     description:
       'FiNAN supports Filipino nurses across the Nordic region with trusted guidance on licensing, integration, and career growth.',
     siteUrl: 'https://www.finan.eu.com',
     author: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     language: 'en',
     charset: 'UTF-8',
+  },
+  organization: {
+    name: 'Filipino Nurses Association in the Nordic Region',
+    alternateNames: ['FiNAN'],
   },
   openGraph: {
     type: 'website',

@@ -55,8 +55,8 @@ export interface WebSiteSchema {
  */
 export function generateOrganizationSchema(): OrganizationSchema {
   // Follow Google's example: full name as primary, acronym as alternate
-  const organizationName = 'Filipino Nurses Association in the Nordic Region';
-  const alternateNames = ['FiNAN'];
+  const organizationName = seoConfig.organization.name;
+  const alternateNames = seoConfig.organization.alternateNames;
 
   // Construct full logo URL
   const logoUrl = getFullUrl('/finan-logo.svg');
@@ -87,8 +87,8 @@ export function generateOrganizationSchema(): OrganizationSchema {
  */
 export function generateWebSiteSchema(): WebSiteSchema {
   // Prioritize "FiNAN" for Google Search "Site Name"
-  const websiteName = 'FiNAN';
-  const alternateNames = ['Filipino Nurses Association in the Nordic Region'];
+  const websiteName = seoConfig.openGraph.siteName;
+  const alternateNames = [seoConfig.organization.name];
 
   return {
     '@context': 'https://schema.org',
