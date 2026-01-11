@@ -1,7 +1,15 @@
 ---
 // Navbar.astro - Main navigation component
+import BannerTriennialGathering from './BannerTriennialGathering.astro';
+
+interface Props {
+  showBanner?: boolean;
+}
+
+const { showBanner = true } = Astro.props;
 ---
 
+{showBanner && <BannerTriennialGathering />}
 <nav class="py-5X relative z-50">
   <div class="mx-auto max-w-screen-xl px-6 py-8">
     <div

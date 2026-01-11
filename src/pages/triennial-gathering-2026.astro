@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import TopBanner from '../components/TopBanner.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import EventSched from '../components/EventSched.astro';
@@ -14,8 +13,7 @@ import { triennialGathering2026Schedule } from '../data/events/triennialGatherin
   title="Triennial Gathering 2026 | FiNAN Conference"
   description="Join us for the FiNAN Triennial Gathering 2026 in Reykjavik, Iceland. Amplifying Voices: Navigating Equity, Leadership, and Global Migration. March 30 – April 1, 2026."
 >
-  <TopBanner />
-  <Navbar />
+  <Navbar showBanner={false} />
 
   <EventHeaderSection
     secondaryButtonText="View Schedule"
