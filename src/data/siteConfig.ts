@@ -98,10 +98,21 @@ export interface AdditionalSEOConfig {
 }
 
 /**
+ * Organization profile for structured data
+ */
+export interface OrganizationProfile {
+  /** Organization display name */
+  name: string;
+  /** Alternate organization names */
+  alternateNames: string[];
+}
+
+/**
  * Complete SEO configuration interface
  */
 export interface SEOConfig {
   basic: BasicSEO;
+  organization: OrganizationProfile;
   openGraph: OpenGraphConfig;
   twitter: TwitterConfig;
   meta: MetaConfig;
@@ -126,6 +137,10 @@ export const seoConfig = {
     author: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     language: 'en',
     charset: 'UTF-8',
+  },
+  organization: {
+    name: 'Filipino Nurses Association in the Nordic Region',
+    alternateNames: ['FiNAN'],
   },
   openGraph: {
     type: 'website',
