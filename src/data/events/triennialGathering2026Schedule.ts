@@ -23,9 +23,8 @@ export const triennialGathering2026Schedule = [
       {
         time: '09:15 – 09:45',
         title: 'Opening Keynote',
-        speaker: 'Marvi Gil',
-        details:
-          'Landspítalinn, National University Hospital of Iceland. "Filipino Nurses, Cultural Ambassadors of the World"',
+        speaker: 'Margrét Manda Jónsdóttir',
+        details: 'Landspital University Hospital, Nurse Manager"',
       },
       {
         time: '09:45 – 10:15',
@@ -104,11 +103,11 @@ export const triennialGathering2026Schedule = [
   },
   {
     date: 'March 31, 2026',
-    description: 'Blue Lagoon',
+    description: 'Golden Circle',
     events: [
       {
         time: '10:00 – 17:00',
-        title: 'Blue lagoon whole day',
+        title: 'Golden Circle whole day',
         speaker: '',
         details: '',
       },
