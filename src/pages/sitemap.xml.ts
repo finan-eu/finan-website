@@ -6,7 +6,7 @@ import { sitemapConfig } from '../data/sitemap/sitemapConfig';
  * Generates XML sitemap with full SEO control
  */
 
-const SITE_URL = 'https://www.finan.eu.com';
+const SITE_URL = 'https://finan.eu.com';
 
 function escapeXml(unsafe: string): string {
   return unsafe

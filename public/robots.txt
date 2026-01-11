@@ -7,4 +7,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://www.finan.eu.com/sitemap.xml
+Sitemap: https://finan.eu.com/sitemap.xml

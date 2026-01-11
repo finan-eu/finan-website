@@ -127,13 +127,12 @@ export interface SEOConfig {
  */
 export const seoConfig = {
   basic: {
-    title: 'FiNAN - The Filipino Nurses Association in the Nordic Region',
+    title: 'Filipino Nurses Association in the Nordic Region (FiNAN)',
     titleTemplate: '%s | FiNAN',
-    titleDefault:
-      'FiNAN - The Filipino Nurses Association in the Nordic Region',
+    titleDefault: 'Filipino Nurses Association in the Nordic Region (FiNAN)',
     description:
       'FiNAN supports Filipino nurses across the Nordic region with trusted guidance on licensing, integration, and career growth.',
-    siteUrl: 'https://www.finan.eu.com',
+    siteUrl: 'https://finan.eu.com',
     author: 'The Filipino Nurses Association in the Nordic Region (FiNAN)',
     language: 'en',
     charset: 'UTF-8',
