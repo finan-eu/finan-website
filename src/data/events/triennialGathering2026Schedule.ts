@@ -18,13 +18,13 @@ export const triennialGathering2026Schedule = [
         time: '09:00 – 09:15',
         title: 'Welcome to Iceland',
         speaker: 'Ólafur Gúðbjórn Skúlason',
-        details: 'Landspítalinn, National University Hospital of Iceland.',
+        details: 'Landspítali, National University Hospital of Iceland.',
       },
       {
         time: '09:15 – 09:45',
         title: 'Opening Keynote',
         speaker: 'Margrét Manda Jónsdóttir',
-        details: 'Landspital University Hospital, Nurse Manager"',
+        details: 'Landspítali University Hospital, Nurse Manager',
       },
       {
         time: '09:45 – 10:15',
