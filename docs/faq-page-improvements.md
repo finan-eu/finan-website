@@ -8,7 +8,7 @@
 
 ## 2. Hero Image Specificity
 
-- Currently uses generic hero-image.jpg like most pages
+- Currently uses generic hero-image.webp like most pages
 - Consider using a FAQ-specific hero image (like about.astro and membership.astro could also benefit
   from this)
 

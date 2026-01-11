@@ -56,7 +56,7 @@ src/
 
 #### Accessibility Priority: High
 
-- `src/assets/hero-image.jpg` referenced in `HeroHeader.astro:4` but deleted
+- `src/assets/hero-image.webp` referenced in `HeroHeader.astro:4` but deleted
 - Several public images deleted but may still be referenced
 - **Impact:** Broken hero section, potential build failures
 

@@ -792,7 +792,7 @@ export const generateLocalBusinessSchema = (location: {
 ```astro
 ---
 import { Image } from 'astro:assets';
-import heroImage from '../assets/images/hero-image.jpg';
+import heroImage from '../assets/images/hero-image.webp';
 ---
 
 <Image
@@ -860,7 +860,7 @@ backgroundAlt="Filipino healthcare professionals in the Nordic countries" ✅ Be
 ```astro
 ---
 import { Picture } from 'astro:assets';
-import heroImage from '../assets/images/hero-image.jpg';
+import heroImage from '../assets/images/hero-image.webp';
 ---
 
 <Picture

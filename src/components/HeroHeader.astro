@@ -1,7 +1,7 @@
 ---
 // HeroHeader.astro - Main hero section with FiNAN mission
 import { Image } from 'astro:assets';
-import heroImage from '../assets/images/hero-image.jpg';
+import heroImage from '../assets/images/hero-image.webp';
 import Navbar from './Navbar.astro';
 import { heroConfig } from '../data/heroConfig';
 ---
@@ -13,7 +13,7 @@ import { heroConfig } from '../data/heroConfig';
   <Image
     src={heroImage}
     alt="Filipino nurses working together in Nordic healthcare"
-    class="absolute inset-0 h-full w-full object-cover object-center"
+    class="absolute inset-0 h-full w-full object-cover object-top"
     loading="eager"
     fetchpriority="high"
     decoding="async"
