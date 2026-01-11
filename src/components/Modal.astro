@@ -254,7 +254,7 @@ const maxWidthClasses = {
         modalElement.setAttribute('aria-hidden', 'false');
 
         // Add focus trap listener when modal opens
-        document.addEventListener('keydown', trapFocus, { signal });
+        document.addEventListener('keydown', trapFocus);
 
         // Focus first focusable element after modal renders (10ms delay ensures visibility)
         setTimeout(() => {
@@ -281,7 +281,6 @@ const maxWidthClasses = {
   document.addEventListener('astro:before-swap', () => {
     eventListeners.forEach((listeners) => {
       listeners.controller.abort();
-      document.removeEventListener('keydown', listeners.keydown);
       document.removeEventListener('keydown', listeners.trapFocus);
     });
     eventListeners.clear();
