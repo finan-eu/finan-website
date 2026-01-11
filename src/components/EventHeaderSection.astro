@@ -209,12 +209,16 @@ const {
     countdownIntervalId = window.setInterval(updateCountdown, 1000);
   };
 
-  // Update countdown immediately and then every 1 second
-  try {
-    startCountdown();
-  } catch (error) {
-    console.error('[EventHeader] Failed to initialize countdown timer:', error);
-  }
+  const initCountdown = () => {
+    try {
+      startCountdown();
+    } catch (error) {
+      console.error(
+        '[EventHeader] Failed to initialize countdown timer:',
+        error
+      );
+    }
+  };
 
   // Wires up registration modal trigger: finds button with data-modal-trigger="registration-modal"
   // and calls the _openModal() method exposed by Modal.astro on the modal element.
@@ -278,9 +282,29 @@ const {
     );
   }
 
-  // Initialize modal trigger on page load and after Astro view transitions
+  // Initialize countdown + modal trigger on page load and after Astro view transitions
   // (astro:page-load supports SPA-like navigation)
-  document.addEventListener('astro:page-load', initModalTrigger);
+  document.addEventListener('astro:page-load', () => {
+    initCountdown();
+    initModalTrigger();
+  });
+
+  if (
+    document.readyState === 'complete' ||
+    document.readyState === 'interactive'
+  ) {
+    initCountdown();
+    initModalTrigger();
+  } else {
+    document.addEventListener(
+      'DOMContentLoaded',
+      () => {
+        initCountdown();
+        initModalTrigger();
+      },
+      { once: true }
+    );
+  }
 
   document.addEventListener('astro:before-swap', () => {
     if (countdownIntervalId) {
