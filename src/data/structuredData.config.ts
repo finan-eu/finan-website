@@ -22,9 +22,22 @@ export interface OrganizationSchema {
   name: string;
   alternateName: string[];
   url: string;
-  logo: string;
+  logo: {
+    '@type': string;
+    url: string;
+  };
   description: string;
   sameAs: string[];
+  contactPoint?: {
+    '@type': string;
+    contactType: string;
+    email: string;
+    availableLanguage: string[];
+  };
+  address?: {
+    '@type': string;
+    addressCountry: string;
+  };
 }
 
 /**
@@ -46,6 +59,43 @@ export interface WebSiteSchema {
 }
 
 /**
+ * Schema.org Event structured data
+ * @see https://schema.org/Event
+ */
+export interface EventSchema {
+  '@context': string;
+  '@type': string;
+  '@id': string;
+  name: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  eventStatus: string;
+  eventAttendanceMode: string;
+  location: {
+    '@type': string;
+    name: string;
+    address: {
+      '@type': string;
+      addressLocality: string;
+      addressCountry: string;
+    };
+  };
+  image: string[];
+  organizer: {
+    '@id': string;
+  };
+  offers?: {
+    '@type': string;
+    url: string;
+    price: string;
+    priceCurrency: string;
+    availability: string;
+    validFrom: string;
+  };
+}
+
+/**
  * Generate Organization schema (JSON-LD)
  *
  * This schema helps search engines identify the organization and
@@ -58,7 +108,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
   const organizationName = seoConfig.organization.name;
   const alternateNames = seoConfig.organization.alternateNames;
 
-  // Construct full logo URL
+  // Construct full logo URL (structured format for better Google understanding)
   const logoUrl = getFullUrl('/finan-logo.svg');
 
   // Extract social media URLs
@@ -71,9 +121,22 @@ export function generateOrganizationSchema(): OrganizationSchema {
     name: organizationName,
     alternateName: alternateNames,
     url: seoConfig.basic.siteUrl,
-    logo: logoUrl,
+    logo: {
+      '@type': 'ImageObject',
+      url: logoUrl,
+    },
     description: seoConfig.basic.description,
     sameAs: socialUrls,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'info@finan.eu.com',
+      availableLanguage: ['en', 'tl'],
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'Nordic Region',
+    },
   };
 }
 
@@ -106,15 +169,65 @@ export function generateWebSiteSchema(): WebSiteSchema {
 }
 
 /**
+ * Generate Event schema for Triennial Gathering 2026
+ *
+ * This schema helps Google display the event in search results
+ * with rich snippets including date, location, and registration info.
+ *
+ * @returns Event schema object
+ */
+export function generateTriennialGathering2026EventSchema(): EventSchema {
+  const eventUrl = `${seoConfig.basic.siteUrl}/triennial-gathering-2026`;
+  const eventImageUrl = getFullUrl('/ogimg_finan.jpg');
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    '@id': `${eventUrl}#event`,
+    name: 'FiNAN Triennial Gathering 2026',
+    description:
+      'Join us for the FiNAN Triennial Gathering 2026 in Reykjavik, Iceland. Amplifying Voices: Navigating Equity, Leadership, and Global Migration. A platform for Filipino Internationally Educated Nurses, healthcare leaders, policy-makers, and recruiters to explore workforce mobility, ethical recruitment, integration, and the future of nursing.',
+    startDate: '2026-03-30T09:00:00+00:00',
+    endDate: '2026-04-01T23:59:59+00:00',
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: {
+      '@type': 'Place',
+      name: 'Reykjavik, Iceland',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Reykjavik',
+        addressCountry: 'IS',
+      },
+    },
+    image: [eventImageUrl],
+    organizer: {
+      '@id': `${seoConfig.basic.siteUrl}/#organization`,
+    },
+    offers: {
+      '@type': 'Offer',
+      url: eventUrl,
+      price: '0',
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      validFrom: '2026-01-01T00:00:00+00:00',
+    },
+  };
+}
+
+/**
  * Type-safe helper to get all structured data schemas
  *
  * @param schemas Array of schema types to generate
  * @returns Array of schema objects
  */
 export function generateStructuredData(
-  schemas: ('organization' | 'website')[] = ['organization', 'website']
-): (OrganizationSchema | WebSiteSchema)[] {
-  const result: (OrganizationSchema | WebSiteSchema)[] = [];
+  schemas: ('organization' | 'website' | 'event')[] = [
+    'organization',
+    'website',
+  ]
+): (OrganizationSchema | WebSiteSchema | EventSchema)[] {
+  const result: (OrganizationSchema | WebSiteSchema | EventSchema)[] = [];
 
   if (schemas.includes('organization')) {
     result.push(generateOrganizationSchema());
@@ -122,6 +235,10 @@ export function generateStructuredData(
 
   if (schemas.includes('website')) {
     result.push(generateWebSiteSchema());
+  }
+
+  if (schemas.includes('event')) {
+    result.push(generateTriennialGathering2026EventSchema());
   }
 
   return result;

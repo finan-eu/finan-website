@@ -22,7 +22,7 @@ interface Props {
    * Array of schema types to include
    * @default ['organization', 'website']
    */
-  schemas?: ('organization' | 'website')[];
+  schemas?: ('organization' | 'website' | 'event')[];
 }
 
 const { schemas = ['organization', 'website'] } = Astro.props;
