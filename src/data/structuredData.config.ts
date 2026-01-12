@@ -85,6 +85,11 @@ export interface EventSchema {
   organizer: {
     '@id': string;
   };
+  performer?: {
+    '@type': string;
+    '@id'?: string;
+    name: string;
+  };
   offers?: {
     '@type': string;
     url: string;
@@ -135,7 +140,8 @@ export function generateOrganizationSchema(): OrganizationSchema {
     },
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'Nordic Region',
+      addressCountry: 'FI',
+      addressRegion: 'Nordic Region',
     },
   };
 }
@@ -203,6 +209,11 @@ export function generateTriennialGathering2026EventSchema(): EventSchema {
     image: [eventImageUrl],
     organizer: {
       '@id': `${seoConfig.basic.siteUrl}/#organization`,
+    },
+    performer: {
+      '@type': 'Organization',
+      '@id': `${seoConfig.basic.siteUrl}/#organization`,
+      name: 'Filipino Nurses Association in the Nordic Region (FiNAN)',
     },
     offers: {
       '@type': 'Offer',
