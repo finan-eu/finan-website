@@ -31,7 +31,7 @@ const { showBanner = true } = Astro.props;
       <div class="hidden xl:block xl:pt-8">
         <div class="flex items-baseline space-x-6">
           <!-- Representation Dropdown -->
-          <div class="group relative" id="representation-dropdown">
+          <div class="relative" id="representation-dropdown">
             <button
               type="button"
               class="flex cursor-pointer items-center rounded-full px-3 py-2 text-lg font-medium text-gray-700 transition-colors hover:text-blue-900"
@@ -41,10 +41,11 @@ const { showBanner = true } = Astro.props;
             >
               Representation
               <svg
-                class="ml-1 h-4 w-4 transition-transform duration-200 ease-out group-hover:rotate-180"
+                class="ml-1 h-4 w-4 transition-transform duration-200 ease-out"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                id="representation-icon"
               >
                 <path
                   stroke-linecap="round"
@@ -54,22 +55,22 @@ const { showBanner = true } = Astro.props;
               </svg>
             </button>
             <div
-              class="ring-opacity-5 invisible absolute left-0 z-50 mt-2 w-64 scale-95 transform overflow-hidden rounded-md bg-white opacity-0 shadow-lg ring-1 ring-black transition-all duration-200 ease-out group-hover:visible group-hover:scale-100 group-hover:opacity-100"
+              class="invisible absolute left-0 z-50 mt-3 w-72 scale-95 transform overflow-hidden rounded-xl border border-gray-200 bg-white opacity-0 shadow-lg transition-all duration-200 ease-out"
               id="representation-menu"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="representation-button"
             >
-              <div class="py-0" role="none">
+              <div class="px-3 py-3" role="none">
                 <a
                   href="/representation/kingdom-denmark"
-                  class="flex items-center gap-3 px-4 py-4 text-lg text-gray-700 hover:text-blue-900"
+                  class="flex items-center gap-4 rounded-lg px-6 py-4 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50"
                   role="menuitem"
                 >
                   <img
                     src="/assets/flags/flag_denmark.svg"
                     alt=""
-                    class="h-5 w-5"
+                    class="h-6 w-6 flex-shrink-0"
                   />
                   <span>Kingdom of Denmark</span>
                 </a>
@@ -77,25 +78,25 @@ const { showBanner = true } = Astro.props;
                 <!-- Faroe Islands -->
                 <!-- <a
                   href="/representation/faroe-islands"
-                  class="flex items-center gap-3 px-4 py-4  text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  class="flex items-center gap-4 rounded-lg px-6 py-4 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50"
                   role="menuitem"
                 >
                   <img
                     src="/assets/flags/flag_faroe_islands.svg"
                     alt=""
-                    class="h-5 w-5"
+                    class="h-6 w-6 flex-shrink-0"
                   />
                   <span>Faroe Islands</span>
                 </a> -->
                 <a
                   href="/representation/finland"
-                  class="flex items-center gap-3 px-4 py-4 text-lg text-gray-700 hover:text-blue-900"
+                  class="flex items-center gap-4 rounded-lg px-6 py-4 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50"
                   role="menuitem"
                 >
                   <img
                     src="/assets/flags/flag_finland.svg"
                     alt=""
-                    class="h-5 w-5"
+                    class="h-6 w-6 flex-shrink-0"
                   />
                   <span>Finland</span>
                 </a>
@@ -103,45 +104,45 @@ const { showBanner = true } = Astro.props;
                 <!-- Greenland -->
                 <!-- <a
                   href="/representation/greenland"
-                  class="flex items-center gap-3 px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-gray-900"
+                  class="flex items-center gap-4 rounded-lg px-6 py-4 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50"
                   role="menuitem"
                 >
-                  <img src="/assets/flags/flag_greenland.svg" alt="" class="h-5 w-5" />
+                  <img src="/assets/flags/flag_greenland.svg" alt="" class="h-6 w-6 flex-shrink-0" />
                   <span>Greenland</span>
                 </a> -->
                 <a
                   href="/representation/iceland"
-                  class="flex items-center gap-3 px-4 py-4 text-lg text-gray-700 hover:text-blue-900"
+                  class="flex items-center gap-4 rounded-lg px-6 py-4 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50"
                   role="menuitem"
                 >
                   <img
                     src="/assets/flags/flag_iceland.svg"
                     alt=""
-                    class="h-5 w-5"
+                    class="h-6 w-6 flex-shrink-0"
                   />
                   <span>Iceland</span>
                 </a>
                 <a
                   href="/representation/norway"
-                  class="flex items-center gap-3 px-4 py-4 text-lg text-gray-700 hover:text-blue-900"
+                  class="flex items-center gap-4 rounded-lg px-6 py-4 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50"
                   role="menuitem"
                 >
                   <img
                     src="/assets/flags/flag_norway.svg"
                     alt=""
-                    class="h-5 w-5"
+                    class="h-6 w-6 flex-shrink-0"
                   />
                   <span>Norway</span>
                 </a>
                 <a
                   href="/representation/sweden"
-                  class="flex items-center gap-3 px-4 py-4 text-lg text-gray-700 hover:text-blue-900"
+                  class="flex items-center gap-4 rounded-lg px-6 py-4 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50"
                   role="menuitem"
                 >
                   <img
                     src="/assets/flags/flag_sweden.svg"
                     alt=""
-                    class="h-5 w-5"
+                    class="h-6 w-6 flex-shrink-0"
                   />
                   <span>Sweden</span>
                 </a>
@@ -276,63 +277,71 @@ const { showBanner = true } = Astro.props;
           <div class="hidden space-y-1 pl-4" id="mobile-representation-menu">
             <a
               href="/representation/kingdom-denmark"
-              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
+              class="flex items-center gap-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900"
             >
               <img
                 src="/assets/flags/flag_denmark.svg"
                 alt=""
-                class="h-5 w-5"
+                class="h-6 w-6 flex-shrink-0"
               />
               <span>Kingdom of Denmark</span>
             </a>
             <!-- <a
               href="/representation/faroe-islands"
-              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
+              class="flex items-center gap-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900"
             >
-              <img src="/assets/flags/flag_faroe_islands.svg" alt="" class="h-5 w-5" />
+              <img src="/assets/flags/flag_faroe_islands.svg" alt="" class="h-6 w-6 flex-shrink-0" />
               <span>Faroe Islands</span>
             </a> -->
             <a
               href="/representation/finland"
-              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
+              class="flex items-center gap-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900"
             >
               <img
                 src="/assets/flags/flag_finland.svg"
                 alt=""
-                class="h-5 w-5"
+                class="h-6 w-6 flex-shrink-0"
               />
               <span>Finland</span>
             </a>
             <!-- <a
               href="/representation/greenland"
-              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
+              class="flex items-center gap-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900"
             >
-              <img src="/assets/flags/flag_greenland.svg" alt="" class="h-5 w-5" />
+              <img src="/assets/flags/flag_greenland.svg" alt="" class="h-6 w-6 flex-shrink-0" />
               <span>Greenland</span>
             </a> -->
             <a
               href="/representation/iceland"
-              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
+              class="flex items-center gap-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900"
             >
               <img
                 src="/assets/flags/flag_iceland.svg"
                 alt=""
-                class="h-5 w-5"
+                class="h-6 w-6 flex-shrink-0"
               />
               <span>Iceland</span>
             </a>
             <a
               href="/representation/norway"
-              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
+              class="flex items-center gap-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900"
             >
-              <img src="/assets/flags/flag_norway.svg" alt="" class="h-5 w-5" />
+              <img
+                src="/assets/flags/flag_norway.svg"
+                alt=""
+                class="h-6 w-6 flex-shrink-0"
+              />
               <span>Norway</span>
             </a>
             <a
               href="/representation/sweden"
-              class="flex items-center gap-3 py-2 text-lg text-gray-600 hover:text-gray-900"
+              class="flex items-center gap-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900"
             >
-              <img src="/assets/flags/flag_sweden.svg" alt="" class="h-5 w-5" />
+              <img
+                src="/assets/flags/flag_sweden.svg"
+                alt=""
+                class="h-6 w-6 flex-shrink-0"
+              />
               <span>Sweden</span>
             </a>
           </div>

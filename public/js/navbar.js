@@ -43,6 +43,7 @@ function initializeNavbar() {
   // Desktop Representation dropdown functionality
   const representationButton = document.getElementById('representation-button');
   const representationMenu = document.getElementById('representation-menu');
+  const representationIcon = document.getElementById('representation-icon');
 
   if (representationButton && representationMenu) {
     // Remove any existing listeners
@@ -69,6 +70,10 @@ function initializeNavbar() {
           'visible',
           'scale-100'
         );
+        // Rotate chevron back
+        if (representationIcon) {
+          representationIcon.classList.remove('rotate-180');
+        }
       } else {
         representationMenu.classList.remove(
           'opacity-0',
@@ -76,6 +81,10 @@ function initializeNavbar() {
           'scale-95'
         );
         representationMenu.classList.add('opacity-100', 'visible', 'scale-100');
+        // Rotate chevron down
+        if (representationIcon) {
+          representationIcon.classList.add('rotate-180');
+        }
       }
     });
 
@@ -88,6 +97,10 @@ function initializeNavbar() {
         'visible',
         'scale-100'
       );
+      // Reset chevron rotation
+      if (representationIcon) {
+        representationIcon.classList.remove('rotate-180');
+      }
     });
   }
 
