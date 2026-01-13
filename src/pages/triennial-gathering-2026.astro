@@ -8,6 +8,8 @@ import EventHeaderSection from '../components/EventHeaderSection.astro';
 import StructuredData from '../components/StructuredData.astro';
 import scheduleBanner from '../assets/images/events/v2_banner-triennial-gathering-2026.png';
 import { triennialGathering2026Schedule } from '../data/events/triennialGathering2026Schedule';
+import CTABanner from '../components/CTABanner.astro';
+import RegistrationSection from '../components/RegistrationSection.astro';
 ---
 
 <Layout
@@ -73,6 +75,8 @@ import { triennialGathering2026Schedule } from '../data/events/triennialGatherin
       <EventSched schedule={triennialGathering2026Schedule} />
     </section>
 
+    <RegistrationSection />
+    <CTABanner />
     <Footer />
   </section>
 </Layout>
