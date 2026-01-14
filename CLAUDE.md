@@ -74,21 +74,25 @@ public/
 ### Key Components
 
 **Core Navigation & Layout:**
+
 - **Navbar.astro** - Main navigation with responsive design
 - **Footer.astro** - Site footer with links and information
 - **TopBanner.astro** - Top page announcements
 - **PageHeader.astro** - Reusable page header with consistent styling
 
 **Hero & Landing Components:**
+
 - **HeroHeader.astro** - Landing page hero section
 - **EventHeaderSection.astro** - Event page hero with countdown timer
 
 **Representation & Contact:**
+
 - **NordicRepresentation.astro** - Display all Nordic country representation
 - **Committee.astro** - Display committee members by country
 - **RepresentationContactSection.astro** - Contact information for regional pages
 
 **Content & Information:**
+
 - **Statistics.astro** - Display organization statistics
 - **Pillars.astro** - Organization pillars display
 - **OurAdvocacy.astro** - Services and support information (original advocacy section)
@@ -98,21 +102,25 @@ public/
 - **PublicationCard.astro** - Publication display card
 
 **Interactive Components:**
+
 - **FAQAccordion.astro** - FAQ accordion component
 - **EventSched.astro** - Event schedule accordion component
 - **CTABanner.astro** - Call-to-action sections
 - **RegistrationSection.astro** - Member registration
 
 **Blog & News:**
+
 - **Blog.astro** - Main blog/news section
 - **BlogRepresentation.astro** - Regional blog section for representation pages
 
 **SEO & Data:**
+
 - **StructuredData.astro** - Structured data/schema markup for SEO
 
 ### Pages
 
 **Main Pages:**
+
 - **index.astro** - Home page with hero, statistics, representation overview
 - **about.astro** - Organization information, mission, committee
 - **membership.astro** - Membership benefits and registration
@@ -125,6 +133,7 @@ public/
 - **404.astro** - Custom 404 error page
 
 **Representation Pages (8 Nordic Countries/Regions):**
+
 - **representation/denmark.astro** - Denmark representation
 - **representation/faroe-islands.astro** - Faroe Islands representation
 - **representation/finland.astro** - Finland & Åland representation
@@ -190,57 +199,11 @@ The project uses a centralized, type-safe data layer:
 
 All data files use TypeScript interfaces and the `as const satisfies` pattern for type safety.
 
-### Image Import Standards
-
-**IMPORTANT**: When adding images to committee member data or any data configuration files, ALWAYS use the import pattern for proper Astro asset optimization.
-
-**Correct Pattern** (as used in `finlandCommittee.ts`):
-
-```typescript
-import type { CommitteeConfig } from './types';
-import floroCubeloImage from '../../../assets/images/committee/finland/floro-cubelo.jpg';
-import ryannDelosoImage from '../../../assets/images/committee/finland/ryann-deloso.jpg';
-
-const finlandCommittee: CommitteeConfig = {
-  members: [
-    {
-      name: 'Floro Cubelo',
-      imageSrc: floroCubeloImage,
-      imageAlt: 'Portrait of Floro Cubelo',
-      // ... other properties
-    },
-    {
-      name: 'Ryann Deloso',
-      imageSrc: ryannDelosoImage,
-      imageAlt: 'Portrait of Ryann Deloso',
-      // ... other properties
-    },
-  ],
-} as const;
-```
-
-**Key Requirements**:
-1. Import images from `src/assets/` directory (NOT from `public/`)
-2. Use descriptive variable names following the pattern: `[firstName][LastName]Image`
-3. Import at the top of the file with other imports
-4. Store images in the appropriate subdirectory: `src/assets/images/committee/[country]/`
-5. Use the imported reference in the `imageSrc` property
-
-**Why This Matters**:
-- Astro optimizes imported images (compression, format conversion, responsive images)
-- Type safety ensures image paths are valid at build time
-- Build fails immediately if image files are missing
-- Images in `public/` are NOT optimized by Astro
-
-**Image File Naming Convention**:
-- Use kebab-case for image filenames: `first-last.jpg`
-- Example: `floro-cubelo.jpg`, `ryann-deloso.jpg`
-- Supported formats: `.jpg`, `.png`, `.webp`
-
 ### Asset Organization
 
 **Optimized Assets (src/assets/):**
 Images in `src/assets/` are automatically optimized by Astro:
+
 - **Committee Images**: `src/assets/images/committee/[country]/`
   - finland/ - Finnish committee member photos
   - sweden/ - Swedish committee member photos
@@ -252,6 +215,7 @@ Images in `src/assets/` are automatically optimized by Astro:
 
 **Static Assets (public/):**
 Assets in `public/` are served as-is without optimization:
+
 - **Flags**: `/assets/flags/` - Country and regional flag SVGs
 - **Icons**: `/assets/icons/` - UI icons and graphics
 - **Images**: `/assets/images/` - General static images
@@ -271,6 +235,7 @@ Assets in `public/` are served as-is without optimization:
 ### Button Styling Conventions
 
 **Primary Buttons**: All primary action buttons (e.g., "Be a Member", CTA buttons) must include the following shadow and transition effects:
+
 ```
 shadow-lg transition-all duration-200 hover:shadow-xl
 ```
@@ -304,6 +269,7 @@ The project integrates PhotoSwipe v5.4.4 for image galleries and lightbox functi
   - Responsive grid layout (1 column mobile, 2 tablet, 3 desktop)
   - Optimized images using Astro's asset pipeline
 - **Usage Pattern**:
+
   ```javascript
   import PhotoSwipeLightbox from 'photoswipe/lightbox';
   import 'photoswipe/style.css';
@@ -315,6 +281,7 @@ The project integrates PhotoSwipe v5.4.4 for image galleries and lightbox functi
   });
   lightbox.init();
   ```
+
 - **Integration with Astro**: Uses `astro:page-load` event listener for SPA-like navigation support
 
 **Gallery Location**: `src/pages/representation/sweden.astro`
@@ -342,12 +309,14 @@ The project integrates PhotoSwipe v5.4.4 for image galleries and lightbox functi
 ## Special Features
 
 ### Event Features (Triennial Gathering 2026)
+
 - **Countdown Timer**: Live JavaScript countdown to event date
 - **Event Schedule**: Accordion-based schedule with collapsible days
 - **Event Hero**: Responsive hero section with overlay and CTA buttons
 - **Registration Section**: Integrated registration forms and links
 
 ### Interactive Components
+
 - **Accordion Components**: FAQAccordion and EventSched with smooth animations
 - **Photo Galleries**: PhotoSwipe-powered image lightbox with touch gestures and keyboard navigation
 - **Dynamic Navigation**: Client-side navigation handling
@@ -355,6 +324,7 @@ The project integrates PhotoSwipe v5.4.4 for image galleries and lightbox functi
 - **Smooth Transitions**: CSS transitions and animations throughout
 
 ### Accessibility Features
+
 - **Semantic HTML**: Proper heading structure and ARIA attributes
 - **Screen Reader Support**: Hidden headings and descriptive labels
 - **Keyboard Navigation**: Focus states and keyboard-accessible components
