@@ -1,0 +1,88 @@
+# Filipino Nurses Association in the Nordic Region (FiNAN)
+
+> https://finan.eu.com
+
+## About
+
+FiNAN (Filipino Nurses Association in the Nordic Region) is a professional non-profit organization that connects, supports, and advocates for Filipino nurses across the Nordic region. The organization provides guidance on licensing, cultural integration, and professional development for Filipino nurses working in Denmark, Finland, Iceland, Norway, Sweden, and the autonomous territories of Faroe Islands, Greenland, and Åland.
+
+FiNAN is a registered non-profit organization in the Nordic region with official registrations in:
+- Finland: Patentti- ja rekisterihallitus Y-tunnus 3084026-2
+- Denmark: Erhvervsstyrelsen CVR number 40349367
+- Sweden: Skatteverket Organisation number 802537-7097
+- Iceland: Ríkisskattstjóri Registration number 5208190450
+
+## Mission
+
+- Connect Filipino nurses across the Nordic region
+- Support professional development and career advancement
+- Advocate for Filipino nurses' rights and welfare
+- Provide guidance on licensing and regulatory requirements
+- Facilitate cultural integration in Nordic healthcare systems
+- Foster collaboration between Nordic countries and the Philippines
+
+## Key Pages
+
+### Main Pages
+
+- `/` - Home page with organization overview, statistics, and regional representation
+- `/about` - Organization information, mission, vision, and leadership committee
+- `/membership` - Membership benefits, registration information, and how to join
+- `/faq` - Frequently asked questions about FiNAN, membership, and nursing in the Nordic region
+- `/guides-resources` - Resources and guides for Filipino nurses in the Nordic countries
+- `/contact` - Contact information and inquiry form
+- `/terms-agreement` - Terms of service and membership agreements
+- `/triennial-gathering-2026` - Information about FiNAN's 2026 triennial conference event
+
+### Regional Representation Pages
+
+Each Nordic country/territory has a dedicated page with local committee information, partnerships, publications, and regional news:
+
+- `/representation/denmark` - Denmark chapter information and committee
+- `/representation/faroe-islands` - Faroe Islands chapter information and committee
+- `/representation/finland` - Finland & Åland chapter information and committee
+- `/representation/greenland` - Greenland chapter information and committee
+- `/representation/iceland` - Iceland chapter information and committee
+- `/representation/norway` - Norway chapter information and committee
+- `/representation/sweden` - Sweden chapter information and committee
+- `/representation/kingdom-denmark` - Kingdom of Denmark collective representation (Denmark, Faroe Islands, Greenland)
+
+## Key Topics
+
+- **Nursing Licensing**: Information about obtaining nursing licenses in Nordic countries
+- **Cultural Integration**: Support for Filipino nurses adapting to Nordic culture and healthcare systems
+- **Professional Development**: Resources for continuing education and career advancement
+- **Community Building**: Connecting Filipino nurses across the Nordic region
+- **Advocacy**: Representing Filipino nurses' interests in Nordic healthcare
+- **Events**: Triennial gatherings and regional events for networking and professional development
+- **Partnerships**: Collaborations with healthcare institutions and nursing organizations
+
+## Organization Structure
+
+FiNAN operates with:
+- Regional committees in each Nordic country
+- Country representatives and chairpersons
+- Partnership networks with healthcare institutions
+- Member-driven initiatives and programs
+- Annual and triennial gatherings
+
+## Contact
+
+For general inquiries: info@finan.eu.com
+
+Country-specific contacts:
+- Denmark: denmark@finan.eu.com
+- Faroe Islands: faroeislands@finan.eu.com
+- Greenland: greenland@finan.eu.com
+- Finland & Åland: finland@finan.eu.com
+- Iceland: iceland@finan.eu.com
+- Norway: norway@finan.eu.com
+- Sweden: sweden@finan.eu.com
+
+For more information, visit the contact page at https://finan.eu.com/contact
+
+## Additional Resources
+
+- Blog and news: https://puls.finan.eu.com (external blog site)
+- Regional news and updates available on each country's representation page
+- Publications and research available through country-specific pages
