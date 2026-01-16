@@ -28,7 +28,7 @@ export default defineConfig({
   site: 'https://finan.eu.com',
   integrations: [],
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
   security: {
     checkOrigin: true,
