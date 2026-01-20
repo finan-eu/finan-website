@@ -176,7 +176,16 @@ const robotsValue =
       }}
     />
 
-    <StructuredData schemas={['organization', 'website']} />
+    <!-- Structured Data -->
+    <!--
+      Only include WebSite schema on the homepage to help Google identify the correct Site Name.
+      Organization schema is included on all pages to establish ownership.
+    -->
+    <StructuredData
+      schemas={Astro.url.pathname === '/'
+        ? ['organization', 'website']
+        : ['organization']}
+    />
 
     <!-- View Transitions -->
     <ClientRouter />
