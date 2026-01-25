@@ -13,7 +13,7 @@ const finlandCommittee: CommitteeConfig = {
       bio: 'Akuuttihoitotyö, hoitotiede, kansanterveystiede, hoitotyön koulutus, kansainvälisten sairaanhoitajien integroitomis-ja pätevöitymiskoulutus.',
       imageAlt: 'Portrait of Floro Cubelo',
       imageSrc: floroCubeloImage,
-      linkedinUrl: '',
+      linkedinUrl: 'https://www.linkedin.com/in/fcjoamk/',
     },
     {
       name: 'Ryann Deloso',
@@ -31,7 +31,7 @@ const finlandCommittee: CommitteeConfig = {
       bio: 'Dialyysi ja perioperatiivinen hoitotyö.',
       imageAlt: 'Portrait of Jeanny Mae Banting Tuominen',
       imageSrc: jeannyMaeBantingTuominenImage,
-      linkedinUrl: '',
+      linkedinUrl: 'https://www.linkedin.com/in/jeanny-mae-tuominen-905a52255/',
     },
     {
       name: 'Marie Lagundi',
@@ -40,7 +40,7 @@ const finlandCommittee: CommitteeConfig = {
       bio: 'Hoitotyön yrittäjys, akuuttiosasto, hanke osaaja.',
       imageAlt: 'Portrait of Marie Lagundi',
       imageSrc: marieLagundiImage,
-      linkedinUrl: '',
+      linkedinUrl: 'https://www.linkedin.com/in/marie-lagundi-6625051a5',
     },
   ],
 } as const;
