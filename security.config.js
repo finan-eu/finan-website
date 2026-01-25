@@ -58,6 +58,7 @@ export const contentSecurityPolicy = {
     'https://*.ghost.io',
     'https://*.ghost.org',
     'https://*.ghostcdn.com',
+    'https://puls.finan.eu.com',
     'https://*.cloudfront.net', // Broad wildcard - see security note above
     'https://images.unsplash.com',
   ],
