@@ -127,18 +127,18 @@ export interface SEOConfig {
  */
 export const seoConfig = {
   basic: {
-    title: 'Filipino Nurses Association Nordic (FiNAN)',
+    title: 'Filipino Nurses Association-Nordic (FiNAN)',
     titleTemplate: '%s | FiNAN',
-    titleDefault: 'Filipino Nurses Association Nordic (FiNAN)',
+    titleDefault: 'Filipino Nurses Association-Nordic (FiNAN)',
     description:
       'FiNAN supports Filipino nurses across the Nordic region with trusted guidance on licensing, integration, and career growth.',
     siteUrl: 'https://finan.eu.com',
-    author: 'Filipino Nurses Association Nordic (FiNAN)',
+    author: 'Filipino Nurses Association-Nordic (FiNAN)',
     language: 'en',
     charset: 'UTF-8',
   },
   organization: {
-    name: 'Filipino Nurses Association Nordic',
+    name: 'Filipino Nurses Association-Nordic',
     alternateNames: ['FiNAN'],
   },
   openGraph: {
@@ -147,8 +147,8 @@ export const seoConfig = {
     imageWidth: 1200,
     imageHeight: 630,
     imageAlt:
-      'Filipino Nurses Association Nordic (FiNAN) - Connecting and supporting Filipino nurses',
-    siteName: 'FiNAN',
+      'Filipino Nurses Association-Nordic (FiNAN) - Connecting and supporting Filipino nurses',
+    siteName: 'Filipino Nurses Association-Nordic (FiNAN)',
     locale: 'en_US',
     alternateLocales: [],
   },
@@ -158,7 +158,7 @@ export const seoConfig = {
     creator: 'yourhandle',
     image: '/ogimg_finan.jpg',
     imageAlt:
-      'Filipino Nurses Association Nordic (FiNAN) - Connecting and supporting Filipino nurses',
+      'Filipino Nurses Association-Nordic (FiNAN) - Connecting and supporting Filipino nurses',
   },
   meta: {
     keywords: [

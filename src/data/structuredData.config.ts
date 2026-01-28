@@ -214,7 +214,7 @@ export function generateTriennialGathering2026EventSchema(): EventSchema {
     performer: {
       '@type': 'Organization',
       '@id': `${seoConfig.basic.siteUrl}/#organization`,
-      name: 'Filipino Nurses Association Nordic (FiNAN)',
+      name: 'Filipino Nurses Association-Nordic (FiNAN)',
     },
     offers: {
       '@type': 'Offer',
