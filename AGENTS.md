@@ -1,148 +1,394 @@
-# Repository Guidelines
+# FiNAN Website - Agent Guidelines
 
-## Purpose
+This document provides essential information for AI coding agents working on the FiNAN (Filipino Nurses Association in the Nordic Region) website project.
 
-This file orients agentic coding assistants working in this repo. It collects build/lint/typecheck commands, single-file workflows, and code style rules that match the current Astro + Tailwind stack.
+---
 
-## Project Structure & Module Organization
+## Project Overview
 
-- `src/` holds the Astro site source. UI lives in `src/components/` (Navbar, HeroHeader, TopBanner, CTABanner, RegistrationSection, NordicRepresentation, WorkingCommittee, etc.).
-- Page shells are in `src/pages/` with marketing routes (`index`, `about`, `membership`, `contact-us`, `faq`, `guides-resources`) plus `representation/` for country detail pages and `sitemap.xml.ts` for sitemap generation.
-- Shared layouts live in `src/layouts/` with `Layout.astro` as the main chrome. Add new layout wrappers here.
-- Centralized copy/data is stored in `src/data/` TypeScript modules (hero, CTA banner, statistics, registration, siteConfig). Regional representation data lives in `src/data/representation/`.
-- Global styling flows through Tailwind (imported in `src/styles/global.css`) with a few custom utilities.
-- Bundled images and SVGs belong in `src/assets/` so Astro can optimize them. Static files (flags, icons, JS enhancements like `public/js/navbar.js` and `public/js/mobile-menu.js`, robots.txt) belong in `public/`.
-- Reference designs and discovery docs live in `docs/`.
-- Build artifacts are generated into `dist/`; never edit `dist/` manually.
+**FiNAN** is the official website for the Filipino Nurses Association in the Nordic Region - a professional non-profit organization connecting, supporting, and advocating for Filipino nurses across Denmark, Faroe Islands, Finland (including Åland), Greenland, Iceland, Norway, and Sweden.
 
-## Build, Lint, Format, and Typecheck Commands
+### Key Facts
 
-Run commands from repo root unless stated otherwise:
+- **Domain**: https://finan.eu.com
+- **Framework**: Astro 5.16.15 (static site generator)
+- **Styling**: Tailwind CSS 4.1.13 with Vite integration
+- **Language**: TypeScript with strict type checking
+- **CMS**: Ghost CMS integration for blog content
+- **Package Manager**: npm (with lockfile)
 
-- `npm install` — install dependencies.
-- `npm run dev` — run the Astro dev server at `http://localhost:4321`.
-- `npm run build` — generate production build into `dist/`.
-- `npm run preview` — serve the production build for smoke testing.
-- `npm run astro <subcommand>` — access Astro CLI utilities (e.g., `npm run astro check`).
-- `npm run lint` — run ESLint across the project.
-- `npm run lint:fix` — auto-fix lint issues where possible.
-- `npm run format` — run Prettier with Tailwind class ordering.
-- `npm run format:check` — verify formatting without changes.
-- `npm run security:audit` — run `npm audit` at moderate threshold.
-- `npm run security:check` — reminder that security headers live in `security.config.js`.
+---
 
-## Single-File or Targeted Checks
+## Build, Test, and Development Commands
 
-Use these when only a subset of files changes:
+Run all commands from the project root:
 
-- Lint a file or directory: `npm run lint -- src/components/HeroHeader.astro`.
-- Format a file: `npx prettier --write src/components/HeroHeader.astro`.
-- Check formatting on a file: `npx prettier --check src/components/HeroHeader.astro`.
-- Typecheck (full project): `npm run astro check`.
+| Command | Action |
+|---------|--------|
+| `npm install` | Install dependencies |
+| `npm run dev` | Start development server at `http://localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run astro` | Run Astro CLI commands (e.g., `npm run astro check`) |
+| `npm run lint` | Run ESLint across the project |
+| `npm run lint:fix` | Auto-fix ESLint issues where possible |
+| `npm run format` | Format code with Prettier (includes Tailwind class sorting) |
+| `npm run format:check` | Verify formatting without making changes |
+| `npm run security:audit` | Run npm audit at moderate threshold |
+| `npm run security:check` | Display security checklist reminder |
 
-## Tests (Current State)
+### Code Quality Workflow
 
-- There is no automated test runner configured.
-- Manual verification is expected after meaningful UI changes (desktop + mobile).
-- If tests are added later, colocate under `src/` and name them `<feature>.spec.{js,ts}`.
-- When adding a runner, update this file with single-test commands.
+**IMPORTANT**: After making changes, always run:
 
-## Astro Authoring Guidelines
+```bash
+npm run lint:fix && npm run format
+```
 
-- Keep Astro pages focused on composition; move repeated UI into `src/components/`.
-- Use `Astro.props` for input props and keep component APIs small.
-- Prefer slots for layout composition over deeply nested props.
-- Avoid inline `<script>` tags unless necessary; place reusable behavior in `public/js/`.
-- Use `Astro.site` and `astro-seo` data in page shells to keep metadata consistent.
-- Watch for unused imports or props in `.astro` files to keep lint clean.
+This ensures all ESLint rules are enforced, code formatting is consistent, and Tailwind classes are automatically sorted.
 
-## Data & Content Guidelines
+---
 
-- Treat `src/data/` as the single source of truth for copy, links, and counts.
-- Use descriptive keys for data objects so components remain readable.
-- When adding new sections, create or extend data modules instead of hard-coding copy.
-- Keep localized or regional content inside `src/data/representation/`.
-- Add sensible defaults when new data fields are optional.
+## Project Structure
 
-## Coding Style & Formatting
+```
+/
+├── public/                     # Static assets (served as-is)
+│   ├── flags/                  # Country flag SVG assets
+│   ├── icons/                  # UI icons and graphics
+│   ├── images/                 # Static images
+│   ├── js/                     # Public JavaScript files
+│   │   └── navbar.js           # Client-side navigation script
+│   ├── favicon.*               # Favicon variants
+│   ├── ogimg_finan.jpg         # Open Graph default image
+│   ├── robots.txt              # Search engine directives
+│   └── site.webmanifest        # PWA manifest
+├── src/
+│   ├── assets/                 # Optimized assets (Astro processes these)
+│   │   └── images/
+│   │       ├── committee/      # Committee member photos by country
+│   │       ├── events/         # Event images
+│   │       └── gallery/        # Photo gallery images
+│   ├── components/             # Reusable Astro components (25+ components)
+│   │   ├── feature-section/    # Feature-specific components
+│   │   └── *.astro             # UI components
+│   ├── data/                   # TypeScript data configurations
+│   │   ├── representation/     # Regional representation data
+│   │   │   ├── committee/      # Committee member data by country
+│   │   │   ├── partnership/    # Partnership data
+│   │   │   └── publication/    # Publication data
+│   │   ├── pages/              # Page-specific data
+│   │   │   └── faq/            # FAQ data
+│   │   ├── events/             # Event-specific configurations
+│   │   └── *.ts                # Component configs (hero, CTA, etc.)
+│   ├── layouts/                # Page layout templates
+│   │   └── Layout.astro        # Main layout with SEO, meta tags
+│   ├── lib/                    # Utility libraries
+│   │   └── ghost.ts            # Ghost CMS API client
+│   ├── pages/                  # File-based routing
+│   │   ├── representation/     # Nordic country pages (8 pages)
+│   │   ├── sitemap.xml.ts      # Dynamic sitemap generation
+│   │   └── *.astro             # Main site pages
+│   ├── styles/                 # Global CSS styles
+│   │   └── global.css          # Tailwind imports + base styles
+│   └── env.d.ts                # TypeScript environment types
+├── astro.config.mjs            # Astro configuration
+├── security.config.js          # Security headers and CSP configuration
+├── eslint.config.js            # ESLint flat configuration
+├── .prettierrc                 # Prettier configuration
+├── tsconfig.json               # TypeScript configuration
+└── package.json                # Dependencies and scripts
+```
 
-- Use semantic HTML in `.astro` templates with accessible landmarks and headings.
-- Indent Astro markup with two spaces.
-- Prefer composable components over large monolithic sections.
-- Use Tailwind utilities first; only add custom CSS in `src/styles/global.css` when utilities cannot cover the use case.
-- Group Tailwind classes by breakpoint then state: `sm:` → `md:` → `lg:` then `hover:`/`focus:`.
-- Keep copy centralized in `src/data/` modules instead of hard-coding strings inside components.
-- Use Astro components and slots for layout composition; avoid duplicating layout chrome.
-- Keep props typed in components where TypeScript is used.
+---
 
-## Imports & Module Conventions
+## Technology Stack
 
-- Order imports: external packages first, then internal modules, then styles/assets.
-- Prefer type-only imports (`import type`) when importing types.
-- Use relative imports within `src/`; avoid absolute path aliasing unless configured.
-- Keep imports minimal; remove unused imports promptly to satisfy ESLint.
-- Avoid side-effect imports in `.astro` files unless required for polyfills.
+### Core Dependencies
 
-## Naming Conventions
+- **Astro 5.16.15** - Static site generator with island architecture
+- **Tailwind CSS 4.1.13** - Utility-first CSS framework (via `@tailwindcss/vite`)
+- **TypeScript 5.9.2** - Type-safe JavaScript with strict mode
 
-- Components: PascalCase filenames (e.g., `HeroHeader.astro`).
-- Utility functions and variables: camelCase.
-- Data modules in `src/data/`: camelCase with descriptive names (`siteConfig.ts`).
-- CSS classes: Tailwind utilities; custom class names should be kebab-case if needed.
-- Images and static assets: kebab-case filenames.
+### Key Integrations
 
-## TypeScript Usage
+- **Ghost CMS** (`@ts-ghost/content-api`) - Blog content management
+- **PhotoSwipe 5.4.4** - Image gallery and lightbox functionality
+- **astro-seo** - SEO meta tag management
+- **@astrojs/sitemap** - XML sitemap generation
 
-- Use TypeScript for shared configuration objects and structured data.
-- Add explicit types when data structures become nested or reused in multiple modules.
-- Prefer `as const` for read-only config data when it improves inference.
-- Avoid `any`; use narrow union types where possible.
-- Keep data modules export-only; avoid runtime side effects in `src/data/`.
+### Development Tools
 
-## Error Handling & Resilience
+- **ESLint 9.x** with `eslint-plugin-astro` for Astro-specific linting
+- **Prettier 3.x** with `prettier-plugin-astro` and `prettier-plugin-tailwindcss`
+- **@astrojs/check** - Astro TypeScript checking
 
-- Guard against missing data when rendering dynamic sections.
-- Prefer sensible defaults in data modules to avoid runtime template errors.
-- Avoid throwing inside Astro templates; handle errors in data loading layers.
-- When fetching external content, use try/catch and surface fallback UI or copy.
-- Avoid breaking the build on optional external data; degrade gracefully.
+---
 
-## Styling, Assets, and Performance
+## Code Organization and Architecture
 
-- Use `src/assets/` for images that benefit from Astro optimization.
-- Use `public/` for static files that must preserve their original paths.
-- When adding/updating committee photos, **ALWAYS** follow `.opencode/rules/committee-images.md` for Astro asset optimization.
-- Keep class lists readable; split into multiple lines when they grow large.
-- Favor responsive image sizes over oversized assets.
-- Remove unused assets when deprecating sections.
+### Component Architecture
 
-## Accessibility & SEO
+Components follow a modular, composable pattern:
 
-- Keep heading hierarchy consistent (`h1` once per page).
-- Ensure links and buttons have clear, descriptive labels.
-- Maintain alt text for images in `src/assets/` or `public/`.
-- Use `astro-seo` data in page shells for metadata consistency.
-- Verify focus states remain visible after Tailwind changes.
+- **Layout Components**: `Layout.astro` provides the main page shell with SEO, navigation, and footer
+- **Page Components**: Each page in `src/pages/` composes sections using imported components
+- **UI Components**: Reusable components in `src/components/` follow single-responsibility principle
+- **Data-Driven**: All copy/content is centralized in `src/data/` TypeScript modules
 
-## Manual QA Checklist
+### Data Layer
 
-- Confirm layout on mobile, tablet, and desktop breakpoints.
-- Check nav and mobile menu interactions after JS updates.
-- Validate external links open correctly and use `rel` when needed.
-- Run `npm run lint` and `npm run format:check` before handoff.
+The project uses a centralized, type-safe data architecture:
 
-## Documentation & Collaboration
+```typescript
+// Example: src/data/heroConfig.ts
+export const heroConfig = {
+  title: 'Supporting Filipino Nurses in the Nordics',
+  description: '...',
+  buttons: {
+    primary: { text: 'Be a Member', url: '/membership' },
+    secondary: { text: 'Contact Us', url: '/contact' },
+  },
+} as const;
+```
 
-- Follow conventional commit style (`feat:`, `fix:`, `refactor:`) with subjects under 72 characters.
-- PRs should summarize functional impact, document manual QA (browsers checked, commands run), and include screenshots when UI shifts.
-- Capture new discovery notes or UX references in `docs/`.
+All data files use:
+- TypeScript interfaces for type safety
+- `as const satisfies` pattern for readonly configs
+- Descriptive naming with clear hierarchy
 
-## Security & Configuration Notes
+### Key Configuration Files
 
-- `security.config.js` defines recommended security headers and CSP helpers.
-- `astro.config.mjs` mirrors headers for dev server behavior; update both if policies change.
-- Re-run `npm run security:audit` after dependency updates or third-party integrations.
+**`src/data/siteConfig.ts`** - Central SEO and site metadata configuration including:
+- Basic SEO (title, description, site URL)
+- Open Graph settings
+- Twitter Card configuration
+- Organization structured data
+- Helper functions for URL/title generation
 
-## Cursor/Copilot Rules
+**`astro.config.mjs`** - Astro configuration with:
+- Tailwind CSS via Vite plugin
+- Security headers middleware
+- CSS code splitting
+- Vendor chunking
 
-- No `.cursor/rules/`, `.cursorrules`, or `.github/copilot-instructions.md` files are present as of the latest scan.
+**`security.config.js`** - Security configuration:
+- Content Security Policy (CSP) definitions
+- Security headers (X-Frame-Options, etc.)
+- Ghost CMS image source allowlist
+- Security checklist
+
+---
+
+## Coding Style Guidelines
+
+### Astro Components
+
+- Use semantic HTML with accessible landmarks
+- Indent markup with 2 spaces
+- Keep props typed with interfaces when using TypeScript
+- Use slots for layout composition
+- Prefer slots over deeply nested props
+- Avoid inline `<script>` tags; place reusable behavior in `public/js/`
+
+### Tailwind CSS Conventions
+
+- Utility-first approach; avoid custom CSS unless necessary
+- Group classes by breakpoint then state: `sm:` → `md:` → `lg:` then `hover:`/`focus:`
+- Use Prettier plugin for automatic class sorting
+- Keep class lists readable; split into multiple lines when they grow large
+
+**Button Styling Convention** - Primary buttons must include:
+```
+shadow-lg transition-all duration-200 hover:shadow-xl
+```
+
+### TypeScript Conventions
+
+- Use strict type checking (configured in `tsconfig.json`)
+- Add explicit types for nested or reused data structures
+- Prefer `as const` for read-only config data
+- Avoid `any`; use narrow union types
+- Keep data modules export-only (no runtime side effects)
+
+### Import Order
+
+1. External packages
+2. Internal modules
+3. Styles/assets
+
+Use type-only imports (`import type`) when importing types.
+
+### Naming Conventions
+
+| Type | Convention | Example |
+|------|------------|---------|
+| Components | PascalCase | `HeroHeader.astro` |
+| Utility functions | camelCase | `getFullUrl()` |
+| Data modules | camelCase | `siteConfig.ts` |
+| CSS classes (custom) | kebab-case | `min-h-screen-mobile` |
+| Image files | kebab-case | `floro-cubelo.jpg` |
+
+---
+
+## Testing Strategy
+
+**Current State**: No automated test runner is configured.
+
+**Manual QA Checklist** (required after meaningful UI changes):
+- [ ] Confirm layout on mobile, tablet, and desktop breakpoints
+- [ ] Check navigation and mobile menu interactions
+- [ ] Validate external links open correctly with `rel` attributes
+- [ ] Test form submissions (if applicable)
+- [ ] Verify image loading and optimization
+- [ ] Check for console errors
+- [ ] Run `npm run lint` and `npm run format:check`
+
+**Future Testing**: If tests are added, colocate them under `src/` with naming pattern `<feature>.spec.{js,ts}`.
+
+---
+
+## Asset Handling
+
+### Optimized Assets (`src/assets/`)
+
+Images placed here are automatically optimized by Astro:
+- Compression without quality loss
+- Format conversion (WebP, AVIF) with fallbacks
+- Responsive image generation
+- Build-time validation (fails if images missing)
+
+**Use for**: Committee photos, event images, gallery photos
+
+**Import Pattern**:
+```typescript
+import floroCubeloImage from '../../../assets/images/committee/finland/floro-cubelo.jpg';
+
+const config = {
+  imageSrc: floroCubeloImage,  // Use imported reference, not string path
+};
+```
+
+### Static Assets (`public/`)
+
+Served as-is without optimization:
+- Flags, icons, favicons
+- JavaScript files
+- Files that must preserve exact paths
+
+**Never use string paths for images** - always import from `src/assets/` for optimization benefits.
+
+---
+
+## Security Considerations
+
+### Implemented Security Measures
+
+1. **Content Security Policy (CSP)** - Defined in `security.config.js`
+2. **Security Headers**:
+   - `X-Frame-Options: DENY` (clickjacking protection)
+   - `X-Content-Type-Options: nosniff` (MIME sniffing prevention)
+   - `Referrer-Policy: strict-origin-when-cross-origin`
+   - `Permissions-Policy` for camera, microphone, geolocation
+3. **Origin Checking** - Enabled in Astro config
+4. **External Links** - Use `rel="noopener noreferrer"`
+
+### Ghost CMS Security Notes
+
+The CSP includes broad wildcard patterns for Ghost CMS image sources:
+- `https://*.ghost.io`, `https://*.ghost.org`, `https://*.ghostcdn.com`
+- `https://*.cloudfront.net` (broad wildcard - documented trade-off)
+
+These are necessary for Ghost Pro's dynamic CDN usage but represent a security trade-off. See `security.config.js` for detailed documentation.
+
+### Environment Variables
+
+Sensitive configuration in `.env` (not committed):
+- `GHOST_URL` - Ghost CMS instance URL
+- `GHOST_CONTENT_API_KEY` - Read-only API key
+
+See `.env.example` for template.
+
+---
+
+## Third-Party Integrations
+
+### Ghost CMS (Blog)
+
+- **Location**: `src/lib/ghost.ts`
+- **Library**: `@ts-ghost/content-api`
+- **Purpose**: Fetch blog posts for display on site and representation pages
+- **Regional Filtering**: Posts filtered by country tags for representation pages
+- **External Links**: Blog posts link to `puls.finan.eu.com` with proper security attributes
+
+### PhotoSwipe (Image Galleries)
+
+- **Library**: `photoswipe@5.4.4`
+- **Usage**: Sweden representation page features Community Highlights gallery
+- **Features**: Touch gestures, keyboard navigation, zoom/pan, responsive grid
+- **Implementation**: Uses `astro:page-load` event for SPA-like navigation support
+
+---
+
+## Deployment
+
+The site is configured for static deployment:
+
+1. **Build Output**: `./dist/` directory
+2. **Site URL**: `https://finan.eu.com` (configured in `astro.config.mjs`)
+3. **Sitemap**: Generated at `/sitemap.xml` via `src/pages/sitemap.xml.ts`
+4. **Noindex on Preview**: Automatic `noindex,nofollow` on `.pages.dev` domains
+
+**Build Process**:
+```bash
+npm run build
+```
+
+Output in `dist/` is ready for static hosting (Cloudflare Pages, Netlify, Vercel, etc.).
+
+---
+
+## Common Tasks
+
+### Adding a New Page
+
+1. Create `.astro` file in `src/pages/`
+2. Import `Layout` from `../layouts/Layout.astro`
+3. Compose page using existing components
+4. Add page-specific data to `src/data/pages/` if needed
+5. Update sitemap configuration if necessary
+
+### Adding Committee Member Photos
+
+See `.opencode/rules/committee-images.md` for detailed instructions:
+
+1. Place image in `src/assets/images/committee/[country]/`
+2. Name file using kebab-case: `first-last.jpg`
+3. Import in committee file: `import firstLastImage from '...'`
+4. Use imported reference in `imageSrc` property
+5. Run `npm run build` to verify
+
+### Modifying SEO
+
+Edit `src/data/siteConfig.ts`:
+- Update `seoConfig.basic` for site-wide defaults
+- Update `seoConfig.openGraph` for social sharing
+- Update `seoConfig.meta.keywords` for search keywords
+
+Individual pages can override via `Layout` props:
+```astro
+<Layout title="Page Title" description="Custom description">
+```
+
+---
+
+## Additional Resources
+
+- **Astro Documentation**: https://docs.astro.build
+- **Tailwind CSS Documentation**: https://tailwindcss.com
+- **Ghost CMS API Docs**: https://ghost.org/docs/content-api/
+- **CLAUDE.md**: Additional development context and component documentation
+
+---
+
+*Last updated: January 2026*
