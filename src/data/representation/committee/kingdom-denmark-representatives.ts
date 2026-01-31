@@ -1,25 +1,25 @@
 import type { CommitteeConfig } from './types';
-import cherisaDupitasImage from '../../../assets/images/committee/kingdom-denmark/cherisa-dupitas.png';
-import girardDupitasImage from '../../../assets/images/committee/kingdom-denmark/girard-dupitas.png';
+import cherisaDupitasImage from '../../../assets/images/committee/kingdom-denmark/cherisa-dupitas.jpg';
+import girardDupitasImage from '../../../assets/images/committee/kingdom-denmark/girard-dupitas.jpg';
 import manilynJacobsenImage from '../../../assets/images/committee/kingdom-denmark/manilyn-jacobsen.jpg';
 import jessicaDamImage from '../../../assets/images/committee/kingdom-denmark/jessica-dam.jpg';
 
 const kingdomDenmarkRepresentatives: CommitteeConfig = {
   members: [
     {
-      name: 'Cherisa Dupitas',
+      name: 'Cherisa Chy Dupitas',
       affiliations: 'Dronning Ingrids Hospital',
       role: 'Representative',
-      bio: 'Landsdækkende TeleNeurolog Koordinator og Medicinsk Ambulatorium sygeplejerske, Dronning Ingrids Hospital',
+      bio: 'HeadNurse - Medicinsk Ambulatory Consist of: Adult and Kids Outpatient Unit; Tuberculosis and Infectious Unit; Cancer & Chemotherapy Unit; Palliative Team Unit',
       imageAlt: 'Portrait of Cherisa Dupitas',
       imageSrc: cherisaDupitasImage,
       linkedinUrl: '',
     },
     {
-      name: 'Girard Dupitas',
+      name: 'Girard Paul Dupitas',
       affiliations: 'Dronning Ingrids Hospital',
       role: 'Representative',
-      bio: 'Afdelingsygeplejerske, Patient Hotel, Dronning Ingrids Hospital',
+      bio: 'Head Nurse in Patient hotel Dronning Ingrids Hospital. Specialty: Orthopedic nurse; Trauma nurse; Wound nurse specialist; Postgraduate Academic Leadership',
       imageAlt: 'Portrait of Girard Dupitas',
       imageSrc: girardDupitasImage,
       linkedinUrl: '',
