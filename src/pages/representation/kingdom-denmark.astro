@@ -9,7 +9,6 @@ import heroImage from '../../assets/images/representation/denmark/denmark-banner
 import denmarkChapterImage from '../../assets/images/representation/denmark/denmark-chapter.jpg';
 import Committee from '../../components/Committee.astro';
 import BlogRepresentation from '../../components/BlogRepresentation.astro';
-import kingdomDenmarkRepresentatives from '../../data/representation/committee/kingdom-denmark-representatives';
 import { Image } from 'astro:assets';
 ---
 
@@ -144,14 +143,9 @@ import { Image } from 'astro:assets';
       </div>
     </section>
 
-    <Committee country="denmark" heading="Committee" />
+    <Committee country="kingdomDenmark" heading="Committee" />
 
-    <Committee
-      members={kingdomDenmarkRepresentatives.members}
-      heading="Representatives"
-    />
-
-    <BlogRepresentation country="kingdom-denmark" />
+    <BlogRepresentation country="kingdomDenmark" />
 
     <RegistrationSection />
 

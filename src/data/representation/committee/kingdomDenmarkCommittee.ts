@@ -1,11 +1,31 @@
 import type { CommitteeConfig } from './types';
+import cristalTolosaWarburgImage from '../../../assets/images/committee/kingdom-denmark/cristal-tolosa-warburg.png';
+import katherinePerezLuckmannImage from '../../../assets/images/committee/kingdom-denmark/katherine-perez-luckmann.png';
 import cherisaDupitasImage from '../../../assets/images/committee/kingdom-denmark/cherisa-dupitas.jpg';
 import girardDupitasImage from '../../../assets/images/committee/kingdom-denmark/girard-dupitas.jpg';
 import manilynJacobsenImage from '../../../assets/images/committee/kingdom-denmark/manilyn-jacobsen.jpg';
 import jessicaDamImage from '../../../assets/images/committee/kingdom-denmark/jessica-dam.jpg';
 
-const kingdomDenmarkRepresentatives: CommitteeConfig = {
+const kingdomDenmarkCommittee: CommitteeConfig = {
   members: [
+    {
+      name: 'Cristal Tolosa Warburg',
+      affiliations: 'Herlev Hospital',
+      role: 'Chair',
+      bio: 'Assisterende Afdelingsygeplejerske, Infektionssygdomme Sengeafsnit, Herlev Hospital',
+      imageAlt: 'Portrait of Cristal Tolosa Warburg',
+      imageSrc: cristalTolosaWarburgImage,
+      linkedinUrl: '',
+    },
+    {
+      name: 'Katherine Perez Luckmann',
+      affiliations: 'Herlev Hospital',
+      role: 'Co-Chair',
+      bio: 'Klinisk Sygeplejevejleder, Infektionssygdomme Sengeafsnit, Herlev Hospital',
+      imageAlt: 'Portrait of Katherine Perez Luckmann',
+      imageSrc: katherinePerezLuckmannImage,
+      linkedinUrl: '',
+    },
     {
       name: 'Cherisa Chy Dupitas',
       affiliations: 'Dronning Ingrids Hospital',
@@ -45,4 +65,4 @@ const kingdomDenmarkRepresentatives: CommitteeConfig = {
   ],
 } as const;
 
-export default kingdomDenmarkRepresentatives;
+export default kingdomDenmarkCommittee;

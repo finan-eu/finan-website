@@ -40,7 +40,7 @@ export const blogRepresentationConfig = {
       'Stay updated with the latest news, events, and insights from FiNAN Iceland. Explore our recent activities, policy updates, and community highlights.',
     tag: 'Iceland',
   },
-  'faroe-islands': {
+  faroeIslands: {
     heading: 'Latest from Faroe Islands',
     description:
       'Stay updated with the latest news, events, and insights from FiNAN Faroe Islands. Explore our recent activities, policy updates, and community highlights.',
@@ -52,7 +52,7 @@ export const blogRepresentationConfig = {
       'Stay updated with the latest news, events, and insights from FiNAN Greenland. Explore our recent activities, policy updates, and community highlights.',
     tag: 'Greenland',
   },
-  'kingdom-denmark': {
+  kingdomDenmark: {
     heading: 'Latest from Kingdom of Denmark',
     description:
       'Stay updated with the latest news, events, and insights from FiNAN Kingdom of Denmark. Explore our recent activities, policy updates, and community highlights.',
