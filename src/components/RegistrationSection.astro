@@ -7,7 +7,7 @@ import { registrationSectionConfig } from '../data/registrationSectionConfig';
 <section class="bg-white py-16">
   <div class="mx-auto max-w-screen-xl px-6">
     <!-- Intro text -->
-    <div class="mb-12 text-center">
+    <div class="mb-12 text-center motion-fade-up">
       <p class="mx-auto max-w-3xl text-lg text-gray-700">
         <span class="font-bold"
           >{registrationSectionConfig.title.highlight}</span
@@ -17,7 +17,7 @@ import { registrationSectionConfig } from '../data/registrationSectionConfig';
     </div>
 
     <!-- Registration Cards Grid -->
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 motion-stagger-children">
       {
         registrationSectionConfig.entities.map((entity) => (
           <div class="text-center">

@@ -53,3 +53,30 @@
     }
   } */
 }
+
+@layer utilities {
+  /* Motion Animation Base Styles */
+  .motion-fade-up,
+  .motion-stagger-children > * {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+
+  /* Ensure content is visible when JavaScript is disabled */
+  .no-js .motion-fade-up,
+  .no-js .motion-stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .motion-fade-up,
+    .motion-stagger-children > * {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
