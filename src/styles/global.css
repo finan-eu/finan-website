@@ -89,22 +89,23 @@
 /* 
   Global Button Animations 
   Applied after Tailwind utilities to ensure overrides 
+  Excludes accordion buttons to prevent unwanted scale effects
 */
-button,
+button:not(.faq-toggle),
 a.rounded-full[class*='bg-'],
 a.rounded-full[class*='border-'] {
   @apply transition-all duration-200 ease-in-out;
 }
 
 @media (hover: hover) {
-  button:hover,
+  button:not(.faq-toggle):hover,
   a.rounded-full[class*='bg-']:hover,
   a.rounded-full[class*='border-']:hover {
     @apply scale-105;
   }
 }
 
-button:active,
+button:not(.faq-toggle):active,
 a.rounded-full[class*='bg-']:active,
 a.rounded-full[class*='border-']:active {
   @apply scale-95;
