@@ -85,3 +85,27 @@
     }
   }
 }
+
+/* 
+  Global Button Animations 
+  Applied after Tailwind utilities to ensure overrides 
+*/
+button,
+a.rounded-full[class*='bg-'],
+a.rounded-full[class*='border-'] {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+@media (hover: hover) {
+  button:hover,
+  a.rounded-full[class*='bg-']:hover,
+  a.rounded-full[class*='border-']:hover {
+    @apply scale-105;
+  }
+}
+
+button:active,
+a.rounded-full[class*='bg-']:active,
+a.rounded-full[class*='border-']:active {
+  @apply scale-95;
+}
