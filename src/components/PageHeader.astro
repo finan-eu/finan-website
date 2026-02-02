@@ -21,7 +21,9 @@ const {
 } = Astro.props;
 ---
 
-<section class={`relative flex items-center py-20 md:py-40 ${className}`}>
+<section
+  class={`relative flex items-center overflow-hidden py-20 md:py-40 ${className}`}
+>
   {
     backgroundImage && (
       <Image
@@ -44,7 +46,11 @@ const {
   <div
     class="relative z-10 mx-auto w-full max-w-screen-xl px-4 text-white sm:px-6"
   >
-    <div class="mx-auto max-w-4xl text-center">
+    <div
+      class="mx-auto max-w-4xl text-center motion-stagger-children"
+      data-motion-stagger="0.16"
+      data-motion-margin="0px"
+    >
       <h1 class="mb-6 text-5xl leading-tight font-bold lg:text-6xl">
         {title}
       </h1>

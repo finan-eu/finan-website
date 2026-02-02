@@ -58,8 +58,13 @@
   /* Motion Animation Base Styles */
   .motion-fade-up,
   .motion-stagger-children > * {
-    will-change: transform, opacity;
+    /* removed will-change to avoid layer de-promotion flicker */
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: none !important;
   }
 
   /* Ensure content is visible when JavaScript is disabled */

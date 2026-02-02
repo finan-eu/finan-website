@@ -9,7 +9,7 @@ import { heroConfig } from '../data/heroConfig';
 <!-- Navigation -->
 <Navbar />
 
-<section class="relative flex items-center py-20 md:py-32">
+<section class="relative flex items-center overflow-hidden py-20 md:py-32">
   <Image
     src={heroImage}
     alt="Filipino nurses working together in Nordic healthcare"
@@ -29,32 +29,38 @@ import { heroConfig } from '../data/heroConfig';
   <div
     class="relative z-10 mx-auto w-full max-w-screen-xl px-4 py-8 text-left text-white sm:px-6 sm:py-12 sm:text-center md:py-16"
   >
-    <h1
-      class="mb-6 text-4xl leading-tight font-bold sm:mb-8 lg:text-5xl"
-      set:html={heroConfig.title.replace(
-        'Filipino Nurses in the Nordics',
-        '<br /> Filipino Nurses in the Nordics'
-      )}
-    />
+    <div
+      class="motion-stagger-children"
+      data-motion-stagger="0.16"
+      data-motion-margin="0px"
+    >
+      <h1
+        class="mb-6 text-4xl leading-tight font-bold sm:mb-8 lg:text-5xl"
+        set:html={heroConfig.title.replace(
+          'Filipino Nurses in the Nordics',
+          '<br /> Filipino Nurses in the Nordics'
+        )}
+      />
 
-    <p class="mb-8 max-w-4xl text-lg sm:mx-auto sm:mb-12 sm:text-lg md:text-xl">
-      {heroConfig.description}
-    </p>
+      <p class="mb-8 max-w-4xl text-lg sm:mx-auto sm:mb-12 sm:text-lg md:text-xl">
+        {heroConfig.description}
+      </p>
 
-    <!-- Action Links -->
-    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-      <a
-        href={heroConfig.buttons.primary.url}
-        class="inline-block w-full rounded-full border-2 border-white bg-white px-8 py-3 text-center font-semibold text-gray-900 shadow-lg transition-colors hover:bg-gray-100 sm:w-auto"
-      >
-        {heroConfig.buttons.primary.text}
-      </a>
-      <a
-        href={heroConfig.buttons.secondary.url}
-        class="inline-block w-full rounded-full border-2 border-white px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-white hover:text-gray-900 sm:w-auto"
-      >
-        {heroConfig.buttons.secondary.text}
-      </a>
+      <!-- Action Links -->
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href={heroConfig.buttons.primary.url}
+          class="inline-block w-full rounded-full border-2 border-white bg-white px-8 py-3 text-center font-semibold text-gray-900 shadow-lg transition-colors hover:bg-gray-100 sm:w-auto"
+        >
+          {heroConfig.buttons.primary.text}
+        </a>
+        <a
+          href={heroConfig.buttons.secondary.url}
+          class="inline-block w-full rounded-full border-2 border-white px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-white hover:text-gray-900 sm:w-auto"
+        >
+          {heroConfig.buttons.secondary.text}
+        </a>
+      </div>
     </div>
   </div>
 </section>

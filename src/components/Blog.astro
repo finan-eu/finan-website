@@ -55,7 +55,10 @@ function truncateExcerpt(
     <!-- Blog Grid or Empty State -->
     {
       posts.length > 0 ? (
-        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 motion-stagger-children">
+        <div
+          class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 motion-stagger-children"
+          data-motion-stagger="0.16"
+        >
           {posts.map((post) => (
             <a
               href={post.url}
