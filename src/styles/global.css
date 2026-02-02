@@ -53,3 +53,59 @@
     }
   } */
 }
+
+@layer utilities {
+  /* Motion Animation Base Styles */
+  .motion-fade-up,
+  .motion-stagger-children > * {
+    /* removed will-change to avoid layer de-promotion flicker */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: none !important;
+  }
+
+  /* Ensure content is visible when JavaScript is disabled */
+  .no-js .motion-fade-up,
+  .no-js .motion-stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .motion-fade-up,
+    .motion-stagger-children > * {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+/* 
+  Global Button Animations 
+  Applied after Tailwind utilities to ensure overrides 
+*/
+button,
+a.rounded-full[class*='bg-'],
+a.rounded-full[class*='border-'] {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+@media (hover: hover) {
+  button:hover,
+  a.rounded-full[class*='bg-']:hover,
+  a.rounded-full[class*='border-']:hover {
+    @apply scale-105;
+  }
+}
+
+button:active,
+a.rounded-full[class*='bg-']:active,
+a.rounded-full[class*='border-']:active {
+  @apply scale-95;
+}

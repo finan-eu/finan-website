@@ -41,7 +41,7 @@ function truncateExcerpt(
 <section class="bg-gray-50 py-16 md:py-24">
   <div class="mx-auto max-w-screen-xl px-6">
     <!-- Header -->
-    <div class="mb-16 text-center">
+    <div class="motion-fade-up mb-16 text-center">
       <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-5xl">
         FiNAN Puls
       </h2>
@@ -55,7 +55,10 @@ function truncateExcerpt(
     <!-- Blog Grid or Empty State -->
     {
       posts.length > 0 ? (
-        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="motion-stagger-children mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+          data-motion-stagger="0.16"
+        >
           {posts.map((post) => (
             <a
               href={post.url}

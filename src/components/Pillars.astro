@@ -6,7 +6,7 @@ import { pillarsConfig } from '../data/pillarsConfig';
 <section class="bg-gray-50 py-16 md:py-24">
   <div class="mx-auto max-w-screen-xl px-6">
     <!-- Header -->
-    <div class="mb-16">
+    <div class="motion-fade-up mb-16">
       <p class="mb-4 text-sm font-medium text-gray-600">
         {pillarsConfig.section.subtitle}
       </p>
@@ -55,7 +55,10 @@ import { pillarsConfig } from '../data/pillarsConfig';
     </div>
 
     <!-- Pillar Cards -->
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div
+      class="motion-stagger-children grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+      data-motion-stagger="0.16"
+    >
       {
         pillarsConfig.cards.map((card) => (
           <div class="block rounded-lg border border-gray-200 bg-white p-8 transition-all hover:border-blue-900 hover:shadow-lg">
