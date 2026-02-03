@@ -6,6 +6,11 @@ export interface RegistrationInfo {
 export interface FAQ {
   question: string;
   answer: string;
+  followUpLink?: {
+    prefix: string;
+    text: string;
+    href: string;
+  };
   registrationDetails?: RegistrationInfo[];
 }
 
@@ -76,11 +81,21 @@ export const faqCategories: FAQCategory[] = [
         question: 'How do I become a member?',
         answer:
           'Membership in the association is open to individuals residing in the Nordic countries who are either licensed nurses or are currently in the process of obtaining their nursing license.',
+        followUpLink: {
+          prefix: 'Learn more about ',
+          text: 'FiNAN Membership',
+          href: '/membership',
+        },
       },
       {
         question: 'How much is the membership fee?',
         answer:
           "For just 20 euros a year, you're essentially spending the cost of a cup of coffee each month for ten months.",
+        followUpLink: {
+          prefix: 'Learn more about ',
+          text: 'FiNAN Membership',
+          href: '/membership',
+        },
       },
     ],
   },

@@ -87,6 +87,17 @@ let globalFaqIndex = 0;
                       <p class="text-base text-gray-700 md:text-lg">
                         {faq.answer}
                       </p>
+                      {faq.followUpLink && (
+                        <p class="mt-3 text-base text-gray-700 md:text-lg">
+                          {faq.followUpLink.prefix}
+                          <a
+                            href={faq.followUpLink.href}
+                            class="font-semibold text-blue-900 underline decoration-blue-300 underline-offset-4 transition-colors hover:text-blue-700"
+                          >
+                            {faq.followUpLink.text}
+                          </a>
+                        </p>
+                      )}
                       {faq.registrationDetails && (
                         <div class="mt-4 space-y-3">
                           <p class="text-sm font-semibold text-gray-900 md:text-base">
