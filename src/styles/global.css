@@ -86,27 +86,20 @@
   }
 }
 
-/* 
-  Global Button Animations 
-  Applied after Tailwind utilities to ensure overrides 
-  Excludes accordion buttons and nav dropdown toggles to prevent unwanted scale effects
+/*
+  Global Button Animations
+  Applied only to elements that explicitly opt-in via .btn-scale
 */
-button:not(.faq-toggle):not(.nav-dropdown-toggle),
-a.rounded-full[class*='bg-'],
-a.rounded-full[class*='border-'] {
+.btn-scale {
   @apply transition-all duration-200 ease-in-out;
 }
 
 @media (hover: hover) {
-  button:not(.faq-toggle):not(.nav-dropdown-toggle):hover,
-  a.rounded-full[class*='bg-']:hover,
-  a.rounded-full[class*='border-']:hover {
+  .btn-scale:hover {
     @apply scale-105;
   }
 }
 
-button:not(.faq-toggle):not(.nav-dropdown-toggle):active,
-a.rounded-full[class*='bg-']:active,
-a.rounded-full[class*='border-']:active {
+.btn-scale:active {
   @apply scale-95;
 }
