@@ -203,6 +203,14 @@ All data files use:
 shadow-lg transition-all duration-200 hover:shadow-xl
 ```
 
+**List Styling Convention** - For proper bullet/number indentation with wrapped text, always use `list-outside` with left padding:
+```
+list-outside list-disc pl-6    # For unordered lists
+list-outside list-decimal pl-6 # For ordered lists
+```
+
+Avoid `list-inside` as it causes text to wrap without proper indentation.
+
 ### TypeScript Conventions
 
 - Use strict type checking (configured in `tsconfig.json`)
