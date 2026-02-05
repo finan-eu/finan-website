@@ -29,7 +29,7 @@ This is an Astro 5.x static site with the following structure:
 │   ├── pages/              # File-based routing
 │   │   ├── representation/ # Nordic country pages (8 pages)
 │   │   └── *.astro         # Main site pages
-│   ├── scripts/            # Client-side JavaScript
+│   ├── lib/                # Utility libraries (Ghost CMS API client)
 │   └── styles/             # Global CSS styles
 └── package.json
 ```
@@ -45,15 +45,17 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`          | Build production site to ./dist/           |
 | `npm run preview`        | Preview built site locally                 |
 | `npm run astro`          | Run Astro CLI commands                     |
+| `npm run check`          | Run Astro + TypeScript checks              |
 | `npm run lint`           | Run ESLint on codebase                     |
 | `npm run lint:fix`       | Run ESLint with auto-fix                   |
 | `npm run format`         | Format code with Prettier                  |
 | `npm run format:check`   | Check code formatting                      |
 | `npm run security:audit` | Run npm security audit                     |
+| `npm run security:check` | Show project security checklist reminder   |
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Astro 5.15.9 (static site generator)
+- **Framework**: Astro 5.16.15 (static site generator)
 - **Styling**: Tailwind CSS 4.1.13
 - **Language**: TypeScript (full type safety)
 - **Code Quality**: ESLint + Prettier

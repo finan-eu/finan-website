@@ -1,8 +1,10 @@
 import type { Partner } from './types';
+import arcadaLogo from '../../../assets/images/partners/arcada-logo.png';
+import oamkLogo from '../../../assets/images/partners/oamk-logo.png';
 
 export const kingdomDenmarkPartners: Partner[] = [
   {
-    logo: '/assets/partners/oamk-logo.png',
+    logo: oamkLogo,
     alt: 'Oulu University of Applied Sciences',
     content: [
       'Study Nursing in Northern Finland at <strong>Oulu University of Applied Sciences</strong>! The application period is from January 5-25, 2026.',
@@ -11,7 +13,7 @@ export const kingdomDenmarkPartners: Partner[] = [
     ],
   },
   {
-    logo: '/assets/partners/arcada-logo.png',
+    logo: arcadaLogo,
     alt: 'Arcada University of Applied Sciences',
     content: [
       'The Arcada University of Applied Sciences and the Filipino Nurses Association in the Nordic Region signed a Memorandum of Agreement to address the needs and challenges of Internationally Educated Nurses through nursing education.',

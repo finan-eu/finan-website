@@ -4,21 +4,30 @@ import tailwindcss from '@tailwindcss/vite';
 import { cspString, securityHeaders as headers } from './security.config.js';
 
 // Custom Vite plugin to set security headers
+/** @returns {any} */
 function securityHeaders() {
   return {
     name: 'security-headers',
+    /** @param {any} server */
     configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        // Set CSP from centralized config
-        res.setHeader('Content-Security-Policy', cspString);
+      server.middlewares.use(
+        /**
+         * @param {any} _req
+         * @param {any} res
+         * @param {() => void} next
+         */
+        (_req, res, next) => {
+          // Set CSP from centralized config
+          res.setHeader('Content-Security-Policy', cspString);
 
-        // Set other security headers from centralized config
-        Object.entries(headers).forEach(([header, value]) => {
-          res.setHeader(header, value);
-        });
+          // Set other security headers from centralized config
+          Object.entries(headers).forEach(([header, value]) => {
+            res.setHeader(header, value);
+          });
 
-        next();
-      });
+          next();
+        }
+      );
     },
   };
 }
@@ -34,7 +43,7 @@ export default defineConfig({
     checkOrigin: true,
   },
   vite: {
-    plugins: [tailwindcss(), securityHeaders()],
+    plugins: [/** @type {any} */ (tailwindcss()), securityHeaders()],
     build: {
       cssCodeSplit: true,
       rollupOptions: {
