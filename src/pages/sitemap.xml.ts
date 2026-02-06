@@ -21,9 +21,10 @@ export const GET: APIRoute = () => {
   const urls = sitemapConfig.urls
     .map((url) => {
       const loc = `${SITE_URL}${url.loc}`;
-      const lastmod = url.lastmod
-        ? `    <lastmod>${escapeXml(url.lastmod)}</lastmod>\n`
-        : '';
+      const lastmod =
+        'lastmod' in url && url.lastmod
+          ? `    <lastmod>${escapeXml(url.lastmod)}</lastmod>\n`
+          : '';
       const changefreq = url.changefreq
         ? `    <changefreq>${escapeXml(url.changefreq)}</changefreq>\n`
         : '';

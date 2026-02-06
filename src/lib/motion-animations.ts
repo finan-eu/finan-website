@@ -1,4 +1,4 @@
-import { animate, inView, stagger } from 'motion';
+import { animate, inView } from 'motion';
 
 const prefersReducedMotion =
   typeof window !== 'undefined' &&

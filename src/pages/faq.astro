@@ -18,7 +18,11 @@ const faqSchema = generateFAQSchema();
 <Layout title="FAQ - FiNAN">
   <Fragment slot="head">
     <!-- FAQ Schema Markup for SEO and Rich Snippets -->
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(faqSchema)}
+    />
   </Fragment>
   <main>
     <!-- Skip to content link for keyboard navigation -->
