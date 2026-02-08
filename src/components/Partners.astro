@@ -1,19 +1,18 @@
 ---
 // Partners.astro - Partners section showcasing FiNAN's partnerships
-import { Image } from 'astro:assets';
-import arcadaLogo from '../assets/images/partners/arcada-logo.png';
-import euResearchLogo from '../assets/images/partners/eu-research-innovation.png';
-import fdnLogo from '../assets/images/partners/filipino-nursing-diaspora-network.png';
+import arcadaLogo from '../assets/images/partners/arcada-logo.svg';
+import euResearchLogo from '../assets/images/partners/eu-research-innovation.svg';
+import fdnLogo from '../assets/images/partners/filipino-nursing-diaspora-network.svg';
 import finnishGovtEmblem from '../assets/images/partners/finnish_government_emblem.svg';
-import ianpcLogo from '../assets/images/partners/ianpc.png';
-import moniheliLogo from '../assets/images/partners/moniheli-logo.png';
-import oamkLogo from '../assets/images/partners/oamk-logo.png';
-import siennaLogo from '../assets/images/partners/sienna-logo.png';
-import wsdnLogo from '../assets/images/partners/wsdn-logo.jpg';
+import ianpcLogo from '../assets/images/partners/ianpc.svg';
+import moniheliLogo from '../assets/images/partners/moniheli-logo.svg';
+import oamkLogo from '../assets/images/partners/oamk-logo.svg';
+import siennaLogo from '../assets/images/partners/sienna-logo.svg';
+import wsdnLogo from '../assets/images/partners/wsdn.svg';
 ---
 
 <section class="bg-white py-16 md:py-24">
-  <div class="mx-auto max-w-screen-xl px-6">
+  <div class="mx-auto max-w-7xl px-6">
     <!-- Header -->
     <div class="motion-fade-up mb-16 text-center">
       <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
@@ -26,100 +25,100 @@ import wsdnLogo from '../assets/images/partners/wsdn-logo.jpg';
       class="motion-fade-up flex flex-wrap items-center justify-center gap-8 md:gap-12"
     >
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={finnishGovtEmblem}
+        <img
+          src={finnishGovtEmblem.src}
           alt="Finnish Government"
-          class="h-16 w-auto object-contain md:h-20"
-          width={160}
-          quality={80}
+          class="h-20 w-auto object-contain md:h-25"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- OAMK -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={oamkLogo}
+        <img
+          src={oamkLogo.src}
           alt="Oulu University of Applied Sciences"
-          class="max-h-16 w-auto object-contain md:max-h-20"
-          width={160}
-          quality={80}
+          class="h-14 w-auto object-contain md:h-18"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- Arcada -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={arcadaLogo}
+        <img
+          src={arcadaLogo.src}
           alt="Arcada University of Applied Sciences"
-          class="max-h-20 w-auto object-contain md:max-h-25"
-          width={180}
-          quality={80}
+          class="h-20 w-auto object-contain md:h-26"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- EU Research -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={euResearchLogo}
+        <img
+          src={euResearchLogo.src}
           alt="European Union Research and Innovation"
-          class="max-h-25 w-auto object-contain md:max-h-30"
-          width={240}
-          quality={80}
+          class="h-24 w-auto object-contain md:h-35"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- Moniheli -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={moniheliLogo}
+        <img
+          src={moniheliLogo.src}
           alt="Moniheli"
-          class="max-h-5 w-auto object-contain md:max-h-8"
-          width={100}
-          quality={80}
+          class="h-7 w-auto object-contain md:h-9"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- Filipino Nursing Diaspora Network -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={fdnLogo}
+        <img
+          src={fdnLogo.src}
           alt="Filipino Nursing Diaspora Network"
-          class="max-h-16 w-auto object-contain md:max-h-20"
-          width={160}
-          quality={80}
+          class="h-14 w-auto object-contain md:h-18"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- SIENNA -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={siennaLogo}
+        <img
+          src={siennaLogo.src}
           alt="Society of Internationally Educated Nurses in North America"
-          class="max-h-18 w-auto object-contain md:max-h-25"
-          width={150}
-          quality={80}
+          class="h-20 w-auto object-contain md:h-24"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- IANPC -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={ianpcLogo}
+        <img
+          src={ianpcLogo.src}
           alt="International Assembly for National Nursing Associations"
-          class="max-h-18 w-auto object-contain md:max-h-25"
-          width={150}
-          quality={80}
+          class="h-20 w-auto object-contain md:h-24"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
       <!-- WSDN -->
       <div class="flex items-center justify-center px-4">
-        <Image
-          src={wsdnLogo}
+        <img
+          src={wsdnLogo.src}
           alt="World Sustainable Development Network"
-          class="max-h-18 w-auto object-contain md:max-h-25"
-          width={210}
-          quality={80}
+          class="h-12 w-auto object-contain md:h-16"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

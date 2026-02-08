@@ -1,6 +1,6 @@
 import type { Partner } from './types';
-import arcadaLogo from '../../../assets/images/partners/arcada-logo.png';
-import oamkLogo from '../../../assets/images/partners/oamk-logo.png';
+import arcadaLogo from '../../../assets/images/partners/arcada-logo.svg';
+import oamkLogo from '../../../assets/images/partners/oamk-logo.svg';
 
 export const kingdomDenmarkPartners: Partner[] = [
   {
