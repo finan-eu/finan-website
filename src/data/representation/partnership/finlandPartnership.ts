@@ -1,6 +1,6 @@
 import type { Partner } from './types';
-import oamkLogo from '../../../assets/images/partners/oamk-logo.png';
-import arcadaLogo from '../../../assets/images/partners/arcada-logo.png';
+import oamkLogo from '../../../assets/images/partners/oamk-logo.svg';
+import arcadaLogo from '../../../assets/images/partners/arcada-logo.svg';
 
 export const finlandPartners: Partner[] = [
   {

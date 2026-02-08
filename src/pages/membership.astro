@@ -4,17 +4,16 @@ import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
 import Footer from '../components/Footer.astro';
 import Blog from '../components/Blog.astro';
-import { Image } from 'astro:assets';
 import heroImage from '../assets/images/hero-image.webp';
-import arcadaLogo from '../assets/images/partners/arcada-logo.png';
-import euResearchLogo from '../assets/images/partners/eu-research-innovation.png';
-import fdnLogo from '../assets/images/partners/filipino-nursing-diaspora-network.png';
+import arcadaLogo from '../assets/images/partners/arcada-logo.svg';
+import euResearchLogo from '../assets/images/partners/eu-research-innovation.svg';
+import fdnLogo from '../assets/images/partners/filipino-nursing-diaspora-network.svg';
 import finnishGovtEmblem from '../assets/images/partners/finnish_government_emblem.svg';
-import ianpcLogo from '../assets/images/partners/ianpc.png';
-import moniheliLogo from '../assets/images/partners/moniheli-logo.png';
-import oamkLogo from '../assets/images/partners/oamk-logo.png';
-import siennaLogo from '../assets/images/partners/sienna-logo.png';
-import wsdnLogo from '../assets/images/partners/wsdn-logo.jpg';
+import ianpcLogo from '../assets/images/partners/ianpc.svg';
+import moniheliLogo from '../assets/images/partners/moniheli-logo.svg';
+import oamkLogo from '../assets/images/partners/oamk-logo.svg';
+import siennaLogo from '../assets/images/partners/sienna-logo.svg';
+import wsdnLogo from '../assets/images/partners/wsdn.svg';
 import RegistrationSection from '../components/RegistrationSection.astro';
 ---
 
@@ -23,7 +22,7 @@ import RegistrationSection from '../components/RegistrationSection.astro';
     <Navbar />
     <PageHeader
       title="Membership"
-      description="The Filipino Nurses Association in the Nordic Region (FiNAN) is the only regional registered non-profit organization that represents and bridges Filipino Nurses in the Nordic Region."
+      description="The Filipino Nurses Association in the Nordic Region (FiNAN) is a registered non-profit organization in the Nordic Region representing the voice of Filipino Nurses for important issues in the form of integration plan, migration issues, equality, healthcare and workplace protection to the policy and decision-makers."
       backgroundImage={heroImage}
       backgroundAlt="Filipino healthcare professionals in the Nordic countries"
     />
@@ -44,7 +43,7 @@ import RegistrationSection from '../components/RegistrationSection.astro';
               Membership is open to individuals in the Nordic countries who are
               licensed nurses or currently pursuing their nursing license.
             </li>
-            <li>Annual membership fee: 20 euros.</li>
+            <li>Annual membership fee is 20 euros.</li>
             <li>
               For membership inquiries, email us at <a
                 href="mailto:info@finan.eu.com"
@@ -54,7 +53,8 @@ import RegistrationSection from '../components/RegistrationSection.astro';
               </a>
             </li>
           </ul>
-          <div>
+          <!-- Register as member CTA -->
+          <!-- <div>
             <a
               href="https://membership.finan.eu.com"
               target="_blank"
@@ -63,6 +63,14 @@ import RegistrationSection from '../components/RegistrationSection.astro';
             >
               Register as a Member
             </a>
+          </div> -->
+          <div>
+            <iframe
+              data-tally-src="https://tally.so/embed/mOZ11Y?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="1908"
+              title="FiNAN Membership Registration"></iframe>
           </div>
         </div>
       </div>
@@ -72,22 +80,6 @@ import RegistrationSection from '../components/RegistrationSection.astro';
     <section class="bg-white py-16">
       <div class="mx-auto max-w-4xl px-4 sm:px-6">
         <div class="space-y-12">
-          <div>
-            <h2
-              class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-            >
-              Representation
-            </h2>
-            <p class="text-lg text-gray-700">
-              The Filipino Nurses Association in the Nordic Region (FiNAN) is a
-              registered non-profit organization in the Nordic Region
-              representing the voice of Filipino Nurses for important issues in
-              the form of integration plan, migration issues, equality,
-              healthcare and workplace protection to the policy and
-              decision-makers.
-            </p>
-          </div>
-
           <div>
             <h2
               class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
@@ -131,100 +123,100 @@ import RegistrationSection from '../components/RegistrationSection.astro';
         <!-- Partner Logos Grid -->
         <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={finnishGovtEmblem}
+            <img
+              src={finnishGovtEmblem.src}
               alt="Finnish Government"
-              class="h-16 w-auto object-contain md:h-20"
-              width={160}
-              quality={80}
+              class="h-20 w-auto object-contain md:h-24"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- OAMK -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={oamkLogo}
+            <img
+              src={oamkLogo.src}
               alt="Oulu University of Applied Sciences"
-              class="max-h-16 w-auto object-contain md:max-h-20"
-              width={160}
-              quality={80}
+              class="h-14 w-auto object-contain md:h-18"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- Arcada -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={arcadaLogo}
+            <img
+              src={arcadaLogo.src}
               alt="Arcada University of Applied Sciences"
-              class="max-h-20 w-auto object-contain md:max-h-25"
-              width={180}
-              quality={80}
+              class="h-20 w-auto object-contain md:h-24"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- EU Research -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={euResearchLogo}
+            <img
+              src={euResearchLogo.src}
               alt="European Union Research and Innovation"
-              class="max-h-25 w-auto object-contain md:max-h-30"
-              width={240}
-              quality={80}
+              class="h-24 w-auto object-contain md:h-30"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- Moniheli -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={moniheliLogo}
+            <img
+              src={moniheliLogo.src}
               alt="Moniheli"
-              class="max-h-5 w-auto object-contain md:max-h-8"
-              width={100}
-              quality={80}
+              class="h-7 w-auto object-contain md:h-9"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- Filipino Nursing Diaspora Network -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={fdnLogo}
+            <img
+              src={fdnLogo.src}
               alt="Filipino Nursing Diaspora Network"
-              class="max-h-16 w-auto object-contain md:max-h-20"
-              width={160}
-              quality={80}
+              class="h-14 w-auto object-contain md:h-18"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- SIENNA -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={siennaLogo}
+            <img
+              src={siennaLogo.src}
               alt="Society of Internationally Educated Nurses in North America"
-              class="max-h-18 w-auto object-contain md:max-h-25"
-              width={150}
-              quality={80}
+              class="h-20 w-auto object-contain md:h-24"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- IANPC -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={ianpcLogo}
+            <img
+              src={ianpcLogo.src}
               alt="International Assembly for National Nursing Associations"
-              class="max-h-18 w-auto object-contain md:max-h-25"
-              width={150}
-              quality={80}
+              class="h-20 w-auto object-contain md:h-24"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- WSDN -->
           <div class="flex items-center justify-center px-4">
-            <Image
-              src={wsdnLogo}
+            <img
+              src={wsdnLogo.src}
               alt="World Sustainable Development Network"
-              class="max-h-18 w-auto object-contain md:max-h-25"
-              width={210}
-              quality={80}
+              class="h-12 w-auto object-contain md:h-16"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -234,6 +226,7 @@ import RegistrationSection from '../components/RegistrationSection.astro';
     <!-- Blog Section -->
     <Blog />
     <RegistrationSection />
+    <script is:inline src="/js/tally-embed.js"></script>
   </main>
   <Footer />
 </Layout>

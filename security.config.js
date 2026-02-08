@@ -63,8 +63,9 @@ export const contentSecurityPolicy = {
     'https://images.unsplash.com',
   ],
   'font-src': ["'self'", 'https://fonts.gstatic.com'],
-  'script-src': ["'self'", "'unsafe-inline'"], // Required for Google Fonts preload optimization
-  'connect-src': ["'self'"],
+  'script-src': ["'self'", "'unsafe-inline'", 'https://tally.so'], // Required for Google Fonts preload optimization and Tally embed widget
+  'connect-src': ["'self'", 'https://tally.so'],
+  'frame-src': ["'self'", 'https://tally.so'],
   'frame-ancestors': ["'none'"],
   'base-uri': ["'self'"],
   'form-action': ["'self'"],
