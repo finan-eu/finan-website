@@ -50,8 +50,26 @@ All commands are run from the root of the project, from a terminal:
 | `npm run lint:fix`       | Run ESLint with auto-fix                   |
 | `npm run format`         | Format code with Prettier                  |
 | `npm run format:check`   | Check code formatting                      |
+| `npm run check:all`      | Run full quality gate (lint+format+check+build) |
 | `npm run security:audit` | Run npm security audit                     |
 | `npm run security:check` | Show project security checklist reminder   |
+
+## Git Hooks (Husky)
+
+This project uses Husky to run automated checks during Git workflows.
+
+- `pre-commit`: Runs `lint-staged` on staged files only for fast feedback.
+  - `*.{js,jsx,ts,tsx,astro}`: `eslint --fix` then `prettier --write`
+  - `*.{json,md,css,yml,yaml}`: `prettier --write`
+- `pre-push`: Runs full project checks via `npm run check:all`:
+  - `npm run lint`
+  - `npm run format:check`
+  - `npm run check`
+  - `npm run build`
+
+Hooks are installed automatically after `npm install` through the `prepare` script.
+
+Emergency bypass (use sparingly): add `--no-verify` to `git commit` or `git push`.
 
 ## 🛠️ Tech Stack
 
