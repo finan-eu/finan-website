@@ -72,3 +72,6 @@ Thumbs.db
 # --- Misc ---
 .playwright-mcp/
 docs/
+
+# --- AI / Editor tools ---
+.opencode/
