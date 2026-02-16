@@ -50,7 +50,7 @@ export const triennialGathering2026Schedule = [
           'Board Member, Félag Íslenska Hjúkrunarfræðinga (Icelandic Nurses Union); Founding Chairperson, Deild Erlendra Hjúkfrunarfræðinga (Foreign Nurses Department, Icelandic Nurses Union)',
       },
       {
-        time: '11:00-12:30',
+        time: '11:00 – 12:30',
         title: 'LUNCH',
         speaker: '',
         details: '',
