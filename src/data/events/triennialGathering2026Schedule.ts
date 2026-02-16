@@ -12,24 +12,26 @@ export const triennialGathering2026Schedule = [
   },
   {
     date: 'March 30, 2026',
-    description: 'Conference Day',
+    description: 'FiNAN Conference, Reykjavik, Iceland',
     events: [
       {
-        time: '09:00 – 09:15',
+        time: '9:00 – 09:15',
         title: 'Welcome to Iceland',
-        speaker: 'Ólafur Gúðbjórn Skúlason',
-        details: 'Landspítali, National University Hospital of Iceland.',
+        speaker: 'Margrét Manda Jónsdóttir',
+        details:
+          'Director of Nursing, Combined Rehabilitation Services, Landspítalinn, National University Hospital of Iceland',
       },
       {
         time: '09:15 – 09:45',
-        title: 'Opening Keynote',
-        speaker: 'Margrét Manda Jónsdóttir',
-        details: 'Landspítali University Hospital, Nurse Manager',
+        title:
+          'Opening Keynote: "Filipino Nurses, Cultural Ambassadors of the World"',
+        speaker: 'Marvi Gil',
+        details: 'Landspítalinn, National University Hospital of Iceland',
       },
       {
         time: '09:45 – 10:15',
         title:
-          'Pathways to Collaboration: Navigating the world of evidence-based research ',
+          'Pathways to Collaboration: Navigating the world of evidence-based research',
         speaker: 'Dr. Floro Cubelo',
         details: '',
       },
@@ -45,11 +47,11 @@ export const triennialGathering2026Schedule = [
           'Equity vs Equality: Amplifying your presence in nursing leadership in the Nordic region',
         speaker: 'Wendill Viejo',
         details:
-          'Board Member, Félag Íslenska Hjúkrunarfræðinga (Icelandic Nurses Union)',
+          'Board Member, Félag Íslenska Hjúkrunarfræðinga (Icelandic Nurses Union); Founding Chairperson, Deild Erlendra Hjúkfrunarfræðinga (Foreign Nurses Department, Icelandic Nurses Union)',
       },
       {
-        time: '11:00 – 12:30',
-        title: 'Lunch Break',
+        time: '11:00-12:30',
+        title: 'LUNCH',
         speaker: '',
         details: '',
       },
@@ -57,22 +59,26 @@ export const triennialGathering2026Schedule = [
         time: '12:30 – 14:00',
         title:
           'Breakout session: Moving to Nordic Countries: Filipino perspectives and collective experiences',
-        speaker: 'Dr. Unnur Dís Skaptadóttir (Facilitator)',
+        speaker: 'Facilitator: Dr. Unnur Dís Skaptadóttir',
         details:
-          'University of Iceland. Delegates to be grouped by country to discuss and present results.',
+          'Professor of Anthropology and Head of Faculty of Sociology, Anthropology and Folkloristics, University of Iceland. "Filipino Migrant Nurses\' Experiences of Coping with Multiple Conflicting Workplace Demands" (',
+        referenceLinkText: 'Nordic Journal Of Migration Research',
+        referenceLinkSuffix:
+          '). Delegates will be grouped by country to answer 5 to 6 guide questions, and each group will present their results.',
+        referenceLinkUrl: 'https://journal-njmr.org/articles/10.33134/njmr.752',
       },
       {
         time: '14:00 – 14:15',
         title: 'Short Interactive Quiz (with prizes)',
         speaker: '',
-        details: '',
+        details: 'c/o Happy Pinoys – ENFID Iceland',
       },
       {
         time: '14:15 – 14:45',
-        title: 'When Cultures Collide: Relationships',
+        title: 'When Cultures Collide: Navigating relationships in the Nordics',
         speaker: 'Ragnheiður Bjartman Eiríksdóttir',
         details:
-          'Reproductive Health Specialist (sex therapist), mental health nurse, Author, Knitting Designer',
+          'Reproductive Health Specialist, mental health nurse, author, Knitting Designer',
       },
       {
         time: '14:45 – 15:00',
@@ -82,45 +88,23 @@ export const triennialGathering2026Schedule = [
       },
       {
         time: '15:00 – 15:30',
-        title: 'Workshop: Crafting our Message to the Filipino government',
-        speaker: 'FINAN officers (Facilitators)',
+        title: 'Brainstorming Workshop (Group Work)',
+        speaker: 'Facilitators: FiNAN officers',
         details:
-          '"In a perfect world, how can the Filipino government make ours and our families\' lives better?"\n\nEach delegation will then be responsible for formally delivering this message to the Filipino embassies and consulates in their respective countries.\n\nThe message will be formally submitted to Filipino embassies, consulates, Philippine Congress, or Senate.',
+          'What are the policies in the Nordic region that affect Filipino nurses and how can FiNAN work towards influencing them? Crafting a message to decision makers both in the Philippines and the Nordic countries.',
       },
       {
         time: '15:30 – 16:00',
         title: 'Closing Remarks and turnover to the next country host',
-        speaker: '',
+        speaker:
+          'FiNAN co-chairs: Cristal Tolosa Warburg & Katherine Perez Luckmann',
         details: '',
       },
       {
-        time: '19:00 – 21:00',
-        title: 'Gala Night & Fellowship',
+        time: '19:00',
+        title: 'Gala Night & Fellowship (Megaworld)',
         speaker: '',
         details: '',
-      },
-    ],
-  },
-  {
-    date: 'March 31, 2026',
-    description: 'Golden Circle',
-    events: [
-      {
-        time: '10:00 – 17:00',
-        title: 'Golden Circle whole day',
-        speaker: '',
-        details: '',
-      },
-    ],
-  },
-  {
-    date: 'April 1, 2026',
-    description: 'Goodbye Iceland',
-    events: [
-      {
-        time: 'TBA',
-        title: 'To Be Announced',
-        details: 'Schedule details will be announced soon.',
       },
     ],
   },

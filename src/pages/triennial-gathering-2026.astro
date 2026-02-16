@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import EventSched from '../components/EventSched.astro';
 import EventHeaderSection from '../components/EventHeaderSection.astro';
+import Blog from '../components/Blog.astro';
 import StructuredData from '../components/StructuredData.astro';
 import scheduleBanner from '../assets/images/events/v2_banner-triennial-gathering-2026.png';
 import { triennialGathering2026Schedule } from '../data/events/triennialGathering2026Schedule';
@@ -14,7 +15,7 @@ import RegistrationSection from '../components/RegistrationSection.astro';
 
 <Layout
   title="Triennial Gathering 2026 | FiNAN Conference"
-  description="Join us for the FiNAN Triennial Gathering 2026 in Reykjavik, Iceland. Amplifying Voices: Navigating Equity, Leadership, and Global Migration. March 30 – April 1, 2026."
+  description="Join us for the FiNAN Triennial Gathering 2026 in Reykjavik, Iceland. Amplifying Voices: Navigating Equity, Leadership, and Global Migration. March 29 – 30, 2026."
 >
   <StructuredData schemas={['event']} slot="head" />
   <Navbar showBanner={false} />
@@ -36,7 +37,7 @@ import RegistrationSection from '../components/RegistrationSection.astro';
         The <strong
           >Filipino Nurses Association in the Nordic Region (FiNAN)</strong
         > proudly invites you to our landmark event on <strong
-          >March 30 – April 1, 2026</strong
+          >March 29 – 30, 2026</strong
         >, where we bring together <strong
           >Filipino Internationally Educated Nurses (IENs)</strong
         >, other internationally educated nurses, healthcare leaders,
@@ -76,6 +77,7 @@ import RegistrationSection from '../components/RegistrationSection.astro';
     </section>
 
     <RegistrationSection />
+    <Blog />
     <CTABanner />
     <Footer />
   </section>

@@ -4,6 +4,9 @@ interface Event {
   readonly title: string;
   readonly speaker?: string;
   readonly details?: string;
+  readonly referenceLinkText?: string;
+  readonly referenceLinkUrl?: string;
+  readonly referenceLinkSuffix?: string;
 }
 
 interface EventDay {
@@ -81,11 +84,11 @@ let globalEventIndex = 0;
                 <div class="border-t border-gray-100 px-6 py-5">
                   <div class="space-y-4">
                     {day.events.map((event) => (
-                      <div class="event-item flex flex-col gap-3 sm:grid sm:grid-cols-[auto_1fr] sm:gap-8">
+                      <div class="event-item flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-8">
                         {/* Left side - Time */}
-                        <div>
+                        <div class="sm:w-48 sm:flex-shrink-0">
                           {event.time && (
-                            <span class="inline-flex items-center gap-1.5 rounded-lg border-1 border-blue-100 bg-blue-50 px-3 py-1 font-mono text-base font-semibold text-blue-900 md:text-lg">
+                            <span class="inline-flex items-center gap-1.5 rounded-lg border-1 border-blue-100 bg-blue-50 px-3 py-1 font-mono text-base font-semibold whitespace-nowrap text-blue-900 md:text-lg">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -99,7 +102,7 @@ let globalEventIndex = 0;
                           )}
                         </div>
                         {/* Right side - Title, Speaker, Details */}
-                        <div>
+                        <div class="flex-1">
                           <h5 class="text-base font-semibold text-gray-900 md:text-lg">
                             {event.title}
                           </h5>
@@ -108,9 +111,25 @@ let globalEventIndex = 0;
                               {event.speaker}
                             </p>
                           )}
-                          {event.details && (
+                          {(event.details ||
+                            (event.referenceLinkText &&
+                              event.referenceLinkUrl)) && (
                             <p class="mt-1 text-base text-gray-700 md:text-lg">
                               {event.details}
+                              {event.referenceLinkText &&
+                                event.referenceLinkUrl && (
+                                  <>
+                                    <a
+                                      href={event.referenceLinkUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      class="font-medium text-blue-800 underline decoration-blue-300 underline-offset-2 transition-colors duration-200 hover:text-blue-900"
+                                    >
+                                      {event.referenceLinkText}
+                                    </a>
+                                    {event.referenceLinkSuffix}
+                                  </>
+                                )}
                             </p>
                           )}
                         </div>
