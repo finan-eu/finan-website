@@ -20,7 +20,7 @@ This is an Astro 5.x static site with the following structure:
 ├── src/
 │   ├── assets/
 │   │   └── images/         # Optimized images (committee photos, events)
-│   ├── components/         # Reusable Astro components (25 components)
+│   ├── components/         # Reusable Astro components
 │   ├── data/               # TypeScript data configurations
 │   │   ├── representation/ # Regional representation data
 │   │   ├── pages/          # Page-specific data
@@ -34,7 +34,26 @@ This is an Astro 5.x static site with the following structure:
 └── package.json
 ```
 
-## 🧞 Commands
+## 🏃 How to Run It
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/finan-eu/finan-website.git
+   cd finan-website
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The site will be available at `http://localhost:4321`.
+
+## 🧞 All Commands
 
 All commands are run from the root of the project, from a terminal:
 
