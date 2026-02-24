@@ -11,7 +11,7 @@ This document provides essential information for AI coding agents working on the
 ### Key Facts
 
 - **Domain**: https://finan.eu.com
-- **Framework**: Astro 5.16.15 (static site generator)
+- **Framework**: Astro 5.17.1 (static site generator)
 - **Styling**: Tailwind CSS 4.1.13 with Vite integration
 - **Language**: TypeScript with strict type checking
 - **CMS**: Ghost CMS integration for blog content
@@ -54,11 +54,15 @@ This ensures all ESLint rules are enforced, code formatting is consistent, and T
 ```
 /
 ├── public/                     # Static assets (served as-is)
-│   ├── flags/                  # Country flag SVG assets
-│   ├── icons/                  # UI icons and graphics
+│   ├── assets/
+│   │   ├── flags/              # Country flag SVG assets
+│   │   └── icons/              # UI icons and graphics
+│   ├── content/                # Downloadable static files (PDF, etc.)
 │   ├── images/                 # Static images
 │   ├── js/                     # Public JavaScript files
-│   │   └── navbar.js           # Client-side navigation script
+│   │   ├── navbar.js           # Client-side navigation script
+│   │   └── tally-embed.js      # Tally form embed helper
+│   ├── og/                     # Open Graph images
 │   ├── favicon.*               # Favicon variants
 │   ├── ogimg_finan.jpg         # Open Graph default image
 │   ├── robots.txt              # Search engine directives
@@ -106,7 +110,7 @@ This ensures all ESLint rules are enforced, code formatting is consistent, and T
 
 ### Core Dependencies
 
-- **Astro 5.16.15** - Static site generator with island architecture
+- **Astro 5.17.1** - Static site generator with island architecture
 - **Tailwind CSS 4.1.13** - Utility-first CSS framework (via `@tailwindcss/vite`)
 - **TypeScript 5.9.2** - Type-safe JavaScript with strict mode
 
@@ -368,13 +372,13 @@ Output in `dist/` is ready for static hosting (Cloudflare Pages, Netlify, Vercel
 
 ### Adding Committee Member Photos
 
-See `.opencode/rules/committee-images.md` for detailed instructions:
-
 1. Place image in `src/assets/images/committee/[country]/`
 2. Name file using kebab-case: `first-last.jpg`
-3. Import in committee file: `import firstLastImage from '...'`
-4. Use imported reference in `imageSrc` property
-5. Run `npm run build` to verify
+3. Keep images close to existing conventions: use `.jpg`, `.jpeg`, or `.png` based on source quality.
+4. Import in committee file: `import firstLastImage from '...'`
+5. Use imported reference in `imageSrc` property (do not use raw string paths)
+6. Run `npm run build` to verify Astro can resolve the asset
+7. Run `npm run lint:fix && npm run format` before finalizing changes
 
 ### Modifying SEO
 
@@ -395,8 +399,7 @@ Individual pages can override via `Layout` props:
 - **Astro Documentation**: https://docs.astro.build
 - **Tailwind CSS Documentation**: https://tailwindcss.com
 - **Ghost CMS API Docs**: https://ghost.org/docs/content-api/
-- **CLAUDE.md**: Additional development context and component documentation
 
 ---
 
-*Last updated: January 2026*
+*Last updated: February 2026*

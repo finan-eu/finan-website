@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { ClientRouter } from 'astro:transitions';
 import { SEO } from 'astro-seo';
 import StructuredData from '../components/StructuredData.astro';
 import { seoConfig, getFullUrl, getPageTitle } from '../data/siteConfig';
@@ -34,6 +33,8 @@ interface Props {
   nofollow?: boolean;
   /** Additional keywords to append */
   keywords?: string[];
+  /** Enable motion scroll animations bundle on this page */
+  enableMotion?: boolean;
 }
 
 const {
@@ -46,6 +47,7 @@ const {
   noindex = forceNoIndex,
   nofollow = forceNoFollow,
   keywords,
+  enableMotion = false,
 } = Astro.props;
 
 // Process title with template if provided
@@ -89,14 +91,20 @@ const robotsValue =
       content="public, max-age=31536000, immutable"
     />
 
-    <!-- Google Fonts Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Google Fonts - Optimized Loading -->
+    <!-- Self-hosted Open Sans font preloads -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="preload"
+      href="/fonts/OpenSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/OpenSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     <!-- SEO Component -->
@@ -179,14 +187,11 @@ const robotsValue =
         : ['organization']}
     />
 
-    <!-- View Transitions -->
-    <ClientRouter />
-
     <!-- Additional head content from pages -->
     <slot name="head" />
   </head>
   <body>
-    <div id="page-content" transition:animate="fade">
+    <div id="page-content">
       <slot />
     </div>
 
@@ -218,7 +223,7 @@ const robotsValue =
       window.addEventListener('pageshow', setVH);
     </script> -->
     <!-- Motion Scroll Animations -->
-    <script src="../lib/init-motion-animations.ts"></script>
+    {enableMotion && <script src="../lib/init-motion-animations.ts" />}
   </body>
 </html>
 
