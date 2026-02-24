@@ -23,6 +23,7 @@ The organization is a registered non-profit across the Nordic Region:
 - **Membership System**: Registration and member benefits
 - **Resources**: Guides and FAQ for nurses
 - **Multilingual Support**: Content for diverse Nordic regions
+- **View Transitions**: Seamless, app-like page navigation using Astro `<ClientRouter />` for faster perceived load times and state preservation
 
 ## Tech Stack
 
