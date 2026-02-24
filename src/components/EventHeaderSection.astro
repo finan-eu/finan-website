@@ -283,29 +283,11 @@ const {
     );
   }
 
-  // Initialize countdown + modal trigger on page load and after Astro view transitions
-  // (astro:page-load supports SPA-like navigation)
+  // astro:page-load fires on both initial load and after client-side navigation (View Transitions)
   document.addEventListener('astro:page-load', () => {
     initCountdown();
     initModalTrigger();
   });
-
-  if (
-    document.readyState === 'complete' ||
-    document.readyState === 'interactive'
-  ) {
-    initCountdown();
-    initModalTrigger();
-  } else {
-    document.addEventListener(
-      'DOMContentLoaded',
-      () => {
-        initCountdown();
-        initModalTrigger();
-      },
-      { once: true }
-    );
-  }
 
   document.addEventListener('astro:before-swap', () => {
     if (countdownIntervalId) {

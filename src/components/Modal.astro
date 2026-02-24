@@ -273,8 +273,7 @@ const maxWidthClasses = {
     });
   }
 
-  // Initialize on page load and after Astro view transitions
-  // (astro:page-load supports SPA-like navigation)
+  // astro:page-load fires on both initial load and after client-side navigation (View Transitions)
   document.addEventListener('astro:page-load', initModal);
 
   // Cleanup event listeners before page navigation to prevent memory leaks

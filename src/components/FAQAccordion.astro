@@ -154,7 +154,7 @@ let globalFaqIndex = 0;
     });
   }
 
-  // Initialize on page load and after navigation
+  // astro:page-load fires on both initial load and after client-side navigation (View Transitions)
   document.addEventListener('astro:page-load', initFAQAccordion);
 </script>
 
