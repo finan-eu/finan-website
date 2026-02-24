@@ -1,12 +1,39 @@
+![FiNAN logo](public/finan-logo.svg)
+
 # FiNAN Website
 
-The official website for **FiNAN (Filipino Nurses Association in the Nordic Region)** - a professional non-profit organization connecting, supporting, and advocating for Filipino nurses across the Nordic region.
+The official website for **FiNAN (Filipino Nurses Association in the Nordic Region)** - a registered non-profit organization connecting, supporting, and advocating for Filipino nurses across the Nordic region.
 
 ## About FiNAN
 
 FiNAN provides guidance on licensing, cultural integration, and professional development for Filipino nurses working in Denmark, Faroe Islands, Finland (including Åland), Greenland, Iceland, Norway, and Sweden.
 
-## 🚀 Project Structure
+The organization is a registered non-profit across the Nordic Region:
+- **Finland**: Patentti- ja rekisterihallitus (PRH) - Y-tunnus: 3084026-2
+- **Denmark**: Erhvervsstyrelsen - CVR number: 40349367
+- **Sweden**: Skatteverket - Organisation number: 802537-7097
+- **Iceland**: Ríkisskattstjóri - Registration number: 5208190450
+
+## Website Features
+
+- **Nordic Representation**: Dedicated pages for 8 Nordic countries/regions
+- **Working Committee**: Display of leadership team by country
+- **Blog Integration**: Ghost CMS integration for news and updates
+- **Event Management**: Triennial Gathering 2026 event page with countdown
+- **Membership System**: Registration and member benefits
+- **Resources**: Guides and FAQ for nurses
+- **Multilingual Support**: Content for diverse Nordic regions
+
+## Tech Stack
+
+- **Framework**: Astro 5.16.15 (static site generator)
+- **Styling**: Tailwind CSS 4.1.13
+- **Language**: TypeScript (full type safety)
+- **Deployment**: Cloudflare Pages
+- **Code Quality**: ESLint + Prettier
+- **CMS Integration**: Ghost CMS (blog content)
+
+## Project Structure
 
 This is an Astro 5.x static site with the following structure:
 
@@ -34,7 +61,7 @@ This is an Astro 5.x static site with the following structure:
 └── package.json
 ```
 
-## 🏃 How to Run It
+## How to Run It
 
 1. **Clone the repository:**
    ```bash
@@ -53,7 +80,7 @@ This is an Astro 5.x static site with the following structure:
    ```
    The site will be available at `http://localhost:4321`.
 
-## 🧞 All Commands
+## All Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -90,32 +117,14 @@ Hooks are installed automatically after `npm install` through the `prepare` scri
 
 Emergency bypass (use sparingly): add `--no-verify` to `git commit` or `git push`.
 
-## 🛠️ Tech Stack
+## Documentation
 
-- **Framework**: Astro 5.16.15 (static site generator)
-- **Styling**: Tailwind CSS 4.1.13
-- **Language**: TypeScript (full type safety)
-- **Code Quality**: ESLint + Prettier
-- **CMS Integration**: Ghost CMS (blog content)
+For detailed development guidelines, architecture, and component documentation, see [FiNAN's Documentation site](https://docs.finan.eu.com).
 
-## 📖 Documentation
-
-For detailed development guidelines, architecture, and component documentation, see [CLAUDE.md](./CLAUDE.md).
-
-## 🌐 Website Features
-
-- **Nordic Representation**: Dedicated pages for 8 Nordic countries/regions
-- **Working Committee**: Display of leadership team by country
-- **Blog Integration**: Ghost CMS integration for news and updates
-- **Event Management**: Triennial Gathering 2026 event page with countdown
-- **Membership System**: Registration and member benefits
-- **Resources**: Guides and FAQ for nurses
-- **Multilingual Support**: Content for diverse Nordic regions
-
-## 🔒 Security
+## Security
 
 The site implements comprehensive security headers including CSP, X-Frame-Options, and proper origin checking.
 
-## 👀 Want to learn more about Astro?
+## Contact Info
 
-Feel free to check [Astro's documentation](https://docs.astro.build) or join the [Astro Discord server](https://astro.build/chat).
+For inquiries, please contact us at [info@finan.eu.com](mailto:info@finan.eu.com)
