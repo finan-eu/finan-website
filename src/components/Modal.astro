@@ -32,16 +32,16 @@ const maxWidthClasses = {
   >
   </div>
 
-  <!-- Modal Content -->
+  <!-- Modal Content wrapper (relative anchor for the close button) -->
   <div
-    class={`modal-content relative z-10 w-full ${maxWidthClasses[maxWidth]} transform rounded-lg bg-white shadow-2xl transition-all duration-300 ease-in-out`}
+    class={`modal-content relative z-10 w-full ${maxWidthClasses[maxWidth]}`}
   >
-    <!-- Close button in upper right corner -->
+    <!-- Close button: Inside the card on mobile, floating outside on md+ screens -->
     <button
       type="button"
       data-modal-close
       aria-label="Close modal"
-      class="absolute top-4 right-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2"
+      class="absolute top-2 right-2 z-20 cursor-pointer rounded-full bg-white p-2 text-gray-700 shadow-md transition-colors hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2 sm:-top-3 sm:-right-3"
     >
       <!-- X icon -->
       <svg
@@ -52,26 +52,31 @@ const maxWidthClasses = {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-6 w-6"
+        class="h-5 w-5"
       >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
 
-    <!-- Header -->
-    <div class="border-b border-gray-200 px-8 py-8">
-      <h2
-        id={`${id}-title`}
-        class="text-center text-2xl font-bold text-gray-900 md:text-3xl"
-      >
-        {title}
-      </h2>
-    </div>
+    <!-- White card -->
+    <div
+      class="transform rounded-lg bg-white shadow-2xl transition-all duration-300 ease-in-out"
+    >
+      <!-- Header -->
+      <div class="border-b border-gray-200 px-8 py-8">
+        <h2
+          id={`${id}-title`}
+          class="text-center text-2xl font-bold text-gray-900 md:text-3xl"
+        >
+          {title}
+        </h2>
+      </div>
 
-    <!-- Body -->
-    <div class="px-8 py-8">
-      <slot />
+      <!-- Body -->
+      <div class="px-8 py-8">
+        <slot />
+      </div>
     </div>
   </div>
 </div>
@@ -127,13 +132,14 @@ const maxWidthClasses = {
 
         // Restore body scroll
         document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-        document.body.style.top = '';
 
-        // Restore scroll position (for iOS Safari)
+        // Restore iOS Safari scroll lock styles and scroll position
         const scrollY = modalElement.dataset.scrollY;
         if (scrollY) {
+          document.body.style.position = '';
+          document.body.style.width = '';
+          document.body.style.top = '';
+
           const scrollPosition = parseInt(scrollY, 10);
 
           if (isNaN(scrollPosition)) {
@@ -234,20 +240,28 @@ const maxWidthClasses = {
 
       document.addEventListener('keydown', handleKeyDown, { signal });
 
+      // Detect iOS Safari: needs position:fixed body trick to prevent background scroll.
+      // Other browsers handle overflow:hidden correctly without jumping to top.
+      const isIosSafari =
+        /iP(ad|hone|od)/.test(navigator.userAgent) &&
+        /WebKit/.test(navigator.userAgent) &&
+        !/CriOS|FxiOS|OPiOS|mercury/.test(navigator.userAgent);
+
       // Store trigger element for focus restoration
       const openModal = (trigger: HTMLElement) => {
         triggerElement = trigger;
 
-        // Store current scroll position for iOS Safari
-        modalElement.dataset.scrollY = window.scrollY.toString();
-
         // Prevent body scroll
         document.body.style.overflow = 'hidden';
 
-        // iOS Safari scroll lock: prevents background scrolling on mobile Safari
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-        document.body.style.top = `-${window.scrollY}px`;
+        if (isIosSafari) {
+          // iOS Safari scroll lock: position:fixed prevents background scrolling,
+          // top offset keeps visual position. Store scrollY to restore on close.
+          modalElement.dataset.scrollY = window.scrollY.toString();
+          document.body.style.position = 'fixed';
+          document.body.style.width = '100%';
+          document.body.style.top = `-${window.scrollY}px`;
+        }
 
         // Show modal
         modalElement.classList.remove('hidden');
@@ -292,21 +306,21 @@ const maxWidthClasses = {
     display: flex;
   }
 
+  /* Smooth transitions on the inner white card */
+  .modal-content > div {
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
   /* Modal content entrance animation */
-  .modal.hidden .modal-content {
+  .modal.hidden .modal-content > div {
     transform: scale(0.95);
     opacity: 0;
   }
 
-  .modal:not(.hidden) .modal-content {
+  .modal:not(.hidden) .modal-content > div {
     transform: scale(1);
     opacity: 1;
-  }
-
-  /* Smooth transitions */
-  .modal-content {
-    transition:
-      transform 0.3s ease-in-out,
-      opacity 0.3s ease-in-out;
   }
 </style>
