@@ -4,6 +4,14 @@
 
 The official website for **FiNAN (Filipino Nurses Association in the Nordic Region)** - a registered non-profit organization connecting, supporting, and advocating for Filipino nurses across the Nordic region.
 
+![Astro](https://img.shields.io/badge/Astro-FF5D01?style=flat-square&logo=astro&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![Ghost](https://img.shields.io/badge/Ghost_CMS-738480?style=flat-square&logo=ghost&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black)
+
 ## About FiNAN
 
 FiNAN provides guidance on licensing, cultural integration, and professional development for Filipino nurses working in Denmark, Faroe Islands, Finland (including Åland), Greenland, Iceland, Norway, and Sweden.
