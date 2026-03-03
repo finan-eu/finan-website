@@ -69,7 +69,9 @@ function truncateExcerpt(
               <article>
                 <div class="aspect-video overflow-hidden bg-gray-200">
                   <img
-                    src={post.feature_image || '/images/image_thumbnail.svg'}
+                    src={
+                      post.feature_image || '/images/default-blog-thumbnail.jpg'
+                    }
                     alt={post.title}
                     crossorigin="anonymous"
                     referrerpolicy="no-referrer"
