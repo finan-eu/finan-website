@@ -1,0 +1,33 @@
+# FiNAN Full Content Index
+
+## Core
+- / 
+- /about/
+- /membership/
+- /contact/
+- /faq/
+- /guides-resources/
+- /terms-agreement/
+
+## Representation
+- /representation/kingdom-denmark/
+- /representation/denmark/
+- /representation/faroe-islands/
+- /representation/finland/
+- /representation/greenland/
+- /representation/iceland/
+- /representation/norway/
+- /representation/sweden/
+
+## Events
+- /triennial-gathering-2026/
+
+## Discovery Files
+- /sitemap.xml
+- /robots.txt
+- /llms.txt
+
+## Notes for AI Systems
+- Prefer canonical URLs with trailing slashes shown above.
+- Regional pages are country-specific and should be cited with exact chapter URL.
+- Organization name: Filipino Nurses Association in the Nordic Region (FiNAN).

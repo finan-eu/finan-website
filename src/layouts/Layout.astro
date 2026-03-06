@@ -40,7 +40,7 @@ interface Props {
 
 const {
   title,
-  description = seoConfig.basic.description,
+  description,
   image = seoConfig.openGraph.image,
   article = false,
   publishedTime,
@@ -53,6 +53,12 @@ const {
 
 // Process title with template if provided
 const pageTitle = title ? getPageTitle(title) : seoConfig.basic.title;
+const normalizedTitle = title?.replace(/\s*-\s*FiNAN$/i, '').trim();
+const pageDescription =
+  description ??
+  (normalizedTitle
+    ? `${normalizedTitle} updates, programs, and guidance from FiNAN for Filipino nurses in the Nordic region.`
+    : seoConfig.basic.description);
 
 // Construct full image URL
 const fullImageUrl = getFullUrl(image);
@@ -112,7 +118,7 @@ const robotsValue =
     <!-- SEO Component -->
     <SEO
       title={pageTitle}
-      description={description}
+      description={pageDescription}
       canonical={seoConfig.additional.enableCanonical
         ? Astro.url.href
         : undefined}
@@ -126,7 +132,7 @@ const robotsValue =
           url: Astro.url.href,
         },
         optional: {
-          description: description,
+          description: pageDescription,
           siteName: seoConfig.openGraph.siteName,
           locale: seoConfig.openGraph.locale,
         },
@@ -151,7 +157,7 @@ const robotsValue =
           ? `@${seoConfig.twitter.creator}`
           : undefined,
         title: pageTitle,
-        description: description,
+        description: pageDescription,
         image: fullImageUrl,
         imageAlt: seoConfig.twitter.imageAlt,
       }}

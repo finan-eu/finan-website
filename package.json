@@ -13,6 +13,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "pseo:quality": "node scripts/pseo-quality-guard.mjs",
     "prepare": "husky",
     "security:audit": "npm audit --audit-level moderate",
     "security:check": "echo '🔒 Security Check Complete - See security.config.js for details'"
