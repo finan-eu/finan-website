@@ -53,11 +53,6 @@ export const sitemapConfig = {
 
     // Regional Representation Pages - Medium priority
     {
-      loc: '/representation/denmark/',
-      changefreq: 'monthly',
-      priority: 0.6,
-    },
-    {
       loc: '/representation/faroe-islands/',
       changefreq: 'monthly',
       priority: 0.6,

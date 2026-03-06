@@ -14,7 +14,6 @@
 ## Regional Representation Hubs
 
 - [Kingdom of Denmark](/representation/kingdom-denmark/)
-- [Denmark](/representation/denmark/)
 - [Faroe Islands](/representation/faroe-islands/)
 - [Finland](/representation/finland/)
 - [Greenland](/representation/greenland/)

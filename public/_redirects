@@ -4,3 +4,6 @@
 # Host/domain-level redirects (e.g. www <-> apex, pages.dev -> custom domain)
 # must be configured in Cloudflare dashboard Redirect Rules, not in this file.
 # The `_redirects` file supports path-based redirects only.
+
+/representation/denmark    /representation/kingdom-denmark/    301
+/representation/denmark/   /representation/kingdom-denmark/    301

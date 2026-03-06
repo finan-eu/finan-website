@@ -77,7 +77,7 @@ const {
           alt="Calendar"
           class="h-5 w-5"
         />
-        <span class="text-lg">March 30 – April 1, 2026</span>
+        <span class="text-lg">March 29 – 30, 2026</span>
       </div>
       <div class="flex items-center gap-2">
         <img
@@ -150,12 +150,12 @@ const {
   let countdownIntervalId: number | null = null;
   let modalTriggerController: AbortController | null = null;
 
-  // Updates countdown timer to 2026-03-30 event date. After event date passes,
-  // displays 00:00:00:00. Called immediately on load and then every 1 second.
+  // Updates countdown timer to the 2026-03-29 event date. After the event date
+  // passes, displays 00:00:00:00.
   // TODO: Update or remove this countdown after the 2026 event concludes.
   function updateCountdown() {
-    // Event date: March 30, 2026 (hardcoded for 2026 Triennial Gathering)
-    const eventDate = new Date('2026-03-30T00:00:00').getTime();
+    // Event date: March 29, 2026 (hardcoded for 2026 Triennial Gathering)
+    const eventDate = new Date('2026-03-29T00:00:00').getTime();
     const now = new Date().getTime();
     const distance = eventDate - now;
 

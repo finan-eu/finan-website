@@ -8,6 +8,41 @@ import { TSGhostContentAPI } from '@ts-ghost/content-api';
 // Lazy initialization of Ghost Content API client
 let ghostAPI: TSGhostContentAPI | null = null;
 
+const shouldFailOnGhostError =
+  import.meta.env.PROD && process.env.GHOST_STRICT === 'true';
+
+function stringifyGhostDetails(details: unknown): string {
+  if (details instanceof Error) {
+    return details.message;
+  }
+
+  if (typeof details === 'string') {
+    return details;
+  }
+
+  try {
+    return JSON.stringify(details);
+  } catch {
+    return String(details);
+  }
+}
+
+function handleGhostFailure<T>(
+  message: string,
+  fallback: T,
+  details?: unknown
+): T {
+  const suffix = details ? ` ${stringifyGhostDetails(details)}` : '';
+  const fullMessage = `[Ghost] ${message}.${suffix}`.trim();
+
+  if (shouldFailOnGhostError) {
+    throw new Error(fullMessage);
+  }
+
+  console.error(fullMessage);
+  return fallback;
+}
+
 function getGhostAPI(): TSGhostContentAPI | null {
   if (ghostAPI) {
     return ghostAPI;
@@ -18,18 +53,25 @@ function getGhostAPI(): TSGhostContentAPI | null {
 
   // Return null if environment variables are not configured
   if (!ghostUrl || !ghostApiKey) {
-    console.warn(
-      'Ghost CMS environment variables not configured. Blog posts will not be available.'
+    return handleGhostFailure(
+      'Ghost CMS environment variables are not configured. Blog posts will not be available',
+      null,
+      {
+        ghostUrlConfigured: Boolean(ghostUrl),
+        ghostApiKeyConfigured: Boolean(ghostApiKey),
+      }
     );
-    return null;
   }
 
   try {
     ghostAPI = new TSGhostContentAPI(ghostUrl, ghostApiKey, 'v5.0');
     return ghostAPI;
   } catch (error) {
-    console.error('Failed to initialize Ghost API client:', error);
-    return null;
+    return handleGhostFailure(
+      'Failed to initialize Ghost API client',
+      null,
+      error
+    );
   }
 }
 
@@ -57,14 +99,20 @@ export async function getBlogPosts(limit = 10) {
       .fetch();
 
     if (!response.success) {
-      console.error('Error fetching Ghost posts:', response.errors.join(', '));
-      return [];
+      return handleGhostFailure(
+        'Error fetching Ghost posts',
+        [],
+        response.errors
+      );
     }
 
     return response.data;
   } catch (error) {
-    console.error('Failed to fetch blog posts from Ghost:', error);
-    return [];
+    return handleGhostFailure(
+      'Failed to fetch blog posts from Ghost',
+      [],
+      error
+    );
   }
 }
 
@@ -89,14 +137,20 @@ export async function getPostBySlug(slug: string) {
       .fetch();
 
     if (!response.success) {
-      console.error('Error fetching Ghost post:', response.errors.join(', '));
-      return null;
+      return handleGhostFailure(
+        'Error fetching Ghost post',
+        null,
+        response.errors
+      );
     }
 
     return response.data;
   } catch (error) {
-    console.error(`Failed to fetch post with slug "${slug}":`, error);
-    return null;
+    return handleGhostFailure(
+      `Failed to fetch post with slug "${slug}"`,
+      null,
+      error
+    );
   }
 }
 
@@ -121,14 +175,16 @@ export async function getAllPostSlugs() {
       .fetch();
 
     if (!response.success) {
-      console.error('Error fetching post slugs:', response.errors.join(', '));
-      return [];
+      return handleGhostFailure(
+        'Error fetching post slugs',
+        [],
+        response.errors
+      );
     }
 
     return response.data.map((post) => post.slug);
   } catch (error) {
-    console.error('Failed to fetch post slugs:', error);
-    return [];
+    return handleGhostFailure('Failed to fetch post slugs', [], error);
   }
 }
 
@@ -164,11 +220,11 @@ export async function getBlogPostsByTag(tag: string | string[], limit = 6) {
       .fetch();
 
     if (!response.success) {
-      console.error(
-        'Error fetching Ghost posts by tag:',
-        response.errors.join(', ')
+      return handleGhostFailure(
+        `Error fetching Ghost posts by tag "${Array.isArray(tag) ? tag.join(', ') : tag}"`,
+        [],
+        response.errors
       );
-      return [];
     }
 
     // Filter posts by matching tag slugs
@@ -183,10 +239,10 @@ export async function getBlogPostsByTag(tag: string | string[], limit = 6) {
     // Return only the requested limit
     return filteredPosts.slice(0, limit);
   } catch (error) {
-    console.error(
-      `Failed to fetch blog posts with tag "${Array.isArray(tag) ? tag.join(', ') : tag}":`,
+    return handleGhostFailure(
+      `Failed to fetch blog posts with tag "${Array.isArray(tag) ? tag.join(', ') : tag}"`,
+      [],
       error
     );
-    return [];
   }
 }

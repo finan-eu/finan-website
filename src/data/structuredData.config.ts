@@ -193,9 +193,9 @@ export function generateTriennialGathering2026EventSchema(): EventSchema {
     '@id': `${eventUrl}#event`,
     name: 'FiNAN Triennial Gathering 2026',
     description:
-      'Join us for the FiNAN Triennial Gathering 2026 in Reykjavik, Iceland. Amplifying Voices: Navigating Equity, Leadership, and Global Migration. A platform for Filipino Internationally Educated Nurses, healthcare leaders, policy-makers, and recruiters to explore workforce mobility, ethical recruitment, integration, and the future of nursing.',
-    startDate: '2026-03-30T09:00:00+00:00',
-    endDate: '2026-04-01T23:59:59+00:00',
+      'Join us for the FiNAN Triennial Gathering 2026 in Reykjavik, Iceland on March 29 to 30, 2026. Amplifying Voices: Navigating Equity, Leadership, and Global Migration. A platform for Filipino Internationally Educated Nurses, healthcare leaders, policy-makers, and recruiters to explore workforce mobility, ethical recruitment, integration, and the future of nursing.',
+    startDate: '2026-03-29T11:00:00+00:00',
+    endDate: '2026-03-30T23:59:59+00:00',
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {

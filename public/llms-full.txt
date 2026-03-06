@@ -11,7 +11,6 @@
 
 ## Representation
 - /representation/kingdom-denmark/
-- /representation/denmark/
 - /representation/faroe-islands/
 - /representation/finland/
 - /representation/greenland/
