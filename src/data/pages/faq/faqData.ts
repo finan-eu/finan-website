@@ -38,7 +38,7 @@ export const faqCategories: FAQCategory[] = [
       'Learn more about our organization, mission, and operations',
     faqs: [
       {
-        question: 'Is FiNAN a registered NGO?',
+        question: 'Is FiNAN a registered non-profit organization?',
         answer:
           'Yes. FiNAN is a registered non-profit organization in Finland, Denmark, and Iceland. We are currently in the process of registering it in Norway and Sweden.',
         registrationDetails: [
