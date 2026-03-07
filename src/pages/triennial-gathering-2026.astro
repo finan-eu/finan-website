@@ -1,8 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
 import EventSched from '../components/EventSched.astro';
 import EventHeaderSection from '../components/EventHeaderSection.astro';
 import Blog from '../components/Blog.astro';
@@ -16,9 +14,9 @@ import RegistrationSection from '../components/RegistrationSection.astro';
 <Layout
   title="Triennial Gathering 2026 | FiNAN Conference"
   description="Join us for the FiNAN Triennial Gathering 2026 in Reykjavik, Iceland. Amplifying Voices: Navigating Equity, Leadership, and Global Migration. March 29 – 30, 2026."
+  showBanner={false}
 >
   <StructuredData schemas={['event']} slot="head" />
-  <Navbar showBanner={false} />
 
   <EventHeaderSection
     secondaryButtonText="View Schedule"
@@ -51,34 +49,32 @@ import RegistrationSection from '../components/RegistrationSection.astro';
         nursing in a globalized healthcare landscape.
       </p>
     </div>
-
-    <!-- Event Schedule Section -->
-    <section class="bg-white pb-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <!-- Schedule Banner Image -->
-        <div>
-          <Image
-            src={scheduleBanner}
-            alt="Triennial Gathering 2026 Schedule Banner"
-            class="w-full rounded-lg"
-            loading="lazy"
-            format="webp"
-          />
-        </div>
-
-        <h2
-          class="pt-10 pb-6 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          id="schedule"
-        >
-          Schedule
-        </h2>
-      </div>
-      <EventSched schedule={triennialGathering2026Schedule} />
-    </section>
-
-    <RegistrationSection />
-    <Blog />
-    <CTABanner />
-    <Footer />
   </section>
+
+  <!-- Event Schedule Section -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div>
+        <Image
+          src={scheduleBanner}
+          alt="Triennial Gathering 2026 Schedule Banner"
+          class="w-full rounded-lg"
+          loading="lazy"
+          format="webp"
+        />
+      </div>
+
+      <h2
+        class="pt-10 pb-6 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        id="schedule"
+      >
+        Schedule
+      </h2>
+    </div>
+    <EventSched schedule={triennialGathering2026Schedule} />
+  </section>
+
+  <RegistrationSection />
+  <Blog />
+  <CTABanner />
 </Layout>

@@ -1,113 +1,106 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/Navbar.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import RegistrationSection from '../../components/RegistrationSection.astro';
 import CTABanner from '../../components/CTABanner.astro';
-import Footer from '../../components/Footer.astro';
 import heroImage from '../../assets/images/representation/iceland/iceland-banner.webp';
 import Committee from '../../components/Committee.astro';
 import BlogRepresentation from '../../components/BlogRepresentation.astro';
 ---
 
 <Layout title="Iceland - FiNAN">
-  <main>
-    <Navbar />
-    <PageHeader
-      title="Iceland"
-      description="Explore healthcare opportunities in Iceland, the land of fire and ice, known for its innovative healthcare system and high quality of life."
-      contactEmail="iceland@finan.eu.com"
-      backgroundImage={heroImage}
-      backgroundAlt="Reykjavik, Iceland"
-    />
+  <PageHeader
+    title="Iceland"
+    description="Explore healthcare opportunities in Iceland, the land of fire and ice, known for its innovative healthcare system and high quality of life."
+    contactEmail="iceland@finan.eu.com"
+    backgroundImage={heroImage}
+    backgroundAlt="Reykjavik, Iceland"
+  />
 
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <!-- Welcome to FiNAN Iceland -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Welcome to FiNAN Iceland!
-        </h2>
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <!-- Welcome to FiNAN Iceland -->
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Welcome to FiNAN Iceland!
+      </h2>
 
-        <p class="mb-10 text-lg text-gray-700">
-          We are a proud community of Filipino nurses working and thriving in
-          Iceland's healthcare system. Our mission is to
-          <strong>connect, support, and empower Filipino nurses</strong> in the Nordic
-          region by fostering collaboration, professional growth, and cultural integration.
-        </p>
+      <p class="mb-10 text-lg text-gray-700">
+        We are a proud community of Filipino nurses working and thriving in
+        Iceland's healthcare system. Our mission is to
+        <strong>connect, support, and empower Filipino nurses</strong> in the Nordic
+        region by fostering collaboration, professional growth, and cultural integration.
+      </p>
 
-        <!-- What We Do -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          What We Do
-        </h2>
+      <!-- What We Do -->
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        What We Do
+      </h2>
 
-        <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
-          <li>
-            <strong>Community Building</strong>: We create a strong support
-            network for Filipino nurses in Iceland through social events,
-            professional forums, and cultural activities.
-          </li>
-          <li>
-            <strong>Professional Development</strong>: We organize workshops,
-            seminars, and mentorship programs to help members advance their
-            careers and adapt to Iceland's healthcare standards.
-          </li>
-          <li>
-            <strong>Advocacy</strong>: We represent the voice of Filipino nurses
-            in Iceland, promoting fair employment practices and cultural
-            inclusion.
-          </li>
-          <li>
-            <strong>Information Sharing</strong>: We provide guidance on
-            licensing, language learning, and integration into Icelandic
-            society.
-          </li>
-        </ul>
+      <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
+        <li>
+          <strong>Community Building</strong>: We create a strong support
+          network for Filipino nurses in Iceland through social events,
+          professional forums, and cultural activities.
+        </li>
+        <li>
+          <strong>Professional Development</strong>: We organize workshops,
+          seminars, and mentorship programs to help members advance their
+          careers and adapt to Iceland's healthcare standards.
+        </li>
+        <li>
+          <strong>Advocacy</strong>: We represent the voice of Filipino nurses
+          in Iceland, promoting fair employment practices and cultural
+          inclusion.
+        </li>
+        <li>
+          <strong>Information Sharing</strong>: We provide guidance on
+          licensing, language learning, and integration into Icelandic society.
+        </li>
+      </ul>
 
-        <!-- Challenges Faced by Filipino Nurses in Iceland -->
-        <h2
-          class="mt-10 pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Challenges Faced by Filipino Nurses in Iceland
-        </h2>
+      <!-- Challenges Faced by Filipino Nurses in Iceland -->
+      <h2
+        class="mt-10 pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Challenges Faced by Filipino Nurses in Iceland
+      </h2>
 
-        <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
-          <li>
-            <strong>Language Barrier</strong>: Learning Icelandic is essential
-            for effective communication and career progression, but it can be
-            challenging.
-          </li>
-          <li>
-            <strong>Cultural Adjustment</strong>: Adapting to Icelandic work
-            culture and social norms requires time and support.
-          </li>
-          <li>
-            <strong>Professional Recognition</strong>: Navigating credential
-            validation and meeting local nursing requirements can be complex.
-          </li>
-          <li>
-            <strong>Isolation</strong>: Geographic distance and small Filipino
-            communities can lead to feelings of loneliness and limited social
-            support.
-          </li>
-          <li>
-            <strong>Workload and Stress</strong>: High demands in healthcare
-            settings, especially in specialized areas like forensic psychiatry,
-            can be overwhelming without adequate resources.
-          </li>
-        </ul>
-      </div>
-    </section>
-    <Committee country="iceland" heading="Committee" />
+      <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
+        <li>
+          <strong>Language Barrier</strong>: Learning Icelandic is essential for
+          effective communication and career progression, but it can be
+          challenging.
+        </li>
+        <li>
+          <strong>Cultural Adjustment</strong>: Adapting to Icelandic work
+          culture and social norms requires time and support.
+        </li>
+        <li>
+          <strong>Professional Recognition</strong>: Navigating credential
+          validation and meeting local nursing requirements can be complex.
+        </li>
+        <li>
+          <strong>Isolation</strong>: Geographic distance and small Filipino
+          communities can lead to feelings of loneliness and limited social
+          support.
+        </li>
+        <li>
+          <strong>Workload and Stress</strong>: High demands in healthcare
+          settings, especially in specialized areas like forensic psychiatry,
+          can be overwhelming without adequate resources.
+        </li>
+      </ul>
+    </div>
+  </section>
+  <Committee country="iceland" heading="Committee" />
 
-    <BlogRepresentation country="iceland" />
+  <BlogRepresentation country="iceland" />
 
-    <RegistrationSection />
+  <RegistrationSection />
 
-    <CTABanner />
-  </main>
-  <Footer />
+  <CTABanner />
 </Layout>

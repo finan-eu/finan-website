@@ -1,78 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
-import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.webp';
 ---
 
 <Layout title="Guides & Resources - FiNAN">
-  <main>
-    <Navbar />
-    <PageHeader
-      title="Guides & Resources"
-      description="Essential information and resources for Filipino healthcare professionals in the Nordic countries."
-      backgroundImage={heroImage}
-      backgroundAlt="Resources and guides for healthcare professionals"
-    />
+  <PageHeader
+    title="Guides & Resources"
+    description="Essential information and resources for Filipino healthcare professionals in the Nordic countries."
+    backgroundImage={heroImage}
+    backgroundAlt="Resources and guides for healthcare professionals"
+  />
 
-    <!-- Additional content sections can be added here -->
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <header class="max-w-2xl">
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          >
-            Getting Started in the Nordic Countries
-          </h2>
-        </header>
+  <!-- Additional content sections can be added here -->
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <header class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+          Getting Started in the Nordic Countries
+        </h2>
+      </header>
 
-        <div class="mt-4">
-          <p class="mb-6 text-lg text-gray-700">
-            Moving to work in the Nordic countries as a healthcare professional
-            can be both exciting and challenging. Our comprehensive guides will
-            help you navigate the process from initial planning to successful
-            integration into your new workplace and community.
-          </p>
+      <div class="mt-4">
+        <p class="mb-6 text-lg text-gray-700">
+          Moving to work in the Nordic countries as a healthcare professional
+          can be both exciting and challenging. Our comprehensive guides will
+          help you navigate the process from initial planning to successful
+          integration into your new workplace and community.
+        </p>
 
-          <p class="mb-6 text-lg text-gray-700">
-            Whether you're considering Denmark, Finland, Iceland, Norway, or
-            Sweden, each country has unique requirements, opportunities, and
-            cultural considerations that are important to understand before
-            making the transition.
-          </p>
+        <p class="mb-6 text-lg text-gray-700">
+          Whether you're considering Denmark, Finland, Iceland, Norway, or
+          Sweden, each country has unique requirements, opportunities, and
+          cultural considerations that are important to understand before making
+          the transition.
+        </p>
 
-          <h3
-            class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-          >
-            Professional Requirements
-          </h3>
-          <p class="mb-6 text-lg text-gray-700">
-            Each Nordic country has specific licensing and certification
-            requirements for healthcare professionals. Understanding these
-            requirements early in your planning process is crucial for a smooth
-            transition. We provide detailed information about credential
-            recognition, language requirements, and professional registration
-            processes.
-          </p>
+        <h3
+          class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
+        >
+          Professional Requirements
+        </h3>
+        <p class="mb-6 text-lg text-gray-700">
+          Each Nordic country has specific licensing and certification
+          requirements for healthcare professionals. Understanding these
+          requirements early in your planning process is crucial for a smooth
+          transition. We provide detailed information about credential
+          recognition, language requirements, and professional registration
+          processes.
+        </p>
 
-          <h3
-            class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
-          >
-            Cultural Integration
-          </h3>
-          <p class="text-lg text-gray-700">
-            Successful integration goes beyond professional requirements.
-            Understanding Nordic workplace culture, social norms, and community
-            life will help you thrive in your new environment. Our resources
-            cover everything from workplace etiquette to building lasting
-            relationships in your new community.
-          </p>
-        </div>
+        <h3
+          class="mb-4 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl"
+        >
+          Cultural Integration
+        </h3>
+        <p class="text-lg text-gray-700">
+          Successful integration goes beyond professional requirements.
+          Understanding Nordic workplace culture, social norms, and community
+          life will help you thrive in your new environment. Our resources cover
+          everything from workplace etiquette to building lasting relationships
+          in your new community.
+        </p>
       </div>
-    </section>
-    <CTABanner />
-  </main>
-  <Footer />
+    </div>
+  </section>
+  <CTABanner />
 </Layout>

@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import { SEO } from 'astro-seo';
 import { ClientRouter } from 'astro:transitions';
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
 import StructuredData from '../components/StructuredData.astro';
 import { seoConfig, getFullUrl, getPageTitle } from '../data/siteConfig';
 
@@ -36,6 +38,14 @@ interface Props {
   keywords?: string[];
   /** Enable motion scroll animations bundle on this page */
   enableMotion?: boolean;
+  /** Render the shared site navbar */
+  showNavbar?: boolean;
+  /** Render the shared site footer */
+  showFooter?: boolean;
+  /** Show the triennial gathering banner above the navbar */
+  showBanner?: boolean;
+  /** Additional classes for the main landmark */
+  mainClass?: string;
 }
 
 const {
@@ -49,6 +59,10 @@ const {
   nofollow = forceNoFollow,
   keywords,
   enableMotion = false,
+  showNavbar = true,
+  showFooter = true,
+  showBanner = true,
+  mainClass,
 } = Astro.props;
 
 // Process title with template if provided
@@ -200,7 +214,11 @@ const robotsValue =
   </head>
   <body>
     <div id="page-content">
-      <slot />
+      {showNavbar && <Navbar showBanner={showBanner} />}
+      <main class={mainClass}>
+        <slot />
+      </main>
+      {showFooter && <Footer />}
     </div>
 
     <!-- Mobile Viewport Height Fix Script -->

@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
-import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.webp';
 import CTABanner from '../components/CTABanner.astro';
 import RepresentationContactSection from '../components/RepresentationContactSection.astro';
@@ -11,49 +9,43 @@ import RegistrationSection from '../components/RegistrationSection.astro';
 ---
 
 <Layout title="Contact Us - FiNAN">
-  <main>
-    <Navbar />
-    <PageHeader
-      title="Contact Us"
-      description="Get in touch with the Filipino Nordic Association of Nurses. We're here to support our community and answer your questions."
-      backgroundImage={heroImage}
-      backgroundAlt="Contact us - FiNAN support"
-    />
+  <PageHeader
+    title="Contact Us"
+    description="Get in touch with the Filipino Nordic Association of Nurses. We're here to support our community and answer your questions."
+    backgroundImage={heroImage}
+    backgroundAlt="Contact us - FiNAN support"
+  />
 
-    <!-- Contact Information Section -->
-    <section class="bg-white pt-16 pb-8">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <header class="max-w-2xl">
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+  <!-- Contact Information Section -->
+  <section class="bg-white pt-16 pb-8">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <header class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+          Get in Touch
+        </h2>
+      </header>
+
+      <div class="mt-4">
+        <p class="mb-8 text-lg text-gray-700">
+          We're here to connect, support, and empower Filipino nurses across the
+          Nordic countries. Whether you're looking for career guidance,
+          community support, or want to get involved with our initiatives, we'd
+          love to hear from you.
+        </p>
+        <p class="text-lg text-gray-700">
+          For general inquiries, please email us at
+          <a
+            class="font-semibold text-blue-600 underline hover:text-blue-800"
+            href="mailto:info@finan.eu.com"
           >
-            Get in Touch
-          </h2>
-        </header>
-
-        <div class="mt-4">
-          <p class="mb-8 text-lg text-gray-700">
-            We're here to connect, support, and empower Filipino nurses across
-            the Nordic countries. Whether you're looking for career guidance,
-            community support, or want to get involved with our initiatives,
-            we'd love to hear from you.
-          </p>
-          <p class="text-lg text-gray-700">
-            For general inquiries, please email us at
-            <a
-              class="font-semibold text-blue-600 underline hover:text-blue-800"
-              href="mailto:info@finan.eu.com"
-            >
-              info@finan.eu.com
-            </a>
-          </p>
-        </div>
+            info@finan.eu.com
+          </a>
+        </p>
       </div>
-    </section>
-    <RepresentationContactSection />
-    <Blog />
-    <RegistrationSection />
-    <CTABanner />
-  </main>
-  <Footer />
+    </div>
+  </section>
+  <RepresentationContactSection />
+  <Blog />
+  <RegistrationSection />
+  <CTABanner />
 </Layout>

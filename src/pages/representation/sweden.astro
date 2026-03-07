@@ -1,10 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/Navbar.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import RegistrationSection from '../../components/RegistrationSection.astro';
 import CTABanner from '../../components/CTABanner.astro';
-import Footer from '../../components/Footer.astro';
 import heroImage from '../../assets/images/representation/sweden/sweden-banner.webp';
 import Committee from '../../components/Committee.astro';
 import BlogRepresentation from '../../components/BlogRepresentation.astro';
@@ -15,165 +13,161 @@ import 'photoswipe/style.css';
 ---
 
 <Layout title="Sweden - FiNAN">
-  <main>
-    <Navbar />
-    <PageHeader
-      title="Sweden"
-      description="Welcome to the Regional Representation Site of the Filipino Nurses Association in the Nordic Region – Sweden (FiNAN Sweden)"
-      contactEmail="sweden@finan.eu.com"
-      backgroundImage={heroImage}
-      backgroundAlt="Stockholm, Sweden"
-    />
+  <PageHeader
+    title="Sweden"
+    description="Welcome to the Regional Representation Site of the Filipino Nurses Association in the Nordic Region – Sweden (FiNAN Sweden)"
+    contactEmail="sweden@finan.eu.com"
+    backgroundImage={heroImage}
+    backgroundAlt="Stockholm, Sweden"
+  />
 
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <!-- FiNAN Sweden -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <!-- FiNAN Sweden -->
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Welcome! Välkommen! Mabuhay!
+      </h2>
+
+      <p class="mb-10 text-lg text-gray-700">
+        The Sweden Chapter was established in 2020 to address the unique needs
+        and challenges of Filipino nurses living and working in Sweden. Since
+        private employers began recruiting Filipino nurses in 2010, the presence
+        of a dedicated non-profit organization has become essential. Our
+        regional representation advocates for fair recruitment, ethical
+        integration, and improved working conditions for Filipino nurses within
+        Sweden’s health and social care systems.
+      </p>
+
+      <!-- Our Commitment -->
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Why We Exist
+      </h2>
+      <p class="mb-6 text-lg text-gray-700">
+        Filipino nurses play a vital role in Swedish healthcare, contributing to
+        patient safety, culturally competent care, and workforce sustainability.
+        However, migration brings challenges such as deskilling, language
+        barriers, and adaptation to new clinical environments. Our working
+        committee works to:
+      </p>
+
+      <ul class="list-disc space-y-2 pl-6 text-lg text-gray-700">
+        <li>Promote professional development and continuing education.</li>
+        <li>Support cultural integration and mental well-being.</li>
+        <li>
+          Engage in policy dialogue to ensure compliance with WHO's Global Code
+          of Practice on International Recruitment of Health Personnel.
+        </li>
+        <li>
+          Share evidence-based practices and research through our official
+          publication, Nordic Puls.
+        </li>
+      </ul>
+
+      <p class="mt-6 text-lg text-gray-700">
+        Our initiatives are grounded in research and global health frameworks,
+        aligning with Sustainable Development Goals and ethical recruitment
+        standards. We collaborate with healthc are institutions, educational
+        bodies, and policymakers to strengthen the role of internationally
+        educated nurses in Sweden.
+      </p>
+    </div>
+  </section>
+  <Committee
+    country="sweden"
+    heading="Committee"
+    description="Our leadership team consists of experienced nurses committed to empowering Filipino professionals in Sweden:"
+  />
+
+  <section id="our-commitment">
+    <div class="mx-auto max-w-4xl px-4 pb-16 sm:px-6">
+      <!-- Our Commitment -->
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Our Commitment
+      </h2>
+      <p class="mb-10 text-lg text-gray-700">
+        We strive to ensure that Filipino nurses in Sweden are not only
+        integrated but thrive professionally and personally. Through advocacy,
+        education, and community engagement, we aim to create a supportive
+        environment where every nurse feels valued and respected.
+        <br />
+        <br />
+        For inquiries, collaborations, or membership, contact us at: <strong
+          >sweden@finan.eu.com</strong
         >
-          Welcome! Välkommen! Mabuhay!
-        </h2>
+      </p>
+    </div>
+  </section>
 
-        <p class="mb-10 text-lg text-gray-700">
-          The Sweden Chapter was established in 2020 to address the unique needs
-          and challenges of Filipino nurses living and working in Sweden. Since
-          private employers began recruiting Filipino nurses in 2010, the
-          presence of a dedicated non-profit organization has become essential.
-          Our regional representation advocates for fair recruitment, ethical
-          integration, and improved working conditions for Filipino nurses
-          within Sweden’s health and social care systems.
-        </p>
+  <!-- Photo Gallery Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h2
+        class="mb-8 text-center text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Community Highlights
+      </h2>
+      <p class="mb-10 text-center text-lg text-gray-700">
+        Explore moments from our Sweden Chapter activities and events
+      </p>
 
-        <!-- Our Commitment -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      <div
+        class="pswp-gallery grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        id="gallery--sweden"
+      >
+        <a
+          href={swe01Image.src}
+          data-pswp-width="2500"
+          data-pswp-height="1326"
+          target="_blank"
+          class="block overflow-hidden rounded-lg shadow-md transition-all duration-200 hover:shadow-xl"
         >
-          Why We Exist
-        </h2>
-        <p class="mb-6 text-lg text-gray-700">
-          Filipino nurses play a vital role in Swedish healthcare, contributing
-          to patient safety, culturally competent care, and workforce
-          sustainability. However, migration brings challenges such as
-          deskilling, language barriers, and adaptation to new clinical
-          environments. Our working committee works to:
-        </p>
-
-        <ul class="list-disc space-y-2 pl-6 text-lg text-gray-700">
-          <li>Promote professional development and continuing education.</li>
-          <li>Support cultural integration and mental well-being.</li>
-          <li>
-            Engage in policy dialogue to ensure compliance with WHO's Global
-            Code of Practice on International Recruitment of Health Personnel.
-          </li>
-          <li>
-            Share evidence-based practices and research through our official
-            publication, Nordic Puls.
-          </li>
-        </ul>
-
-        <p class="mt-6 text-lg text-gray-700">
-          Our initiatives are grounded in research and global health frameworks,
-          aligning with Sustainable Development Goals and ethical recruitment
-          standards. We collaborate with healthc are institutions, educational
-          bodies, and policymakers to strengthen the role of internationally
-          educated nurses in Sweden.
-        </p>
+          <img
+            src={swe01Image.src}
+            alt="Sweden FiNAN Chapter Event Photo 1"
+            class="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
+          />
+        </a>
+        <a
+          href={swe04Image.src}
+          data-pswp-width="2250"
+          data-pswp-height="3065"
+          target="_blank"
+          class="block overflow-hidden rounded-lg shadow-md transition-all duration-200 hover:shadow-xl"
+        >
+          <img
+            src={swe04Image.src}
+            alt="Sweden FiNAN Chapter Event Photo 2"
+            class="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
+          />
+        </a>
+        <a
+          href={swe06Image.src}
+          data-pswp-width="912"
+          data-pswp-height="684"
+          target="_blank"
+          class="block overflow-hidden rounded-lg shadow-md transition-all duration-200 hover:shadow-xl"
+        >
+          <img
+            src={swe06Image.src}
+            alt="Sweden FiNAN Chapter Event Photo 3"
+            class="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
+          />
+        </a>
       </div>
-    </section>
-    <Committee
-      country="sweden"
-      heading="Committee"
-      description="Our leadership team consists of experienced nurses committed to empowering Filipino professionals in Sweden:"
-    />
+    </div>
+  </section>
 
-    <section id="our-commitment">
-      <div class="mx-auto max-w-4xl px-4 pb-16 sm:px-6">
-        <!-- Our Commitment -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Our Commitment
-        </h2>
-        <p class="mb-10 text-lg text-gray-700">
-          We strive to ensure that Filipino nurses in Sweden are not only
-          integrated but thrive professionally and personally. Through advocacy,
-          education, and community engagement, we aim to create a supportive
-          environment where every nurse feels valued and respected.
-          <br />
-          <br />
-          For inquiries, collaborations, or membership, contact us at: <strong
-            >sweden@finan.eu.com</strong
-          >
-        </p>
-      </div>
-    </section>
+  <BlogRepresentation country="sweden" />
 
-    <!-- Photo Gallery Section -->
-    <section class="bg-gray-50 py-16">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2
-          class="mb-8 text-center text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Community Highlights
-        </h2>
-        <p class="mb-10 text-center text-lg text-gray-700">
-          Explore moments from our Sweden Chapter activities and events
-        </p>
+  <RegistrationSection />
 
-        <div
-          class="pswp-gallery grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
-          id="gallery--sweden"
-        >
-          <a
-            href={swe01Image.src}
-            data-pswp-width="2500"
-            data-pswp-height="1326"
-            target="_blank"
-            class="block overflow-hidden rounded-lg shadow-md transition-all duration-200 hover:shadow-xl"
-          >
-            <img
-              src={swe01Image.src}
-              alt="Sweden FiNAN Chapter Event Photo 1"
-              class="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
-            />
-          </a>
-          <a
-            href={swe04Image.src}
-            data-pswp-width="2250"
-            data-pswp-height="3065"
-            target="_blank"
-            class="block overflow-hidden rounded-lg shadow-md transition-all duration-200 hover:shadow-xl"
-          >
-            <img
-              src={swe04Image.src}
-              alt="Sweden FiNAN Chapter Event Photo 2"
-              class="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
-            />
-          </a>
-          <a
-            href={swe06Image.src}
-            data-pswp-width="912"
-            data-pswp-height="684"
-            target="_blank"
-            class="block overflow-hidden rounded-lg shadow-md transition-all duration-200 hover:shadow-xl"
-          >
-            <img
-              src={swe06Image.src}
-              alt="Sweden FiNAN Chapter Event Photo 3"
-              class="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <BlogRepresentation country="sweden" />
-
-    <RegistrationSection />
-
-    <CTABanner />
-  </main>
-  <Footer />
+  <CTABanner />
 </Layout>
 
 <script>

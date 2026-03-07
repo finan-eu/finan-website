@@ -9,28 +9,24 @@ import NordicRepresentation from '../components/NordicRepresentation.astro';
 import Blog from '../components/Blog.astro';
 import RegistrationSection from '../components/RegistrationSection.astro';
 import CTABanner from '../components/CTABanner.astro';
-import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout enableMotion={true}>
-  <main>
-    <HeroHeader />
-    <EventHeaderSection
-      secondaryButtonText="View event details"
-      secondaryButtonLink="/triennial-gathering-2026/#triennial-gathering-2026"
-      headingLevel="h2"
-      subtitleSize="md:text-xl"
-      countdownSize="lg:text-4xl"
-    />
-    <Pillars />
-    <Partners />
-    <TriennialReport />
-    <OurAdvocacy />
-    <NordicRepresentation />
-    <Blog />
-    <RegistrationSection />
-    <CTABanner />
-  </main>
-  <Footer />
+  <HeroHeader />
+  <EventHeaderSection
+    secondaryButtonText="View event details"
+    secondaryButtonLink="/triennial-gathering-2026/#triennial-gathering-2026"
+    headingLevel="h2"
+    subtitleSize="md:text-xl"
+    countdownSize="lg:text-4xl"
+  />
+  <Pillars />
+  <Partners />
+  <TriennialReport />
+  <OurAdvocacy />
+  <NordicRepresentation />
+  <Blog />
+  <RegistrationSection />
+  <CTABanner />
 </Layout>

@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
-import Footer from '../components/Footer.astro';
 import Blog from '../components/Blog.astro';
 import heroImage from '../assets/images/hero-image.webp';
 import arcadaLogo from '../assets/images/partners/arcada-logo.svg';
@@ -18,43 +16,39 @@ import RegistrationSection from '../components/RegistrationSection.astro';
 ---
 
 <Layout title="Membership - FiNAN">
-  <main>
-    <Navbar />
-    <PageHeader
-      title="Membership"
-      description="The Filipino Nurses Association in the Nordic Region (FiNAN) is a registered non-profit organization in the Nordic Region representing the voice of Filipino Nurses for important issues in the form of integration plan, migration issues, equality, healthcare and workplace protection to the policy and decision-makers."
-      backgroundImage={heroImage}
-      backgroundAlt="Filipino healthcare professionals in the Nordic countries"
-    />
+  <PageHeader
+    title="Membership"
+    description="The Filipino Nurses Association in the Nordic Region (FiNAN) is a registered non-profit organization in the Nordic Region representing the voice of Filipino Nurses for important issues in the form of integration plan, migration issues, equality, healthcare and workplace protection to the policy and decision-makers."
+    backgroundImage={heroImage}
+    backgroundAlt="Filipino healthcare professionals in the Nordic countries"
+  />
 
-    <!-- Membership Registration Section -->
-    <section class="bg-gray-50 py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <div class="space-y-8">
-          <h2
-            class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          >
-            Membership Registration
-          </h2>
-          <ul
-            class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700"
-          >
-            <li>
-              Membership is open to individuals in the Nordic countries who are
-              licensed nurses or currently pursuing their nursing license.
-            </li>
-            <li>Annual membership fee is 20 euros.</li>
-            <li>
-              For membership inquiries, email us at <a
-                href="mailto:info@finan.eu.com"
-                class="text-blue-600 underline hover:text-blue-800"
-              >
-                info@finan.eu.com
-              </a>
-            </li>
-          </ul>
-          <!-- Register as member CTA -->
-          <!-- <div>
+  <!-- Membership Registration Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="space-y-8">
+        <h2
+          class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+        >
+          Membership Registration
+        </h2>
+        <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
+          <li>
+            Membership is open to individuals in the Nordic countries who are
+            licensed nurses or currently pursuing their nursing license.
+          </li>
+          <li>Annual membership fee is 20 euros.</li>
+          <li>
+            For membership inquiries, email us at <a
+              href="mailto:info@finan.eu.com"
+              class="text-blue-600 underline hover:text-blue-800"
+            >
+              info@finan.eu.com
+            </a>
+          </li>
+        </ul>
+        <!-- Register as member CTA -->
+        <!-- <div>
             <a
               href="https://membership.finan.eu.com"
               target="_blank"
@@ -64,169 +58,165 @@ import RegistrationSection from '../components/RegistrationSection.astro';
               Register as a Member
             </a>
           </div> -->
-          <div>
-            <iframe
-              data-tally-src="https://tally.so/embed/mOZ11Y?alignLeft=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy"
-              width="100%"
-              height="1908"
-              title="FiNAN Membership Registration"></iframe>
-          </div>
+        <div>
+          <iframe
+            data-tally-src="https://tally.so/embed/mOZ11Y?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="1908"
+            title="FiNAN Membership Registration"></iframe>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Membership content -->
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <div class="space-y-12">
-          <div>
-            <h2
-              class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-            >
-              Opportunities
-            </h2>
-            <p class="mb-6 text-lg text-gray-700">
-              FiNAN is actively invited in events, seminars, conferences both
-              locally and internationally. You can be part of these
-              opportunities.
-            </p>
-            <ul
-              class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700"
-            >
-              <li>Discounted entries in the Annual General Assembly</li>
-              <li>
-                Updates in the welfare of Filipino Nurses in the Nordic
-                Countries
-              </li>
-              <li>Nordic Puls Digital Magazine</li>
-              <li>
-                Advice and Councelling on Professional Development (Master's and
-                Doctorate Degree)
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section class="bg-white pb-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <!-- Header -->
-        <div class="mb-16">
-          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-            Our Partners in Healthcare, Education & Policy
+  <!-- Membership content -->
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="space-y-12">
+        <div>
+          <h2
+            class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+          >
+            Opportunities
           </h2>
-        </div>
-
-        <!-- Partner Logos Grid -->
-        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={finnishGovtEmblem.src}
-              alt="Finnish Government"
-              class="h-20 w-auto object-contain md:h-24"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- OAMK -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={oamkLogo.src}
-              alt="Oulu University of Applied Sciences"
-              class="h-14 w-auto object-contain md:h-18"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- Arcada -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={arcadaLogo.src}
-              alt="Arcada University of Applied Sciences"
-              class="h-20 w-auto object-contain md:h-24"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- EU Research -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={euResearchLogo.src}
-              alt="European Union Research and Innovation"
-              class="h-24 w-auto object-contain md:h-30"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- Moniheli -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={moniheliLogo.src}
-              alt="Moniheli"
-              class="h-7 w-auto object-contain md:h-9"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- Filipino Nursing Diaspora Network -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={fdnLogo.src}
-              alt="Filipino Nursing Diaspora Network"
-              class="h-14 w-auto object-contain md:h-18"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- SIENNA -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={siennaLogo.src}
-              alt="Society of Internationally Educated Nurses in North America"
-              class="h-20 w-auto object-contain md:h-24"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- IANPC -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={ianpcLogo.src}
-              alt="International Assembly for National Nursing Associations"
-              class="h-20 w-auto object-contain md:h-24"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <!-- WSDN -->
-          <div class="flex items-center justify-center px-4">
-            <img
-              src={wsdnLogo.src}
-              alt="World Sustainable Development Network"
-              class="h-12 w-auto object-contain md:h-16"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+          <p class="mb-6 text-lg text-gray-700">
+            FiNAN is actively invited in events, seminars, conferences both
+            locally and internationally. You can be part of these opportunities.
+          </p>
+          <ul
+            class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700"
+          >
+            <li>Discounted entries in the Annual General Assembly</li>
+            <li>
+              Updates in the welfare of Filipino Nurses in the Nordic Countries
+            </li>
+            <li>Nordic Puls Digital Magazine</li>
+            <li>
+              Advice and Councelling on Professional Development (Master's and
+              Doctorate Degree)
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Blog Section -->
-    <Blog />
-    <RegistrationSection />
-    <script is:inline src="/js/tally-embed.js"></script>
-  </main>
-  <Footer />
+  <!-- Partners Section -->
+  <section class="bg-white pb-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <!-- Header -->
+      <div class="mb-16">
+        <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+          Our Partners in Healthcare, Education & Policy
+        </h2>
+      </div>
+
+      <!-- Partner Logos Grid -->
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={finnishGovtEmblem.src}
+            alt="Finnish Government"
+            class="h-20 w-auto object-contain md:h-24"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- OAMK -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={oamkLogo.src}
+            alt="Oulu University of Applied Sciences"
+            class="h-14 w-auto object-contain md:h-18"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- Arcada -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={arcadaLogo.src}
+            alt="Arcada University of Applied Sciences"
+            class="h-20 w-auto object-contain md:h-24"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- EU Research -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={euResearchLogo.src}
+            alt="European Union Research and Innovation"
+            class="h-24 w-auto object-contain md:h-30"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- Moniheli -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={moniheliLogo.src}
+            alt="Moniheli"
+            class="h-7 w-auto object-contain md:h-9"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- Filipino Nursing Diaspora Network -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={fdnLogo.src}
+            alt="Filipino Nursing Diaspora Network"
+            class="h-14 w-auto object-contain md:h-18"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- SIENNA -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={siennaLogo.src}
+            alt="Society of Internationally Educated Nurses in North America"
+            class="h-20 w-auto object-contain md:h-24"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- IANPC -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={ianpcLogo.src}
+            alt="International Assembly for National Nursing Associations"
+            class="h-20 w-auto object-contain md:h-24"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <!-- WSDN -->
+        <div class="flex items-center justify-center px-4">
+          <img
+            src={wsdnLogo.src}
+            alt="World Sustainable Development Network"
+            class="h-12 w-auto object-contain md:h-16"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <Blog />
+  <RegistrationSection />
+  <script is:inline src="/js/tally-embed.js"></script>
 </Layout>

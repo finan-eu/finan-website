@@ -1,112 +1,105 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/Navbar.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import RegistrationSection from '../../components/RegistrationSection.astro';
 import CTABanner from '../../components/CTABanner.astro';
-import Footer from '../../components/Footer.astro';
 import heroImage from '../../assets/images/representation/norway/norway-banner.webp';
 import Committee from '../../components/Committee.astro';
 import BlogRepresentation from '../../components/BlogRepresentation.astro';
 ---
 
 <Layout title="Norway - FiNAN">
-  <main>
-    <Navbar />
-    <PageHeader
-      title="Norway"
-      description="Discover healthcare opportunities in Norway, renowned for its comprehensive welfare system, natural beauty, and commitment to healthcare excellence."
-      contactEmail="norway@finan.eu.com"
-      backgroundImage={heroImage}
-      backgroundAlt="Oslo, Norway"
-    />
+  <PageHeader
+    title="Norway"
+    description="Discover healthcare opportunities in Norway, renowned for its comprehensive welfare system, natural beauty, and commitment to healthcare excellence."
+    contactEmail="norway@finan.eu.com"
+    backgroundImage={heroImage}
+    backgroundAlt="Oslo, Norway"
+  />
 
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <!-- Welcome to FiNAN Norway -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Welcome to FiNAN Norway!
-        </h2>
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <!-- Welcome to FiNAN Norway -->
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Welcome to FiNAN Norway!
+      </h2>
 
-        <p class="mb-10 text-lg text-gray-700">
-          We are a vibrant community of Filipino nurses contributing to Norway's
-          healthcare system. Our mission is to
-          <strong>connect, support, and empower Filipino nurses</strong> by promoting
-          collaboration, professional growth, and cultural integration.
-        </p>
+      <p class="mb-10 text-lg text-gray-700">
+        We are a vibrant community of Filipino nurses contributing to Norway's
+        healthcare system. Our mission is to
+        <strong>connect, support, and empower Filipino nurses</strong> by promoting
+        collaboration, professional growth, and cultural integration.
+      </p>
 
-        <!-- What We Do -->
-        <h2
-          class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          What We Do
-        </h2>
+      <!-- What We Do -->
+      <h2
+        class="pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        What We Do
+      </h2>
 
-        <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
-          <li>
-            <strong>Community Support</strong>: We build a strong network for
-            Filipino nurses in Norway through social gatherings, cultural
-            events, and professional forums.
-          </li>
-          <li>
-            <strong>Professional Development</strong>: We organize workshops,
-            webinars, and mentorship programs to help members succeed in
-            Norway's healthcare environment.
-          </li>
-          <li>
-            <strong>Advocacy</strong>: We represent Filipino nurses' voices in
-            discussions about fair employment, cultural inclusion, and workforce
-            sustainability.
-          </li>
-          <li>
-            <strong>Information Hub</strong>: We provide guidance on licensing,
-            language learning, and adapting to Norwegian work culture.
-          </li>
-        </ul>
+      <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
+        <li>
+          <strong>Community Support</strong>: We build a strong network for
+          Filipino nurses in Norway through social gatherings, cultural events,
+          and professional forums.
+        </li>
+        <li>
+          <strong>Professional Development</strong>: We organize workshops,
+          webinars, and mentorship programs to help members succeed in Norway's
+          healthcare environment.
+        </li>
+        <li>
+          <strong>Advocacy</strong>: We represent Filipino nurses' voices in
+          discussions about fair employment, cultural inclusion, and workforce
+          sustainability.
+        </li>
+        <li>
+          <strong>Information Hub</strong>: We provide guidance on licensing,
+          language learning, and adapting to Norwegian work culture.
+        </li>
+      </ul>
 
-        <!-- Challenges Faced by Filipino Nurses in Norway -->
-        <h2
-          class="mt-10 pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-        >
-          Challenges Faced by Filipino Nurses in Norway
-        </h2>
+      <!-- Challenges Faced by Filipino Nurses in Norway -->
+      <h2
+        class="mt-10 pb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+      >
+        Challenges Faced by Filipino Nurses in Norway
+      </h2>
 
-        <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
-          <li>
-            <strong>Language Proficiency</strong>: Norwegian language
-            requirements can be demanding and affect career progression.
-          </li>
-          <li>
-            <strong>Credential Recognition</strong>: Navigating the
-            authorization process for nursing practice in Norway can be complex
-            and time-consuming.
-          </li>
-          <li>
-            <strong>Cultural Adaptation</strong>: Adjusting to Norwegian
-            workplace norms and social expectations requires support and
-            understanding.
-          </li>
-          <li>
-            <strong>Geographic Dispersion</strong>: Filipino nurses often work
-            in different regions, making networking and community building
-            challenging.
-          </li>
-          <li>
-            <strong>Workload Stress</strong>: High patient care demands and
-            adapting to new systems can lead to stress and burnout.
-          </li>
-        </ul>
-      </div>
-    </section>
-    <Committee country="norway" heading="Committee" />
+      <ul class="list-outside list-disc space-y-2 pl-6 text-lg text-gray-700">
+        <li>
+          <strong>Language Proficiency</strong>: Norwegian language requirements
+          can be demanding and affect career progression.
+        </li>
+        <li>
+          <strong>Credential Recognition</strong>: Navigating the authorization
+          process for nursing practice in Norway can be complex and
+          time-consuming.
+        </li>
+        <li>
+          <strong>Cultural Adaptation</strong>: Adjusting to Norwegian workplace
+          norms and social expectations requires support and understanding.
+        </li>
+        <li>
+          <strong>Geographic Dispersion</strong>: Filipino nurses often work in
+          different regions, making networking and community building
+          challenging.
+        </li>
+        <li>
+          <strong>Workload Stress</strong>: High patient care demands and
+          adapting to new systems can lead to stress and burnout.
+        </li>
+      </ul>
+    </div>
+  </section>
+  <Committee country="norway" heading="Committee" />
 
-    <BlogRepresentation country="norway" />
+  <BlogRepresentation country="norway" />
 
-    <RegistrationSection />
+  <RegistrationSection />
 
-    <CTABanner />
-  </main>
-  <Footer />
+  <CTABanner />
 </Layout>

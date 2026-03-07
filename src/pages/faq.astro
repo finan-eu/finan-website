@@ -1,9 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
 import CTABanner from '../components/CTABanner.astro';
-import Footer from '../components/Footer.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import heroImage from '../assets/images/hero-image.webp';
 import {
@@ -24,55 +22,51 @@ const faqSchema = generateFAQSchema();
       set:html={JSON.stringify(faqSchema)}
     />
   </Fragment>
-  <main>
-    <!-- Skip to content link for keyboard navigation -->
-    <a
-      href="#faq-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-    >
-      Skip to FAQ content
-    </a>
-    <Navbar />
-    <PageHeader
-      title="Frequently Asked Questions"
-      description={faqIntro}
-      backgroundImage={heroImage}
-      backgroundAlt="Beautiful landscape representing the Philippines"
-    />
+  <!-- Skip to content link for keyboard navigation -->
+  <a
+    href="#faq-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+  >
+    Skip to FAQ content
+  </a>
+  <PageHeader
+    title="Frequently Asked Questions"
+    description={faqIntro}
+    backgroundImage={heroImage}
+    backgroundAlt="Beautiful landscape representing the Philippines"
+  />
 
-    <!-- FAQ content sections -->
-    <section
-      id="faq-content"
-      class="bg-white py-16"
-      aria-labelledby="faq-heading"
-    >
-      <FAQAccordion categories={faqCategories} />
-    </section>
+  <!-- FAQ content sections -->
+  <section
+    id="faq-content"
+    class="bg-white py-16"
+    aria-labelledby="faq-heading"
+  >
+    <FAQAccordion categories={faqCategories} />
+  </section>
 
-    <!-- Still have questions? Contact section -->
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <div
-          class="rounded-2xl border border-gray-100 bg-gray-50 px-6 py-12 text-center md:px-12"
+  <!-- Still have questions? Contact section -->
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div
+        class="rounded-2xl border border-gray-100 bg-gray-50 px-6 py-12 text-center md:px-12"
+      >
+        <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+          Still Have Questions?
+        </h2>
+        <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-700 md:text-xl">
+          Can't find the answer you're looking for? We're here to help!<br />
+          Reach out to us and our team will get back to you as soon as possible.
+        </p>
+        <a
+          href="/contact"
+          class="btn-scale inline-flex items-center gap-2 rounded-full bg-blue-900 px-8 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:bg-blue-800 hover:shadow-xl focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 focus:outline-none"
         >
-          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-            Still Have Questions?
-          </h2>
-          <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-700 md:text-xl">
-            Can't find the answer you're looking for? We're here to help!<br />
-            Reach out to us and our team will get back to you as soon as possible.
-          </p>
-          <a
-            href="/contact"
-            class="btn-scale inline-flex items-center gap-2 rounded-full bg-blue-900 px-8 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:bg-blue-800 hover:shadow-xl focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 focus:outline-none"
-          >
-            Contact Us
-          </a>
-        </div>
+          Contact Us
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <CTABanner />
-  </main>
-  <Footer />
+  <CTABanner />
 </Layout>

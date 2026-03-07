@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import PageHeader from '../components/PageHeader.astro';
-import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-image.webp';
 import CTABanner from '../components/CTABanner.astro';
 import Committee from '../components/Committee.astro';
@@ -11,108 +9,97 @@ import RegistrationSection from '../components/RegistrationSection.astro';
 ---
 
 <Layout title="About FiNAN">
-  <main>
-    <Navbar />
-    <PageHeader
-      title="About FiNAN"
-      description="The Filipino Nurses Association in the Nordic Region"
-      backgroundImage={heroImage}
-      backgroundAlt="Beautiful landscape representing the Philippines"
-    />
+  <PageHeader
+    title="About FiNAN"
+    description="The Filipino Nurses Association in the Nordic Region"
+    backgroundImage={heroImage}
+    backgroundAlt="Beautiful landscape representing the Philippines"
+  />
 
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <header class="max-w-2xl">
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          >
-            About FiNAN
-          </h2>
-        </header>
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <header class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+          About FiNAN
+        </h2>
+      </header>
 
-        <div class="mt-4">
-          <p class="mb-6 text-lg text-gray-700">
-            The Filipino Nurses Association-Nordic (FiNAN) is the first
-            non-profit organization for Filipino Nurses in the Nordic Region.
-            The first members of the association were gathered through social
-            media platform with diverse educational and work background in the
-            field of nursing. The urgency to create an association to give a
-            voice for the Filipino Nurses living in the region was high in
-            support to the World Health Organization's (WHO) Code of Ethical
-            Recruitment of Health Personnel. Non-ethical issues regarding the
-            recruitment process emerged as a critical dilemma which needed an
-            urgent action from different stakeholders of the Nordic society.
-          </p>
+      <div class="mt-4">
+        <p class="mb-6 text-lg text-gray-700">
+          The Filipino Nurses Association-Nordic (FiNAN) is the first non-profit
+          organization for Filipino Nurses in the Nordic Region. The first
+          members of the association were gathered through social media platform
+          with diverse educational and work background in the field of nursing.
+          The urgency to create an association to give a voice for the Filipino
+          Nurses living in the region was high in support to the World Health
+          Organization's (WHO) Code of Ethical Recruitment of Health Personnel.
+          Non-ethical issues regarding the recruitment process emerged as a
+          critical dilemma which needed an urgent action from different
+          stakeholders of the Nordic society.
+        </p>
 
-          <p class="mb-6 text-lg text-gray-700">
-            The association's vision is to be the leading Filipino Nurses
-            Association in the Nordic Region for highly skilled and competitive
-            Filipino Nurses and the mission is to empower and strengthen the
-            global image of Filipino Nurses as a source of nursing manpower and
-            care in the Nordic Region.
-          </p>
+        <p class="mb-6 text-lg text-gray-700">
+          The association's vision is to be the leading Filipino Nurses
+          Association in the Nordic Region for highly skilled and competitive
+          Filipino Nurses and the mission is to empower and strengthen the
+          global image of Filipino Nurses as a source of nursing manpower and
+          care in the Nordic Region.
+        </p>
 
-          <p class="mb-6 text-lg text-gray-700">
-            As a starting non-profit organization, our resources to achieve the
-            goals in relation to the United Nation's Sustainable Development
-            Goals and Universal Health Coverage is limited.
-          </p>
-        </div>
-
-        <div class="mt-12">
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          >
-            Strategic Goals
-          </h2>
-
-          <ol
-            class="mt-8 ml-6 list-outside list-decimal space-y-2 text-lg text-gray-700"
-          >
-            <li>
-              Monitor Filipino Nursing Workforce Migration to the Nordic
-              Countries
-            </li>
-            <li>
-              Participate in the achievement of Sustainable Development Goals
-              (SDGs)
-            </li>
-            <li>Negotiate to decision and policy-makers</li>
-            <li>
-              Collaborate in the integration of Filipino Nurses in the Nordic
-              work life
-            </li>
-            <li>Involve in peer support and mentoring</li>
-            <li>Produce evidence-based data</li>
-          </ol>
-        </div>
+        <p class="mb-6 text-lg text-gray-700">
+          As a starting non-profit organization, our resources to achieve the
+          goals in relation to the United Nation's Sustainable Development Goals
+          and Universal Health Coverage is limited.
+        </p>
       </div>
-    </section>
 
-    <section class="bg-white pb-16">
-      <div class="mx-auto max-w-4xl px-6">
-        <header class="max-w-4xl">
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          >
-            Regional Representation Committees
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-gray-600">
-            Official regional representatives of the Filipino Nurses Association
-            in the Nordic Region
-          </p>
-        </header>
+      <div class="mt-12">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+          Strategic Goals
+        </h2>
+
+        <ol
+          class="mt-8 ml-6 list-outside list-decimal space-y-2 text-lg text-gray-700"
+        >
+          <li>
+            Monitor Filipino Nursing Workforce Migration to the Nordic Countries
+          </li>
+          <li>
+            Participate in the achievement of Sustainable Development Goals
+            (SDGs)
+          </li>
+          <li>Negotiate to decision and policy-makers</li>
+          <li>
+            Collaborate in the integration of Filipino Nurses in the Nordic work
+            life
+          </li>
+          <li>Involve in peer support and mentoring</li>
+          <li>Produce evidence-based data</li>
+        </ol>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <Committee country="kingdomDenmark" heading="Kingdom of Denmark" />
-    <Committee country="finland" heading="Finland & Åland" />
-    <Committee country="iceland" heading="Iceland" />
-    <Committee country="norway" heading="Norway" />
-    <Committee country="sweden" heading="Sweden" />
-    <RegistrationSection />
-    <Blog />
-    <CTABanner />
-  </main>
-  <Footer />
+  <section class="bg-white pb-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <header class="max-w-4xl">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+          Regional Representation Committees
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-gray-600">
+          Official regional representatives of the Filipino Nurses Association
+          in the Nordic Region
+        </p>
+      </header>
+    </div>
+  </section>
+
+  <Committee country="kingdomDenmark" heading="Kingdom of Denmark" />
+  <Committee country="finland" heading="Finland & Åland" />
+  <Committee country="iceland" heading="Iceland" />
+  <Committee country="norway" heading="Norway" />
+  <Committee country="sweden" heading="Sweden" />
+  <RegistrationSection />
+  <Blog />
+  <CTABanner />
 </Layout>
