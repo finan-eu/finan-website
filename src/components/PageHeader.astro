@@ -23,6 +23,7 @@ const {
 
 <section
   class={`relative flex items-center overflow-hidden py-20 md:py-40 ${className}`}
+  transition:animate="none"
 >
   {
     backgroundImage && (
@@ -48,8 +49,9 @@ const {
       class="motion-stagger-children mx-auto max-w-4xl text-center"
       data-motion-stagger="0.16"
       data-motion-margin="0px"
+      transition:animate="none"
     >
-      <h1 class="mb-6 text-5xl leading-tight font-bold lg:text-6xl">
+      <h1 class="mb-6 text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
         {title}
       </h1>
 
