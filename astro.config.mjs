@@ -35,6 +35,9 @@ function securityHeaders() {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://finan.eu.com',
+  redirects: {
+    '/triennial-gathering-2026': '/',
+  },
   integrations: [],
   build: {
     inlineStylesheets: 'always',
