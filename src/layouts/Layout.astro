@@ -42,8 +42,6 @@ interface Props {
   showNavbar?: boolean;
   /** Render the shared site footer */
   showFooter?: boolean;
-  /** Show the triennial gathering banner above the navbar */
-  showBanner?: boolean;
   /** Additional classes for the main landmark */
   mainClass?: string;
 }
@@ -61,7 +59,6 @@ const {
   enableMotion = false,
   showNavbar = true,
   showFooter = true,
-  showBanner = true,
   mainClass,
 } = Astro.props;
 
@@ -214,7 +211,7 @@ const robotsValue =
   </head>
   <body>
     <div id="page-content">
-      {showNavbar && <Navbar showBanner={showBanner} />}
+      {showNavbar && <Navbar />}
       <main class={mainClass}>
         <slot />
       </main>
