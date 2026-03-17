@@ -88,13 +88,6 @@ export const sitemapConfig = {
       priority: 0.6,
     },
 
-    // Event Pages - Medium priority
-    {
-      loc: '/triennial-gathering-2026/',
-      changefreq: 'weekly',
-      priority: 0.5,
-    },
-
     // Legal Pages - Lower priority
     {
       loc: '/terms-agreement/',

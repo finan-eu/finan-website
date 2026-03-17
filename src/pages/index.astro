@@ -1,6 +1,5 @@
 ---
 import HeroHeader from '../components/HeroHeader.astro';
-import EventHeaderSection from '../components/EventHeaderSection.astro';
 import Pillars from '../components/Pillars.astro';
 import Partners from '../components/Partners.astro';
 import TriennialReport from '../components/feature-section/TriennialReport.astro';
@@ -14,13 +13,6 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout enableMotion={true}>
   <HeroHeader />
-  <EventHeaderSection
-    secondaryButtonText="View event details"
-    secondaryButtonLink="/triennial-gathering-2026/#triennial-gathering-2026"
-    headingLevel="h2"
-    subtitleSize="md:text-xl"
-    countdownSize="lg:text-4xl"
-  />
   <Pillars />
   <Partners />
   <TriennialReport />
