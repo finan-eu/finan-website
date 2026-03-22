@@ -1,14 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import bannerImage from '../assets/images/events/banner-triennial-gathering-2026.jpg';
-import RegistrationModal from './RegistrationModal.astro';
 
 interface Props {
   secondaryButtonText: string;
   secondaryButtonLink: string;
   headingLevel?: 'h1' | 'h2';
   subtitleSize?: 'md:text-xl' | 'md:text-2xl';
-  countdownSize?: 'lg:text-4xl' | 'lg:text-5xl';
   id?: string;
 }
 
@@ -17,7 +15,6 @@ const {
   secondaryButtonLink,
   headingLevel = 'h1',
   subtitleSize = 'md:text-2xl',
-  countdownSize = 'lg:text-5xl',
   id = 'triennial-gathering-2026',
 } = Astro.props;
 ---
@@ -89,46 +86,8 @@ const {
       </div>
     </div>
 
-    <!-- Countdown Timer -->
-    <div
-      class="mb-10 inline-block rounded-lg border-2 border-white/30 bg-gray-600/50 p-6 backdrop-blur-sm"
-    >
-      <div class="flex gap-8" id="countdown">
-        <div class="flex flex-col items-center">
-          <span class={`text-4xl font-bold ${countdownSize}`} id="days">00</span
-          >
-          <span class="mt-2 text-sm text-gray-300">Day</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <span class={`text-4xl font-bold ${countdownSize}`} id="hours"
-            >00</span
-          >
-          <span class="mt-2 text-sm text-gray-300">Hour</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <span class={`text-4xl font-bold ${countdownSize}`} id="minutes"
-            >00</span
-          >
-          <span class="mt-2 text-sm text-gray-300">Min</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <span class={`text-4xl font-bold ${countdownSize}`} id="seconds"
-            >00</span
-          >
-          <span class="mt-2 text-sm text-gray-300">Sec</span>
-        </div>
-      </div>
-    </div>
-
     <!-- CTA Buttons -->
     <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
-      <button
-        type="button"
-        data-modal-trigger="registration-modal"
-        class="btn-scale w-full cursor-pointer rounded-full bg-white px-8 py-3 font-semibold text-gray-800 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 md:w-auto"
-      >
-        Register Now
-      </button>
       <a
         href={secondaryButtonLink}
         class="btn-scale w-full rounded-full border-2 border-white px-[30px] py-[10px] font-semibold text-white transition-all duration-200 hover:bg-white/10 md:w-auto"
@@ -138,166 +97,3 @@ const {
     </div>
   </div>
 </section>
-
-<RegistrationModal />
-
-<script>
-  // TypeScript interface for modal elements with exposed API
-  interface ModalElement extends HTMLElement {
-    _openModal: (trigger: HTMLElement) => void;
-  }
-
-  let countdownIntervalId: number | null = null;
-  let modalTriggerController: AbortController | null = null;
-
-  // Updates countdown timer to the 2026-03-29 event date. After the event date
-  // passes, displays 00:00:00:00.
-  // TODO: Update or remove this countdown after the 2026 event concludes.
-  function updateCountdown() {
-    // Event date: March 29, 2026 (hardcoded for 2026 Triennial Gathering)
-    const eventDate = new Date('2026-03-29T00:00:00').getTime();
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    // Get countdown elements with validation
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-
-    // Validate all elements exist
-    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
-      console.error(
-        '[EventHeader] Countdown timer elements not found. Expected IDs: days, hours, minutes, seconds'
-      );
-      console.warn(
-        '[EventHeader] Countdown timer cannot update. Check DOM structure.'
-      );
-      return;
-    }
-
-    if (distance < 0) {
-      daysEl.textContent = '00';
-      hoursEl.textContent = '00';
-      minutesEl.textContent = '00';
-      secondsEl.textContent = '00';
-      return;
-    }
-
-    try {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      daysEl.textContent = String(days).padStart(2, '0');
-      hoursEl.textContent = String(hours).padStart(2, '0');
-      minutesEl.textContent = String(minutes).padStart(2, '0');
-      secondsEl.textContent = String(seconds).padStart(2, '0');
-    } catch (error) {
-      console.error('[EventHeader] Failed to update countdown:', error);
-    }
-  }
-
-  const startCountdown = () => {
-    if (countdownIntervalId) {
-      clearInterval(countdownIntervalId);
-    }
-
-    updateCountdown();
-    countdownIntervalId = window.setInterval(updateCountdown, 1000);
-  };
-
-  const initCountdown = () => {
-    try {
-      startCountdown();
-    } catch (error) {
-      console.error(
-        '[EventHeader] Failed to initialize countdown timer:',
-        error
-      );
-    }
-  };
-
-  // Wires up registration modal trigger: finds button with data-modal-trigger="registration-modal"
-  // and calls the _openModal() method exposed by Modal.astro on the modal element.
-  // WARNING: Tightly coupled to Modal.astro's internal _openModal API.
-  function initModalTrigger() {
-    if (modalTriggerController) {
-      modalTriggerController.abort();
-    }
-
-    modalTriggerController = new AbortController();
-    const { signal } = modalTriggerController;
-
-    const trigger = document.querySelector(
-      '[data-modal-trigger="registration-modal"]'
-    );
-    const modal = document.querySelector('[data-modal="registration-modal"]');
-
-    if (!trigger) {
-      console.error(
-        '[EventHeader] Modal trigger button not found: [data-modal-trigger="registration-modal"]'
-      );
-      modalTriggerController.abort();
-      modalTriggerController = null;
-      return;
-    }
-
-    if (!modal) {
-      console.error(
-        '[EventHeader] Modal element not found: [data-modal="registration-modal"]'
-      );
-      console.warn(
-        '[EventHeader] Make sure RegistrationModal component is included in the page'
-      );
-      modalTriggerController.abort();
-      modalTriggerController = null;
-      return;
-    }
-
-    trigger.addEventListener(
-      'click',
-      () => {
-        const modalElement = modal as ModalElement;
-
-        if (!modalElement._openModal) {
-          console.error(
-            '[EventHeader] Modal._openModal method not available. Modal may not be initialized yet.'
-          );
-          console.warn(
-            '[EventHeader] This is a timing issue - modal initialization must complete before trigger initialization'
-          );
-          return;
-        }
-
-        try {
-          modalElement._openModal(trigger as HTMLElement);
-        } catch (error) {
-          console.error('[EventHeader] Failed to open modal:', error);
-        }
-      },
-      { signal }
-    );
-  }
-
-  // astro:page-load fires on both initial load and after client-side navigation (View Transitions)
-  document.addEventListener('astro:page-load', () => {
-    initCountdown();
-    initModalTrigger();
-  });
-
-  document.addEventListener('astro:before-swap', () => {
-    if (countdownIntervalId) {
-      clearInterval(countdownIntervalId);
-      countdownIntervalId = null;
-    }
-
-    if (modalTriggerController) {
-      modalTriggerController.abort();
-      modalTriggerController = null;
-    }
-  });
-</script>
