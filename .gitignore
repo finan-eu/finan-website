@@ -76,3 +76,5 @@ docs/
 # --- AI / Editor tools ---
 .opencode/
 .firecrawl/
+.claude/
+CLAUDE.md
