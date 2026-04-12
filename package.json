@@ -28,17 +28,17 @@
     ]
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.1.13",
     "@ts-ghost/content-api": "^4.2.0",
-    "astro": "^5.17.1",
+    "astro": "^6.1.5",
     "astro-seo": "^0.8.4",
     "motion": "^12.30.0",
     "photoswipe": "^5.4.4",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.8",
     "@typescript-eslint/parser": "^8.45.0",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
