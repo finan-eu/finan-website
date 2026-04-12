@@ -19,7 +19,7 @@
 - /representation/sweden/
 
 ## Events
-- /triennial-gathering-2026/
+<!-- Event page template preserved in src/templates/ - not currently published -->
 
 ## Discovery Files
 - /sitemap.xml

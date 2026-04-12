@@ -178,11 +178,15 @@ export function generateWebSiteSchema(): WebSiteSchema {
 /**
  * Generate Event schema for Triennial Gathering 2026
  *
+ * NOTE: This event page is currently unpublished (template preserved in src/templates/).
+ * When republishing, uncomment the schema generation in generateStructuredData() below.
+ *
  * This schema helps Google display the event in search results
  * with rich snippets including date, location, and registration info.
  *
  * @returns Event schema object
  */
+/*
 export function generateTriennialGathering2026EventSchema(): EventSchema {
   const eventUrl = `${seoConfig.basic.siteUrl}/triennial-gathering-2026`;
   const eventImageUrl = getFullUrl('/ogimg_finan.jpg');
@@ -226,6 +230,7 @@ export function generateTriennialGathering2026EventSchema(): EventSchema {
     },
   };
 }
+*/
 
 /**
  * Type-safe helper to get all structured data schemas
@@ -234,12 +239,9 @@ export function generateTriennialGathering2026EventSchema(): EventSchema {
  * @returns Array of schema objects
  */
 export function generateStructuredData(
-  schemas: ('organization' | 'website' | 'event')[] = [
-    'organization',
-    'website',
-  ]
-): (OrganizationSchema | WebSiteSchema | EventSchema)[] {
-  const result: (OrganizationSchema | WebSiteSchema | EventSchema)[] = [];
+  schemas: ('organization' | 'website')[] = ['organization', 'website']
+): (OrganizationSchema | WebSiteSchema)[] {
+  const result: (OrganizationSchema | WebSiteSchema)[] = [];
 
   if (schemas.includes('organization')) {
     result.push(generateOrganizationSchema());
@@ -247,10 +249,6 @@ export function generateStructuredData(
 
   if (schemas.includes('website')) {
     result.push(generateWebSiteSchema());
-  }
-
-  if (schemas.includes('event')) {
-    result.push(generateTriennialGathering2026EventSchema());
   }
 
   return result;
