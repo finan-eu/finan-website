@@ -71,10 +71,9 @@ Thumbs.db
 
 # --- Misc ---
 .playwright-mcp/
-docs/
+/docs/
 
 # --- AI / Editor tools ---
-.opencode/
 .firecrawl/
 .claude/
 CLAUDE.md
